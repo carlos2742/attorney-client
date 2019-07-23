@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
     "build": "ng build",
     "test": "ng test",
