@@ -1,0 +1,225 @@
+{
+  "PORTAL": {
+    "ALERTS":{
+      "REQUIRED":"{{field}} es requerido",
+      "EMAIL":"Correo electronico incorrecto",
+      "MINLENGTH":"{{field}} debe tener al menos 7 números",
+      "PATTERN":"{{field}} debe tener solamente números",
+      "FAILED":"Su mensaje no se puedo enviar.",
+      "SUCCESS":"Su mensaje se envio satisfactoriamente."
+    },
+    "TITLE":{
+      "NAME":"Morejon Attorney, P.A.",
+      "PLACE":"Oficina de Leyes",
+      "SLOGAN":"Porque su problema es nuestro problema"
+    },
+    "ROUTES":{
+      "HOME": "inicio",
+      "ABOUT": "acerca-de",
+      "AREAS_OF_PRACTICES": "areas-del-derecho-que-practicamos",
+      "FAQ": "preguntas-frecuentes",
+      "CONTACTS": "contactenos"
+    },
+    "LABEL":{
+      "HOME": "Inicio",
+      "ABOUT": "Acerca de",
+      "AREAS_OF_PRACTICES": "Áreas del Derecho que Practicamos",
+      "FAQ": "Preguntas Frecuentes",
+      "CONTACTS": "Contáctenos"
+    },
+    "FORM":{
+      "TITLE": "Primera Consulta GRATIS",
+      "FIELDS":{
+        "NAME": "Nombre (requerido)",
+        "EMAIL": "Correo (requerido)",
+        "PHONE": "Telefono (opcional)",
+        "MESSAGE": "Mensaje (requerido)"
+      },
+      "ALERTS":{
+        "NAME": "Nombre",
+        "EMAIL": "Correo",
+        "PHONE": "Telefono",
+        "MESSAGE": "Mensaje"
+      },
+      "BUTTON": "Envie su mensaje",
+      "DESCRIPTION": "Nos comunicaremos con usted en 24 horas. Para asistencia inmediata llámenos a <a class='phone' href='tel:7869070154'> (786) 907-0154 </a>. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
+    },
+    "VIEW":{
+      "HOME":{
+        "TITLE":"¡Bienvenido!",
+        "DESCRIPTION":"<p>Somos un bufete radicado en el área de Miami. Nuestra Abogada, Yahima Morejon, Esq.  tiene varios años de experiencia, primero como letrada en La Habana, Cuba, y luego en el estado de la Florida. Nuestra promesa a cada cliente es que manejaremos su caso con profesionalismo, fidelidad e integridad. La firma dedicara todos sus recursos para resolver su problema legal. Porque su problema, es nuestro problema.</p><p>Y. Morejon Attorney, P.A. maneja todos sus casos de una manera diligente, leal y rápida. Nos dedicamos a su problema legal, porque su problema es nuestro problema.</p>"
+      },
+      "ABOUT":{
+        "TITLE":"Acerca de",
+        "DESCRIPTION":"<p>Yahima Morejon, Esq. es una abogada, que se licencia en Derecho en la Universidad de La Habana, Cuba, y luego obtiene el título de Juris Doctor en St. Thomas University School of Law, en la Florida, Estados Unidos. Mientras trabajó en la ONBC estuvo encargada de casos penales y civiles, así como asuntos referentes a sucesiones y familia. Como residente en Miami, se desempeñó en una firma especializada en bancarrota, hipotecas e inmigración. Eventualmente,  Morejon decidió abrir su propio bufete, con sede en Miami, para ayudar a su comunidad y continuar con su pasión por el ejercicio del Derecho. En Y. Morejon Attorney, P.A. le prometemos a nuestros clientes que sus casos se manejaran con profesionalismo e integridad, y que nos dedicaremos a su causa. Porque su problema, es nuestro problema.</p>"
+      },
+      "FAQ":{
+        "TITLE":"Preguntas frecuentes",
+        "GENERAL":{
+          "TITLE":"Generales",
+          "QUESTIONS":{
+            "1":"¿Qué tipo de casos maneja su bufete?",
+            "2":"¿Puedo tener una consulta gratis?",
+            "3":"¿Cuáles serían los costos y honorarios para atender mi caso?",
+            "4":"¿En cuánto tiempo usted resolverá mi caso?"
+          },
+          "ANSWERS":{
+            "1":"Nuestro bufete maneja una gran variedad de casos que incluyen: inmigración, familia, sucesiones, bancarrotas, hipotecas, lesiones personales y defensas penales. Sin embargo, si usted tiene una pregunta acerca de otro asunto, siempre puede preguntar. Nuestra primera consulta de 30 minutos es gratis y si no podemos llevar su caso, le ayudaremos a encontrar quien pueda.",
+            "2":"Si. Nuestra primera consulta de 30 minutos siempre es gratis. Nos puede llamar por teléfono, mandarnos un e-mail, escribirnos a través de nuestra página web, o hacer una cita en nuestra oficina, y nosotros lo escucharemos sin cargo para usted. Recuerde, que su problema es nuestro problema.",
+            "3":"Cada caso es diferente, como cada persona. La cantidad de tiempo que se le dedica a un asunto varía considerablemente en dependencia de las características del caso. Una vez que tengamos todos los hechos, podremos determinar una cuota. Pero le aseguramos que haremos nuestro mayor esfuerzo por dedicarnos a su asunto y defender sus derechos. La primera consulta de 30 minutos siempre es gratis.",
+            "4":"Cada caso es diferente, las leyes y el sistema de cortes varían constantemente. No podemos garantizarle una fecha de culminación de su asunto, ni cuánto tiempo demorara su resolución, pero le prometemos que haremos todo lo que esté a nuestro alcance para ser tan audaces y expeditos como sea posible, sin sacrificar profesionalidad."
+          }
+        },
+        "IMMIGRATION":{
+          "TITLE":"Inmigración",
+          "QUESTIONS":{
+            "1":"Estoy indocumentado en este país. ¿Existe alguna manera de que pueda obtener mi permiso de trabajo?",
+            "2":"Soy residente permanente y quiero aplicar a la ciudadanía, pero no hablo inglés. ¿Qué puedo hacer?",
+            "3":"Fui víctima de un crimen en mi país. ¿Podre ajustar mi estatus en los Estados Unidos?"
+          },
+          "ANSWERS":{
+            "1":"Si, las leyes de inmigración de los Estados Unidos tienen diferentes recursos legales que pueden ser utilizados para ajustar su estatus. La manera exacta para obtener un permiso de trabajo depende de las situaciones específicas de cada persona, tales como los lazos familiares que tenga en este país, y su historia migratoria en los Estados Unidos. Un abogado le es necesario para determinar adecuadamente el camino a seguir.",
+            "2":"USCIS ha establecido algunas excepciones que permiten a residentes permanentes obtener la ciudadanía sin que conozcan el idioma inglés, realizando el examen en su lengua. La firma puede asistirlo en determinar si usted califica para dichas excepciones, y ayudarlo a obtener su certificado de naturalización.",
+            "3":"Las leyes migratorias de los Estados Unidos tienen ciertas directrices para proteger a víctimas de crímenes, abusos y/ o represiones en sus países de origen. La firma le puede ayudar a entender sus derechos y determinar si califica para ajustar su estatus en los Estados Unidos, dependiendo de sus características personales."
+          }
+        },
+        "FAMILY":{
+          "TITLE":"Familia",
+          "QUESTIONS":{
+            "1":"Tenía un plan de pensión alimenticia, pero perdí mi trabajo y ahora no puedo realizar los mismos pagos. ¿Qué puedo hacer?",
+            "2":"Estoy en proceso de divorcio y no tenemos hijos en común. ¿Podre recibir pensión alimenticia?",
+            "3":"¿Necesito una razón para divorciarme?",
+            "4":"Recibí una demanda de divorcio y mi esposo/esposa está solicitando pensión alimenticia en cantidades que no puedo pagar. ¿Qué puedo hacer?",
+            "5":"El padre/madre de mi hijo no ha pagado pensión alimenticia. ¿Puedo hacerlo(a) respetar esos pagos?",
+            "6":"Durante nuestro divorcio llegamos a un acuerdo de un régimen de comunicación. ¿Podemos cambiarlo o modificarlo?",
+            "7":"¿Necesito un acuerdo prenupcial o post-nupcial?",
+            "8":"El Departamento de Niños y Familias (DCF) ha abierto una investigación en mi contra por abuso infantil. ¿Qué puedo hacer?"
+          },
+          "ANSWERS":{
+            "1":"Si ha habido un cambio en sus circunstancias financieras más allá de su control, la ley de la Florida permite cambios y/o modificaciones en los planes de pagos de pensión alimenticia cuando las circunstancias personales han cambiado. Y. Morejon Attorney, P.A.  le podrá ayudar a modificar sus actuales pagos y a calcular el monto de los cambios.",
+            "2":"Pensión alimenticia entre cónyuges y pensión alimenticia para los hijos son dos conceptos diferentes. Usted pudiera ser elegible para recibir pensión alimenticia aun cuando no existan hijos en común. Las cortes pueden adjudicar diferentes tipos de pensiones alimenticias en dependencia de las circunstancias personales de cada individuo y la historia marital de las partes. Un abogado le puede ayudar a determinar si usted tiene derecho a recibir algún tipo de pago.",
+            "3":"No la necesita. El estado de la Florida es un estado sin culpa, con solo demostrar que el matrimonio esta irremediablemente roto y que existe incompatibilidad de caracteres, es suficiente para que la corte acepte la petición de divorcio.",
+            "4":"Las leyes de la Florida requieren que se analicen diferentes factores para determinar los pagos de pensión alimenticia, tales como las circunstancias económicas de las partes, el estándar de vida al que se encuentran acostumbrados, la capacidad adquisitiva de las partes y el mejor interés del menor. Cada matrimonio y cada divorcio son diferentes, por lo que se necesitara un abogado que examine los detalles del caso para calcular si es necesario pagar pensión alimenticia y que cantidad.",
+            "5":"Si. El pago de la pensión alimenticia de los hijos es para beneficio del menor y las cortes de la Florida ejecutaran el pago de la pensión, incluyendo pagos atrasados.",
+            "6":"Si las circunstancias han cambiado, el régimen de comunicación puede ser modificado.",
+            "7":"Los acuerdos prenupciales y post-nupciales son instrumentos dedicados a proteger los bienes personales de cada cónyuge en el caso de divorcio o muerte. Si usted desea preservar sus bienes y evitar obligaciones que pudieran no ser suyas, entonces debería consultar a un abogado.",
+            "8":"Usted tiene derecho a contratar a un abogado para representarlo, a ser informado de la causa de la investigación, la naturaleza de las alegaciones, el posible resultado de la investigación y el posible remedio."
+          }
+        },
+        "WILLSPROBATE":{
+          "TITLE":"Sucesiones",
+          "QUESTIONS":{
+            "1":"¿Necesito un testamento?",
+            "2":"¿Si hago un testamento, la persona que nombre como beneficario(a) tendrá algún derecho actual sobre mis bienes?",
+            "3":"Yo hice un testamento hace años, pero cambié de idea. ¿Puedo cambiar el testamento?",
+            "4":"Mi esposo(a) murió y no me dejo nada en su testamento. ¿Tengo derecho a recibir algo?",
+            "5":"Mi esposo(a) murió y no le dejo nada en su testamento a nuestro hijo(a). ¿Tiene nuestro hijo derecho sobre sus bienes?",
+            "6":"¿Puedo impugnar un testamento? ¿Y si lo hago pierdo algún derecho?",
+            "7":"¿Puedo hacer un testamento oral?",
+            "8":"¿Qué es un fideicomiso?  ¿Es necesario crear uno?"
+          },
+          "ANSWERS":{
+            "1":"Si usted quiere disponer de sus bienes de una manera específica, necesita un testamento; de lo contrario serán aplicadas las reglas de la sucesión intestada.",
+            "2":"No. Un testamento propiamente ejecutado no le otorga derechos a ninguno de los beneficiarios mientras el testador este vivo. El testamento solo surtirá efecto después de la muerte del testador.",
+            "3":"Si, mientras el testador se encuentre vivo y con capacidad para comprender la magnitud de sus actos, él puede revocar y/o modificar su testamento.",
+            "4":"En dependencia de la fecha en que el testamento fue ejecutado y la fecha en que contrajeron matrimonio, usted podría tener derecho sobre ciertos bienes de su cónyuge. Un análisis de su historia familiar y una consulta con un abogado serán necesarias para determinar adecuadamente si usted posee derechos sobre los bienes de su cónyuge.",
+            "5":"En dependencia de la fecha en que el testamento fue ejecutado y la fecha en que nació su hijo(a), el/ella podría tener derecho sobre ciertos bienes de su cónyuge. Un análisis de su historia familiar y una consulta con un abogado serán necesarias para determinar adecuadamente si los hijos poseen derechos sobre los bienes de sus padres.",
+            "6":"Como persona interesada usted tiene el derecho de impugnar un testamento. No perderá ningún derecho si decide comenzar un proceso de impugnación, incluso si el testamento dice que perderá ciertos beneficios, esto no aplicara, porque el estado de la Florida no reconoce las cláusulas “in terrorem.”",
+            "7":"No, los testamentos orales no están reconocidos en la Florida.",
+            "8":"Un fideicomiso es una relación fideicomisaria entre el fiduciario, que ostenta el título legal de una propiedad específica, con el deber de manejarla, invertirla, salvaguardarla y administrarla para el interés de sus beneficiarios. Un fideicomiso no es un instrumento necesario, sin embargo, si usted desea disponer o mantener cierto control sobre los bienes, la mejor opción sería crear uno."
+          }
+        },
+        "BANKRUPTCY":{
+          "TITLE":"Bancarrota",
+          "QUESTIONS":{
+            "1":"Puedo aplicar a la bancarrota si tengo muy poca o mucha deuda?",
+            "2":"Si aplico a la bancarrota, perderé  mi casa o mi propiedad?",
+            "3":"Cuánto tiempo debe pasar para reparar mi crédito?",
+            "4":"Cual es la diferencia entre el Capitulo 7 y el Capitulo 13 de la bancarrota?",
+            "5":"Puedo detener la venta en reposecion hipotecaria (foreclosure) de mi casa cuando aplico a la bancarrota?"
+          },
+          "ANSWERS":{
+            "1":"El código de bancarrota no establece límites en la cantidad de deuda que una persona debe tener cuando aplica a la bancarrota. En depenedncia de la cantidad de la deuda y el tipo de deuda usted podrá ser elegible para la bancarrota. Determinar el capítulo correcto require un ánalisis de su situacion financiera, y debe consultarse con un abogado.",
+            "2":"Sin el adequado consejo legal usted podría perder su casa y otras propiedads si aplicara a la bancarrota. Si su propiedad se encuentra en ejecución hipotecaria, aplicar a la bancarrota generalmente parará el proceso de venta de su casa. Usted también podría sere elegible para participar en programas de mitigación de pérdidas ofrecidas por la corte de bancarrota.",
+            "3":"Generalmente, una vez que el caso de bancarrota haya sido cerrado, usted comenzara a recibir ofertas de tarjetas de credito pre-pagadas, lo cual lo ayudara a comenzar a reestablecer su credito en un periodo de 6 a 12 meses. En los proximos 2 a 4 años el historial de credito podra ser suficiente para arrendar , comprar un vehiculo u otra propiedad.",
+            "4":"Al Capitulo 7 se le conoce como la liquidacion de la bancarrota e incluye el perdon y la condonacion de la deuda a cambio de la propiedad no exenta del deudor. El Capitulo 13, tambien conocido como la reorganizacion de la bancarrota, es para las personas que buscan restructurar sus deudas individuales. La decision de aplicar a un Capitulo u otro require extenso conocimiento de las leyes de bancarrota y no se debe realizar sin antes consultar a un abogado.",
+            "5":"Generalmente si. Si su propiedad se encuentra en reposecion hipotecaria (foreclosure), aplicar a la bancarrota usualmente detiene la venta de su propiedad. Usted tambien podria salvar su casa participando en los programas de mitigacion de perdidas de la corte. Sin embargo, solo un abogado especializado es capaz de informarle si la aplicacion a la bancarrota, puede detener la reposecion hipotecaria (foreclosure)."
+          }
+        },
+        "REALPROPERTY":{
+          "TITLE":"Derecho sobre Bienes",
+          "QUESTIONS":{
+            "1":"Necesito un abogado si voy a comprar o vender una casa?",
+            "2":"Como arrendador, que puedo hacer si mi inquilino no esta pagando el importe de la renta?",
+            "3":"Como inquilino, que puedo hacer si mi arrendador no esta cumpliendo con los terminos del contrato?"
+          },
+          "ANSWERS":{
+            "1":"No es necesario un abogado a la hora de comprar o vender una casa. Sin embargo, la compra de una casa es una de las transacciones financieras mas grandes que una persona realiza durante su vida. Seria prudente que usted contratara a un abogado para que revise los documentos de venta o la transaccion. El pago de los honorarios a un abogado sera  mucho menor que el costo de un problema no detectado a tiempo.",
+            "2":"Usted puede desalojar al inquilino y readquirir la posecion de su propiedad, para poder ser rentada nuevamente. Usted tambien pudiera demandar a su inquilino por el importe que se le adeuda. Los problemas entre arrendador y arrendatario requieren de una pronta atencion, ya que cada dia que pasa sin abonarse la  renta, es una perdida economica. Un arrendador deberia contactar a un abogado siempre que su inquilino haya dejado de pagar la renta.",
+            "3":"Usted pudiera ser elegible para una reduccion del importe de su renta hasta que el arrendador cumpla con los terminos del contrato. Los arrendadores, al igual que los inquillinos estan obligados a cumplir los terminos del contrato y respetar las leyes que lo rigen."
+          }
+        },
+        "INJURY":{
+          "TITLE":"Lesiones",
+          "QUESTIONS":{
+            "1":"Fui victima de un accidente de auto. Que debo hacer?",
+            "2":"Me cai en una tienda, un supermercado, o centro commercial. Que puedo hacer?"
+          },
+          "ANSWERS":{
+            "1":"Usted debe consultar inmediatamente a un abogado para determinar si puede realizar una reclamacion contra el otro conductor. Las reclamaciones de accidente deben ser tratadas con premura, pues de lo contrario se pudiera perder la posibilidad de efectuar la reclamacion.",
+            "2":"Usted debe consultar inmediatamente a un abogado para determinar si puede realizar una reclamacion contra el dueno de la propiedad, el negocio o una tercera persona. Las reclamaciones de accidente deben ser tratadas con premura, pues de lo contrario se pudiera perder el derecho de reclamar."
+          }
+        },
+        "CDEFENSE":{
+          "TITLE":"Defensa Penal",
+          "QUESTIONS":{
+            "1":"Me han arrestado. ¿Qué puedo hacer?",
+            "2":"Si me han arrestado ¿Necesito responder las preguntas que me realicen si mi abogado no está presente?",
+            "3":"Puede la policía registrar mi casa/carro/mi persona sin una orden?",
+            "4":"Puede la policía arrestar a mi hijo/hija?",
+            "5":"¿Puedo eliminar mis antecedentes penales?"
+          },
+          "ANSWERS":{
+            "1":"Si lo han arrestado, usted necesita permanecer en silencio y demandar la presencia de un abogado de inmediato.",
+            "2":"Si usted ha sido arrestado y solicitó un abogado, usted no necesita responder las preguntas si su abogado no esta presente.",
+            "3":"La respuesta requiere examinar las circunstancias. Generalmente los oficiales necesitan una orden de registro emitida por la corte o debe existir causa probable para efectuar el registro. Usted debe consultar a un abogado y explicarle todos los hechos para determinar si efectivamente el registro ha sido autorizado por la ley.",
+            "4":"Un niño puede ser arrestado siguiendo una orden de arresto emitida por la corte, por un arresto acorde a ley, por un oficial con causa probable o por las fuerzas del orden al no comparecer en corte. Los padres, guardianes o custodios legales deberán ser notificados.",
+            "5":"En dependencia de qué tipo de crimen se le haya encontrado culpable y la sentencia recibida, un abogado podrá ayudarlo a eliminar sus antecedentes penales."
+          }
+        }
+      },
+      "APRACTICES":{
+        "TITLE":"Que necesita saber.",
+        "DESCRIPTION":"<p>Somos un bufete radicado en el área de Miami. Nuestra Abogada, Yahima Morejon, Esq.  tiene varios años de experiencia, primero como letrada en La Habana, Cuba, y luego en el estado de la Florida. Nuestra promesa a cada cliente es que manejaremos su caso con profesionalismo, fidelidad e integridad. La firma dedicara todos sus recursos para resolver su problema legal. Porque su problema, es nuestro problema.</p>",
+        "IMMIGRATION":{
+          "TITLE":"Inmigración",
+          "CONTENT":"<p>Hay muchas razones por las cuales las personas deciden vivir o trabajar en los Estados Unidos, pero principalmente por las oportunidades que nos brinda este país. Nuestra oficina ayuda a inmigrantes a alcanzar sus metas, pues ofrecemos un amplio rango de servicios como:</p><ul><li>Peticiones familiares</li><li>Perdones</li><li>Ajuste de estatus</li><li>Permiso de trabajos</li><li>Aplicaciones de asilo</li><li>Ajustes para victimas de crímenes</li><li>Naturalizaciones</li><li>Visas de Negocios</li></li></ul>"
+        },
+        "FAMILY":{
+          "TITLE":"Familia",
+          "CONTENT":"<p>La familia es el soporte principal de nuestra sociedad, es por ello que nuestro objetivo es ayudarlos con sus asuntos familiares, sin perder de vista lo delicados que  pueden llegar a ser. Ofrecemos servicios en las siguientes áreas:</p><ul><li>Divorcios</li><li>Pensión alimenticia para cónyuges e hijos</li><li>Custodia de los hijos</li><li>Reubicación de padres/hijos</li><li>Acuerdos prenupciales y postnupciales</li><li>Casos de dependencia familiar</li></ul>"
+        },
+        "WILLSPROBATE":{
+          "TITLE":"Sucesiones",
+          "CONTENT":"<p>Siempre es difícil para familiares y amigos cuando un ser querido muere. Desafortunadamente, el tiempo de luto se ve interrumpido por la necesidad de prestar atención a las propiedades y asuntos del fallecido. Nuestra oficina está aquí para proveerle a usted, su familia y amigos el conocimiento legal que le proporcionará  paz en tan difíciles momentos. Nuestros servicios incluyen:</p><ul><li>Testamentos</li><li>Fideicomisos</li><li>Poderes</li><li>Administración de herencias, fideicomisos, y testamentos</li></ul>"
+        },
+        "BANKRUPTCY":{
+          "TITLE":"Bancarrota, Hipotecas, y Asuntos Relacionados con Bienes",
+          "CONTENT":"<p>Ya sea que usted quiera salir de deudas o consolidarlas, salvar su carro o su casa de ser reposeído, comprar o vender el hogar de sus sueños, o desalojar un arrendatario moroso; la oficina de Y. Morejon Attorney está aquí para ayudarlo en los siguientes asuntos:</p><ul><li>Presentación de bancarrotas de Capitulo 7</li><li>Presentación de bancarrotas de Capitulo 13</li><li>Bancarrota para negocios</li><li>Desalojos</li><li>Venta de propiedad</li><li>Cierre de bienes raíces</li></ul>"
+        },
+        "INJURY":{
+          "TITLE":"Lesiones Personales",
+          "CONTENT":"<p>Estar involucrado en un accidente de cualquier índole, lo puede dejar con secuelas físicas y financieras. La oficina de Y. Morejon Attorney puede ayudarlo a recuperar su estatus financiero pues provee servicios en las siguientes áreas:</p><ul><li>Accidentes de auto</li><li>Accidentes de peatón</li><li>Caídas y lesiones</li></ul>"
+        },
+        "CDEFENSE":{
+          "TITLE":"Defensa Penal",
+          "CONTENT":"<p>Si usted ha sido arrestado hay dos cosas que debe recordar: guardar silencio, y consultar a un abogado. Nuestra oficina puede ayudarle con:</p><ul><li>Delitos graves</li><li>Delitos menores</li><li>Delitos de droga</li><li>DIU y defensa en asuntos de transito</li><li>Defensa de jóvenes</li></ul>"
+        }
+      }
+    },
+    "FOOTER":{
+      "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
+    }
+  }
+}
+
