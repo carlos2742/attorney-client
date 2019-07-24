@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {CommonService} from '../shared/services/common/common.service';
-import {State} from './store/reducers/portal.reducers';
+import {CommonState} from '../shared/store/reducers/common.reducers';
 import {Store} from '@ngrx/store';
-import * as PortalActions from './store/actions/portal.actions';
-import * as PortalSelector from './store/selectors/portal.selectors';
+import * as CommonActions from '../shared/store/actions/common.actions';
+import * as CommonSelector from '../shared/store/selectors/common.selectors';
 
 @Component({
   selector: 'app-portal',
@@ -12,11 +12,11 @@ import * as PortalSelector from './store/selectors/portal.selectors';
 })
 export class PortalComponent implements OnInit {
 
-  constructor(private common: CommonService, private store: Store<State>) {
-    this.store.dispatch(new PortalActions.InitializeLanguage());
-    this.store.dispatch(new PortalActions.ChangeLanguage('es'));
+  constructor(private common: CommonService, private store: Store<CommonState>) {
+    this.store.dispatch(new CommonActions.InitializeLanguage());
+    this.store.dispatch(new CommonActions.ChangeLanguage('es'));
 
-    this.store.select(PortalSelector.selectLanguage).subscribe(response => {
+    this.store.select(CommonSelector.selectLanguage).subscribe(response => {
       console.log(response);
     });
   }
