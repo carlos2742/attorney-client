@@ -1,5 +1,6 @@
 import * as Portal from '../actions/portal.actions';
 interface Language {
+  initializing: boolean;
   initialized: boolean;
   currentLanguage: string;
 }
@@ -9,6 +10,7 @@ export interface State {
 
 export const initialState: State = {
   language: {
+    initializing: false,
     initialized: false,
     currentLanguage: ''
   }
@@ -19,13 +21,33 @@ export function reducer(
   action: Portal.ActionsUnion
 ): State {
   switch (action.type) {
-    case Portal.ActionTypes.InitLanguage: {
-      console.log(Portal.ActionTypes.InitLanguage);
-      return state;
+    case Portal.ActionTypes.InitializeLanguage: {
+      console.log(Portal.ActionTypes.InitializeLanguage);
+      return {
+        language: {
+          ...state.language,
+          initializing: true,
+        }
+      };
     }
-    case Portal.ActionTypes.ChangeLanguage: {
-      console.log(Portal.ActionTypes.ChangeLanguage);
-      return state;
+    case Portal.ActionTypes.InitializedLanguage: {
+      console.log(Portal.ActionTypes.InitializedLanguage);
+      return {
+        language: {
+          initializing: false,
+          initialized: true,
+          currentLanguage: action.payload
+        }
+      };
+    }
+    case Portal.ActionTypes.ChangeLanguageSuccess: {
+      console.log(Portal.ActionTypes.ChangeLanguageSuccess);
+      return {
+        language: {
+          ...state.language,
+          currentLanguage: action.payload
+        }
+      };
     }
 
     default: {

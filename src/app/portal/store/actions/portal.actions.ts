@@ -1,13 +1,20 @@
 import {Action} from '@ngrx/store';
 
 export enum ActionTypes {
-  InitLanguage = '[Language] Init',
-  ChangeLanguage = '[Language] Change'
+  InitializeLanguage = '[Language] Initialize',
+  InitializedLanguage = '[Language] Initialized',
+  ChangeLanguage = '[Language] Change',
+  ChangeLanguageSuccess = '[Language] Change Success'
 }
 
-export class InitLanguage implements Action {
-  readonly type = ActionTypes.InitLanguage;
+export class InitializeLanguage implements Action {
+  readonly type = ActionTypes.InitializeLanguage;
   constructor() {}
+}
+
+export class InitializedLanguage implements Action {
+  readonly type = ActionTypes.InitializedLanguage;
+  constructor(public payload: any) {}
 }
 
 export class ChangeLanguage implements Action {
@@ -15,5 +22,12 @@ export class ChangeLanguage implements Action {
   constructor(public payload: any) {}
 }
 
-export type ActionsUnion = InitLanguage |
-  ChangeLanguage;
+export class ChangeLanguageSuccess implements Action {
+  readonly type = ActionTypes.ChangeLanguageSuccess;
+  constructor(public payload: any) {}
+}
+
+export type ActionsUnion = InitializeLanguage |
+  InitializedLanguage |
+  ChangeLanguage |
+  ChangeLanguageSuccess;
