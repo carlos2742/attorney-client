@@ -1,0 +1,28 @@
+@import "../../portal.component";
+input, textarea{
+  background-color: transparent;
+  border: 1px solid $gold_color;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: $gold_color;
+  width: 100%;
+}
+
+textarea{
+  min-height: 80px;
+}
+
+button{
+  background-color: $gold_color;
+  border-radius: 20px;
+  border: none;
+  padding: 8px 35px;
+}
+
+@include media-breakpoint-down(sm){
+  button{
+    width: 100%;
+  }
+}
+
+

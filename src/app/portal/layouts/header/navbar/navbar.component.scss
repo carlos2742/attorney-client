@@ -1,0 +1,15 @@
+@import "../header.component";
+
+.navbar-brand{
+  color: $gold_color !important;
+  font-size: 1rem;
+  margin: 0 0.9rem;
+}
+
+#mobile-logo{
+  margin-left: -3rem;
+}
+
+.navbar-toggler{
+  color: $gold_color;
+}

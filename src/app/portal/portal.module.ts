@@ -5,12 +5,22 @@ import { PortalRoutingModule } from './portal-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import {SharedModule} from '../shared/shared.module';
 import { PortalComponent } from './portal.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { NavbarComponent } from './layouts/header/navbar/navbar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { InfoComponent } from './layouts/footer/info/info.component';
+import { FormComponent } from './layouts/form/form.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    PortalComponent
+    PortalComponent,
+    HeaderComponent,
+    NavbarComponent,
+    FooterComponent,
+    InfoComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

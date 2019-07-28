@@ -1,0 +1,24 @@
+<div>
+  <p>La primera consulta es GRATIS</p>
+  <p [innerHTML]="'PORTAL.FORM.DESCRIPTION' | translate"></p>
+  <form action="">
+    <div class="row">
+      <div class="col-12 col-lg-4 pb-1">
+        <input type="text" id="name" placeholder="{{'PORTAL.FORM.FIELDS.NAME' | translate}}">
+      </div>
+      <div class="col-12 col-lg-4 pb-1">
+        <input type="text" id="phone" placeholder="{{'PORTAL.FORM.FIELDS.PHONE' | translate}}">
+      </div>
+      <div class="col-12 col-lg-4 pb-1">
+        <input type="text" id="email" placeholder="{{'PORTAL.FORM.FIELDS.EMAIL' | translate}}">
+      </div>
+    </div>
+    <div class="row pt-1">
+      <div class="col-12">
+        <textarea placeholder="{{'PORTAL.FORM.FIELDS.MESSAGE' | translate}}"></textarea>
+      </div>
+    </div>
+    <button type="button">Enviar</button>
+  </form>
+</div>
+
