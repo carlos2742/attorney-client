@@ -4,6 +4,16 @@
   width: 270px;
   padding: 0 1rem;
 
+  & > div{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.9rem;
+    line-height: 2rem;
+  }
+
+  h4{
+    font-family: 'Cardiff Bold';
+  }
+
   #phone{
     font-size: 1.5rem;
     line-height: 1.5rem;

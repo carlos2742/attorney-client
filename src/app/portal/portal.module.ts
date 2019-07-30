@@ -10,6 +10,7 @@ import { NavbarComponent } from './layouts/header/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { InfoComponent } from './layouts/footer/info/info.component';
 import { FormComponent } from './layouts/form/form.component';
+import { SocialNetworkComponent } from './layouts/social-network/social-network.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormComponent } from './layouts/form/form.component';
     NavbarComponent,
     FooterComponent,
     InfoComponent,
-    FormComponent
+    FormComponent,
+    SocialNetworkComponent
   ],
   imports: [
     CommonModule,

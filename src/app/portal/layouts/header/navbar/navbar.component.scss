@@ -4,12 +4,29 @@
   color: $gold_color !important;
   font-size: 1rem;
   margin: 0 0.9rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: 'Montserrat-Bold';
 }
 
 #mobile-logo{
   margin-left: -3rem;
 }
-
-.navbar-toggler{
-  color: $gold_color;
+.navbar-light{
+  .navbar-toggler{
+    color: $gold_color;
+    font-size: 2rem;
+    z-index: 1;
+  }
 }
+
+@include media-breakpoint-down(md){
+  .navbar-brand{
+    border-bottom: 1px solid $gold_color;
+    text-transform: uppercase;
+    &:first-child, &:last-child{
+      border-bottom: none;
+    }
+  }
+}
+
