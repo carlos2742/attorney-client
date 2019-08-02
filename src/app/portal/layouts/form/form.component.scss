@@ -1,10 +1,20 @@
 @import "../../portal.component";
+
+:host{
+  font-family: 'Roboto-Regular';
+  p{
+    &:first-child{
+      font-size: 20px;
+    }
+    font-size: 13px;
+  }
+}
+
 input, textarea{
   background-color: transparent;
   border: 1px solid $gold_color;
   border-radius: 5px;
   padding: 5px 10px;
-  color: $gold_color;
   width: 100%;
 }
 
@@ -12,11 +22,13 @@ textarea{
   min-height: 80px;
 }
 
-button{
-  background-color: $gold_color;
-  border-radius: 20px;
-  border: none;
-  padding: 8px 35px;
+
+button, input, textarea{
+  font-size: 13px;
+}
+
+::placeholder, input, textarea{
+  color: $gold_color;
 }
 
 @include media-breakpoint-down(sm){

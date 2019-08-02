@@ -30,10 +30,10 @@
     "FORM":{
       "TITLE": "Primera Consulta GRATIS",
       "FIELDS":{
-        "NAME": "Nombre (requerido)",
-        "EMAIL": "Correo (requerido)",
-        "PHONE": "Telefono (opcional)",
-        "MESSAGE": "Mensaje (requerido)"
+        "NAME": "Nombre",
+        "EMAIL": "Correo",
+        "PHONE": "Telefono",
+        "MESSAGE": "Mensaje"
       },
       "ALERTS":{
         "NAME": "Nombre",

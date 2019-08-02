@@ -39,6 +39,13 @@
 }
 
 @font-face {
+  font-family: 'Cardiff MediumItalic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cardiff MediumItalic'), url('assets/fonts/CARDIF_I.woff') format('woff');
+}
+
+@font-face {
   font-family: 'Roboto-Bold';
   src: url('assets/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Roboto-Bold.woff') format('woff'), url('assets/fonts/Roboto-Bold.ttf')  format('truetype'), url('assets/fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');
   font-weight: normal;

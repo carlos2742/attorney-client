@@ -3,14 +3,13 @@
 .navbar-brand{
   color: $gold_color !important;
   font-size: 1rem;
-  margin: 0 0.9rem;
-  text-transform: capitalize;
+  margin: 0 0.6rem;
   font-weight: bold;
   font-family: 'Montserrat-Bold';
 }
 
 #mobile-logo{
-  margin-left: -3rem;
+  margin-left: -1rem;
 }
 .navbar-light{
   .navbar-toggler{
@@ -24,7 +23,7 @@
   .navbar-brand{
     border-bottom: 1px solid $gold_color;
     text-transform: uppercase;
-    &:first-child, &:last-child{
+    &:first-child, &:nth-last-child(3){
       border-bottom: none;
     }
   }
