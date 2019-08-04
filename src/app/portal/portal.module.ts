@@ -12,6 +12,7 @@ import { InfoComponent } from './layouts/footer/info/info.component';
 import { FormComponent } from './layouts/form/form.component';
 import { SocialNetworkComponent } from './layouts/social-network/social-network.component';
 import { SubHeaderComponent } from './layouts/header/sub-header/sub-header.component';
+import { TitleComponent } from './helpers/title/title.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SubHeaderComponent } from './layouts/header/sub-header/sub-header.compo
     InfoComponent,
     FormComponent,
     SocialNetworkComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    TitleComponent
   ],
   imports: [
     CommonModule,
