@@ -2,11 +2,11 @@
   "PORTAL": {
     "ALERTS":{
       "REQUIRED":"{{field}} es requerido",
-      "EMAIL":"Correo electronico incorrecto",
+      "EMAIL":"Correo electrónico incorrecto",
       "MINLENGTH":"{{field}} debe tener al menos 7 números",
       "PATTERN":"{{field}} debe tener solamente números",
       "FAILED":"Su mensaje no se puedo enviar.",
-      "SUCCESS":"Su mensaje se envio satisfactoriamente."
+      "SUCCESS":"Su mensaje se envió satisfactoriamente."
     },
     "TITLE":{
       "NAME":"Morejon Attorney, P.A.",
@@ -28,7 +28,7 @@
       "CONTACTS": "Contáctenos"
     },
     "FORM":{
-      "TITLE": "Primera Consulta GRATIS",
+      "TITLE": "La primera consulta es <strong>GRATIS</strong>",
       "FIELDS":{
         "NAME": "Nombre",
         "EMAIL": "Correo",

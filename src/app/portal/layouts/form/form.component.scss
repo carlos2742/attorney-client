@@ -14,6 +14,14 @@ button{
   font-size: 13px;
 }
 
+.message-alert{
+  color: #000;
+  background-color: #d8a972;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: 'Montserrat-Regular';
+}
+
 @include media-breakpoint-down(sm){
   button{
     width: 100%;

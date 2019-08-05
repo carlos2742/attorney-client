@@ -9,6 +9,7 @@ import {reducer} from '../shared/store/reducers/common.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {CommonEffects} from './store/effects/common.effects';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -28,12 +29,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     StoreModule.forFeature('common', reducer),
-    EffectsModule.forFeature([CommonEffects])
+    EffectsModule.forFeature([CommonEffects]),
+    NgbModule
   ],
   exports: [
     CommonModule,
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [
     CommonService
