@@ -10,6 +10,7 @@ import {CommonService} from '../../../shared/services/common/common.service';
 export class FormComponent implements OnInit {
 
   public requestForm;
+  public showForm: boolean;
 
   constructor(private formBuilder: FormBuilder, private common: CommonService) {
     this.requestForm = formBuilder.group({
@@ -18,6 +19,7 @@ export class FormComponent implements OnInit {
       phone: new FormControl('', [Validators.pattern(/^-?(0|[0-9]\d*)?$/), Validators.minLength(7)]),
       message: new FormControl('', [Validators.required]),
     });
+    this.showForm = true;
   }
 
   ngOnInit() {
@@ -36,7 +38,7 @@ export class FormComponent implements OnInit {
     if (this.requestForm.valid) {
       this.common.sendEmail(this.requestForm.value).subscribe(
         () => {
-          console.log('alert-success');
+          this.showForm = false;
         },
         error => {
           console.log(error);
