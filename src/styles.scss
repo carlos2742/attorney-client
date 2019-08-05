@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$gold_color: #d8a972;
+$dark_color: #161719;
+
+$cardif_bold_italic: 'Cardiff MediumItalic';
+
+p a.phone{
+    color: $gold_color;
+}

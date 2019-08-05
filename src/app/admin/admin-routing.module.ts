@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ScaffoldComponent} from './components/scaffold/scaffold.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {AdminComponent} from './admin.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ScaffoldComponent,
+    component: AdminComponent,
     children: [
       { path: '', component: DashboardComponent}
     ]

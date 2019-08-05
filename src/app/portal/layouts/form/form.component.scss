@@ -1,0 +1,23 @@
+@import "../../portal.component";
+
+:host{
+  font-family: 'Roboto-Regular';
+  p{
+    &:first-child{
+      font-size: 20px;
+    }
+    font-size: 13px;
+  }
+}
+
+button{
+  font-size: 13px;
+}
+
+@include media-breakpoint-down(sm){
+  button{
+    width: 100%;
+  }
+}
+
+

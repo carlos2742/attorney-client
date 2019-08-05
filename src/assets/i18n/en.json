@@ -1,0 +1,225 @@
+{
+  "PORTAL" : {
+    "ALERTS":{
+      "REQUIRED":"{{field}} is required",
+      "EMAIL":"Wrong email",
+      "MINLENGTH":"{{field}} should have at least 7 number",
+      "PATTERN":"{{field}} should have only numbers",
+      "FAILED":"Your message could not be sent.",
+      "SUCCESS":"Your message was sent successfully."
+    },
+    "TITLE":{
+      "NAME":"Morejon Attorney, P.A.",
+      "PLACE":"Law Office",
+      "SLOGAN":"Because your problem is our problem."
+    },
+    "ROUTES":{
+      "HOME": "home",
+      "ABOUT": "about-us",
+      "AREAS_OF_PRACTICES": "areas-of-practices",
+      "FAQ": "faq",
+      "CONTACTS": "contacts-us"
+    },
+    "NAV":{
+      "HOME": "Home",
+      "ABOUT": "About Us",
+      "AREAS_OF_PRACTICES": "Areas of Practices",
+      "FAQ": "FAQ",
+      "CONTACTS": "Contacts Us"
+    },
+    "FORM":{
+      "TITLE": "First Consultation FREE",
+      "FIELDS":{
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "PHONE": "Phone",
+        "MESSAGE": "Message"
+      },
+      "ALERTS":{
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "PHONE": "Phone",
+        "MESSAGE": "Message"
+      },
+      "BUTTON": "Submit your message",
+      "DESCRIPTION": "We will contact you within 24 hours. For immediate assistance call us at <a class='phone' href='tel:7869070154'>(786) 907-0154</a>. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."
+    },
+    "VIEW":{
+      "HOME":{
+        "TITLE":"Welcome!",
+        "DESCRIPTION":"<p>The law firm is based in the Miami-Dade area. Our attorney, Yahima Morejon, Esq., has several years of experience, first as an attorney in Havana, Cuba and then in the state of Florida. Our promise to every single client is that their case will be managed with professionalism, fidelity, and integrity. The firm will dedicate all its resources to resolve your legal matter. Your problem is our problem.</p><p>Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue, because your problem is our problem.</p>"
+      },
+      "ABOUT":{
+        "TITLE":"About Us",
+        "DESCRIPTION":"<p>Yahima Morejon, Esq. is a foreign attorney. She has obtained her Licentiate in Law degree from Havana University in Cuba, and her Juris Doctor degree from St. Thomas University School of Law. While working at the ONBC, Ms. Morejon handled criminal, civil, probate, and family cases. As a resident of Miami, she worked for a law firm that specialized in bankruptcy, foreclosure, and immigration matters. Eventually, Ms. Morejon decided to open her own law office to help her community and to continue her passion of practicing law. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue because your problem is our problem.</p>"
+      },
+      "FAQ":{
+        "TITLE":"Frequently Asked Questions",
+        "GENERAL":{
+          "TITLE":"General",
+          "QUESTIONS":{
+            "1":"What types of cases does your firm handle/practice?",
+            "2":"Do you offer free consultations?",
+            "3":"How much does your firm charge to handle my case?",
+            "4":"How long will it take to resolve my case?"
+          },
+          "ANSWERS":{
+            "1":"Our firm deals with a range of different cases that includes: Immigration, Family, Wills and Probate, Bankruptcy, Foreclosure, Evictions, Personal Injury, and Criminal Defense. However, if you have a question about a matter that is not listed above, you are always free to ask. The first 30-minutes consultation is free. If we are not able to take your case, we will help you find an attorney that can.",
+            "2":"Yes. Our first 30-minutes consultation is always free. You can reach us by phone or email, through our website, or by making an appointment. We will gladly listen to your legal issue without charge. Remember that your problem is our problem.",
+            "3":"Every case is different in much the same way every person is different. The amount of time that will be required for a certain case can greatly vary depending on the circumstances and the type of case. Once we are presented with all the facts and those facts are carefully examined, we will determine an estimate of the fees and costs that will be required for your case. Remember, the first consultation is always free.",
+            "4":"Every case is different, and the law and court system are constantly changing. We cannot accurately advise you as to the exact amount of time that it will take to resolve your case. However, we can tell you that the firm will do everything within its lawful power to resolve your legal matter in a quick and expeditious manner."
+          }
+        },
+        "IMMIGRATION":{
+          "TITLE":"Immigration",
+          "QUESTIONS":{
+            "1":"Is there a way that I can obtain a work permit in the United States if I am an undocumented person/immigrant?",
+            "2":"I am a green card holder/legal permanent resident and I want to apply for citizenship, but I do not speak English. What can I do?",
+            "3":"I have been the victim of a crime in my country. Am I eligible to adjust status in United States?"
+          },
+          "ANSWERS":{
+            "1":"Yes, there are many ways an undocumented person may be able to receive a work permit/authorization in the United States. The exact way to obtain a work permit will depend on the specific situation of each person such as their family ties to this country and their migratory history in the United States. An attorney is needed to properly assess these types of cases.",
+            "2":"If you qualify for an exception, you may be able to take the citizenship exam in your language, rather than in English. The firm can assist you in determining whether an exception applies as it concerns the citizenship exam.",
+            "3":"United States immigration law allow people who have been victims of certain crimes, abuse, and/or repression to adjust status to become a legal resident of the United States. The firm can advise you whether you are eligible for this form of immigration relief."
+          }
+        },
+        "FAMILY":{
+          "TITLE":"Family",
+          "QUESTIONS":{
+            "1":"I had an alimony/child support plan, but I lost my previous job and can’t afford to make the same payments. What can I do?",
+            "2":"I’m going through a divorce and I have no children in common with my spouse. Am I entitled to alimony?",
+            "3":"Do I need a fixed reason to get divorce?",
+            "4":"I received divorce papers and my wife/husband is asking me for amounts that I can’t afford to pay for alimony and/or child support. What can I do?",
+            "5":"Can I enforce the payment of child support?",
+            "6":"During our divorce we agreed to a parenting plan. Can it be changed or modified?",
+            "7":"Do I need a prenuptial or a postnuptial agreement?",
+            "8":"The Department of Children and Families (DCF) has opened an investigation against me for child abuse. What can I do?"
+          },
+          "ANSWERS":{
+            "1":"If there has been a change in financial circumstances beyond your control, Florida law allows for a change/modification of the amount(s) being paid for alimony and/or child support. Y. Morejon Attorney, P.A. can assist you in modifying an existing alimony and/or child support order and in calculating what the change would be.",
+            "2":"Alimony and child support are two very different forms of support intended for two very different reasons. Yes, you may be eligible for alimony even if you have no child(ren) in common. The courts can award different types of alimony depending on the financial circumstances and marital history of the divorcing parties. Consultation with an attorney can help you determine which type of alimony should be requested.",
+            "3":"No, you only need to believe that the marriage is “irretrievably broken.” Florida is a no-fault state. Simply showing an irremediable/irreversible breakdown of the marriage is enough to grant a divorce.",
+            "4":"Florida law requires that alimony and child support payments be determined using a variety of different factors such as the economic circumstances of the divorcing parties, the standard of living the parties are accustom to, the earning capacities of the parties, and the best interests of the child(ren). Every marriage, as with every divorce, is different, therefore, an attorney will be required to examine the details of the case to determine and calculate whether alimony and/or child(ren) support is required to be paid, and, if so, in what amount.",
+            "5":"Yes. Child support is for the benefit of the child(ren) and Florida courts will strictly enforce the payment of child support and the payment of any past due support.",
+            "6":"If the circumstances have changed, the parenting plan can be modified.",
+            "7":"Prenuptial and postnuptial agreements are used to protect personal assets/property and to avoid personal liability in the event of divorce or the death of a spouse. If you wish to preserve your assets and to avoid obligations that may not be yours, then you should strongly consider having an attorney draft one of these agreements.",
+            "8":"You have the right to be represented by an attorney. You have the right to be informed of the subject of the investigation, the nature of the allegation(s), the possible outcome(s) of the investigation and the possible remedies."
+          }
+        },
+        "WILLSPROBATE":{
+          "TITLE":"Wills and Probate",
+          "QUESTIONS":{
+            "1":"Do I need a will or is a will required?",
+            "2":"If I make a will, shall the individual(s) named in the will have any rights to my assets/property while I am still alive?",
+            "3":"I made a will years ago, but I changed my mind. Can I change it?",
+            "4":"My husband/wife died and left me nothing in the will. Am I entitled to anything?",
+            "5":"My husband/wife died and left nothing to our child(ren) in the will? Is my son/daughter entitled to any of my spouse’s assets?",
+            "6":"Can I contest a will? If so, will I lose any rights if I do?",
+            "7":"Can I create an oral will or is a will made orally valid?",
+            "8":"What is a trust, and should I make one?"
+          },
+          "ANSWERS":{
+            "1":"If you want to dispose of your estate in certain manner, then you do need a will. Otherwise, Florida law and your family members will decide where your assets/property will go once you have passed on.",
+            "2":"No. A properly executed will does not grant rights to any person while the testator/will maker is alive. A will only has a legal effect after testator’s death.",
+            "3":"Yes, if the testator/will maker is alive and of sound mind to understand the changes being made, then the testator can modify the existing will or revoke/terminate the old one completely and create a new one.",
+            "4":"The answer will depend on the date(s) that the will was executed and that the marriage took place. A full family history analysis and consultation would be required to adequately determine entitlement to your spouse’s assets.",
+            "5":"The answer will depend on the date(s) that the will was executed and that the child(ren) was born. A full family history analysis and consultation would be required to adequately determine whether the child(ren) are entitled to a distribution of the deceased spouse’s assets.",
+            "6":"Yes, you may contest a will if you are an interested party/person. No, you will not lose any rights if you contest the will, even if the will itself states that you will lose your rights. These “in terrorem” clauses are not recognized in Florida.",
+            "7":"No, oral wills are not recognized in the state of Florida.",
+            "8":"A trust is a fiduciary or supervisory relationship in which a trustee holds legal title to specific property/assets under a fiduciary/faithful duty to manage, invest, safeguard, and administer the trust assets and income for the benefit of the beneficiary(ies). Although a trust is not a necessity of life, it is a useful instrument for protecting, disposing, and investing assets."
+          }
+        },
+        "BANKRUPTCY":{
+          "TITLE":"Bankruptcy",
+          "QUESTIONS":{
+            "1":"Can I file for bankruptcy if I have too little or too much debt?",
+            "2":"If I file for bankruptcy, will I lose my home or property?",
+            "3":"How long will it take to have my credit repaired?",
+            "4":"What is the difference between Chapter 7 and Chapter 13 bankruptcy?",
+            "5":"Can I stop the foreclosure sale of my home by filing for bankruptcy?"
+          },
+          "ANSWERS":{
+            "1":"The bankruptcy code does set certain limits on the amount of debt an individual can have when filing for bankruptcy. Depending on the amount and type of debt you may be eligible to file for bankruptcy. Determining the correct chapter to file requires a thorough analysis of your financial situation, which can be done through consultation with an attorney.",
+            "2":"Without proper legal advice you may lose your home and other property by filing for bankruptcy. If your property is in foreclosure, the filing of a bankruptcy will usually stop the sale of the home. You may also be eligible to participate in loss mitigation programs offered by the bankruptcy court.",
+            "3":"Typically, once the bankruptcy case has been closed, individuals will begin to receive pre-paid credit card offers, which allow for credit to be more readily reestablished, within 6 to 12 months. Within 2 to 4 years an individual’s credit score is usually sufficient to lease or purchase a car or other property.",
+            "4":"Chapter 7 bankruptcy is known as liquidation bankruptcy that involves the forgiveness of all dischargeable debt in exchange for the debtor’s (the individual who files for bankruptcy) non-exempt assets.  Chapter 13 is known as reorganization bankruptcy for individuals that involves restructuring an individual’s debts. The decision as to what chapter to file requires an extensive legal knowledge of bankruptcy law and should not be attempted without first consulting an attorney.",
+            "5":"Yes, most of the time. If your property is in foreclosure, the filing of a bankruptcy will usually stop the sale of the home. You may also be able to save your home by participating in the bankruptcy court’s loss mitigation programs. However, only an experienced attorney will be able to tell you whether a bankruptcy filing will stop the sale of the property."
+          }
+        },
+        "REALPROPERTY":{
+          "TITLE":"Real Property",
+          "QUESTIONS":{
+            "1":"Do I need an attorney when I buy or sell a house?",
+            "2":"As a landlord, what can I do if my tenant is not paying the rent?",
+            "3":"As a tenant, what can I do if the landlord is not complying with the terms of the lease agreement?"
+          },
+          "ANSWERS":{
+            "1":"An attorney is not necessarily required to buy or sell a house. However, the purchase of a home is typically one of the largest financial transaction an individual will make. Prudence would demand that you have an attorney review the sale documents or the transaction. The attorney’s services will be far less expensive than the cost of an unforeseen problem with the property that is discovered several years in the future.",
+            "2":"You may evict him and regain possession of the property to hopefully rent it to a better tenant. You may also sue the tenant for past due rent owed. Landlord/tenant issues are time sensitive because every day that goes by without the payment of rent is a loss to the landlord. A landlord should not hesitate to immediately contact an attorney the day after a unpaid rent payment becomes due.",
+            "3":"You may be eligible for a reduction or abatement of the rent until the landlord corrects the material issue. Just like tenants, landlords are bound by the terms of the prevailing lease agreement and the law as it pertains to the lease of a property."
+          }
+        },
+        "INJURY":{
+          "TITLE":"Personal Injury",
+          "QUESTIONS":{
+            "1":"I was in a car accident. What can I do?",
+            "2":"I fell in a grocery store/supermarket/mall. What can I do?"
+          },
+          "ANSWERS":{
+            "1":"Immediately consult an attorney to determine whether you have a claim against the other driver. Accident claims are time sensitive matters and must be addressed soon after the incident to avoid losing the ability to file a claim.",
+            "2":"Immediately consult an attorney to determine whether you have a claim against property owner, the business, or another third-party. Accident claims are time sensitive matters and must be addressed soon after the incident to avoid losing the ability to file a claim."
+          }
+        },
+        "CDEFENSE":{
+          "TITLE":"Criminal Defense",
+          "QUESTIONS":{
+            "1":"I was arrested. What can I do?",
+            "2":"If I have been arrested, do I need to answer questions if my attorney is not there?",
+            "3":"Can the police search my house, car, and/or person without a court order?",
+            "4":"Can the police arrest or detain my child?",
+            "5":"Can my criminal record be erased?"
+          },
+          "ANSWERS":{
+            "1":"If you have been arrested, you should remain silent and not make the situation worse. Further, you should exercise your right to an attorney and immediately demand to consult with one.",
+            "2":"If you have been arrested and requested an attorney, you do not need to answer any questions in the absence of your attorney.",
+            "3":"The answer would require a thorough examination of the circumstances. Typically, for a law enforcement officer to conduct a search of your property, they must have a court-issued warrant or probable cause. An attorney should be consulted and given the full facts for a proper determination of whether a search was authorized by law.",
+            "4":"A child can be arrested and taken into custody pursuant to a court order or lawful arrest, by an officer with probable cause, and/or for failure to appear in court. However, the child’s parents, guardians, or legal custodians should be notified.",
+            "5":"You may be eligible to seal and/or expunge your criminal record depending on the type and extent of the crime and the outcome of the criminal case."
+          }
+        }
+      },
+      "APRACTICES":{
+        "TITLE":"What you need to know",
+        "DESCRIPTION":"<p>The law firm is based in the Miami-Dade area. Our attorney, Yahima Morejon, Esq., has several years of experience, first as an attorney in Havana, Cuba and then in the state of Florida. Our promise to every single client is that their case will be managed with professionalism, fidelity, and integrity. The firm will dedicate all its resources to resolve your legal matter. Your problem is our problem.</p>",
+        "IMMIGRATION":{
+          "TITLE":"Immigration",
+          "CONTENT":"<p>Individuals desire to immigrate and work in the United States for countless reasons, but mainly due to the prosperity and opportunity that can be found in this country. The firm can help you achieve these desires and goals by providing a range of immigration services. Our immigration services include:</p><ul><li>Family petitions</li><li>Waivers of inadmissibility and unlawful presence</li><li>Adjustment of status</li><li>Work permits</li></ul>"
+        },
+        "FAMILY":{
+          "TITLE":"Family",
+          "CONTENT":"<p>Family is the framework and backbone of society. Therefore, our goal is to assist you with all your family related legal issues while understanding how difficult and painful these matters can be. We offer the following family law services:</p><ul><li>Divorce</li><li>Alimony</li><li>Child support</li><li>Child custody</li><li>Parental/Child relocation</li><li>Prenuptial and postnuptial agreements</li><li>Dependency matters</li></ul>"
+        },
+        "WILLSPROBATE":{
+          "TITLE":"Wills and Probate",
+          "CONTENT":"<p>The death of a loved one is never easy to cope with. Unfortunately, the grieving process is interrupted by the need to take care of the loved one’s  affairs and property. Our office is here to provide you, your family and friends with the legal knowledge and expertise to help you grieve in peace. The office offers the following wills/probate legal services:<p><ul><li>Wills</li><li>Trusts</li><li>Power of attorney</li><li>Estate, trusts, and probate administrations</li></ul>"
+        },
+        "BANKRUPTCY":{
+          "TITLE":"Bankruptcy, Foreclosure, and Property Law",
+          "CONTENT":"<p>Whether you are struggling to eliminate or consolidate debt, to save your home or car from foreclosure or repossession, to evict a non-paying or non-compliant tenant, and/or to sell or purchase real estate, Y. Morejon Attorney, P.A. can assist you with the following:</p><ul><li>Chapter 7 filings</li><li>Chapter 13 filings</li><li>Business bankruptcy</li><li>Evictions</li><li>Real Estate closings</li><li>Sale of real property</li></ul>"
+        },
+        "INJURY":{
+          "TITLE":"Personal Injury",
+          "CONTENT":"<p>Being involved in an accident, any type of accident, may leave you with physical disabilities and financial damages. The firm can bridge the gaps in your life created by these accidents. The firm provides the following personal injury law services:</p><ul><li>Vehicle accidents</li><li>Pedestrian accidents</li><li>Slip and fall injuries</li></ul>"
+        },
+        "CDEFENSE":{
+          "TITLE":"Criminal Defense",
+          "CONTENT":"<p>If you have been arrested, you should remember two very important things, remain silent and consult with an attorney. Our office can assist you with the following:</p><ul><li>Felonies</li><li>Misdemeanors</li><li>Drug related matters</li><li>DIU and traffic defense</li><li>Juvenile Defense</li></ul>"
+        }
+      }
+    },
+    "FOOTER":{
+      "INFO":"&copy; Y. Morejon Attorney, P.A. All rights reserved. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."
+    }
+  }
+}
+

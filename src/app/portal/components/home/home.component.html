@@ -1,1 +1,56 @@
-<p>home works!</p>
+<div class="container">
+  <div id="home" class="pb-5">
+    <app-title [title]="'PORTAL.VIEW.HOME.TITLE' | translate"></app-title>
+    <div class="content">
+      <p class="description text-center pl-md-5 pr-md-5">{{'PORTAL.VIEW.HOME.DESCRIPTION' | translate}}</p>
+    </div>
+  </div>
+</div>
+<div id="about" class="pb-5">
+  <div class="container">
+    <app-title [title]="'PORTAL.VIEW.ABOUT.TITLE' | translate"></app-title>
+    <div class="content d-flex flex-column flex-lg-row justify-content-center">
+      <div class="profile pb-3 pb-lg-0">
+        <div class="image-container">
+          <img width="190" class="position-absolute" src="assets/images/photo.JPG" alt="">
+        </div>
+        <div class="separator mt-4 mb-4"></div>
+        <div class="text-center">Yahima Morejon</div>
+      </div>
+      <div class="group ml-md-5 pl-md-5 pr-md-5">
+        <p class="description text-center text-lg-left pr-md-5">{{'PORTAL.VIEW.ABOUT.DESCRIPTION' | translate}}</p>
+        <div class="d-flex justify-content-center pt-3 pt-lg-0 justify-content-lg-start">
+          <img class="pr-5 mr-4" src="assets/images/uh.png">
+          <img class="pr-5 mr-4" src="assets/images/st.png">
+          <img src="assets/images/ou.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div id="practices" class="pb-5">
+    <app-title [title]="'PORTAL.NAV.AREAS_OF_PRACTICES' | translate"></app-title>
+    <div class="content">
+      <div class="row">
+        <ng-container *ngFor="let item of practices">
+          <ng-container [ngTemplateOutlet]="practiceCard" [ngTemplateOutletContext]="{item: item}"></ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #practiceCard let-item="item">
+  <div class="card align-items-center col-12 col-lg-4 mb-4">
+    <div class="position-relative">
+      <img class="icon position-absolute" src="{{'assets/images/icon_'+item+'.png' | lowercase}}" alt="{{'icon_'+item}}">
+      <img class="icon-background card-img-top rounded-circle" src="{{'assets/images/'+item+'.png' | lowercase}}" alt="{{item}}">
+    </div>
+    <div class="card-body d-flex flex-column align-items-center">
+      <div class="card-title text-center">{{'PORTAL.VIEW.APRACTICES.'+item+'.TITLE'| translate}}</div>
+      <div class="separator mb-4 mt-2"></div>
+      <div class="card-text" [innerHTML]="'PORTAL.VIEW.APRACTICES.'+item+'.CONTENT'| translate"></div>
+    </div>
+  </div>
+</ng-template>

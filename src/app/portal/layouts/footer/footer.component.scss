@@ -1,0 +1,19 @@
+@import "../../portal.component";
+:host{
+  color: $gold_color;
+  h3{
+    font-family: 'Cardiff MediumItalic';
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  .form-container{
+    padding-right: 7rem;
+  }
+
+  @include media-breakpoint-down(md){
+    .form-container{
+      padding-right: 1.5rem;
+    }
+  }
+}

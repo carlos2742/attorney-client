@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ScaffoldComponent} from './components/scaffold/scaffold.component';
 import {HomeComponent} from './components/home/home.component';
+import {PortalComponent} from './portal.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ScaffoldComponent,
+    component: PortalComponent,
     children: [
-      { path: '', component: HomeComponent}
+      { path: '', component: HomeComponent},
+      { path: 'home', component: HomeComponent},
+      { path: 'inicio', component: HomeComponent},
     ]
   }
 ];

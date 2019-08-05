@@ -1,0 +1,32 @@
+<div class="position-relative" [formGroup]="tempFormGroup">
+  <button *ngIf="!field.valid && field.touched" (click)="toggleError()" class="fas fa-exclamation position-absolute"></button>
+
+  <input *ngIf="type=='input'" (keydown)="hideError()" type="text" formControlName="{{controlName}}" placeholder="{{placeholder | translate}}" [class.error]="!field.valid && field.touched">
+
+  <textarea *ngIf="type=='textarea'" (keydown)="hideError()" formControlName="{{controlName}}" placeholder="{{placeholder | translate}}" [class.error]="!field.valid && field.touched"></textarea>
+
+  <div *ngIf="showError && field.invalid && (field.dirty || field.touched)" class="alert alert-danger">
+
+    <div *ngIf="field.errors.required; else emailBlock">
+      {{"PORTAL.ALERTS.REQUIRED" | translate: params}}
+    </div>
+
+    <ng-template #emailBlock>
+      <div *ngIf="field.errors.email; else patternBlock">
+        {{"PORTAL.ALERTS.EMAIL" | translate: params}}
+      </div>
+    </ng-template>
+
+    <ng-template #patternBlock>
+      <div *ngIf="field.errors.pattern; else lengthBlock">
+        {{"PORTAL.ALERTS.PATTERN" | translate: params}}
+      </div>
+    </ng-template>
+
+    <ng-template #lengthBlock>
+      <div *ngIf="field.errors.minlength">
+        {{"PORTAL.ALERTS.MINLENGTH" | translate: params}}
+      </div>
+    </ng-template>
+  </div>
+</div>
