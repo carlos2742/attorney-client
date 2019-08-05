@@ -1,24 +1,24 @@
 <div>
   <p>La primera consulta es <strong>GRATIS</strong></p>
   <p [innerHTML]="'PORTAL.FORM.DESCRIPTION' | translate"></p>
-  <form action="">
+  <form [formGroup]="requestForm">
     <div class="row">
       <div class="col-12 col-lg-4 pb-1">
-        <input type="text" id="name" placeholder="{{'PORTAL.FORM.FIELDS.NAME' | translate}}">
+        <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.name" [controlName]="'name'" [placeholder]="'PORTAL.FORM.FIELDS.NAME'" [fieldName]="'PORTAL.FORM.ALERTS.NAME'" ></app-input>
       </div>
       <div class="col-12 col-lg-4 pb-1">
-        <input type="text" id="phone" placeholder="{{'PORTAL.FORM.FIELDS.PHONE' | translate}}">
+        <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.phone" [controlName]="'phone'" [placeholder]="'PORTAL.FORM.FIELDS.PHONE'" [fieldName]="'PORTAL.FORM.ALERTS.PHONE'" ></app-input>
       </div>
       <div class="col-12 col-lg-4 pb-1">
-        <input type="text" id="email" placeholder="{{'PORTAL.FORM.FIELDS.EMAIL' | translate}}">
+        <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.email" [controlName]="'email'" [placeholder]="'PORTAL.FORM.FIELDS.EMAIL'" [fieldName]="'PORTAL.FORM.ALERTS.EMAIL'" ></app-input>
       </div>
     </div>
     <div class="row pt-1">
       <div class="col-12">
-        <textarea placeholder="{{'PORTAL.FORM.FIELDS.MESSAGE' | translate}}"></textarea>
+        <app-input [tempFormGroup]="requestForm" [type]="'textarea'" [field]="requestForm.controls.message" [controlName]="'message'" [placeholder]="'PORTAL.FORM.FIELDS.MESSAGE'" [fieldName]="'PORTAL.FORM.ALERTS.MESSAGE'" ></app-input>
       </div>
     </div>
-    <button type="button">Enviar</button>
+    <button type="button" (click)="sendForm()">Enviar</button>
   </form>
 </div>
 

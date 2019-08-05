@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {CommonService} from '../../../shared/services/common/common.service';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  public requestForm;
+
+  constructor(private formBuilder: FormBuilder, private common: CommonService) {
+    this.requestForm = formBuilder.group({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', [Validators.pattern(/^-?(0|[0-9]\d*)?$/), Validators.minLength(7)]),
+      message: new FormControl('', [Validators.required]),
+    });
+  }
 
   ngOnInit() {
+  }
+
+  sendForm() {
+    if (this.requestForm.invalid) {
+      Object.keys(this.requestForm.controls).forEach(
+        field => {
+          const control = this.requestForm.get(field);
+          control.markAsTouched({ onlySelf: true });
+        });
+      return;
+    }
+
+    if (this.requestForm.valid) {
+      this.common.sendEmail(this.requestForm.value).subscribe(
+        () => {
+          console.log('alert-success');
+        },
+        error => {
+          console.log(error);
+          if (error.status === 200) {
+            console.log('alert-success');
+          } else {
+            console.log('alert-danger');
+          }
+        }
+      );
+    }
   }
 
 }

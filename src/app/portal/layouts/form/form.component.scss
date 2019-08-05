@@ -10,25 +10,8 @@
   }
 }
 
-input, textarea{
-  background-color: transparent;
-  border: 1px solid $gold_color;
-  border-radius: 5px;
-  padding: 5px 10px;
-  width: 100%;
-}
-
-textarea{
-  min-height: 80px;
-}
-
-
-button, input, textarea{
+button{
   font-size: 13px;
-}
-
-::placeholder, input, textarea{
-  color: $gold_color;
 }
 
 @include media-breakpoint-down(sm){

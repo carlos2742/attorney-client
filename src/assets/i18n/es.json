@@ -15,7 +15,7 @@
     },
     "ROUTES":{
       "HOME": "inicio",
-      "ABOUT": "acerca-de",
+      "ABOUT": "inicio/#about",
       "AREAS_OF_PRACTICES": "areas-del-derecho-que-practicamos",
       "FAQ": "preguntas-frecuentes",
       "CONTACTS": "contactenos"
