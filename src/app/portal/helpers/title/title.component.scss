@@ -1,0 +1,16 @@
+@import "../../portal.component";
+:host{
+  font-family: $cardif_bold_italic;
+  font-size: 2.6rem;
+}
+.decorator{
+  border-bottom: 2px solid $gold_color;
+  width: 50px;
+  height: 20px;
+}
+
+@include media-breakpoint-down(md){
+  :host{
+    font-size: 1.6rem;
+  }
+}

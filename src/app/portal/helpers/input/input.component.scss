@@ -1,0 +1,46 @@
+@import "../../portal.component";
+
+input, textarea, button{
+  background-color: transparent;
+  border: 1px solid $gold_color;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+button{
+  border: none;
+  height: 31px;
+  color: #970000;
+  right: 0;
+  padding-right: 10px;
+  width: 10%;
+}
+
+textarea{
+  min-height: 80px;
+}
+
+
+input, textarea{
+  font-size: 13px;
+}
+
+::placeholder, input, textarea{
+  color: $gold_color;
+}
+
+.error{
+  border: 1px solid #970000;
+}
+
+.alert{
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  width: 90%;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 0.8rem;
+}

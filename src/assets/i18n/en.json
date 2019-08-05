@@ -20,7 +20,7 @@
       "FAQ": "faq",
       "CONTACTS": "contacts-us"
     },
-    "LABEL":{
+    "NAV":{
       "HOME": "Home",
       "ABOUT": "About Us",
       "AREAS_OF_PRACTICES": "Areas of Practices",
@@ -30,10 +30,10 @@
     "FORM":{
       "TITLE": "First Consultation FREE",
       "FIELDS":{
-        "NAME": "Name (required)",
-        "EMAIL": "Email (required)",
-        "PHONE": "Phone (optional)",
-        "MESSAGE": "Message (required)"
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "PHONE": "Phone",
+        "MESSAGE": "Message"
       },
       "ALERTS":{
         "NAME": "Name",

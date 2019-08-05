@@ -1,0 +1,15 @@
+@import "../app.component";
+
+.bg-dark{
+  background-color: $dark_color !important;
+}
+
+button, .action-btn{
+  background-color: $gold_color;
+  border-radius: 20px;
+  border: none;
+  padding: 8px 40px;
+  &:hover{
+    text-decoration: none;
+  }
+}

@@ -8,6 +8,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from '../shared/store/reducers/common.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {CommonEffects} from './store/effects/common.effects';
+import {ReactiveFormsModule} from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -18,6 +19,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -30,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   exports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ],
   providers: [
     CommonService

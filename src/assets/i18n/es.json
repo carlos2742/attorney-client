@@ -15,25 +15,25 @@
     },
     "ROUTES":{
       "HOME": "inicio",
-      "ABOUT": "acerca-de",
+      "ABOUT": "inicio/#about",
       "AREAS_OF_PRACTICES": "areas-del-derecho-que-practicamos",
       "FAQ": "preguntas-frecuentes",
       "CONTACTS": "contactenos"
     },
-    "LABEL":{
+    "NAV":{
       "HOME": "Inicio",
       "ABOUT": "Acerca de",
-      "AREAS_OF_PRACTICES": "Áreas del Derecho que Practicamos",
+      "AREAS_OF_PRACTICES": "Áreas de Prácticas",
       "FAQ": "Preguntas Frecuentes",
       "CONTACTS": "Contáctenos"
     },
     "FORM":{
       "TITLE": "Primera Consulta GRATIS",
       "FIELDS":{
-        "NAME": "Nombre (requerido)",
-        "EMAIL": "Correo (requerido)",
-        "PHONE": "Telefono (opcional)",
-        "MESSAGE": "Mensaje (requerido)"
+        "NAME": "Nombre",
+        "EMAIL": "Correo",
+        "PHONE": "Telefono",
+        "MESSAGE": "Mensaje"
       },
       "ALERTS":{
         "NAME": "Nombre",
@@ -46,12 +46,12 @@
     },
     "VIEW":{
       "HOME":{
-        "TITLE":"¡Bienvenido!",
-        "DESCRIPTION":"<p>Somos un bufete radicado en el área de Miami. Nuestra Abogada, Yahima Morejon, Esq.  tiene varios años de experiencia, primero como letrada en La Habana, Cuba, y luego en el estado de la Florida. Nuestra promesa a cada cliente es que manejaremos su caso con profesionalismo, fidelidad e integridad. La firma dedicara todos sus recursos para resolver su problema legal. Porque su problema, es nuestro problema.</p><p>Y. Morejon Attorney, P.A. maneja todos sus casos de una manera diligente, leal y rápida. Nos dedicamos a su problema legal, porque su problema es nuestro problema.</p>"
+        "TITLE":"Bienvenido",
+        "DESCRIPTION":"Somos un bufete radicado en el área de Miami. Nuestra Abogada, Yahima Morejon, Esq.  tiene varios años de experiencia, primero como letrada en La Habana, Cuba, y luego en el estado de la Florida. Nuestra promesa a cada cliente es que manejaremos su caso con profesionalismo, fidelidad e integridad. La firma dedicara todos sus recursos para resolver su problema legal. Porque su problema, es nuestro problema. Y. Morejon Attorney, P.A. maneja todos sus casos de una manera diligente, leal y rápida. Nos dedicamos a su problema legal, porque su problema es nuestro problema."
       },
       "ABOUT":{
         "TITLE":"Acerca de",
-        "DESCRIPTION":"<p>Yahima Morejon, Esq. es una abogada, que se licencia en Derecho en la Universidad de La Habana, Cuba, y luego obtiene el título de Juris Doctor en St. Thomas University School of Law, en la Florida, Estados Unidos. Mientras trabajó en la ONBC estuvo encargada de casos penales y civiles, así como asuntos referentes a sucesiones y familia. Como residente en Miami, se desempeñó en una firma especializada en bancarrota, hipotecas e inmigración. Eventualmente,  Morejon decidió abrir su propio bufete, con sede en Miami, para ayudar a su comunidad y continuar con su pasión por el ejercicio del Derecho. En Y. Morejon Attorney, P.A. le prometemos a nuestros clientes que sus casos se manejaran con profesionalismo e integridad, y que nos dedicaremos a su causa. Porque su problema, es nuestro problema.</p>"
+        "DESCRIPTION":"Yahima Morejon, Esq. es una abogada, que se licencia en Derecho en la Universidad de La Habana, Cuba, y luego obtiene el título de Juris Doctor en St. Thomas University School of Law, en la Florida, Estados Unidos. Mientras trabajó en la ONBC estuvo encargada de casos penales y civiles, así como asuntos referentes a sucesiones y familia. Como residente en Miami, se desempeñó en una firma especializada en bancarrota, hipotecas e inmigración. Eventualmente,  Morejon decidió abrir su propio bufete, con sede en Miami, para ayudar a su comunidad y continuar con su pasión por el ejercicio del Derecho. En Y. Morejon Attorney, P.A. le prometemos a nuestros clientes que sus casos se manejaran con profesionalismo e integridad, y que nos dedicaremos a su causa. Porque su problema, es nuestro problema."
       },
       "FAQ":{
         "TITLE":"Preguntas frecuentes",
@@ -193,7 +193,7 @@
         "DESCRIPTION":"<p>Somos un bufete radicado en el área de Miami. Nuestra Abogada, Yahima Morejon, Esq.  tiene varios años de experiencia, primero como letrada en La Habana, Cuba, y luego en el estado de la Florida. Nuestra promesa a cada cliente es que manejaremos su caso con profesionalismo, fidelidad e integridad. La firma dedicara todos sus recursos para resolver su problema legal. Porque su problema, es nuestro problema.</p>",
         "IMMIGRATION":{
           "TITLE":"Inmigración",
-          "CONTENT":"<p>Hay muchas razones por las cuales las personas deciden vivir o trabajar en los Estados Unidos, pero principalmente por las oportunidades que nos brinda este país. Nuestra oficina ayuda a inmigrantes a alcanzar sus metas, pues ofrecemos un amplio rango de servicios como:</p><ul><li>Peticiones familiares</li><li>Perdones</li><li>Ajuste de estatus</li><li>Permiso de trabajos</li><li>Aplicaciones de asilo</li><li>Ajustes para victimas de crímenes</li><li>Naturalizaciones</li><li>Visas de Negocios</li></li></ul>"
+          "CONTENT":"<p>Hay muchas razones por las cuales las personas deciden vivir o trabajar en los Estados Unidos, pero principalmente por las oportunidades que nos brinda este país. Nuestra oficina ayuda a inmigrantes a alcanzar sus metas, pues ofrecemos un amplio rango de servicios como:</p><ul><li>Peticiones familiares</li><li>Perdones</li><li>Ajuste de estatus</li><li>Permiso de trabajos</li><li>Aplicaciones de asilo</li><li>Ajustes para victimas de crímenes</li><li>Naturalizaciones</li><li>Visas de Negocios</li></ul>"
         },
         "FAMILY":{
           "TITLE":"Familia",
