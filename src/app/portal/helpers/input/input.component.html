@@ -1,5 +1,7 @@
 <div class="position-relative" [formGroup]="tempFormGroup">
-  <button *ngIf="!field.valid && field.touched" (click)="toggleError()" class="fas fa-exclamation position-absolute"></button>
+  <button *ngIf="!field.valid && field.touched" (click)="toggleError()" class="position-absolute">
+    <i class="fas fa-exclamation-triangle"></i>
+  </button>
 
   <input *ngIf="type=='input'" (keydown)="hideError()" type="text" formControlName="{{controlName}}" placeholder="{{placeholder | translate}}" [class.error]="!field.valid && field.touched">
 
