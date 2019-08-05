@@ -9,8 +9,12 @@
   height: 20px;
 }
 
-@include media-breakpoint-down(md){
+@include media-breakpoint-down(sm){
   :host{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  .decorator{
+    width: 30px;
+    height: 10px;
   }
 }
