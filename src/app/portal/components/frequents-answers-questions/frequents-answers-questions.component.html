@@ -1,0 +1,25 @@
+<div class="container">
+  <div id="home" class="pb-5">
+    <app-title [title]="'PORTAL.VIEW.FAQ.TITLE' | translate"></app-title>
+    <div class="content">
+      <ngb-accordion [closeOthers]="true" #acc="ngbAccordion" activeIds="ngb-panel-0" (panelChange)="afterChange($event)">
+        <ngb-panel *ngFor="let faq of faqs" [id]="faq.id">
+          <ng-template ngbPanelTitle>
+            <div class="faq-title d-flex justify-content-between align-items-center">
+              <div class="name">{{'PORTAL.VIEW.FAQ.'+faq.id+'.TITLE' | translate}}</div>
+              <div class="icon" [class.open]="selectItem === faq.id">&times;</div>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="row">
+              <div class="col-6 faq-card pb-3" *ngFor="let item of faq.items" >
+                <div class="question">{{'PORTAL.VIEW.FAQ.'+faq.id+'.QUESTIONS.'+item | translate}}</div>
+                <p class="anwser pt-3">{{'PORTAL.VIEW.FAQ.'+faq.id+'.ANSWERS.'+item | translate}}</p>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</div>
