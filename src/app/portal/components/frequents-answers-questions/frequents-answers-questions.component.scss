@@ -1,0 +1,40 @@
+@import "../../portal.component";
+
+.faq-title{
+  color: #d7a971;
+  font-size: 1.5rem;
+  .name{
+    color: #151719;
+    font-family: 'Montserrat-Bold';
+    font-size: 1rem;
+  }
+  .icon{
+    transition: all linear 1s;
+    $rotate: 45deg;
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    transform: rotate($rotate);
+    &.open{
+      $rotate: 0;
+      -webkit-transform: rotate($rotate);
+      -moz-transform: rotate($rotate);
+      -o-transform: rotate($rotate);
+      -ms-transform: rotate($rotate);
+      transform: rotate($rotate);
+    }
+  }
+}
+
+.faq-card{
+  .question{
+    color: #d7a971;
+    font-family: 'Montserrat-Italic';
+  }
+  .anwser{
+    color: #6f6f6f;
+    font-family: 'Roboto-Regular';
+    font-size: 0.9rem;
+  }
+}
