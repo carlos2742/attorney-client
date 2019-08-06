@@ -14,6 +14,9 @@ import { SocialNetworkComponent } from './layouts/social-network/social-network.
 import { SubHeaderComponent } from './layouts/header/sub-header/sub-header.component';
 import { TitleComponent } from './helpers/title/title.component';
 import { InputComponent } from './helpers/input/input.component';
+import { FrequentsAnswersQuestionsComponent } from './components/frequents-answers-questions/frequents-answers-questions.component';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from './store/reducers/portal.reducers';
 
 
 @NgModule({
@@ -28,12 +31,14 @@ import { InputComponent } from './helpers/input/input.component';
     SocialNetworkComponent,
     SubHeaderComponent,
     TitleComponent,
-    InputComponent
+    InputComponent,
+    FrequentsAnswersQuestionsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    PortalRoutingModule
+    PortalRoutingModule,
+    StoreModule.forFeature('portal', reducer),
   ]
 })
 export class PortalModule { }

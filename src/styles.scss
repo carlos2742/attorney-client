@@ -9,3 +9,27 @@ $cardif_bold_italic: 'Cardiff Bold Italic';
 p a.phone{
     color: $gold_color;
 }
+
+ngb-accordion{
+  .card{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-color: #e4c4a0;
+    .card-header{
+      border-bottom: none;
+      background-color: #0000;
+      button{
+        text-decoration: none;
+        width: 100%;
+      }
+    }
+    .card-body{
+      padding-bottom: 0;
+    }
+    .card-body, .card-header, .card-header button{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
