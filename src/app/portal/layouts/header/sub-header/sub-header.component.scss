@@ -3,7 +3,7 @@
 .subheader-background{
   background-image: url("../../../../../assets/images/subheader-image.jpg");
   background-size: cover;
-  height: 350px;
+  height: 370px;
   background-position-y: -177px;
   background-repeat: no-repeat;
   color: #fff;
@@ -41,6 +41,37 @@
       min-width: 150px;
     }
   }
+  .form-container{
+    overflow: hidden;
+    z-index: -1;
+    transition: all linear 0.01s;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1617199c;
+    &>div{
+      min-width: 963px;
+      left:100%;
+      transition: all linear 0.1s;
+      height: 100%;
+      .close-btn{
+        cursor: pointer;
+        color: $gold_color;
+        font-size: 1.6rem;
+      }
+      &>div{
+        padding-right: 4rem;
+        margin-right: 4rem;
+      }
+    }
+    &.open{
+      z-index: 0;
+      &>div{
+        left:48%;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(lg){
@@ -48,13 +79,24 @@
     background-position-y: -182px;
     background-size: 1500px 800px;
     background-position-x: -346px;
+    .form-container{
+      &>div{
+        &>div{
+          padding-right: 0;
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
 
 @include media-breakpoint-down(md){
   .subheader-background{
+    height: 450px;
     background-position-y: -192px;
     background-position-x: -400px;
+    background-size: 1350px;
+
   }
 }
 
@@ -62,11 +104,11 @@
 @include media-breakpoint-down(sm){
   .subheader-background{
     background-position-x: -688px;
-    background-size: 1300px;
     background-position-y: -137px;
 
     &>div{
       background-color: #1a1b1bad;
+      height: 100%;
     }
     .info-container{
       padding-top: 2rem;
@@ -81,12 +123,22 @@
         width: 202px;
       }
     }
+    .form-container{
+      &>div{
+        min-width: 400px;
+      }
+      &.open{
+        &>div{
+          left:5%;
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 424px){
   .subheader-background{
-    height: auto;
+    height: 515px;
     .info-container{
     }
   }

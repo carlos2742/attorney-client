@@ -4,11 +4,19 @@ export interface State {
   menu: {
     selected: string;
   };
+  form: {
+    sending: boolean;
+    sent: boolean;
+  };
 }
 
 export const initialState: State = {
   menu: {
     selected: 'home'
+  },
+  form: {
+    sending: false,
+    sent: false,
   }
 };
 
@@ -23,6 +31,35 @@ export function reducer(
         ...state,
         menu: {
           selected: action.payload
+        }
+      };
+    }
+    case Portal.ActionTypes.SendEmail: {
+      console.log(Portal.ActionTypes.SendEmail);
+      return {
+        ...state,
+        form: {
+          sending: true,
+          sent: false,
+        }
+      };
+    }
+    case Portal.ActionTypes.SendEmailFail: {
+      console.log(Portal.ActionTypes.SendEmailFail);
+      return {...state,
+        form: {
+          sending: false,
+          sent: false
+        }
+      };
+    }
+    case Portal.ActionTypes.EmailSent: {
+      console.log(Portal.ActionTypes.EmailSent);
+      return {
+        ...state,
+        form: {
+          sending: false,
+          sent: true,
         }
       };
     }

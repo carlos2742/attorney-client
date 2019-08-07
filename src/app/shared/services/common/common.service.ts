@@ -33,12 +33,10 @@ export class CommonService {
     const body = {
       service_id: 'gmail',
       template_id: 'attorney',
-      user_id: 'user_ewIBpXK83z3A4IDwIdIwM',
+      user_id: 'user_OTYF8oiRbLB7AjT8kr7KQ',
       template_params: data
     };
     const url = 'https://api.emailjs.com/api/v1.0/email/send';
-    const header = new HttpHeaders();
-    header.append('Authorization', 'ab5c9eef004343e07636ddcaa1630aa9');
-    return this.http.post(url, body, {headers: header});
+    return this.http.post(url, body, { responseType: 'text' as 'json' });
   }
 }
