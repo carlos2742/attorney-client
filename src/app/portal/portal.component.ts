@@ -14,7 +14,7 @@ export class PortalComponent implements OnInit {
 
   constructor(private common: CommonService, private store: Store<CommonState>) {
     this.store.dispatch(new CommonActions.InitializeLanguage());
-    this.store.dispatch(new CommonActions.ChangeLanguage('es'));
+    // this.store.dispatch(new CommonActions.ChangeLanguage('es'));
 
     this.store.select(CommonSelector.selectLanguage).subscribe(response => {
       console.log(response);
