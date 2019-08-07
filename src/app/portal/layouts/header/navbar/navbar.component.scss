@@ -4,9 +4,16 @@
   color: $gold_color !important;
   font-size: 1rem;
   margin: 0 0.6rem;
-  font-weight: bold;
   font-family: 'Montserrat-Bold';
   cursor: pointer;
+  align-items: center;
+  height: 83px;
+  display: flex;
+  border-bottom: 2px solid $dark_color;
+
+  &.selected{
+    border-bottom: 2px solid $gold_color;
+  }
 }
 
 #mobile-logo{
@@ -22,8 +29,13 @@
 
 @include media-breakpoint-down(md){
   .navbar-brand{
-    border-bottom: 1px solid $gold_color;
+    height: auto;
+    color: #d8a97287 !important;
+    border-bottom: 2px solid $gold_color;
     text-transform: uppercase;
+    &.selected{
+      color: #d8a972 !important;
+    }
     &:first-child, &:nth-last-child(3){
       border-bottom: none;
     }
