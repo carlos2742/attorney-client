@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {State} from '../../../store/reducers/portal.reducers';
+import {PortalState} from '../../../store/reducers/portal.reducers';
 import * as PortalSelectors from '../../../store/selectors/portal.selectors';
 
 @Component({
@@ -13,7 +13,7 @@ export class SubHeaderComponent implements OnInit {
   public show: boolean;
   public formSent: boolean;
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<PortalState>) {
     this.show = false;
     this.store.select(PortalSelectors.isFormSent).subscribe(data => {
       this.formSent = data;

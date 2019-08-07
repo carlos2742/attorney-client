@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {State} from '../../store/reducers/portal.reducers';
+import {PortalState} from '../../store/reducers/portal.reducers';
 import {Store} from '@ngrx/store';
 import * as PortalActions from '../../store/actions/portal.actions';
 import * as PortalSelectors from '../../store/selectors/portal.selectors';
@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   public requestForm;
   public formSent: boolean;
 
-  constructor(private formBuilder: FormBuilder, private store: Store<State>, private common: CommonService) {
+  constructor(private formBuilder: FormBuilder, private store: Store<PortalState>, private common: CommonService) {
     this.requestForm = formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),

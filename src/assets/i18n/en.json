@@ -1,5 +1,9 @@
 {
   "PORTAL" : {
+    "LANG": {
+      "ENGLISH": "Eng",
+      "SPANISH": "Spa"
+    },
     "ALERTS":{
       "REQUIRED":"{{field}} is required",
       "EMAIL":"Wrong email",

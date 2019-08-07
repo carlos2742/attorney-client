@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {State} from '../../store/reducers/portal.reducers';
+import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalSelector from '../../store/selectors/portal.selectors';
 import {isNullOrUndefined} from 'util';
 
@@ -9,7 +9,7 @@ import {isNullOrUndefined} from 'util';
 })
 export class PortalService {
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<PortalState>) { }
 
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedMenu).subscribe(select => {

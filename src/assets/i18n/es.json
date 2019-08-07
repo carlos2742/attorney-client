@@ -1,5 +1,9 @@
 {
   "PORTAL": {
+    "LANG": {
+      "ENGLISH": "Ing",
+      "SPANISH": "Esp"
+    },
     "ALERTS":{
       "REQUIRED":"{{field}} es requerido",
       "EMAIL":"Correo electrónico incorrecto",
