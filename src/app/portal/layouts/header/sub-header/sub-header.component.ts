@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubHeaderComponent implements OnInit {
 
-  constructor() { }
+  public show: boolean;
+
+  constructor() {
+    this.show = false;
+  }
 
   ngOnInit() {
+  }
+
+  toggleForm() {
+    this.show = !this.show;
   }
 
 }

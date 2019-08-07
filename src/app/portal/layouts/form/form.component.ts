@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {CommonService} from '../../../shared/services/common/common.service';
 
@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
 
   public requestForm;
   public showForm: boolean;
+  @Input() subheaderLayout: boolean;
 
   constructor(private formBuilder: FormBuilder, private common: CommonService) {
     this.requestForm = formBuilder.group({

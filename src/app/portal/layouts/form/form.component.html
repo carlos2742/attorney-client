@@ -4,13 +4,13 @@
     <p [innerHTML] ="'PORTAL.FORM.DESCRIPTION' | translate"></p>
     <form [formGroup] ="requestForm">
       <div class="row">
-        <div class="col-12 col-lg-4 pb-1">
+        <div class="col-12 pb-1" [ngClass]="{'col-lg-4': !subheaderLayout, 'col-lg-6': subheaderLayout}">
           <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.name" [controlName]="'name'" [placeholder]="'PORTAL.FORM.FIELDS.NAME'" [fieldName]="'PORTAL.FORM.ALERTS.NAME'" ></app-input>
         </div>
-        <div class="col-12 col-lg-4 pb-1">
+        <div class="col-12 pb-1" [ngClass]="{'col-lg-4': !subheaderLayout, 'col-lg-6': subheaderLayout}">
           <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.phone" [controlName]="'phone'" [placeholder]="'PORTAL.FORM.FIELDS.PHONE'" [fieldName]="'PORTAL.FORM.ALERTS.PHONE'" ></app-input>
         </div>
-        <div class="col-12 col-lg-4 pb-1">
+        <div class="col-12 pb-1" [ngClass]="{'col-lg-4': !subheaderLayout, 'col-lg-12': subheaderLayout}">
           <app-input [tempFormGroup]="requestForm" [type]="'input'" [field]="requestForm.controls.email" [controlName]="'email'" [placeholder]="'PORTAL.FORM.FIELDS.EMAIL'" [fieldName]="'PORTAL.FORM.ALERTS.EMAIL'" ></app-input>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<div class="subheader-background">
+<div class="subheader-background position-relative">
   <div class="container">
     <div class="ml-md-3 pl-3 pb-4 info-container text-center text-md-left d-flex flex-column align-items-center align-items-md-start">
       <div class="text-uppercase pl-1 pb-2 title">Bufete de Abogados</div>
@@ -8,8 +8,17 @@
       <div class="action-description pb-3">La primera consulta es <strong>GRATIS</strong> y en solo <strong>24 HORAS</strong> le responderemos.</div>
       <div class="d-flex flex-column align-items-center align-items-md-start">
         <a class="action-btn d-inline-block d-sm-none mb-3" href="tel:7869070154">786 907 0154</a>
-        <button class="action-btn">Hacer una consulta</button>
+        <button class="action-btn" (click)="toggleForm()">Hacer una consulta</button>
+      </div>
+    </div>
+  </div>
+  <div class="form-container position-absolute" [class.open]="show">
+    <div class="bg-dark pt-1 pl-5 pr-5 position-absolute">
+      <a class="close-btn" (click)="toggleForm()">&times;</a>
+      <div>
+        <app-form [subheaderLayout]="true"></app-form>
       </div>
     </div>
   </div>
 </div>
+
