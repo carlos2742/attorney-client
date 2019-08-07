@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, mergeMap, switchMap} from 'rxjs/operators';
 
-import * as PortalActions from '../actions/common.actions';
+import * as CommonActions from '../actions/common.actions';
 import {CommonService} from '../../services/common/common.service';
 
 @Injectable()
@@ -13,10 +13,10 @@ export class CommonEffects {
   @Effect()
   InitializeLanguage$ = this.actions$
     .pipe(
-      ofType(PortalActions.ActionTypes.InitializeLanguage),
+      ofType(CommonActions.ActionTypes.InitializeLanguage),
       mergeMap(() => this.common.initializeLanguage()
         .pipe(
-          map(lang => new PortalActions.InitializeLanguageSuccess(lang))
+          map(lang => new CommonActions.InitializeLanguageSuccess(lang))
         )
       )
     );
@@ -24,11 +24,11 @@ export class CommonEffects {
   @Effect()
   ChangeLanguage$ = this.actions$
     .pipe(
-      ofType(PortalActions.ActionTypes.ChangeLanguage),
-      map((action: PortalActions.ChangeLanguage) => action.payload),
+      ofType(CommonActions.ActionTypes.ChangeLanguage),
+      map((action: CommonActions.ChangeLanguage) => action.payload),
       switchMap(newLang => this.common.changeLanguage(newLang)
         .pipe(
-          map(lang => new PortalActions.ChangeLanguageSuccess(lang))
+          map(lang => new CommonActions.ChangeLanguageSuccess(lang))
         )
       )
     );

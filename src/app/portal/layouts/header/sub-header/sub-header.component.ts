@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from '@ngrx/store';
+import {State} from '../../../store/reducers/portal.reducers';
+import * as PortalSelectors from '../../../store/selectors/portal.selectors';
 
 @Component({
   selector: 'app-sub-header',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubHeaderComponent implements OnInit {
 
-  constructor() { }
+  public show: boolean;
+  public formSent: boolean;
+
+  constructor(private store: Store<State>) {
+    this.show = false;
+    this.store.select(PortalSelectors.isFormSent).subscribe(data => {
+      this.formSent = data;
+    });
+  }
 
   ngOnInit() {
+  }
+
+  toggleForm() {
+    this.show = !this.show;
   }
 
 }

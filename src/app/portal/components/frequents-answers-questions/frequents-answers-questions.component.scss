@@ -9,7 +9,7 @@
     font-size: 1rem;
   }
   .icon{
-    transition: all linear 1s;
+    transition: all linear 0.3s;
     $rotate: 45deg;
     -webkit-transform: rotate($rotate);
     -moz-transform: rotate($rotate);
