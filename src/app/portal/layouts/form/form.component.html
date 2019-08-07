@@ -1,5 +1,8 @@
 <div>
-  <div *ngIf="showForm">
+  <div *ngIf="formSent" class="message-alert mt-5">
+    {{"PORTAL.ALERTS.SUCCESS" | translate}}
+  </div>
+  <div *ngIf="!formSent">
     <p [innerHTML] ="'PORTAL.FORM.TITLE' | translate"></p>
     <p [innerHTML] ="'PORTAL.FORM.DESCRIPTION' | translate"></p>
     <form [formGroup] ="requestForm">
@@ -21,9 +24,6 @@
       </div>
       <button type="button" (click)="sendForm()">{{'PORTAL.FORM.BUTTON' | translate}}</button>
     </form>
-  </div>
-  <div *ngIf="!showForm" class="message-alert mt-5">
-    {{"PORTAL.ALERTS.SUCCESS" | translate}}
   </div>
 </div>
 

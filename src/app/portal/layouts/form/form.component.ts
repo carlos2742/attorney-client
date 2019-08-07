@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {State} from '../../store/reducers/portal.reducers';
+import {Store} from '@ngrx/store';
+import * as PortalActions from '../../store/actions/portal.actions';
+import * as PortalSelectors from '../../store/selectors/portal.selectors';
 import {CommonService} from '../../../shared/services/common/common.service';
 
 @Component({
@@ -9,18 +13,18 @@ import {CommonService} from '../../../shared/services/common/common.service';
 })
 export class FormComponent implements OnInit {
 
-  public requestForm;
-  public showForm: boolean;
   @Input() subheaderLayout: boolean;
+  public requestForm;
+  public formSent: boolean;
 
-  constructor(private formBuilder: FormBuilder, private common: CommonService) {
+  constructor(private formBuilder: FormBuilder, private store: Store<State>, private common: CommonService) {
     this.requestForm = formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.pattern(/^-?(0|[0-9]\d*)?$/), Validators.minLength(7)]),
       message: new FormControl('', [Validators.required]),
     });
-    this.showForm = true;
+    this.store.select(PortalSelectors.isFormSent).subscribe(data => this.formSent = data);
   }
 
   ngOnInit() {
@@ -37,19 +41,7 @@ export class FormComponent implements OnInit {
     }
 
     if (this.requestForm.valid) {
-      this.common.sendEmail(this.requestForm.value).subscribe(
-        () => {
-          this.showForm = false;
-        },
-        error => {
-          console.log(error);
-          if (error.status === 200) {
-            console.log('alert-success');
-          } else {
-            console.log('alert-danger');
-          }
-        }
-      );
+      this.store.dispatch(new PortalActions.SendEmail(this.requestForm.value));
     }
   }
 

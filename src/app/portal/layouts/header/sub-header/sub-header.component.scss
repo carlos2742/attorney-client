@@ -51,6 +51,7 @@
     width: 100%;
     background-color: #1617199c;
     &>div{
+      min-width: 963px;
       left:100%;
       transition: all linear 0.1s;
       height: 100%;
@@ -123,6 +124,9 @@
       }
     }
     .form-container{
+      &>div{
+        min-width: 400px;
+      }
       &.open{
         &>div{
           left:5%;

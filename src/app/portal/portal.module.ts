@@ -17,6 +17,8 @@ import { InputComponent } from './helpers/input/input.component';
 import { FrequentsAnswersQuestionsComponent } from './components/frequents-answers-questions/frequents-answers-questions.component';
 import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/reducers/portal.reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {PortalEffects} from './store/effects/portal.effects';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import {reducer} from './store/reducers/portal.reducers';
     SharedModule,
     PortalRoutingModule,
     StoreModule.forFeature('portal', reducer),
+    EffectsModule.forFeature([PortalEffects])
   ]
 })
 export class PortalModule { }
