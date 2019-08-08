@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent},
       { path: 'about-us', component: HomeComponent},
       { path: 'areas-of-practices', component: HomeComponent},
-      { path: 'faq', component: FrequentsAnswersQuestionsComponent},
+      { path: 'frequents-questions', component: FrequentsAnswersQuestionsComponent},
       { path: 'inicio', component: HomeComponent},
       { path: 'acerca-de', component: HomeComponent },
       { path: 'areas-del-derecho-que-practicamos', component: HomeComponent },

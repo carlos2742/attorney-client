@@ -23,14 +23,14 @@
       "HOME": "home",
       "ABOUT": "about-us",
       "AREAS_OF_PRACTICES": "areas-of-practices",
-      "FAQ": "faq",
+      "FAQ": "frequents-questions",
       "CONTACTS": "contacts-us"
     },
     "NAV":{
       "HOME": "Home",
       "ABOUT": "About Us",
       "AREAS_OF_PRACTICES": "Areas of Practices",
-      "FAQ": "FAQ",
+      "FAQ": "Frequents Questions",
       "CONTACTS": "Contacts Us"
     },
     "FORM":{
@@ -60,7 +60,7 @@
         "DESCRIPTION":"Yahima Morejon, Esq. is a foreign attorney. She has obtained her Licentiate in Law degree from Havana University in Cuba, and her Juris Doctor degree from St. Thomas University School of Law. While working at the ONBC, Ms. Morejon handled criminal, civil, probate, and family cases. As a resident of Miami, she worked for a law firm that specialized in bankruptcy, foreclosure, and immigration matters. Eventually, Ms. Morejon decided to open her own law office to help her community and to continue her passion of practicing law. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue because your problem is our problem."
       },
       "FAQ":{
-        "TITLE":"Frequently Asked Questions",
+        "TITLE":"Frequent questions",
         "GENERAL":{
           "TITLE":"General",
           "QUESTIONS":{

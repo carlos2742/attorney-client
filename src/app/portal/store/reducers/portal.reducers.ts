@@ -2,7 +2,8 @@ import * as Portal from '../actions/portal.actions';
 
 export interface PortalState {
   menu: {
-    selected: string;
+    item: string;
+    route: string;
   };
   form: {
     sending: boolean;
@@ -12,7 +13,8 @@ export interface PortalState {
 
 export const initialState: PortalState = {
   menu: {
-    selected: 'home'
+    item: 'home',
+    route: 'HOME'
   },
   form: {
     sending: false,
@@ -30,7 +32,8 @@ export function reducer(
       return {
         ...state,
         menu: {
-          selected: action.payload
+          item: action.payload.item,
+          route: action.payload.route,
         }
       };
     }

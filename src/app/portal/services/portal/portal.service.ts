@@ -12,7 +12,7 @@ export class PortalService {
   constructor(private store: Store<PortalState>) { }
 
   goToSection(allowed: Array<string>) {
-    this.store.select(PortalSelector.selectedMenu).subscribe(select => {
+    this.store.select(PortalSelector.selectedItem).subscribe(select => {
       if (allowed.includes(select)) {
         const element = document.getElementById(select);
         if (!isNullOrUndefined(element)) {

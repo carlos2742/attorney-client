@@ -3,6 +3,8 @@ import * as CommonActions from '../../../../../shared/store/actions/common.actio
 import {Store} from '@ngrx/store';
 import {CommonState} from '../../../../../shared/store/reducers/common.reducers';
 import * as CommonSelector from '../../../../../shared/store/selectors/common.selectors';
+import {PortalState} from '../../../../store/reducers/portal.reducers';
+import * as PortalSelector from '../../../../store/selectors/portal.selectors';
 
 @Component({
   selector: 'app-language-selector',
@@ -12,10 +14,14 @@ import * as CommonSelector from '../../../../../shared/store/selectors/common.se
 export class LanguageSelectorComponent implements OnInit {
 
   private currentLang: string;
+  private currentRoute: string;
 
-  constructor(private commonStore: Store<CommonState>) {
+  constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
+    });
+    this.portalStore.select(PortalSelector.selectedRoute).subscribe(route => {
+      this.currentRoute = route;
     });
   }
 
@@ -24,7 +30,15 @@ export class LanguageSelectorComponent implements OnInit {
 
   changeLanguage(lang) {
     if (lang !== this.currentLang) {
-      this.commonStore.dispatch(new CommonActions.ChangeLanguage(lang));
+      const payload = {
+        lang,
+        route: {
+          prefix: 'portal',
+          url: this.currentRoute !== '' ? `PORTAL.ROUTES.${this.currentRoute}` : ''
+        }
+      };
+
+      this.commonStore.dispatch(new CommonActions.ChangeLanguage(payload));
     }
   }
 

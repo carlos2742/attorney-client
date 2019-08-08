@@ -3,7 +3,8 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 export const fromPortal = createFeatureSelector('portal');
 
-export const selectedMenu = createSelector(fromPortal, (state: PortalState) => state.menu.selected);
+export const selectedItem = createSelector(fromPortal, (state: PortalState) => state.menu.item);
+export const selectedRoute = createSelector(fromPortal, (state: PortalState) => state.menu.route);
 export const isFormSent = createSelector(fromPortal, (state: PortalState) => state.form.sent);
 
 
