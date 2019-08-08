@@ -24,7 +24,7 @@
       </div>
       <button type="button" class="d-flex align-items-center" [disabled]="sending" (click)="sendForm()">
         {{'PORTAL.FORM.BUTTON' | translate}}
-        <i [class.d-block]="sending" class=" d-none ml-2 fas fa-circle-notch fa-spin"></i>
+        <i [ngClass]="{'invisible': !sending, 'visible': sending}" class="ml-2 fas fa-circle-notch fa-spin"></i>
       </button>
     </form>
   </div>

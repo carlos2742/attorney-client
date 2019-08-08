@@ -11,6 +11,10 @@
   }
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 button{
   font-size: 13px;
   &:disabled{
