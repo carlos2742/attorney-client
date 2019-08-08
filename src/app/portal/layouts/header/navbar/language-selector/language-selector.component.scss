@@ -1,0 +1,7 @@
+@import "../navbar.component";
+.selector{
+  color: #d8a97287 !important;
+  &.selected{
+    color: #d8a972 !important;
+  }
+}

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
-  constructor(private translate: TranslateService, private http: HttpClient) { }
+  constructor(private translate: TranslateService, private http: HttpClient, private router: Router) { }
 
   public initializeLanguage() {
     this.translate.addLangs(['en', 'es']);
@@ -21,8 +22,13 @@ export class CommonService {
     });
   }
 
-  public changeLanguage(language) {
+  public changeLanguage(language, route = {prefix: '', url: ''}) {
     this.translate.use(language);
+    if (route.url !== '' && route.prefix !== '') {
+      this.translate.get(route.url).subscribe((res: string) => {
+        this.router.navigate([`${route.prefix}/${res}`]);
+      });
+    }
     return new Observable( observe => {
       observe.next(language);
       observe.complete();

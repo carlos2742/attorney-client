@@ -19,6 +19,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/reducers/portal.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {PortalEffects} from './store/effects/portal.effects';
+import { LanguageSelectorComponent } from './layouts/header/navbar/language-selector/language-selector.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {PortalEffects} from './store/effects/portal.effects';
     SubHeaderComponent,
     TitleComponent,
     InputComponent,
-    FrequentsAnswersQuestionsComponent
+    FrequentsAnswersQuestionsComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     CommonModule,

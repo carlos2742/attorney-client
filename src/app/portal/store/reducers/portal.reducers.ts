@@ -1,8 +1,9 @@
 import * as Portal from '../actions/portal.actions';
 
-export interface State {
+export interface PortalState {
   menu: {
-    selected: string;
+    item: string;
+    route: string;
   };
   form: {
     sending: boolean;
@@ -10,9 +11,10 @@ export interface State {
   };
 }
 
-export const initialState: State = {
+export const initialState: PortalState = {
   menu: {
-    selected: 'home'
+    item: 'home',
+    route: 'HOME'
   },
   form: {
     sending: false,
@@ -23,14 +25,15 @@ export const initialState: State = {
 export function reducer(
   state = initialState,
   action: Portal.ActionsUnion
-): State {
+): PortalState {
   switch (action.type) {
     case Portal.ActionTypes.SelectMenu: {
       console.log(Portal.ActionTypes.SelectMenu);
       return {
         ...state,
         menu: {
-          selected: action.payload
+          item: action.payload.item,
+          route: action.payload.route,
         }
       };
     }

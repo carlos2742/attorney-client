@@ -1,5 +1,9 @@
 {
   "PORTAL" : {
+    "LANG": {
+      "ENGLISH": "Eng",
+      "SPANISH": "Spa"
+    },
     "ALERTS":{
       "REQUIRED":"{{field}} is required",
       "EMAIL":"Wrong email",
@@ -11,20 +15,22 @@
     "TITLE":{
       "NAME":"Morejon Attorney, P.A.",
       "PLACE":"Law Office",
-      "SLOGAN":"Because your problem is our problem."
+      "SLOGAN1":"Because your problem is our problem.",
+      "SLOGAN2":"The first consultation is <strong> FREE </strong> and in only <strong> 24 HOURS </strong> we will answer you.",
+      "BTN": "Make an inquiry"
     },
     "ROUTES":{
       "HOME": "home",
       "ABOUT": "about-us",
       "AREAS_OF_PRACTICES": "areas-of-practices",
-      "FAQ": "faq",
+      "FAQ": "frequents-questions",
       "CONTACTS": "contacts-us"
     },
     "NAV":{
       "HOME": "Home",
       "ABOUT": "About Us",
       "AREAS_OF_PRACTICES": "Areas of Practices",
-      "FAQ": "FAQ",
+      "FAQ": "Frequents Questions",
       "CONTACTS": "Contacts Us"
     },
     "FORM":{
@@ -47,14 +53,14 @@
     "VIEW":{
       "HOME":{
         "TITLE":"Welcome!",
-        "DESCRIPTION":"<p>The law firm is based in the Miami-Dade area. Our attorney, Yahima Morejon, Esq., has several years of experience, first as an attorney in Havana, Cuba and then in the state of Florida. Our promise to every single client is that their case will be managed with professionalism, fidelity, and integrity. The firm will dedicate all its resources to resolve your legal matter. Your problem is our problem.</p><p>Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue, because your problem is our problem.</p>"
+        "DESCRIPTION":"The law firm is based in the Miami-Dade area. Our attorney, Yahima Morejon, Esq., has several years of experience, first as an attorney in Havana, Cuba and then in the state of Florida. Our promise to every single client is that their case will be managed with professionalism, fidelity, and integrity. The firm will dedicate all its resources to resolve your legal matter. Your problem is our problem. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue, because your problem is our problem."
       },
       "ABOUT":{
         "TITLE":"About Us",
-        "DESCRIPTION":"<p>Yahima Morejon, Esq. is a foreign attorney. She has obtained her Licentiate in Law degree from Havana University in Cuba, and her Juris Doctor degree from St. Thomas University School of Law. While working at the ONBC, Ms. Morejon handled criminal, civil, probate, and family cases. As a resident of Miami, she worked for a law firm that specialized in bankruptcy, foreclosure, and immigration matters. Eventually, Ms. Morejon decided to open her own law office to help her community and to continue her passion of practicing law. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue because your problem is our problem.</p>"
+        "DESCRIPTION":"Yahima Morejon, Esq. is a foreign attorney. She has obtained her Licentiate in Law degree from Havana University in Cuba, and her Juris Doctor degree from St. Thomas University School of Law. While working at the ONBC, Ms. Morejon handled criminal, civil, probate, and family cases. As a resident of Miami, she worked for a law firm that specialized in bankruptcy, foreclosure, and immigration matters. Eventually, Ms. Morejon decided to open her own law office to help her community and to continue her passion of practicing law. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue because your problem is our problem."
       },
       "FAQ":{
-        "TITLE":"Frequently Asked Questions",
+        "TITLE":"Frequent questions",
         "GENERAL":{
           "TITLE":"General",
           "QUESTIONS":{
