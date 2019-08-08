@@ -8,15 +8,17 @@
       <div class="action-description pb-3" [innerHTML]="'PORTAL.TITLE.SLOGAN2' | translate"></div>
       <div class="d-flex flex-column align-items-center align-items-md-start">
         <a class="action-btn d-inline-block d-sm-none mb-3" href="tel:7869070154">786 907 0154</a>
-        <button *ngIf="!formSent" class="action-btn" (click)="toggleForm()">{{'PORTAL.TITLE.BTN' | translate}}</button>
+        <button *ngIf="!sent" class="action-btn" (click)="toggleForm()">{{'PORTAL.TITLE.BTN' | translate}}</button>
       </div>
     </div>
   </div>
   <div class="form-container position-absolute" [class.open]="show">
-    <div class="bg-dark pt-1 pl-5 pr-5 position-absolute">
-      <a class="close-btn" (click)="toggleForm()">&times;</a>
-      <div>
-        <app-form [subheaderLayout]="true"></app-form>
+    <div class="row">
+      <div class="col-12 col-md-6 bg-dark pt-1 pl-5 pr-5 position-absolute">
+        <a class="close-btn" (click)="toggleForm()">&times;</a>
+        <div>
+          <app-form [subheaderLayout]="true"></app-form>
+        </div>
       </div>
     </div>
   </div>

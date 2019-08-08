@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light pb-0">
   <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggle()" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="fas fa-bars"></span>
   </button>
@@ -7,16 +7,20 @@
   </div>
   <div class="collapse navbar-collapse justify-content-center" [class.show]="show">
     <ul class="navbar-nav align-items-lg-center w-100 justify-content-between">
-      <div class="d-block d-lg-none navbar-brand mt-5 mb-3">Eng | Esp</div>
-      <a class="navbar-brand pb-3 pt-3" routerLink="home" (click)="selectItem('home')" href="#">{{"PORTAL.NAV.HOME" | translate}}</a>
-      <a class="navbar-brand pb-3 pt-3" routerLink="about" (click)="selectItem('about')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
-      <a class="navbar-brand pb-3 pt-3" routerLink="practices" (click)="selectItem('practices')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
+      <div class="d-block d-lg-none navbar-brand mt-5 mb-3">
+        <app-language-selector></app-language-selector>
+      </div>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'home'" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')" href="#">{{"PORTAL.NAV.HOME" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'about'" routerLink="{{'PORTAL.ROUTES.ABOUT' | translate}}" (click)="selectItem('about', 'ABOUT')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'practices'" routerLink="{{'PORTAL.ROUTES.AREAS_OF_PRACTICES' | translate}}" (click)="selectItem('practices', 'AREAS_OF_PRACTICES')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
       <div class="navbar-brand d-none d-lg-block">
         <img src="assets/images/logo.svg" width="170">
       </div>
-      <a class="navbar-brand pb-3 pt-3" routerLink="frequents-answers" (click)="selectItem('frequents-answers')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
-      <a class="navbar-brand pb-3 pt-3" (click)="selectItem('contacts')">{{"PORTAL.NAV.CONTACTS" | translate}}</a>
-      <div class="d-none d-lg-block navbar-brand">Eng | Esp</div>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'frequents-answers'" routerLink="{{'PORTAL.ROUTES.FAQ' | translate}}" (click)="selectItem('frequents-answers', 'FAQ')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'contacts'" (click)="selectItem('contacts')">{{"PORTAL.NAV.CONTACTS" | translate}}</a>
+      <div class="d-none d-lg-flex navbar-brand">
+        <app-language-selector></app-language-selector>
+      </div>
       <app-social-network class="d-lg-none mt-5 mb-3"></app-social-network>
     </ul>
   </div>

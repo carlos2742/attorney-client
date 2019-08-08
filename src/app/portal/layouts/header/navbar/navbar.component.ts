@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {State} from '../../../store/reducers/portal.reducers';
+import {PortalState} from '../../../store/reducers/portal.reducers';
 import * as PortalActions from '../../../store/actions/portal.actions';
+import * as PortalSelectors from '../../../store/selectors/portal.selectors';
 import {Store} from '@ngrx/store';
 
 @Component({
@@ -11,9 +12,11 @@ import {Store} from '@ngrx/store';
 export class NavbarComponent implements OnInit {
 
   public show: boolean;
+  public selectedMenu: string;
 
-  constructor(private store: Store<State>) {
+  constructor(private portalStore: Store<PortalState>) {
     this.show = false;
+    this.portalStore.select(PortalSelectors.selectedItem).subscribe(item => this.selectedMenu = item);
   }
 
   ngOnInit() {
@@ -23,8 +26,7 @@ export class NavbarComponent implements OnInit {
     this.show = !this.show;
   }
 
-  selectItem(item) {
-    this.store.dispatch(new PortalActions.SelectMenu(item));
+  selectItem(item, route = '') {
+    this.portalStore.dispatch(new PortalActions.SelectMenu({item, route}));
   }
-
 }

@@ -12,11 +12,13 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent},
       { path: 'home', component: HomeComponent},
-      { path: 'about', component: HomeComponent},
-      { path: 'practices', component: HomeComponent},
-      { path: 'frequents-answers', component: FrequentsAnswersQuestionsComponent},
+      { path: 'about-us', component: HomeComponent},
+      { path: 'areas-of-practices', component: HomeComponent},
+      { path: 'frequents-questions', component: FrequentsAnswersQuestionsComponent},
       { path: 'inicio', component: HomeComponent},
-      { path: 'preguntas-frecuentes', component: FrequentsAnswersQuestionsComponent},
+      { path: 'acerca-de', component: HomeComponent },
+      { path: 'areas-del-derecho-que-practicamos', component: HomeComponent },
+      { path: 'preguntas-frecuentes', component: FrequentsAnswersQuestionsComponent}
     ]
   }
 ];

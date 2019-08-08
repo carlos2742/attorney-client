@@ -1,5 +1,9 @@
 {
   "PORTAL": {
+    "LANG": {
+      "ENGLISH": "Ing",
+      "SPANISH": "Esp"
+    },
     "ALERTS":{
       "REQUIRED":"{{field}} es requerido",
       "EMAIL":"Correo electrónico incorrecto",
@@ -17,10 +21,9 @@
     },
     "ROUTES":{
       "HOME": "inicio",
-      "ABOUT": "inicio/#about",
+      "ABOUT": "acerca-de",
       "AREAS_OF_PRACTICES": "areas-del-derecho-que-practicamos",
-      "FAQ": "preguntas-frecuentes",
-      "CONTACTS": "contactenos"
+      "FAQ": "preguntas-frecuentes"
     },
     "NAV":{
       "HOME": "Inicio",

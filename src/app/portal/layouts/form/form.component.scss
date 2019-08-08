@@ -11,8 +11,15 @@
   }
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 button{
   font-size: 13px;
+  &:disabled{
+    color: #161719;
+  }
 }
 
 .message-alert{

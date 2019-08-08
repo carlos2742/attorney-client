@@ -50,8 +50,7 @@
     height: 100%;
     width: 100%;
     background-color: #1617199c;
-    &>div{
-      min-width: 963px;
+    &> div div{
       left:100%;
       transition: all linear 0.1s;
       height: 100%;
@@ -60,15 +59,15 @@
         color: $gold_color;
         font-size: 1.6rem;
       }
-      &>div{
+      &> div div{
         padding-right: 4rem;
         margin-right: 4rem;
       }
     }
     &.open{
       z-index: 0;
-      &>div{
-        left:48%;
+      &>div div{
+        left:50%;
       }
     }
   }
@@ -124,12 +123,9 @@
       }
     }
     .form-container{
-      &>div{
-        min-width: 400px;
-      }
       &.open{
-        &>div{
-          left:5%;
+        &>div div{
+          left:7%;
         }
       }
     }
