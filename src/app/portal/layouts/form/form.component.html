@@ -22,7 +22,7 @@
           <app-input [tempFormGroup]="requestForm" [type]="'textarea'" [field]="requestForm.controls.message" [controlName]="'message'" [placeholder]="'PORTAL.FORM.FIELDS.MESSAGE'" [fieldName]="'PORTAL.FORM.ALERTS.MESSAGE'" ></app-input>
         </div>
       </div>
-      <button type="button" class="d-flex align-items-center" [disabled]="sending" (click)="sendForm()">
+      <button type="button" class="d-flex align-items-center justify-content-center" [disabled]="sending" (click)="sendForm()">
         {{'PORTAL.FORM.BUTTON' | translate}}
         <i [ngClass]="{'invisible': !sending, 'visible': sending}" class="ml-2 fas fa-circle-notch fa-spin"></i>
       </button>
