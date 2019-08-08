@@ -1,8 +1,8 @@
 <div>
-  <div *ngIf="formSent" class="message-alert mt-5">
+  <div *ngIf="sent" class="message-alert mt-5 mr-5 pr-5">
     {{"PORTAL.ALERTS.SUCCESS" | translate}}
   </div>
-  <div *ngIf="!formSent">
+  <div *ngIf="!sent">
     <p [innerHTML] ="'PORTAL.FORM.TITLE' | translate"></p>
     <p [innerHTML] ="'PORTAL.FORM.DESCRIPTION' | translate"></p>
     <form [formGroup] ="requestForm">
@@ -22,7 +22,10 @@
           <app-input [tempFormGroup]="requestForm" [type]="'textarea'" [field]="requestForm.controls.message" [controlName]="'message'" [placeholder]="'PORTAL.FORM.FIELDS.MESSAGE'" [fieldName]="'PORTAL.FORM.ALERTS.MESSAGE'" ></app-input>
         </div>
       </div>
-      <button type="button" (click)="sendForm()">{{'PORTAL.FORM.BUTTON' | translate}}</button>
+      <button type="button" class="d-flex align-items-center" [disabled]="sending" (click)="sendForm()">
+        {{'PORTAL.FORM.BUTTON' | translate}}
+        <i [class.d-block]="sending" class=" d-none ml-2 fas fa-circle-notch fa-spin"></i>
+      </button>
     </form>
   </div>
 </div>

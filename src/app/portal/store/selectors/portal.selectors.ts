@@ -5,6 +5,6 @@ export const fromPortal = createFeatureSelector('portal');
 
 export const selectedItem = createSelector(fromPortal, (state: PortalState) => state.menu.item);
 export const selectedRoute = createSelector(fromPortal, (state: PortalState) => state.menu.route);
-export const isFormSent = createSelector(fromPortal, (state: PortalState) => state.form.sent);
+export const selectFormState = createSelector(fromPortal, (state: PortalState) => state.form);
 
 

@@ -15,7 +15,8 @@ export class FormComponent implements OnInit {
 
   @Input() subheaderLayout: boolean;
   public requestForm;
-  public formSent: boolean;
+  public sent: boolean;
+  public sending: boolean;
 
   constructor(private formBuilder: FormBuilder, private store: Store<PortalState>, private common: CommonService) {
     this.requestForm = formBuilder.group({
@@ -24,7 +25,10 @@ export class FormComponent implements OnInit {
       phone: new FormControl('', [Validators.pattern(/^-?(0|[0-9]\d*)?$/), Validators.minLength(7)]),
       message: new FormControl('', [Validators.required]),
     });
-    this.store.select(PortalSelectors.isFormSent).subscribe(data => this.formSent = data);
+    this.store.select(PortalSelectors.selectFormState).subscribe(formState => {
+      this.sent = formState.sent;
+      this.sending = formState.sending;
+    });
   }
 
   ngOnInit() {

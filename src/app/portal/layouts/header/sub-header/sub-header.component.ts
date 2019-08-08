@@ -11,12 +11,12 @@ import * as PortalSelectors from '../../../store/selectors/portal.selectors';
 export class SubHeaderComponent implements OnInit {
 
   public show: boolean;
-  public formSent: boolean;
+  public sent: boolean;
 
   constructor(private store: Store<PortalState>) {
     this.show = false;
-    this.store.select(PortalSelectors.isFormSent).subscribe(data => {
-      this.formSent = data;
+    this.store.select(PortalSelectors.selectFormState).subscribe(formState => {
+      this.sent = formState.sent;
     });
   }
 
