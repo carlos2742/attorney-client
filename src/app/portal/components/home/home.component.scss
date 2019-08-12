@@ -1,86 +1,90 @@
 @import "../../portal.component";
+:host{
+  font-size: 1rem;
+  $description_font_color: #737476;
+  $description_font_family: 'Roboto-Regular';
+  $description_font_size: 0.9em;
 
-$description_font_color: #737476;
-$description_font_family: 'Roboto-Regular';
-$description_font_size: 0.8rem;
-
-.separator{
-  border-bottom: 2px solid $gold_color;
-  width: 50px;
-}
-.content{
-  .profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1rem;
-    font-family: $cardif_bold_italic;
-    .image-container{
-      overflow: hidden;
-      border-radius: 50%;
-      position: relative;
-      height: 140px;
-      width: 140px;
-      img{
-        left: -30px;
-        top: -43px;
-        filter: grayscale(50%);
-        -webkit-filter:grayscale(50%) ;
-      }
-    }
+  .separator{
+    border-bottom: 2px solid $gold_color;
+    width: 50px;
   }
-  .description{
-    font-family: $description_font_family;
-    font-size: $description_font_size;
-    color: $description_font_color;
-  }
-}
-
-
-#about{
-  background-color: #f4f4f4;
   .content{
-    .group{
-      column-count: 2;
+    .profile{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1rem;
+      font-family: $cardif_bold_italic;
+      .image-container{
+        overflow: hidden;
+        border-radius: 50%;
+        position: relative;
+        height: 140px;
+        width: 140px;
+        img{
+          left: -30px;
+          top: -43px;
+          filter: grayscale(50%);
+          -webkit-filter:grayscale(50%) ;
+        }
+      }
+    }
+    .description{
+      font-family: $description_font_family;
+      font-size: $description_font_size;
+      color: $description_font_color;
     }
   }
-}
 
-#practices{
-  .card{
-    border: none;
-    border-radius: 0;
-    .icon{
-      top: 36px;
-      left: 32px;
-    }
-    .icon-background{
-      width: 150px;
-    }
-    .card-body{
-      border-bottom: 2px solid $gold_color;
-      .card-title{
-        font-family: 'Montserrat-Bold';
-        font-size: 1rem;
-      }
-      .card-text{
-        font-family: $description_font_family;
-        font-size: $description_font_size;
-        color: $description_font_color;
-      }
-      .separator{
-        width: 60px;
-      }
-    }
-  }
-}
 
-@include media-breakpoint-down(md){
   #about{
+    background-color: #f4f4f4;
     .content{
       .group{
-        column-count: 1;
+        column-count: 2;
+      }
+    }
+  }
+
+  #practices{
+    .card{
+      border: none;
+      border-radius: 0;
+      .icon{
+        top: 36px;
+        left: 32px;
+      }
+      .icon-background{
+        width: 150px;
+      }
+      .card-body{
+        border-bottom: 2px solid $gold_color;
+        .card-title{
+          font-family: 'Montserrat-Bold';
+          font-size: 1rem;
+        }
+        .card-text{
+          font-family: $description_font_family;
+          font-size: $description_font_size;
+          color: $description_font_color;
+        }
+        .separator{
+          width: 60px;
+        }
       }
     }
   }
 }
+@include media-breakpoint-down(md){
+  :host{
+    #about{
+      .content{
+        .group{
+          column-count: 1;
+        }
+      }
+    }
+  }
+}
+

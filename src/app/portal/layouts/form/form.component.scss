@@ -1,38 +1,42 @@
 @import "../../portal.component";
 
 :host{
+  font-size: 1rem;
   font-family: 'Roboto-Regular';
   color: $gold_color;
   p{
     &:first-child{
-      font-size: 20px;
+      font-size: 1.2em;
     }
-    font-size: 13px;
+    font-size: 0.9em;
+  }
+  .hidden{
+    visibility: hidden;
+  }
+
+  button{
+    font-size: 0.9em;
+    &:disabled{
+      color: #161719;
+    }
+  }
+
+  .message-alert{
+    color: #000;
+    background-color: #d8a972;
+    padding: 20px;
+    font-size: 1em;
+    font-family: 'Montserrat-Regular';
   }
 }
 
-.hidden{
-  visibility: hidden;
-}
 
-button{
-  font-size: 13px;
-  &:disabled{
-    color: #161719;
-  }
-}
-
-.message-alert{
-  color: #000;
-  background-color: #d8a972;
-  padding: 20px;
-  font-size: 1rem;
-  font-family: 'Montserrat-Regular';
-}
 
 @include media-breakpoint-down(sm){
-  button{
-    width: 100%;
+  :host{
+    button{
+      width: 100%;
+    }
   }
 }
 

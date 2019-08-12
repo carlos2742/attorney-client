@@ -17,7 +17,7 @@
       "PLACE":"Law Office",
       "SLOGAN1":"\"Because your problem is our problem.\"",
       "SLOGAN2":"The first consultation is <strong> FREE </strong> and in only <strong> 24 HOURS </strong> we will answer you.",
-      "BTN": "Make an inquiry",
+      "BTN": "Make an Inquiry",
       "CALL_BTN": "Call Now"
     },
     "ROUTES":{
@@ -53,7 +53,7 @@
     },
     "VIEW":{
       "HOME":{
-        "TITLE":"Welcome!",
+        "TITLE":"Welcome",
         "DESCRIPTION":"The law firm is based in the Miami-Dade area. Our attorney, Yahima Morejon, Esq., has several years of experience, first as an attorney in Havana, Cuba and then in the state of Florida. Our promise to every single client is that their case will be managed with professionalism, fidelity, and integrity. The firm will dedicate all its resources to resolve your legal matter. Your problem is our problem. Y. Morejon Attorney, P.A. manages all its cases in a diligent, loyal, and expeditious manner. We dedicate ourselves to your legal issue, because your problem is our problem."
       },
       "ABOUT":{

@@ -1,92 +1,97 @@
 @import "../header.component";
-
-.subheader-background{
-  background-image: url("../../../../../assets/images/subheader-image.jpg");
-  background-size: cover;
-  height: 370px;
-  background-position-y: -177px;
-  background-repeat: no-repeat;
-  color: #fff;
-  &>div{
-    background-color: #1a1b1b70;
-    height: 100%;
-  }
-  .info-container{
-    padding-top: 4rem;
-    .title{
-      font-family: 'Montserrat-SemiBold';
-      font-size: 0.8rem;
-    }
-    .subtitle{
-      font-family: 'Edwardian Script ITC V1';
-      font-size: 3em;
-      line-height: 3rem;
-      margin-left: -20px;
-    }
-    .separator{
-      border-bottom: 2px solid #fff;
-      width: 30px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-    .action-title{
-      font-family: 'Roboto-Bold';
-      font-size: 0.8rem;
-    }
-    .action-description{
-      font-family: 'Roboto-Regular';
-      font-size: 0.8rem;
-      width: 270px;
-    }
-    .action-btn{
-      color: #fff;
-      font-size: 0.8rem;
-      padding: 8px 15px;
-      min-width: 150px;
-    }
-  }
-  .form-container{
-    overflow: hidden;
-    z-index: -1;
-    transition: all linear 0.01s;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #1617199c;
-    &> div div{
-      left:100%;
-      transition: all linear 0.1s;
+:host{
+  font-size: 1rem;
+  .subheader-background{
+    background-image: url("../../../../../assets/images/subheader-image.jpg");
+    background-size: cover;
+    height: 370px;
+    background-position-y: -177px;
+    background-repeat: no-repeat;
+    color: #fff;
+    &>div{
+      background-color: #1a1b1b70;
       height: 100%;
-      .close-btn{
-        cursor: pointer;
-        color: $gold_color;
-        font-size: 1.6rem;
+    }
+    .info-container{
+      padding-top: 4rem;
+      .title{
+        font-family: 'Montserrat-SemiBold';
+        font-size: 0.8em;
       }
-      &> div div{
-        padding-right: 4rem;
-        margin-right: 4rem;
+      .subtitle{
+        font-family: 'Edwardian Script ITC V1';
+        font-size: 2.5em;
+        line-height: 3rem;
+        margin-left: -20px;
+      }
+      .separator{
+        border-bottom: 2px solid #fff;
+        width: 30px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .action-title{
+        font-family: 'Roboto-Bold';
+        font-size: 0.8em;
+      }
+      .action-description{
+        font-family: 'Roboto-Regular';
+        font-size: 0.8em;
+        width: 270px;
+      }
+      .action-btn{
+        color: #fff;
+        font-size: 0.8em;
+        padding: 8px 15px;
+        min-width: 150px;
       }
     }
-    &.open{
-      z-index: 0;
-      &>div div{
-        left:50%;
+    .form-container{
+      overflow: hidden;
+      z-index: -1;
+      transition: all linear 0.01s;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #1617199c;
+      &> div div{
+        left:100%;
+        transition: all linear 0.1s;
+        height: 100%;
+        .close-btn{
+          cursor: pointer;
+          color: $gold_color;
+          font-size: 1.6rem;
+        }
+        &> div div{
+          padding-right: 4rem;
+          margin-right: 4rem;
+        }
+      }
+      &.open{
+        z-index: 0;
+        &>div div{
+          left:50%;
+        }
       }
     }
   }
 }
 
+
 @include media-breakpoint-down(lg){
-  .subheader-background{
-    background-position-y: -182px;
-    background-size: 1500px 800px;
-    background-position-x: -346px;
-    .form-container{
-      &>div{
+  :host{
+    .subheader-background{
+      background-position-y: -182px;
+      background-size: 1500px 800px;
+      background-position-x: -346px;
+      .form-container{
         &>div{
-          padding-right: 0;
-          margin-right: 0;
+          &>div{
+            padding-right: 0;
+            margin-right: 0;
+          }
         }
       }
     }
@@ -94,39 +99,43 @@
 }
 
 @include media-breakpoint-down(md){
-  .subheader-background{
-    height: 450px;
-    background-position-y: -192px;
-    background-position-x: -400px;
-    background-size: 1350px;
+  :host{
+    .subheader-background{
+      height: 450px;
+      background-position-y: -192px;
+      background-position-x: -400px;
+      background-size: 1350px;
 
+    }
   }
 }
 
 
 @include media-breakpoint-down(sm){
-  .subheader-background{
-    background-position-x: -688px;
-    background-position-y: -137px;
+  :host{
+    .subheader-background{
+      background-position-x: -688px;
+      background-position-y: -137px;
 
-    &>div{
-      background-color: #1a1b1bad;
-      height: 100%;
-    }
-    .info-container{
-      padding-top: 2rem;
-      width: 100%;
-      .title{
+      &>div{
+        background-color: #1a1b1bad;
+        height: 100%;
+      }
+      .info-container{
+        padding-top: 2rem;
+        width: 100%;
+        .title{
 
+        }
+        .action-description{
+          width: 202px;
+        }
       }
-      .action-description{
-        width: 202px;
-      }
-    }
-    .form-container{
-      &.open{
-        &>div div{
-          left:7%;
+      .form-container{
+        &.open{
+          &>div div{
+            left:7%;
+          }
         }
       }
     }
@@ -134,9 +143,11 @@
 }
 
 @media (max-width: 424px){
-  .subheader-background{
-    height: 515px;
-    .info-container{
+  :host{
+    .subheader-background{
+      height: 515px;
+      .info-container{
+      }
     }
   }
 }
