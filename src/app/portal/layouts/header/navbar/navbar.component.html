@@ -5,11 +5,11 @@
   <div id="mobile-logo" class="d-lg-none text-center mb-1 flex-grow-1">
     <img src="assets/images/logo.svg" width="180">
   </div>
+  <div class="d-block d-lg-none navbar-brand border-bottom-0">
+    <app-language-selector></app-language-selector>
+  </div>
   <div class="collapse navbar-collapse justify-content-center" [class.show]="show">
     <ul class="navbar-nav align-items-lg-center w-100 justify-content-between">
-      <div class="d-block d-lg-none navbar-brand mt-5 mb-3">
-        <app-language-selector></app-language-selector>
-      </div>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'home'" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')" href="#">{{"PORTAL.NAV.HOME" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'about'" routerLink="{{'PORTAL.ROUTES.ABOUT' | translate}}" (click)="selectItem('about', 'ABOUT')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'practices'" routerLink="{{'PORTAL.ROUTES.AREAS_OF_PRACTICES' | translate}}" (click)="selectItem('practices', 'AREAS_OF_PRACTICES')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
@@ -24,6 +24,7 @@
       <app-social-network class="d-lg-none mt-5 mb-3"></app-social-network>
     </ul>
   </div>
+
 </nav>
 
 

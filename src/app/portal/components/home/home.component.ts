@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.portalService.goToSection(['home', 'about', 'practices']);
+    this.portalService.goToSection(['about', 'practices']);
   }
 
 }
