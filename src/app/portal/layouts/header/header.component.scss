@@ -1,1 +1,13 @@
 @import "../../portal.component";
+@include media-breakpoint-down(md){
+  .navbar-container{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: $dark_color;
+    top: 0;
+  }
+  .subheader-container{
+    padding-top: 5.5rem;
+  }
+}
