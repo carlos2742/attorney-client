@@ -17,7 +17,8 @@
       "PLACE":"Bufete de Abogados",
       "SLOGAN1":"Porque su problema es nuestro problema",
       "SLOGAN2":"La primera consulta es <strong>GRATIS</strong> y en solo <strong>24 HORAS</strong> le responderemos.",
-      "BTN": "Hacer una consulta"
+      "BTN": "Hacer una consulta",
+      "CALL_BTN": "Llame Ahora"
     },
     "ROUTES":{
       "HOME": "inicio",
@@ -59,7 +60,7 @@
         "DESCRIPTION":"Yahima Morejon, Esq. es una abogada, que se licencia en Derecho en la Universidad de La Habana, Cuba, y luego obtiene el título de Juris Doctor en St. Thomas University School of Law, en la Florida, Estados Unidos. Mientras trabajó en la ONBC estuvo encargada de casos penales y civiles, así como asuntos referentes a sucesiones y familia. Como residente en Miami, se desempeñó en una firma especializada en bancarrota, hipotecas e inmigración. Eventualmente,  Morejon decidió abrir su propio bufete, con sede en Miami, para ayudar a su comunidad y continuar con su pasión por el ejercicio del Derecho. En Y. Morejon Attorney, P.A. le prometemos a nuestros clientes que sus casos se manejaran con profesionalismo e integridad, y que nos dedicaremos a su causa. Porque su problema, es nuestro problema."
       },
       "FAQ":{
-        "TITLE":"Preguntas frecuentes",
+        "TITLE":"Preguntas Frecuentes",
         "GENERAL":{
           "TITLE":"Generales",
           "QUESTIONS":{
@@ -223,6 +224,7 @@
       }
     },
     "FOOTER":{
+      "TITLE": "Consultenos ante cualquier duda",
       "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
     }
   }
