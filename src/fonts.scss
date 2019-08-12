@@ -76,4 +76,13 @@
   font-style: normal;
 }
 
+@font-face {font-family: "Edwardian Script ITC V1";
+  src: url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.eot"); /* IE9*/
+  src: url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.woff2") format("woff2"), /* chrome、firefox */
+  url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.woff") format("woff"), /* chrome、firefox */
+  url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.svg#Edwardian Script ITC V1") format("svg"); /* iOS 4.1- */
+}
+
 
