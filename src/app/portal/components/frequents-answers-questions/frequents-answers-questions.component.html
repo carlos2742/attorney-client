@@ -11,8 +11,8 @@
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
-            <div class="row">
-              <div class="col-12 col-md-6 faq-card pb-3" *ngFor="let item of faq.items" >
+            <div class="card-columns">
+              <div class="card" *ngFor="let item of faq.items" >
                 <div class="question">{{'PORTAL.VIEW.FAQ.'+faq.id+'.QUESTIONS.'+item | translate}}</div>
                 <p class="anwser pt-3">{{'PORTAL.VIEW.FAQ.'+faq.id+'.ANSWERS.'+item | translate}}</p>
               </div>

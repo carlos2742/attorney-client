@@ -13,7 +13,9 @@ export class PortalService {
 
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedItem).subscribe(select => {
-      if (allowed.includes(select)) {
+      if (select === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth'});
+      } else if (allowed.includes(select)) {
         const element = document.getElementById(select);
         if (!isNullOrUndefined(element)) {
           element.scrollIntoView({behavior: 'smooth'});

@@ -1,40 +1,61 @@
 @import "../../portal.component";
-
-.faq-title{
-  color: #d7a971;
-  font-size: 1.5rem;
-  .name{
-    color: #151719;
-    font-family: 'Montserrat-Bold';
-    font-size: 1rem;
-  }
-  .icon{
-    transition: all linear 0.3s;
-    $rotate: 45deg;
-    -webkit-transform: rotate($rotate);
-    -moz-transform: rotate($rotate);
-    -o-transform: rotate($rotate);
-    -ms-transform: rotate($rotate);
-    transform: rotate($rotate);
-    &.open{
-      $rotate: 0;
+:host{
+  font-size: 1rem;
+  .faq-title{
+    color: #d7a971;
+    font-size: 1.1em;
+    .name{
+      color: #151719;
+      font-family: 'Montserrat-Bold';
+      font-size: 1em;
+    }
+    .icon{
+      transition: all linear 0.3s;
+      $rotate: 45deg;
       -webkit-transform: rotate($rotate);
       -moz-transform: rotate($rotate);
       -o-transform: rotate($rotate);
       -ms-transform: rotate($rotate);
       transform: rotate($rotate);
+      &.open{
+        $rotate: 0;
+        -webkit-transform: rotate($rotate);
+        -moz-transform: rotate($rotate);
+        -o-transform: rotate($rotate);
+        -ms-transform: rotate($rotate);
+        transform: rotate($rotate);
+      }
+    }
+  }
+
+  .card-columns{
+    column-count: 2;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .card{
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    .question{
+      color: #d7a971;
+      font-family: 'Montserrat-Italic';
+      font-size: 1em;
+    }
+    .anwser{
+      color: #6f6f6f;
+      font-family: 'Roboto-Regular';
+      font-size: 0.9em;
     }
   }
 }
 
-.faq-card{
-  .question{
-    color: #d7a971;
-    font-family: 'Montserrat-Italic';
-  }
-  .anwser{
-    color: #6f6f6f;
-    font-family: 'Roboto-Regular';
-    font-size: 0.9rem;
+@include media-breakpoint-down(sm){
+  :host{
+    .card-columns{
+      column-count: 1;
+    }
   }
 }
+

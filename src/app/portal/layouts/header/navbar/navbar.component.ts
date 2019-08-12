@@ -28,5 +28,6 @@ export class NavbarComponent implements OnInit {
 
   selectItem(item, route = '') {
     this.portalStore.dispatch(new PortalActions.SelectMenu({item, route}));
+    this.show = false;
   }
 }
