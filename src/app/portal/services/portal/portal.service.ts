@@ -14,13 +14,20 @@ export class PortalService {
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedItem).subscribe(select => {
       if (select === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth'});
+        this.goTop();
       } else if (allowed.includes(select)) {
-        const element = document.getElementById(select);
-        if (!isNullOrUndefined(element)) {
-          element.scrollIntoView({behavior: 'smooth'});
-        }
+        this.goToElement(select);
       }
     });
+  }
+
+  goTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth'});
+  }
+  goToElement(id) {
+    const element = document.getElementById(id);
+    if (!isNullOrUndefined(element)) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
   }
 }

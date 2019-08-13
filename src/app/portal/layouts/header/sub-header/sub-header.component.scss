@@ -114,8 +114,9 @@
 @include media-breakpoint-down(sm){
   :host{
     .subheader-background{
-      background-position-x: -688px;
-      background-position-y: -137px;
+      background-position-x: -523px;
+      background-position-y: -120px;
+      background-size: 4500px;
 
       &>div{
         background-color: #1a1b1bad;
@@ -124,8 +125,8 @@
       .info-container{
         padding-top: 2rem;
         width: 100%;
-        .title{
-
+        .subtitle{
+          font-size: 1.8em;
         }
         .action-description{
           width: 202px;

@@ -1,8 +1,8 @@
 <div class="container">
-  <div id="home" class="pb-5">
+  <div id="frequents-answers" class="pb-5">
     <app-title [title]="'PORTAL.VIEW.FAQ.TITLE' | translate"></app-title>
     <div class="content">
-      <ngb-accordion [closeOthers]="true" #acc="ngbAccordion" activeIds="ngb-panel-0" (panelChange)="afterChange($event)">
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" (panelChange)="afterChange($event)">
         <ngb-panel *ngFor="let faq of faqs" [id]="faq.id">
           <ng-template ngbPanelTitle>
             <div class="faq-title d-flex justify-content-between align-items-center">

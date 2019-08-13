@@ -5,3 +5,15 @@
     color: #d8a972 !important;
   }
 }
+.lang-container-responsive{
+  display: none;
+}
+
+@media (max-width: 375px){
+  .lang-container{
+    display: none;
+  }
+  .lang-container-responsive{
+    display: block;
+  }
+}

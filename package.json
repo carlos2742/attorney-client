@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
     "build": "ng build",
@@ -18,7 +18,7 @@
     "serve:ssr": "node dist/server",
     "postinstall": "npm run build:ssr",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run attorney:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "ng build --aot --prod && ng run attorney:server:production --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
