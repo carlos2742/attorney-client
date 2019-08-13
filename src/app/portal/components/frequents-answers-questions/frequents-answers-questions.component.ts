@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {PortalService} from '../../services/portal/portal.service';
 
 @Component({
   selector: 'app-frequents-answers-questions',
   templateUrl: './frequents-answers-questions.component.html',
   styleUrls: ['./frequents-answers-questions.component.scss']
 })
-export class FrequentsAnswersQuestionsComponent implements OnInit {
+export class FrequentsAnswersQuestionsComponent implements OnInit, AfterViewInit {
 
   public selectItem: string;
   public faqs: Array<any>;
 
-  constructor() {
+  constructor(private portalService: PortalService) {
     this.selectItem = '';
     this.faqs = [
       {
@@ -50,6 +51,10 @@ export class FrequentsAnswersQuestionsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    this.portalService.goToSection(['frequents-answers']);
   }
 
   private range(length) {

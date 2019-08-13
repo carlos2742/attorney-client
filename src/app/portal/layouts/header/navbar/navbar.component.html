@@ -3,7 +3,9 @@
     <span class="fas fa-bars"></span>
   </button>
   <div id="mobile-logo" class="d-lg-none text-center mb-1 flex-grow-1">
-    <img src="assets/images/logo.svg" width="180">
+    <a href="" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')">
+      <img src="assets/images/logo.svg" width="180">
+    </a>
   </div>
   <div class="d-block d-lg-none navbar-brand border-bottom-0">
     <app-language-selector></app-language-selector>
@@ -14,7 +16,9 @@
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'about'" routerLink="{{'PORTAL.ROUTES.ABOUT' | translate}}" (click)="selectItem('about', 'ABOUT')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'practices'" routerLink="{{'PORTAL.ROUTES.AREAS_OF_PRACTICES' | translate}}" (click)="selectItem('practices', 'AREAS_OF_PRACTICES')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
       <div class="navbar-brand d-none d-lg-block">
-        <img src="assets/images/logo.svg" width="170">
+        <a href="" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')">
+          <img src="assets/images/logo.svg" width="170">
+        </a>
       </div>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'frequents-answers'" routerLink="{{'PORTAL.ROUTES.FAQ' | translate}}" (click)="selectItem('frequents-answers', 'FAQ')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'contacts'" (click)="selectItem('contacts')">{{"PORTAL.NAV.CONTACTS" | translate}}</a>
