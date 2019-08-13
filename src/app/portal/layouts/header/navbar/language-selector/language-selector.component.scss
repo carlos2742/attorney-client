@@ -7,6 +7,12 @@
 }
 .lang-container-responsive{
   display: none;
+  width: 33px;
+  height: 24px;
+  position: relative;
+  .selector{
+    position: absolute;
+  }
 }
 
 @media (max-width: 375px){
