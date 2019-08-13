@@ -4,6 +4,6 @@
   <span class="pl-1" class="selector" [class.selected]="isSpanishSelected" (click)="changeLanguage('es')">{{"PORTAL.LANG.SPANISH" | translate}}</span>
 </div>
 <div class="lang-container-responsive">
-  <span class="pr-1" class="selector" *ngIf="isSpanishSelected" (click)="changeLanguage('en')">{{"PORTAL.LANG.ENGLISH" | translate}}</span>
-  <span class="pl-1" class="selector" *ngIf="!isSpanishSelected" (click)="changeLanguage('es')">{{"PORTAL.LANG.SPANISH" | translate}}</span>
+  <span class="pr-1" class="selector" [class.invisible]="!isSpanishSelected" (click)="changeLanguage('en')">{{"PORTAL.LANG.ENGLISH" | translate}}</span>
+  <span class="pl-1" class="selector" [class.invisible]="isSpanishSelected" (click)="changeLanguage('es')">{{"PORTAL.LANG.SPANISH" | translate}}</span>
 </div>
