@@ -102,10 +102,9 @@
   :host{
     .subheader-background{
       height: 450px;
-      background-position-y: -192px;
-      background-position-x: -400px;
-      background-size: 1350px;
-
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: bottom;
     }
   }
 }
@@ -114,9 +113,9 @@
 @include media-breakpoint-down(sm){
   :host{
     .subheader-background{
-      background-position-x: -523px;
-      background-position-y: -120px;
-      background-size: 4500px;
+      height: 515px;
+      background-image: url("../../../../../assets/images/subheader-image-responsive.jpg");
+
 
       &>div{
         background-color: #1a1b1bad;
@@ -138,16 +137,6 @@
             left:7%;
           }
         }
-      }
-    }
-  }
-}
-
-@media (max-width: 424px){
-  :host{
-    .subheader-background{
-      height: 515px;
-      .info-container{
       }
     }
   }

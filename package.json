@@ -10,7 +10,7 @@
     "start": "ng serve --host 0.0.0.0",
     "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
-    "build": "ng build",
+    "build": "ng build --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
