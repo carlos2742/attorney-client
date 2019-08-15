@@ -11,9 +11,9 @@ import {CommonEffects} from './store/effects/common.effects';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+// export function createTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
 
 @NgModule({
   declarations: [],
@@ -21,13 +21,13 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    }),
+    // TranslateModule.forRoot({
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: (createTranslateLoader),
+    //     deps: [HttpClient]
+    //   }
+    // }),
     StoreModule.forFeature('common', reducer),
     EffectsModule.forFeature([CommonEffects]),
     NgbModule
