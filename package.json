@@ -10,7 +10,7 @@
     "start": "ng serve --host 0.0.0.0",
     "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
-    "build": "ng build --aot",
+    "build": "ng build --aot --prod --output-hashing all",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -18,7 +18,7 @@
     "serve:ssr": "node dist/server",
     "postinstall": "npm run build:ssr",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --aot --prod && ng run attorney:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "npm run build && ng run attorney:server:production --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
