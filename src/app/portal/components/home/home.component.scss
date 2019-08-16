@@ -2,7 +2,7 @@
 :host{
   font-size: 1rem;
   $description_font_color: #737476;
-  $description_font_family: 'Roboto-Regular';
+  $description_font_family: $Roboto;
   $description_font_size: 0.9em;
 
   .separator{
@@ -61,7 +61,8 @@
       .card-body{
         border-bottom: 2px solid $gold_color;
         .card-title{
-          font-family: 'Montserrat-Bold';
+          font-family: $Monserrat;
+          font-weight: bold;
           font-size: 1rem;
         }
         .card-text{
