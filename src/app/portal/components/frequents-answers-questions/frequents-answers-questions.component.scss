@@ -6,7 +6,8 @@
     font-size: 1.1em;
     .name{
       color: #151719;
-      font-family: 'Montserrat-Bold';
+      font-family: $Monserrat;
+      font-weight: bold;
       font-size: 1em;
     }
     .icon{
@@ -40,12 +41,13 @@
     border: none;
     .question{
       color: #d7a971;
-      font-family: 'Montserrat-Italic';
+      font-family: $Monserrat;
+      font-style: italic;
       font-size: 1em;
     }
     .anwser{
       color: #6f6f6f;
-      font-family: 'Roboto-Regular';
+      font-family: $Roboto;
       font-size: 0.9em;
     }
   }

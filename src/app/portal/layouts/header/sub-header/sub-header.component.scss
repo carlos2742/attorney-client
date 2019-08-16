@@ -15,11 +15,12 @@
     .info-container{
       padding-top: 4rem;
       .title{
-        font-family: 'Montserrat-SemiBold';
+        font-family: $Monserrat;
+        font-weight: 600;
         font-size: 0.8em;
       }
       .subtitle{
-        font-family: 'Edwardian Script ITC V1';
+        font-family: $Edwardian_Script_ITC;
         font-size: 2.5em;
         line-height: 3rem;
         margin-left: -20px;
@@ -31,11 +32,12 @@
         margin-bottom: 1rem;
       }
       .action-title{
-        font-family: 'Roboto-Bold';
+        font-family: $Roboto;
+        font-weight: bold;
         font-size: 0.8em;
       }
       .action-description{
-        font-family: 'Roboto-Regular';
+        font-family: $Roboto;
         font-size: 0.8em;
         width: 270px;
       }
