@@ -1,59 +1,16 @@
-@font-face {
-  font-family: 'Montserrat-Bold';
-  src: url('assets/fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Montserrat-Bold.otf')  format('opentype'),
-  url('assets/fonts/Montserrat-Bold.woff') format('woff'), url('assets/fonts/Montserrat-Bold.ttf')  format('truetype'), url('assets/fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@font-face {font-family: "Cardiff Italic";
+  src: url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.eot"); /* IE9*/
+  src: url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.woff2") format("woff2"), /* chrome、firefox */
+  url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.woff") format("woff"), /* chrome、firefox */
+  url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.svg#Cardiff Italic") format("svg"); /* iOS 4.1- */
 }
 
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url('assets/fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Montserrat-Medium.otf')  format('opentype'),
-  url('assets/fonts/Montserrat-Medium.woff') format('woff'), url('assets/fonts/Montserrat-Medium.ttf')  format('truetype'), url('assets/fonts/Montserrat-Medium.svg#Montserrat-Medium') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Regular';
-  src: url('assets/fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Montserrat-Regular.otf')  format('opentype'),
-  url('assets/fonts/Montserrat-Regular.woff') format('woff'), url('assets/fonts/Montserrat-Regular.ttf')  format('truetype'), url('assets/fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-SemiBold';
-  src: url('assets/fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Montserrat-SemiBold.otf')  format('opentype'),
-  url('assets/fonts/Montserrat-SemiBold.woff') format('woff'), url('assets/fonts/Montserrat-SemiBold.ttf')  format('truetype'), url('assets/fonts/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Italic';
-  src: url('assets/fonts/Montserrat-Italic.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Montserrat-Italic.woff') format('woff'), url('assets/fonts/Montserrat-Italic.ttf')  format('truetype'), url('assets/fonts/Montserrat-Italic.svg#Montserrat-Italic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family:"Cardiff Bold";
-  src:url("assets/fonts/CARDIF_B.eot?") format("eot"),url("assets/fonts/CARDIF_B.woff") format("woff"),url("assets/fonts/CARDIF_B.ttf") format("truetype"),
-  url("assets/fonts/CARDIF_B.svg#CardiffBold") format("svg");
-  font-weight:normal;
-  font-style:normal;
-}
-
-@font-face {
-  font-family: 'Cardiff MediumItalic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Cardiff MediumItalic'), url('assets/fonts/CARDIF_I.woff') format('woff');
-}
-
-@font-face {
-  font-family: "Cardiff Bold Italic";
+@font-face {font-family: "Cardiff Bold Italic";
   src: url("assets/fonts/447e8ccbf89f6bfb0b881ca0ac1bc836.eot"); /* IE9*/
   src: url("assets/fonts/447e8ccbf89f6bfb0b881ca0ac1bc836.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("assets/fonts/447e8ccbf89f6bfb0b881ca0ac1bc836.woff2") format("woff2"), /* chrome、firefox */
@@ -62,21 +19,7 @@
   url("assets/fonts/447e8ccbf89f6bfb0b881ca0ac1bc836.svg#Cardiff Bold Italic") format("svg"); /* iOS 4.1- */
 }
 
-@font-face {
-  font-family: 'Roboto-Bold';
-  src: url('assets/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Roboto-Bold.woff') format('woff'), url('assets/fonts/Roboto-Bold.ttf')  format('truetype'), url('assets/fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto-Regular';
-  src: url('assets/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/Roboto-Regular.woff') format('woff'), url('assets/fonts/Roboto-Regular.ttf')  format('truetype'), url('assets/fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {font-family: "Edwardian Script ITC V1";
+@font-face {font-family: "Edwardian Script ITC";
   src: url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.eot"); /* IE9*/
   src: url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.woff2") format("woff2"), /* chrome、firefox */

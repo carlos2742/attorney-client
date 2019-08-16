@@ -4,7 +4,8 @@
   color: $gold_color !important;
   font-size: 1rem;
   margin: 0 0.6rem;
-  font-family: 'Montserrat-Bold';
+  font-family: $Monserrat;
+  font-weight: bold;
   cursor: pointer;
   align-items: center;
   height: 83px;
