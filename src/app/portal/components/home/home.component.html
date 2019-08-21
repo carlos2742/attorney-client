@@ -12,7 +12,10 @@
     <div class="content d-flex flex-column flex-lg-row justify-content-center">
       <div class="profile pb-3 pb-lg-0">
         <div class="image-container">
-          <img width="190" class="position-absolute" src="assets/images/photo.JPG" alt="">
+          <picture>
+            <source type="image/webp" srcset="assets/images/photo.webp">
+            <img width="190" class="position-absolute" src="assets/images/photo.JPG" alt="">
+          </picture>
         </div>
         <div class="separator mt-4 mb-4"></div>
         <div class="text-center">Yahima Morejon</div>
@@ -45,7 +48,10 @@
   <div class="card align-items-center col-12 col-lg-4 mb-4">
     <div class="position-relative">
       <img class="icon position-absolute" src="{{'assets/images/icon_'+item+'.png' | lowercase}}" alt="{{'icon_'+item}}">
-      <img class="icon-background card-img-top rounded-circle" src="{{'assets/images/'+item+'.png' | lowercase}}" alt="{{item}}">
+      <picture>
+        <source type="image/webp" srcset="{{'assets/images/'+item+'.webp' | lowercase}}">
+        <img class="icon-background card-img-top rounded-circle" src="{{'assets/images/'+item+'.png' | lowercase}}" alt="{{item}}">
+      </picture>
     </div>
     <div class="card-body d-flex flex-column align-items-center">
       <div class="card-title text-center">{{'PORTAL.VIEW.APRACTICES.'+item+'.TITLE'| translate}}</div>
