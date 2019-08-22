@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {CoreModule} from './core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { reducers, metaReducers } from './reducers';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CoreModule,
+    TransferHttpCacheModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
