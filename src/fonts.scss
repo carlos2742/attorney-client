@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-@font-face {font-family: "Cardiff Italic";
+@font-face {font-family: "Cardiff Medium Italic";
   src: url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.eot"); /* IE9*/
   src: url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("assets/fonts/5762715ddcc2993805a83fcd2f569ea8.woff2") format("woff2"), /* chrome、firefox */
@@ -27,5 +27,54 @@
   url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url("assets/fonts/ca6f91c0cad2fe33614026d17117601d.svg#Edwardian Script ITC V1") format("svg"); /* iOS 4.1- */
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('assets/fonts/icomoon.eot?dpjjip');
+  src:  url('assets/fonts/icomoon.eot?dpjjip#iefix') format('embedded-opentype'),
+  url('assets/fonts/icomoon.ttf?dpjjip') format('truetype'),
+  url('assets/fonts/icomoon.woff?dpjjip') format('woff'),
+  url('assets/fonts/icomoon.svg?dpjjip#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-spinner8:before {
+  content: "\e981";
+}
+
 
 
