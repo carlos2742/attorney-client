@@ -1,4 +1,8 @@
 {
+  "ROUTES.home": "inicio",
+  "ROUTES.about": "acerca-de",
+  "ROUTES.area_of_practices": "areas-del-derecho-que-practicamos",
+  "ROUTES.faq": "preguntas-frecuentes",
   "PORTAL": {
     "LANG": {
       "ENGLISH": "Ing",
@@ -19,12 +23,6 @@
       "SLOGAN2":"La primera consulta es <strong>GRATIS</strong> y en solo <strong>24 HORAS</strong> le responderemos.",
       "BTN": "Hacer una Consulta",
       "CALL_BTN": "Llame Ahora"
-    },
-    "ROUTES":{
-      "HOME": "inicio",
-      "ABOUT": "acerca-de",
-      "AREAS_OF_PRACTICES": "areas-del-derecho-que-practicamos",
-      "FAQ": "preguntas-frecuentes"
     },
     "NAV":{
       "HOME": "Inicio",

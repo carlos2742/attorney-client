@@ -34,6 +34,7 @@
     "@fortawesome/angular-fontawesome": "^0.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.20",
     "@fortawesome/free-solid-svg-icons": "^5.10.0",
+    "@gilsdav/ngx-translate-router": "^2.1.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
     "@ngrx/effects": "^8.1.0",
     "@ngrx/store": "^8.1.0",
