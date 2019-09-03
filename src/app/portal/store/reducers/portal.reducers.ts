@@ -1,10 +1,7 @@
 import * as Portal from '../actions/portal.actions';
 
 export interface PortalState {
-  menu: {
-    item: string;
-    route: string;
-  };
+  menuItem: string;
   form: {
     sending: boolean;
     sent: boolean;
@@ -12,10 +9,7 @@ export interface PortalState {
 }
 
 export const initialState: PortalState = {
-  menu: {
-    item: 'home',
-    route: 'HOME'
-  },
+  menuItem: 'home',
   form: {
     sending: false,
     sent: false,
@@ -31,10 +25,7 @@ export function reducer(
       console.log(Portal.ActionTypes.SelectMenu);
       return {
         ...state,
-        menu: {
-          item: action.payload.item,
-          route: action.payload.route,
-        }
+        menuItem: action.payload.menuItem,
       };
     }
     case Portal.ActionTypes.SendEmail: {

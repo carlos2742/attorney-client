@@ -1,4 +1,8 @@
 {
+  "ROUTES.home": "home",
+  "ROUTES.about": "about-us",
+  "ROUTES.area_of_practices": "areas-of-practices",
+  "ROUTES.faq": "faqs",
   "PORTAL" : {
     "LANG": {
       "ENGLISH": "Eng",
@@ -19,13 +23,6 @@
       "SLOGAN2":"The first consultation is <strong> FREE </strong> and in only <strong> 24 HOURS </strong> we will answer you.",
       "BTN": "Make an Inquiry",
       "CALL_BTN": "Call Now"
-    },
-    "ROUTES":{
-      "HOME": "home",
-      "ABOUT": "about-us",
-      "AREAS_OF_PRACTICES": "areas-of-practices",
-      "FAQ": "faqs",
-      "CONTACTS": "contacts-us"
     },
     "NAV":{
       "HOME": "Home",

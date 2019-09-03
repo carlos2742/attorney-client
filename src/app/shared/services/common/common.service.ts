@@ -3,32 +3,25 @@ import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
-  constructor(private translate: TranslateService, private http: HttpClient, private router: Router) { }
+  constructor(private translate: TranslateService, private localize: LocalizeRouterService, private http: HttpClient) { }
 
   public initializeLanguage() {
-    this.translate.addLangs(['en', 'es']);
-    const browserLang = this.translate.getBrowserLang();
-    const language = this.translate.getLangs().indexOf(browserLang) > -1 ? browserLang : 'en';
-    this.translate.setDefaultLang(language);
+    this.localize.init();
     return new Observable( observe => {
-      observe.next(language);
+      observe.next(this.localize.parser.currentLang);
       observe.complete();
     });
   }
 
   public changeLanguage(language, route = {prefix: '', url: ''}) {
-    this.translate.use(language);
-    if (route.url !== '' && route.prefix !== '') {
-      this.translate.get(route.url).subscribe((res: string) => {
-        this.router.navigate([`${route.prefix}/${res}`]);
-      });
-    }
+    this.localize.changeLanguage(language);
     return new Observable( observe => {
       observe.next(language);
       observe.complete();

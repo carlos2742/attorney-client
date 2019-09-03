@@ -20,6 +20,7 @@ import {reducer} from './store/reducers/portal.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {PortalEffects} from './store/effects/portal.effects';
 import { LanguageSelectorComponent } from './layouts/header/navbar/language-selector/language-selector.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { LanguageSelectorComponent } from './layouts/header/navbar/language-sele
     SharedModule,
     PortalRoutingModule,
     StoreModule.forFeature('portal', reducer),
-    EffectsModule.forFeature([PortalEffects])
+    EffectsModule.forFeature([PortalEffects]),
+    TranslateModule.forChild()
   ]
 })
 export class PortalModule { }
