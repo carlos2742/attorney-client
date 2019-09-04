@@ -4,6 +4,7 @@ import {HomeComponent} from './components/home/home.component';
 import {PortalComponent} from './portal.component';
 import {FrequentsAnswersQuestionsComponent} from './components/frequents-answers-questions/frequents-answers-questions.component';
 import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
+import {BlogComponent} from './components/blog/blog.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'about', component: HomeComponent},
       { path: 'area_of_practices', component: HomeComponent},
       { path: 'faq', component: FrequentsAnswersQuestionsComponent},
+      { path: 'blog', component: BlogComponent},
     ]
   }
 ];

@@ -9,6 +9,7 @@ import {CommonEffects} from './store/effects/common.effects';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
+import {BlogService} from './services/blog/blog.service';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
     LocalizeRouterModule
   ],
   providers: [
-    CommonService
+    CommonService,
+    BlogService
   ]
 })
 export class SharedModule { }

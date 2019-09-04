@@ -1,0 +1,32 @@
+<div class="container">
+  <div id="blog">
+    <app-title [title]="'PORTAL.BLOG.TITLE' | translate"></app-title>
+  </div>
+  <div class="mb-5">
+    <ng-container *ngFor="let group of articleGroup" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
+  </div>
+</div>
+
+
+<ng-template #groupTemplate let-group="group">
+  <div class="group mb-2">
+    <div class="header d-flex align-items-center">
+      <div class="title">{{group.date | date: "MMM , yyyy" | uppercase}}</div>
+      <div class="group-decorator ml-4"></div>
+    </div>
+    <ng-container *ngFor="let article of group.article_list" [ngTemplateOutlet]="articleTemplate" [ngTemplateOutletContext]="{article: article}"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #articleTemplate let-article="article">
+  <a href="" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
+    <div class="mr-3">
+      <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+    </div>
+    <div>
+      <div class="title mt-2 mt-md-0">{{article.title[currentLang] | uppercase}}</div>
+      <div class="category mt-1">{{article.practice_area.name | uppercase}}</div>
+      <div class="tags mt-2"></div>
+    </div>
+  </a>
+</ng-template>

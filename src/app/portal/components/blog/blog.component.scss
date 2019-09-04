@@ -1,0 +1,53 @@
+@import "../../portal.component";
+
+.group{
+  .header{
+    .title{
+      width: 100px;
+      color: #858483;
+    }
+    .group-decorator{
+      border-bottom: 1px solid #c6c6c6;
+      width: 90%;
+    }
+  }
+
+  .article-card{
+    text-decoration: none;
+    img{
+      width: 200px;
+    }
+    .title{
+      color: #757575
+    }
+    .category{
+      color: #878787;
+    }
+  }
+}
+
+@include media-breakpoint-down(md){
+  .group{
+    .header{
+      .group-decorator{
+        width: 80%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .group{
+    .header{
+      .group-decorator{
+        width: 70%;
+      }
+    }
+    .article-card{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
