@@ -14,14 +14,10 @@ import * as PortalSelector from '../../../../store/selectors/portal.selectors';
 export class LanguageSelectorComponent implements OnInit {
 
   private currentLang: string;
-  private currentRoute: string;
 
-  constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
+  constructor(private commonStore: Store<CommonState>) {
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
-    });
-    this.portalStore.select(PortalSelector.selectedRoute).subscribe(route => {
-      this.currentRoute = route;
     });
   }
 
@@ -31,13 +27,8 @@ export class LanguageSelectorComponent implements OnInit {
   changeLanguage(lang) {
     if (lang !== this.currentLang) {
       const payload = {
-        lang,
-        route: {
-          prefix: 'portal',
-          url: this.currentRoute !== '' ? `PORTAL.ROUTES.${this.currentRoute}` : ''
-        }
+        lang
       };
-
       this.commonStore.dispatch(new CommonActions.ChangeLanguage(payload));
     }
   }

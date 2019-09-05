@@ -24,7 +24,7 @@ export function reducer(
       return {
         language: {
           initialized: true,
-          currentLanguage: action.payload
+          currentLanguage: action.payload.lang
         }
       };
     }
@@ -33,7 +33,7 @@ export function reducer(
       return {
         language: {
           ...state.language,
-          currentLanguage: action.payload
+          currentLanguage: action.payload.lang
         }
       };
     }

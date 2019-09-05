@@ -4,7 +4,7 @@
   .subheader-background{
     background-image: url("../../../../../assets/images/subheader-image.jpg");
     background-size: cover;
-    height: 370px;
+    height: 455px;
     background-position-y: -177px;
     background-repeat: no-repeat;
     color: #fff;
@@ -103,7 +103,7 @@
 @include media-breakpoint-down(md){
   :host{
     .subheader-background{
-      height: 450px;
+      height: 580px;
       background-size: cover;
       background-position-x: center;
       background-position-y: bottom;
@@ -115,7 +115,7 @@
 @include media-breakpoint-down(sm){
   :host{
     .subheader-background{
-      height: 515px;
+      height: 615px;
       background-image: url("../../../../../assets/images/subheader-image-responsive.jpg");
 
 

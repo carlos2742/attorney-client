@@ -3,7 +3,7 @@
     <span class="fas fa-bars"></span>
   </button>
   <div id="mobile-logo" class="d-lg-none text-center mb-1 flex-grow-1">
-    <a href="" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')">
+    <a href="" [routerLink]="'home' | localize" (click)="selectItem('home')">
       <img src="assets/images/logo.svg" width="180">
     </a>
   </div>
@@ -12,15 +12,16 @@
   </div>
   <div class="collapse navbar-collapse justify-content-center" [class.show]="show">
     <ul class="navbar-nav align-items-lg-center w-100 justify-content-between">
-      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'home'" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')" href="#">{{"PORTAL.NAV.HOME" | translate}}</a>
-      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'about'" routerLink="{{'PORTAL.ROUTES.ABOUT' | translate}}" (click)="selectItem('about', 'ABOUT')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
-      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'practices'" routerLink="{{'PORTAL.ROUTES.AREAS_OF_PRACTICES' | translate}}" (click)="selectItem('practices', 'AREAS_OF_PRACTICES')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'home'" [routerLink]="'home' | localize" (click)="selectItem('home')" href="#">{{"PORTAL.NAV.HOME" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'about'" [routerLink]="'about' | localize" (click)="selectItem('about')" href="#">{{"PORTAL.NAV.ABOUT" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'practices'" [routerLink]="'area_of_practices' | localize" (click)="selectItem('practices')" href="#">{{"PORTAL.NAV.AREAS_OF_PRACTICES" | translate}}</a>
       <div class="navbar-brand d-none d-lg-block">
-        <a href="" routerLink="{{'PORTAL.ROUTES.HOME' | translate}}" (click)="selectItem('home', 'HOME')">
+        <a href="" [routerLink]="'home' | localize" (click)="selectItem('home')">
           <img src="assets/images/logo.svg" width="170">
         </a>
       </div>
-      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'frequents-answers'" routerLink="{{'PORTAL.ROUTES.FAQ' | translate}}" (click)="selectItem('frequents-answers', 'FAQ')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'blog'" [routerLink]="'blog' | localize" (click)="selectItem('blog')" href="#">{{"PORTAL.NAV.BLOG" | translate}}</a>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'frequents-answers'" [routerLink]="'faq' | localize" (click)="selectItem('frequents-answers')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'contacts'" (click)="selectItem('contacts')">{{"PORTAL.NAV.CONTACTS" | translate}}</a>
       <div class="d-none d-lg-flex navbar-brand">
         <app-language-selector></app-language-selector>

@@ -12,7 +12,7 @@ export class PortalService {
   constructor(private store: Store<PortalState>) { }
 
   goToSection(allowed: Array<string>) {
-    this.store.select(PortalSelector.selectedItem).subscribe(select => {
+    this.store.select(PortalSelector.selectedMenuItem).subscribe(select => {
       if (select === 'home') {
         this.goTop();
       } else if (allowed.includes(select)) {
