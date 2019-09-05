@@ -3,6 +3,8 @@
   "ROUTES.about": "acerca-de",
   "ROUTES.area_of_practices": "areas-del-derecho-que-practicamos",
   "ROUTES.faq": "preguntas-frecuentes",
+  "ROUTES.blog": "blog",
+  "ROUTES.article": "articulo",
   "PORTAL": {
     "LANG": {
       "ENGLISH": "Ing",
@@ -29,7 +31,8 @@
       "ABOUT": "Acerca de",
       "AREAS_OF_PRACTICES": "Áreas de Prácticas",
       "FAQ": "Preguntas Frecuentes",
-      "CONTACTS": "Contáctenos"
+      "CONTACTS": "Contáctenos",
+      "BLOG": "Blog"
     },
     "FORM":{
       "TITLE": "La primera consulta es <strong>GRATIS</strong>",
@@ -224,6 +227,14 @@
     "FOOTER":{
       "TITLE": "Consultenos ante cualquier duda",
       "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
+    },
+    "BLOG": {
+      "TITLE": "Todos los Artículos",
+      "COMMENT":"Comentar",
+      "SEND": "Enviar",
+      "COMMENTARY": "Comentario",
+      "COMMENT_MESSAGE":"Su comentario ha sido enviado y esta pendiente a revisión",
+      "COMMENTS":"Comentarios"
     }
   }
 }

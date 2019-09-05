@@ -3,6 +3,8 @@
   "ROUTES.about": "about-us",
   "ROUTES.area_of_practices": "areas-of-practices",
   "ROUTES.faq": "faqs",
+  "ROUTES.blog": "blog",
+  "ROUTES.article": "article",
   "PORTAL" : {
     "LANG": {
       "ENGLISH": "Eng",
@@ -29,7 +31,8 @@
       "ABOUT": "About Us",
       "AREAS_OF_PRACTICES": "Areas of Practice",
       "FAQ": "FAQ's",
-      "CONTACTS": "Contacts Us"
+      "CONTACTS": "Contacts Us",
+      "BLOG": "Blog"
     },
     "FORM":{
       "TITLE": "First Consultation FREE",
@@ -224,6 +227,14 @@
     "FOOTER":{
       "TITLE": "Consult us with any questions",
       "INFO":"&copy; Y. Morejon Attorney, P.A. All rights reserved. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."
+    },
+    "BLOG": {
+      "TITLE": "All Articles",
+      "COMMENT":"Comment",
+      "SEND": "Send",
+      "COMMENTARY": "Commentary",
+      "COMMENT_MESSAGE":"Your comment has been sent and is pending review",
+      "COMMENTS":"Comments"
     }
   }
 }

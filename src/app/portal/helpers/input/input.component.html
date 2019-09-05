@@ -3,9 +3,9 @@
     <i class="fas fa-exclamation-triangle"></i>
   </button>
 
-  <input *ngIf="type=='input'" (keydown)="hideError()" type="text" formControlName="{{controlName}}" placeholder="{{placeholder | translate}}" [class.error]="!field.valid && field.touched">
+  <input *ngIf="type=='input'" (keydown)="hideError()" type="text" formControlName="{{controlName}}" placeholder="{{placeholder | translate}} {{requiredSymbol}}" [class.error]="!field.valid && field.touched">
 
-  <textarea *ngIf="type=='textarea'" (keydown)="hideError()" formControlName="{{controlName}}" placeholder="{{placeholder | translate}}" [class.error]="!field.valid && field.touched"></textarea>
+  <textarea *ngIf="type=='textarea'" (keydown)="hideError()" formControlName="{{controlName}}" placeholder="{{placeholder | translate}} {{requiredSymbol}}" [class.error]="!field.valid && field.touched"></textarea>
 
   <div *ngIf="showError && field.invalid && (field.dirty || field.touched)" class="alert alert-danger">
 

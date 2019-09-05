@@ -1,0 +1,157 @@
+@import "../../portal.component";
+.img-container{
+  border-bottom: 5px solid #d7a871;
+  background-color: #ccc;
+  min-height: 235px;
+  img{
+    width: 100%;
+  }
+}
+
+.article-card{
+  .title{
+    color: #d7a870;
+    font-size: 5em;
+    font-family: $cardif_bold_italic;
+    line-height: 1.2em;
+    margin-bottom: 2px;
+  }
+  column-count: 2;
+  .header{
+    .title{
+      font-family: $Monserrat;
+      color: #858483;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+    .group-decorator{
+      border-bottom: 1px solid #c6c6c6;
+      margin-bottom: 2px;
+    }
+  }
+
+  .content{
+    font-family: $Roboto;
+    text-align: justify;
+    font-size: 1.2em;
+    color: #868584;
+  }
+}
+
+.comment-action-container{
+  font-family: $Roboto;
+  font-size: 1.3em;
+  .comment-message{
+    background-color: $gold_color;
+    color: #ffffff;
+  }
+  .comment-btn{
+    background-color: transparent;
+    border: none;
+    color: #606060;
+    font-style: italic;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+$border: 1px solid #e1be96;
+.tag-list{
+  border-top: $border;
+  border-bottom: $border;
+  .tag{
+    display: inline-block;
+    background-color: #f2f2f2;
+    font-family: $Monserrat;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    padding: 1em 1.8em;
+    color: #606060;
+  }
+}
+.form-container{
+  background-color: #1f2324f0;
+  .header{
+    font-size: 1.5em;
+    color: #d7a870;
+    .title{
+      font-family: $cardif_bold_italic;
+    }
+    .icon{
+      color: #d7a870;
+      background-color: #0000;
+      font-size: 1.5em;
+      padding: 0;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .body{
+    .separator{
+      border-bottom: 3px solid $gold_color;
+      width: 3em;
+    }
+  }
+  .footer{
+    button{
+      font-family: $Monserrat;
+      font-size: 0.8em;
+      font-weight: bold;
+      &:focus{
+        outline: none;
+      }
+      i{
+        font-size: 1.5em;
+        color: #000;
+      }
+    }
+  }
+}
+
+.comment-card{
+  .name{
+    font-family: $Monserrat;
+    font-weight: bold;
+    font-size: 1.05em;
+  }
+  .separator{
+    border-bottom: 3px solid $gold_color;
+    width: 3em;
+    display: inline-block;
+  }
+  .content{
+    font-family: $Roboto;
+    font-size: 1.2em;
+    color: #868584;
+  }
+
+  .anwser-card{
+    .profile{
+      margin-bottom: -70px;
+      font-family: $Monserrat;
+      font-weight: bold;
+      font-size: 1.05em;
+      .image-container {
+        height: 120px;
+        width: 120px;
+      }
+    }
+    .content{
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .article-card{
+    column-count: 1;
+    .title{
+      font-size: 4em;
+      line-height: 1em;
+    }
+  }
+}
+

@@ -20,6 +20,7 @@
           <img src="assets/images/logo.svg" width="170">
         </a>
       </div>
+      <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'blog'" [routerLink]="'blog' | localize" (click)="selectItem('blog')" href="#">{{"PORTAL.NAV.BLOG" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'frequents-answers'" [routerLink]="'faq' | localize" (click)="selectItem('frequents-answers')" href="#">{{"PORTAL.NAV.FAQ" | translate}}</a>
       <a class="navbar-brand pb-3 pt-3" [class.selected]="selectedMenu === 'contacts'" (click)="selectItem('contacts')">{{"PORTAL.NAV.CONTACTS" | translate}}</a>
       <div class="d-none d-lg-flex navbar-brand">
