@@ -4,6 +4,7 @@
   "ROUTES.area_of_practices": "areas-of-practices",
   "ROUTES.faq": "faqs",
   "ROUTES.blog": "blog",
+  "ROUTES.article": "article",
   "PORTAL" : {
     "LANG": {
       "ENGLISH": "Eng",
@@ -228,7 +229,8 @@
       "INFO":"&copy; Y. Morejon Attorney, P.A. All rights reserved. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."
     },
     "BLOG": {
-      "TITLE": "All Articles"
+      "TITLE": "All Articles",
+      "COMMENT":"Comment"
     }
   }
 }

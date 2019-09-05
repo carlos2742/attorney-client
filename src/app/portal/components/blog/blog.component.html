@@ -11,7 +11,7 @@
 <ng-template #groupTemplate let-group="group">
   <div class="group mb-2">
     <div class="header d-flex align-items-center">
-      <div class="title">{{group.date | date: "MMM , yyyy" | uppercase}}</div>
+      <div class="title">{{dateFilter(group.date) | date: "MMM , yyyy" | uppercase}}</div>
       <div class="group-decorator ml-4"></div>
     </div>
     <ng-container *ngFor="let article of group.article_list" [ngTemplateOutlet]="articleTemplate" [ngTemplateOutletContext]="{article: article}"></ng-container>
@@ -19,7 +19,7 @@
 </ng-template>
 
 <ng-template #articleTemplate let-article="article">
-  <a href="" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
+  <a href="" [routerLink]="['../article', createSlug(article.title[currentLang])] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
     <div class="mr-3">
       <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
     </div>

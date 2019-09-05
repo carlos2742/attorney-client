@@ -4,6 +4,7 @@
   "ROUTES.area_of_practices": "areas-del-derecho-que-practicamos",
   "ROUTES.faq": "preguntas-frecuentes",
   "ROUTES.blog": "blog",
+  "ROUTES.article": "articulo",
   "PORTAL": {
     "LANG": {
       "ENGLISH": "Ing",
@@ -228,7 +229,8 @@
       "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
     },
     "BLOG": {
-      "TITLE": "Todos los Artículos"
+      "TITLE": "Todos los Artículos",
+      "COMMENT":"Comentar"
     }
   }
 }

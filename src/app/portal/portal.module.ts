@@ -22,6 +22,7 @@ import {PortalEffects} from './store/effects/portal.effects';
 import { LanguageSelectorComponent } from './layouts/header/navbar/language-selector/language-selector.component';
 import {TranslateModule} from '@ngx-translate/core';
 import { BlogComponent } from './components/blog/blog.component';
+import { ArticleComponent } from './components/article/article.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { BlogComponent } from './components/blog/blog.component';
     InputComponent,
     FrequentsAnswersQuestionsComponent,
     LanguageSelectorComponent,
-    BlogComponent
+    BlogComponent,
+    ArticleComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,15 @@
+<img *ngIf="article" class="w-100" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+<div class="container mb-4">
+  <div *ngIf="article" class="article-card pt-4">
+    <div class="title pb-4">{{article.title[currentLang]}}</div>
+    <div class="header d-flex pb-5 pr-4 pl-4">
+      <div class="group-decorator flex-grow-1"></div>
+      <div class="ml-4 title">{{dateFilter(article.updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
+    </div>
+    <div class="content pr-4 pl-4" [innerHTML]="article.content"></div>
+  </div>
+  <div class="text-center pb-3 pt-3"><button class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button></div>
+  <div class="tag-list pt-3 pb-3">
+    <div class="tag">attorney</div>
+  </div>
+</div>
