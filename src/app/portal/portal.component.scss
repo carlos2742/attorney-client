@@ -13,3 +13,24 @@ button, .action-btn{
     text-decoration: none;
   }
 }
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  font-family: $cardif_bold_italic;
+  .image-container{
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    height: 140px;
+    width: 140px;
+    img{
+      left: -30px;
+      top: -43px;
+      filter: grayscale(50%);
+      -webkit-filter:grayscale(50%) ;
+    }
+  }
+}

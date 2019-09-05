@@ -1,4 +1,6 @@
-<img *ngIf="article" class="w-100" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+<div class="img-container">
+  <img *ngIf="article" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+</div>
 <div class="container mb-4">
   <div *ngIf="article" class="article-card pt-4">
     <div class="title pb-4">{{article.title[currentLang]}}</div>
@@ -8,8 +10,78 @@
     </div>
     <div class="content pr-3 pl-3 pr-lg-4 pl-lg-4" [innerHTML]="article.content"></div>
   </div>
-  <div class="text-center pb-3 pt-3"><button class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button></div>
-  <div class="tag-list pt-3 pb-3">
+
+  <div class="text-center pb-4 pt-3 comment-action-container">
+    <button *ngIf="!commentSent" (click)="openModal(commentFormTemplate)" class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button>
+    <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
+  </div>
+
+  <div class="tag-list pt-3 pb-3" *ngIf="article">
     <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>
   </div>
+
+  <ng-container *ngIf="comments && comments.length > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: comments}"></ng-container>
 </div>
+
+<ng-template #commentFormTemplate let-r>
+  <div class="form-container pr-4 pl-4 pt-3 pb-3">
+    <div class="header d-flex justify-content-between align-items-center">
+      <div class="title" id="modal-basic-title">{{'PORTAL.BLOG.COMMENT' | translate}}</div>
+      <button type="button" [disabled]="sending" class="icon" aria-label="Close" (click)="hideModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="body">
+      <div class="separator mb-4"></div>
+      <form [formGroup] ="commentForm">
+        <app-input [tempFormGroup]="commentForm" [type]="'input'" [field]="commentForm.controls.name" [controlName]="'name'" [placeholder]="'PORTAL.FORM.FIELDS.NAME'" [fieldName]="'PORTAL.FORM.ALERTS.NAME'" ></app-input>
+        <app-input [tempFormGroup]="commentForm" [type]="'input'" [field]="commentForm.controls.email" [controlName]="'email'" [placeholder]="'PORTAL.FORM.FIELDS.EMAIL'" [fieldName]="'PORTAL.FORM.ALERTS.EMAIL'" ></app-input>
+        <app-input [tempFormGroup]="commentForm" [type]="'textarea'" [field]="commentForm.controls.content" [controlName]="'content'" [placeholder]="'PORTAL.BLOG.COMMENTARY'" [fieldName]="'PORTAL.BLOG.COMMENTARY'" ></app-input>
+      </form>
+    </div>
+    <div class="footer d-flex justify-content-center pt-3 pb-3">
+      <button type="submit" [disabled]="sending" (click)="sendComment()">
+        <span *ngIf="!sending">
+          {{'PORTAL.BLOG.SEND' | translate | uppercase}}
+        </span>
+        <i *ngIf="sending" class="fas fa-circle-notch fa-spin"></i>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #commentContainer let-comments="comments">
+  <app-title [title]="'PORTAL.BLOG.COMMENTS' | translate"></app-title>
+  <div class="row">
+    <ng-container *ngFor="let comment of comments" [ngTemplateOutlet]="commentTemplate" [ngTemplateOutletContext]="{comment: comment}"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #commentTemplate let-comment="comment">
+  <div class="col-lg-4 comment-card text-center pb-4">
+    <div class="pb-5"><img src="assets/images/comment_image.png" width="200" alt=""></div>
+    <div class="name">{{ comment.name }}</div>
+    <div class="separator mt-4 mb-2"></div>
+    <div class="content" [innerHTML]="comment.content"></div>
+    <div *ngIf="comment.comments.length > 0" class="pt-5">
+      <ng-container *ngFor="let answer of comment.comments" [ngTemplateOutlet]="answerTemplate" [ngTemplateOutletContext]="{answer: answer}"></ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #answerTemplate let-answer="answer">
+  <div class="anwser-card pt-1 pb-4">
+    <div class="profile pb-3 pb-lg-0">
+      <div class="image-container">
+        <picture>
+          <source type="image/webp" srcset="assets/images/photo.webp">
+          <img width="190" class="position-absolute" src="assets/images/photo.JPG" alt="">
+        </picture>
+      </div>
+      <div class="text-center">Yahima Morejon</div>
+    </div>
+    <div class="content pt-5 pb-3 pl-4 pr-4">
+      <div class="pt-4" [innerHTML]="answer.content"></div>
+    </div>
+  </div>
+</ng-template>

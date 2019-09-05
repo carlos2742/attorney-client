@@ -230,7 +230,11 @@
     },
     "BLOG": {
       "TITLE": "All Articles",
-      "COMMENT":"Comment"
+      "COMMENT":"Comment",
+      "SEND": "Send",
+      "COMMENTARY": "Commentary",
+      "COMMENT_MESSAGE":"Your comment has been sent and is pending review",
+      "COMMENTS":"Comments"
     }
   }
 }

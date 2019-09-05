@@ -230,7 +230,11 @@
     },
     "BLOG": {
       "TITLE": "Todos los Artículos",
-      "COMMENT":"Comentar"
+      "COMMENT":"Comentar",
+      "SEND": "Enviar",
+      "COMMENTARY": "Comentario",
+      "COMMENT_MESSAGE":"Su comentario ha sido enviado y esta pendiente a revisión",
+      "COMMENTS":"Comentarios"
     }
   }
 }

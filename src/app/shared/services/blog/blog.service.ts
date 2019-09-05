@@ -11,8 +11,8 @@ export class BlogService {
   private commentsResources: string;
 
   constructor(private common: CommonService, private http: HttpClient) {
-    this.articlesResources = `${this.common.apiUrl}/articles/`;
-    this.commentsResources = `${this.common.apiUrl}/comments/`;
+    this.articlesResources = `${this.common.apiUrl}articles/`;
+    this.commentsResources = `${this.common.apiUrl}comments/`;
   }
 
   public articleList(filter = {}) {
@@ -25,13 +25,13 @@ export class BlogService {
     return this.http.get(url);
   }
 
-  public articleComments(articleId) {
+  public commentsList(articleId) {
     const url = `${this.articlesResources}${articleId}/comments`;
     return this.http.get(url);
   }
 
-  public commentArticle(articleId, comment) {
+  public createComment(articleId, payload) {
     const url = `${this.articlesResources}${articleId}/comments`;
-    return this.http.post(url, comment);
+    return this.http.post(url, {comment: payload});
   }
 }

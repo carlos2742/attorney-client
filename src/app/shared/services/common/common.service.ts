@@ -21,19 +21,11 @@ export class CommonService {
     this.localize.init();
     const currentLang = this.localize.parser.currentLang;
     return this.changeApiLanguage(currentLang);
-    // return new Observable( observe => {
-    //   observe.next(currentLang);
-    //   observe.complete();
-    // });
   }
 
   public changeLanguage(language) {
     this.localize.changeLanguage(language);
     return this.changeApiLanguage(language);
-    // return new Observable( observe => {
-    //   observe.next(language);
-    //   observe.complete();
-    // });
   }
 
   public sendEmail(data) {

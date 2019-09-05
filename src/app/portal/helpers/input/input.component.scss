@@ -1,20 +1,28 @@
 @import "../../portal.component";
-
-input, textarea, button{
-  background-color: transparent;
-  border: 1px solid $gold_color;
-  border-radius: 5px;
-  padding: 5px 10px;
+$font-size: 0.9em;
+input, textarea{
+  border: none;
+  background-color: #fff;
+  padding: 10px 15px;
   width: 100%;
+  font-family: $Roboto;
+  font-size: $font-size;
+  color: #878787 !important;
+  margin: 0.4em 0;
 }
 
 button{
+  background-color: transparent;
   border: none;
   height: 31px;
   color: #970000;
   right: 0;
   padding-right: 10px;
-  width: 18%;
+  top: 7px;
+  z-index: 1;
+  &:focus{
+    outline: none;
+  }
 }
 
 textarea{
@@ -27,7 +35,7 @@ input, textarea{
 }
 
 ::placeholder, input, textarea{
-  color: $gold_color;
+  color: #878787;
 }
 
 .error{
@@ -36,11 +44,9 @@ input, textarea{
 
 .alert{
   position: absolute;
-  top: 0;
-  padding: 5px;
-  width: 82%;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-size: 0.9em;
+  border-radius: 0;
+  font-size: $font-size;
+  top: 7px;
+  padding: 9px;
+  width: 100%;
 }

@@ -10,26 +10,6 @@
     width: 50px;
   }
   .content{
-    .profile{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 1rem;
-      font-family: $cardif_bold_italic;
-      .image-container{
-        overflow: hidden;
-        border-radius: 50%;
-        position: relative;
-        height: 140px;
-        width: 140px;
-        img{
-          left: -30px;
-          top: -43px;
-          filter: grayscale(50%);
-          -webkit-filter:grayscale(50%) ;
-        }
-      }
-    }
     .description{
       font-family: $description_font_family;
       font-size: $description_font_size;
