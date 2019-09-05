@@ -1,5 +1,7 @@
 @import "../../portal.component";
-
+img{
+  border-bottom: 5px solid #d7a871;
+}
 .article-card{
   .title{
     color: #d7a870;
@@ -38,7 +40,7 @@
   color: #606060;
   font-style: italic;
   &:focus{
-    border: none;
+    outline: none;
   }
 }
 $border: 1px solid #e1be96;
@@ -46,6 +48,7 @@ $border: 1px solid #e1be96;
   border-top: $border;
   border-bottom: $border;
   .tag{
+    display: inline-block;
     background-color: #f2f2f2;
     font-family: $Monserrat;
     font-weight: bold;
@@ -53,6 +56,16 @@ $border: 1px solid #e1be96;
     text-transform: uppercase;
     padding: 1em 1.8em;
     color: #606060;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .article-card{
+    column-count: 1;
+    .title{
+      font-size: 4em;
+      line-height: 1em;
+    }
   }
 }
 
