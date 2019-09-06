@@ -43,10 +43,14 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
       this.currentLang = lang;
-      if (!isNullOrUndefined(this.article)) {
-        const route = this.localize.translateRoute(`article/${this.createSlug(this.article.title[lang])}`);
-        this.router.navigate([`${lang}/portal/${route}`]);
-      }
+      // if (!isNullOrUndefined(this.article)) {
+      //   const route = this.localize.translateRoute(`article/${this.createSlug(this.article.title[lang])}`);
+      //   this.router.navigate([`${lang}/portal/${route}`]);
+      //   this.article = null;
+      // }
+      // const title = this.decodeTitle();
+      // this.getArticle(title);
+
       const title = this.decodeTitle();
       this.getArticle(title);
     });

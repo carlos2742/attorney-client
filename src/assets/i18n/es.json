@@ -8,7 +8,7 @@
   "PORTAL": {
     "LANG": {
       "ENGLISH": "Eng",
-      "SPANISH": "Spa"
+      "SPANISH": "Esp"
     },
     "ALERTS":{
       "REQUIRED":"{{field}} es requerido",
