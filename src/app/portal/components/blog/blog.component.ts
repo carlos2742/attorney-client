@@ -30,7 +30,7 @@ export class BlogComponent implements OnInit {
 
   private getArticles() {
     this.blog.articleList().subscribe(response => {
-      this.articleGroup = response;
+      this.articleGroup = this.mapResponse(response);
     });
   }
 
@@ -39,6 +39,12 @@ export class BlogComponent implements OnInit {
   }
   public createSlug(title) {
     return encodeURI(title.split(' ').join('+'));
+  }
+
+  private mapResponse(response) {
+    return Object.keys(response).map(date => {
+      return {date, article_list: response[date] };
+    });
   }
 
 }
