@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
     return date.split('.')[0];
   }
   public createSlug(title) {
-    return encodeURI(title.split(' ').join('+'));
+    return escape(title.split(' ').join('-'));
   }
 
   private mapResponse(response) {

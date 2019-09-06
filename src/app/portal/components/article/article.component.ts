@@ -59,12 +59,12 @@ export class ArticleComponent implements OnInit {
   }
 
   private decodeTitle() {
-    const title = decodeURIComponent(this.active.snapshot.params.title);
-    return title.split('+').join(' ');
+    const title = unescape(this.active.snapshot.params.title);
+    return title.split('-').join(' ');
   }
 
   private createSlug(title) {
-    return encodeURI(title.split(' ').join('+'));
+    return escape(title.split(' ').join('-'));
   }
 
   private getArticle(title) {
