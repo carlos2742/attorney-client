@@ -15,13 +15,13 @@ export class BlogService {
     this.commentsResources = `${this.common.apiUrl}comments/`;
   }
 
-  public articleList(filter = {}) {
-    const url = `${this.articlesResources}search`;
+  public articleList(lang, filter = {}) {
+    const url = `${this.articlesResources + lang}/search`;
     return this.http.post(url, filter);
   }
 
-  public article(title) {
-    const url = `${this.articlesResources}${title}/view`;
+  public article(permalink, lang) {
+    const url = `${this.articlesResources + lang}/${permalink}/view`;
     return this.http.get(url);
   }
 
