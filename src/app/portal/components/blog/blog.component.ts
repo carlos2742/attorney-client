@@ -29,16 +29,19 @@ export class BlogComponent implements OnInit {
   ngOnInit() {}
 
   private getArticles() {
-    this.blog.articleList().subscribe(response => {
-      this.articleGroup = response;
+    this.blog.articleList(this.currentLang).subscribe(response => {
+      this.articleGroup = this.mapResponse(response);
     });
   }
 
   public dateFilter(date) {
     return date.split('.')[0];
   }
-  public createSlug(title) {
-    return encodeURI(title.split(' ').join('+'));
+
+  private mapResponse(response) {
+    return Object.keys(response).map(date => {
+      return {date, article_list: response[date] };
+    });
   }
 
 }

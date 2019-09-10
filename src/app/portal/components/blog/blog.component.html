@@ -22,12 +22,12 @@
 </ng-template>
 
 <ng-template #articleTemplate let-article="article">
-  <a href="" [routerLink]="['../article', createSlug(article.title[currentLang])] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
+  <a href="" [routerLink]="['../article', article.permalinks[currentLang]] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
     <div class="mr-md-3 img-container" *ngIf="article.image_id!==''">
       <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
     </div>
     <div>
-      <div class="title mt-2 mt-md-0">{{article.title[currentLang] | uppercase}}</div>
+      <div class="title mt-2 mt-md-0">{{article.title | uppercase}}</div>
       <!--<div class="category mt-1">{{article.practice_area.name | uppercase}}</div>-->
       <div class="tag-list mt-3">
         <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>

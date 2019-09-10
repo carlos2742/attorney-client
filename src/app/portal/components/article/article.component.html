@@ -3,7 +3,7 @@
 </div>
 <div class="container mb-4">
   <div *ngIf="article" class="article-card pt-4">
-    <div class="title pb-4">{{article.title[currentLang]}}</div>
+    <div class="title text-center text-lg-left pb-4">{{article.title}}</div>
     <div class="header d-flex pb-5 pr-3 pl-3 pr-lg-4 pl-lg-4">
       <div class="group-decorator flex-grow-1"></div>
       <div class="ml-4 title">{{dateFilter(article.updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>

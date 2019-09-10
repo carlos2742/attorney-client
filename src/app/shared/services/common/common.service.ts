@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
 import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
 import {environment} from '../../../../environments/environment';
 
@@ -11,21 +10,24 @@ import {environment} from '../../../../environments/environment';
 })
 export class CommonService {
 
-  private commonResource: string;
 
-  constructor(private translate: TranslateService, private localize: LocalizeRouterService, private http: HttpClient) {
-    this.commonResource = `${this.apiUrl}common/`;
-  }
+  constructor(private translate: TranslateService, private localize: LocalizeRouterService, private http: HttpClient) {}
 
   public initializeLanguage() {
     this.localize.init();
     const currentLang = this.localize.parser.currentLang;
-    return this.changeApiLanguage(currentLang);
+    return new Observable(observe => {
+      observe.next(currentLang);
+      observe.complete();
+    });
   }
 
   public changeLanguage(language) {
     this.localize.changeLanguage(language);
-    return this.changeApiLanguage(language);
+    return new Observable( observe => {
+      observe.next(language);
+      observe.complete();
+    });
   }
 
   public sendEmail(data) {
@@ -41,10 +43,5 @@ export class CommonService {
 
   get apiUrl() {
     return environment.apiUrl;
-  }
-
-  private changeApiLanguage(lang) {
-    const url = `${this.commonResource}language`;
-    return this.http.post(url, {common: {lang}});
   }
 }

@@ -11,6 +11,7 @@ import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
 import {Meta, Title} from '@angular/platform-browser';
 import {NgbModal, NgbModalOptions, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class ArticleComponent implements OnInit {
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
               private localize: LocalizeRouterService,  private meta: Meta, private titleService: Title,
-              private modalService: NgbModal, private fb: FormBuilder) {
+              private modalService: NgbModal, private fb: FormBuilder, private location: Location) {
 
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'article'}));
     this.sending = false;
@@ -43,12 +44,8 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
       this.currentLang = lang;
-      if (!isNullOrUndefined(this.article)) {
-        const route = this.localize.translateRoute(`article/${this.createSlug(this.article.title[lang])}`);
-        this.router.navigate([`${lang}/portal/${route}`]);
-      }
-      const title = this.decodeTitle();
-      this.getArticle(title);
+      const permalink = this.active.snapshot.params.permalink;
+      this.getArticle(permalink);
     });
 
     this.commentForm = this.fb.group({
@@ -58,22 +55,16 @@ export class ArticleComponent implements OnInit {
     });
   }
 
-  private decodeTitle() {
-    const title = decodeURIComponent(this.active.snapshot.params.title);
-    return title.split('+').join(' ');
-  }
-
-  private createSlug(title) {
-    return encodeURI(title.split(' ').join('+'));
-  }
-
-  private getArticle(title) {
-    this.blog.article(title).subscribe(
+  private getArticle(permalink) {
+    this.blog.article(permalink, this.currentLang).subscribe(
       response => {
         this.article = response;
         const keywords = this.article.tags.map(item => item.name).join(', ');
         this.titleService.setTitle(this.article.title[this.currentLang]);
         this.meta.updateTag({name: 'keywords', content: keywords});
+
+        const route = this.localize.translateRoute('article');
+        this.location.replaceState(`${this.currentLang}/portal/${route}/${this.article.permalinks[this.currentLang]}`);
 
         this.blog.commentsList(this.article.id).subscribe(
           commentResponse => {
