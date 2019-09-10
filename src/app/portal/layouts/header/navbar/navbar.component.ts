@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private portalStore: Store<PortalState>) {
     this.show = false;
-    this.portalStore.select(PortalSelectors.selectedItem).subscribe(item => this.selectedMenu = item);
+    this.portalStore.select(PortalSelectors.selectedMenuItem).subscribe(item => this.selectedMenu = item);
   }
 
   ngOnInit() {
@@ -26,8 +26,8 @@ export class NavbarComponent implements OnInit {
     this.show = !this.show;
   }
 
-  selectItem(item, route = '') {
-    this.portalStore.dispatch(new PortalActions.SelectMenu({item, route}));
+  selectItem(item) {
+    this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: item}));
     this.show = false;
   }
 }

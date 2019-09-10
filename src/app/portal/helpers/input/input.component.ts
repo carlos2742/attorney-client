@@ -17,6 +17,7 @@ export class InputComponent implements OnInit {
   @Input() type: string;
   public params: object;
   public showError: boolean;
+  public requiredSymbol: string;
 
   constructor(private translate: TranslateService) {
     this.showError = false;
@@ -24,6 +25,9 @@ export class InputComponent implements OnInit {
 
   ngOnInit() {
     this.loadFieldTranslate();
+    const validator = this.tempFormGroup.controls[this.controlName].validator(this.field);
+    this.requiredSymbol = validator && validator.required ? '*' : '';
+
   }
 
   loadFieldTranslate() {
@@ -34,11 +38,11 @@ export class InputComponent implements OnInit {
     });
   }
 
-  toggleError(){
+  toggleError() {
     this.showError = !this.showError;
   }
 
-  hideError(){
+  hideError() {
     this.showError = false;
   }
 

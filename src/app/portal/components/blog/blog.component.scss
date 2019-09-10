@@ -1,0 +1,76 @@
+@import "../../portal.component";
+#blog{
+  font-size: 1rem;
+  .title{
+    font-family: $cardif_bold_italic;
+    font-size: 2.6em;
+  }
+  .decorator{
+    border-bottom: 3px solid $gold_color;
+    width: 50px;
+  }
+}
+.group-container{
+  min-height: calc(100vh - 694px);
+  .group{
+    .header{
+      .title{
+        color: #858483;
+        font-family: $Monserrat;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      .group-decorator{
+        border-bottom: 1px solid #c6c6c6;
+      }
+    }
+
+    .article-card{
+      text-decoration: none;
+      .img-container{
+        img{
+          width: 270px;
+          border-bottom: 3px solid #d7a871;
+        }
+      }
+
+      .title{
+        font-family: $Roboto;
+        font-weight: 400;
+        color: #757575;
+        font-size: 1em;
+      }
+      .category{
+        color: #878787;
+      }
+      .tag-list{
+        .tag{
+          display: inline-block;
+          background-color: #f2f2f2;
+          font-family: $Monserrat;
+          font-weight: bold;
+          font-size: 0.75em;
+          text-transform: uppercase;
+          padding: 1em 1.8em;
+          color: #606060;
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm){
+  .group-container{
+    .group{
+      .article-card{
+        .img-container{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+

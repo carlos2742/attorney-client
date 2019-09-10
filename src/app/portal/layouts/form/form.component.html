@@ -23,8 +23,8 @@
         </div>
       </div>
       <button type="button" class="d-flex align-items-center justify-content-center" [disabled]="sending" (click)="sendForm()">
-        {{'PORTAL.FORM.BUTTON' | translate}}
-        <i [ngClass]="{'invisible': !sending, 'visible': sending}" class="ml-2 fas fa-circle-notch fa-spin"></i>
+        <span *ngIf="!sending">{{'PORTAL.FORM.BUTTON' | translate}}</span>
+        <i *ngIf="sending" class="ml-2 fas fa-circle-notch fa-spin"></i>
       </button>
     </form>
   </div>
