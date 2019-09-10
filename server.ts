@@ -17,12 +17,16 @@
 
 import 'zone.js/dist/zone-node';
 
-import * as compression from 'compression';
 import * as express from 'express';
+import * as secure  from 'express-force-https';
+import * as compression from 'compression';
 import {join} from 'path';
 
 // Express server
 const app = express();
+
+// add secure
+app.use(secure);
 
 // add compression
 app.use(compression());
