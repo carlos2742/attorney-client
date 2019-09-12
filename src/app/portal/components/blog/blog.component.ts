@@ -35,7 +35,7 @@ export class BlogComponent implements OnInit {
   }
 
   public dateFilter(date) {
-    return date.split('.')[0];
+    return date.split(' ')[0];
   }
 
   private mapResponse(response) {

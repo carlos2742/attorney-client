@@ -22,7 +22,7 @@
 </ng-template>
 
 <ng-template #articleTemplate let-article="article">
-  <a href="" [routerLink]="['../article', article.permalinks[currentLang]] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-3">
+  <a href="" [routerLink]="['../article', article.permalinks[currentLang]] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-4">
     <div class="mr-md-3 img-container" *ngIf="article.image_id!==''">
       <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
     </div>
