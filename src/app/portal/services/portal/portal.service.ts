@@ -60,7 +60,6 @@ export class PortalService {
     this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({property: 'og:site_name', content: 'Attorney'});
     this.meta.updateTag({property: 'og:url', content: url});
-    this.meta.updateTag({property: 'og:description', content: 'description'});
     this.meta.updateTag({property: 'og:type', content: 'article'});
     this.meta.updateTag({property: 'og:image', content: image});
   }
