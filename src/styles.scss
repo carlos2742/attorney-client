@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-//@import "../node_modules/bootstrap/scss/bootstrap";
-
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
 $gold_color: #d8a972;
 $dark_color: #161719;
