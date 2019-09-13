@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BlogService} from '../../../shared/services/blog/blog.service';
 import {Store} from '@ngrx/store';
@@ -18,7 +18,7 @@ import {PortalService} from '../../services/portal/portal.service';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnDestroy {
 
   public article;
   public comments;
@@ -29,6 +29,8 @@ export class ArticleComponent implements OnInit {
 
   public sending: boolean;
   public commentSent: boolean;
+
+  private selectLanguageSubscription;
 
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
@@ -41,7 +43,7 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
+    this.selectLanguageSubscription = this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
       this.currentLang = lang;
       const permalink = this.active.snapshot.params.permalink;
       this.getArticle(permalink);
@@ -52,6 +54,10 @@ export class ArticleComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       content: new FormControl('', [Validators.required]),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.selectLanguageSubscription.unsubscribe();
   }
 
   private getArticle(permalink) {
