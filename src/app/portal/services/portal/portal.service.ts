@@ -43,7 +43,7 @@ export class PortalService {
   addSocialNetworksMetaTags(title, image, keywords) {
     const imageUrl = `https://drive.google.com/uc?export=view&id=${image}`;
     this.addPortalMetaTags(title, keywords);
-    this.createTwitterMetaTag(title, imageUrl);
+    // this.createTwitterMetaTag(title, imageUrl);
     this.createOpenGraphMetaTags(title, imageUrl);
   }
 
@@ -59,7 +59,7 @@ export class PortalService {
     this.meta.updateTag({property: 'og:url', content: url});
     this.meta.updateTag({property: 'og:type', content: 'website'});
     this.meta.updateTag({property: 'og:title', content: title});
-    this.meta.updateTag({property: 'og:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
     this.meta.updateTag({property: 'og:description', content: 'description'});
+    this.meta.updateTag({property: 'og:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
   }
 }
