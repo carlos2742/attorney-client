@@ -52,7 +52,7 @@ export class PortalService {
     this.meta.updateTag({name: 'twitter:site', content: '@Attorney'});
     this.meta.updateTag({name: 'twitter:title', content: title});
     this.meta.updateTag({name: 'twitter:description', content: 'description'});
-    this.meta.updateTag({name: 'twitter:image', content: image});
+    this.meta.updateTag({name: 'twitter:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
   }
 
   /* create meta tags for facebook and linkedin*/
