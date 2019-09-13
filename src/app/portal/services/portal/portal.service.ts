@@ -56,12 +56,10 @@ export class PortalService {
   /* create meta tags for facebook and linkedin*/
   private createOpenGraphMetaTags(title, image) {
     const url = `https://www.ymorejonattorney.com${this.location.path()}`;
-    this.meta.updateTag({property: 'og:title', content: title});
-    this.meta.updateTag({property: 'og:type', content: 'website'});
     this.meta.updateTag({property: 'og:url', content: url});
-    this.meta.updateTag({property: 'og:image', content: image});
-    this.meta.updateTag({property: 'og:image:width', content: '1280'});
-    this.meta.updateTag({property: 'og:image:height', content: '692'});
-    // this.meta.updateTag({property: 'og:description', content: 'description'});
+    this.meta.updateTag({property: 'og:type', content: 'website'});
+    this.meta.updateTag({property: 'og:title', content: title});
+    this.meta.updateTag({property: 'og:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
+    this.meta.updateTag({property: 'og:description', content: 'description'});
   }
 }
