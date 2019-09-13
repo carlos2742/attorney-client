@@ -55,6 +55,8 @@ export class PortalService {
   private createOpenGraphMetaTags(title, image) {
     this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({property: 'og:image', content: image});
+    this.meta.updateTag({property: 'og:image:width', content: '640'});
+    this.meta.updateTag({property: 'og:image:height', content: '442'});
     // this.meta.updateTag({property: 'og:description', content: 'description'});
   }
 }
