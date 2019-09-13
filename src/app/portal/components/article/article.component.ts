@@ -4,14 +4,13 @@ import {BlogService} from '../../../shared/services/blog/blog.service';
 import {Store} from '@ngrx/store';
 import {CommonState} from '../../../shared/store/reducers/common.reducers';
 import * as CommonSelector from '../../../shared/store/selectors/common.selectors';
-import {isNullOrUndefined} from 'util';
 import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalActions from '../../store/actions/portal.actions';
 import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
-import {Meta, Title} from '@angular/platform-browser';
 import {NgbModal, NgbModalOptions, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
+import {PortalService} from '../../services/portal/portal.service';
 
 
 @Component({
@@ -33,8 +32,8 @@ export class ArticleComponent implements OnInit {
 
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
-              private localize: LocalizeRouterService,  private meta: Meta, private titleService: Title,
-              private modalService: NgbModal, private fb: FormBuilder, private location: Location) {
+              private localize: LocalizeRouterService, private modalService: NgbModal,
+              private portal: PortalService, private fb: FormBuilder, private location: Location) {
 
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'article'}));
     this.sending = false;
@@ -60,8 +59,8 @@ export class ArticleComponent implements OnInit {
       response => {
         this.article = response;
         const keywords = this.article.tags.map(item => item.name).join(', ');
-        this.titleService.setTitle(this.article.title[this.currentLang]);
-        this.meta.updateTag({name: 'keywords', content: keywords});
+
+        this.portal.addSocialNetworksMetaTags(this.article.title, this.article.image_id, keywords);
 
         const route = this.localize.translateRoute('article');
         this.location.replaceState(`${this.currentLang}/portal/${route}/${this.article.permalinks[this.currentLang]}`);
