@@ -4,13 +4,15 @@ import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalSelector from '../../store/selectors/portal.selectors';
 import {isNullOrUndefined} from 'util';
 import {Meta, Title} from '@angular/platform-browser';
+import {Location} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortalService {
 
-  constructor(private store: Store<PortalState>, private meta: Meta, private titleService: Title) { }
+  constructor(private store: Store<PortalState>, private meta: Meta, private titleService: Title,
+              private location: Location) { }
 
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedMenuItem).subscribe(select => {
@@ -53,10 +55,13 @@ export class PortalService {
 
   /* create meta tags for facebook and linkedin*/
   private createOpenGraphMetaTags(title, image) {
+    const url = `https://www.ymorejonattorney.com${this.location.path()}`;
     this.meta.updateTag({property: 'og:title', content: title});
+    this.meta.updateTag({property: 'og:type', content: 'website'});
+    this.meta.updateTag({property: 'og:url', content: url});
     this.meta.updateTag({property: 'og:image', content: image});
-    this.meta.updateTag({property: 'og:image:width', content: '640'});
-    this.meta.updateTag({property: 'og:image:height', content: '442'});
+    this.meta.updateTag({property: 'og:image:width', content: '1280'});
+    this.meta.updateTag({property: 'og:image:height', content: '692'});
     // this.meta.updateTag({property: 'og:description', content: 'description'});
   }
 }
