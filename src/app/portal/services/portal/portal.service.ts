@@ -43,14 +43,15 @@ export class PortalService {
   addSocialNetworksMetaTags(title, image, keywords) {
     const imageUrl = `https://drive.google.com/uc?export=view&id=${image}`;
     this.addPortalMetaTags(title, keywords);
-    // this.createTwitterMetaTag(title, imageUrl);
+    this.createTwitterMetaTag(title, imageUrl);
     this.createOpenGraphMetaTags(title, imageUrl);
   }
 
   private createTwitterMetaTag(title, image) {
+    this.meta.updateTag({name: 'twitter:card', content: 'summary_large_image'});
     this.meta.updateTag({name: 'twitter:title', content: title});
+    this.meta.updateTag({name: 'twitter:description', content: 'description'});
     this.meta.updateTag({name: 'twitter:image', content: image});
-    // this.meta.updateTag({name: 'twitter:description', content: 'description'});
   }
 
   /* create meta tags for facebook and linkedin*/
