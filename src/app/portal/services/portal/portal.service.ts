@@ -51,7 +51,6 @@ export class PortalService {
     this.meta.updateTag({name: 'twitter:card', content: 'summary_large_image'});
     this.meta.updateTag({name: 'twitter:site', content: '@Attorney'});
     this.meta.updateTag({name: 'twitter:title', content: title});
-    this.meta.updateTag({name: 'twitter:description', content: 'description'});
     this.meta.updateTag({name: 'twitter:image', content: image});
   }
 
@@ -63,6 +62,6 @@ export class PortalService {
     this.meta.updateTag({property: 'og:url', content: url});
     this.meta.updateTag({property: 'og:description', content: 'description'});
     this.meta.updateTag({property: 'og:type', content: 'article'});
-    this.meta.updateTag({property: 'og:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
+    this.meta.updateTag({property: 'og:image', content: image});
   }
 }

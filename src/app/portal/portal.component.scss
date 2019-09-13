@@ -1,4 +1,7 @@
 @import "../app.component";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
 
 .bg-dark{
   background-color: $dark_color !important;
