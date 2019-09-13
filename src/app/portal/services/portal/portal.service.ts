@@ -43,12 +43,13 @@ export class PortalService {
   addSocialNetworksMetaTags(title, image, keywords) {
     const imageUrl = `https://drive.google.com/uc?export=view&id=${image}`;
     this.addPortalMetaTags(title, keywords);
-    this.createTwitterMetaTag(title, imageUrl);
     this.createOpenGraphMetaTags(title, imageUrl);
+    this.createTwitterMetaTag(title, imageUrl);
   }
 
   private createTwitterMetaTag(title, image) {
     this.meta.updateTag({name: 'twitter:card', content: 'summary_large_image'});
+    this.meta.updateTag({name: 'twitter:site', content: '@Attorney'});
     this.meta.updateTag({name: 'twitter:title', content: title});
     this.meta.updateTag({name: 'twitter:description', content: 'description'});
     this.meta.updateTag({name: 'twitter:image', content: image});
@@ -57,10 +58,11 @@ export class PortalService {
   /* create meta tags for facebook and linkedin*/
   private createOpenGraphMetaTags(title, image) {
     const url = `https://www.ymorejonattorney.com${this.location.path()}`;
-    this.meta.updateTag({property: 'og:url', content: url});
-    this.meta.updateTag({property: 'og:type', content: 'website'});
     this.meta.updateTag({property: 'og:title', content: title});
+    this.meta.updateTag({property: 'og:site_name', content: 'Attorney'});
+    this.meta.updateTag({property: 'og:url', content: url});
     this.meta.updateTag({property: 'og:description', content: 'description'});
+    this.meta.updateTag({property: 'og:type', content: 'article'});
     this.meta.updateTag({property: 'og:image', content: 'https://www.truecodex.com/assets/images/sociallogo.jpg'});
   }
 }
