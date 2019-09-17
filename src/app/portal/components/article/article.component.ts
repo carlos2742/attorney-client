@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
 
   public sending: boolean;
   public commentSent: boolean;
-  public loading: boolean;
+  public dataLoaded: boolean;
 
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
@@ -38,7 +38,7 @@ export class ArticleComponent implements OnInit {
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'article'}));
     this.sending = false;
     this.commentSent = false;
-    this.loading = false;
+    this.dataLoaded = false;
   }
 
   ngOnInit() {
@@ -56,7 +56,7 @@ export class ArticleComponent implements OnInit {
   }
 
   private getArticle(permalink) {
-    this.loading = true;
+    this.dataLoaded = false;
     this.blog.article(permalink, this.currentLang).subscribe(
       response => {
         this.article = response;
@@ -67,7 +67,7 @@ export class ArticleComponent implements OnInit {
         const route = this.localize.translateRoute('article');
         this.location.replaceState(`${this.currentLang}/portal/${route}/${this.article.permalinks[this.currentLang]}`);
 
-        this.loading = false;
+        this.dataLoaded = true;
 
         this.blog.commentsList(this.article.id).subscribe(
           commentResponse => {

@@ -16,7 +16,11 @@ export class BlogComponent implements OnInit {
   public articleGroup;
   public currentLang;
 
+  public dataLoaded: boolean;
+
   constructor(private blog: BlogService, private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
+
+    this.dataLoaded = false;
 
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
@@ -28,8 +32,10 @@ export class BlogComponent implements OnInit {
   ngOnInit() {}
 
   private getArticles() {
+    this.dataLoaded = false;
     this.blog.articleList(this.currentLang).subscribe(response => {
       this.articleGroup = this.mapResponse(response);
+      this.dataLoaded = true;
     });
   }
 
