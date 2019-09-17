@@ -5,7 +5,6 @@ import {Store} from '@ngrx/store';
 import {CommonState} from '../../../shared/store/reducers/common.reducers';
 import * as PortalActions from '../../store/actions/portal.actions';
 import {PortalState} from '../../store/reducers/portal.reducers';
-import * as PortalSelectors from '../../store/selectors/portal.selectors';
 
 @Component({
   selector: 'app-blog',
