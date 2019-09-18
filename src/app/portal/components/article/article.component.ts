@@ -12,7 +12,6 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {PortalService} from '../../services/portal/portal.service';
 
-
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -29,6 +28,7 @@ export class ArticleComponent implements OnInit {
 
   public sending: boolean;
   public commentSent: boolean;
+  public dataLoaded: boolean;
 
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
@@ -38,6 +38,7 @@ export class ArticleComponent implements OnInit {
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'article'}));
     this.sending = false;
     this.commentSent = false;
+    this.dataLoaded = false;
   }
 
   ngOnInit() {
@@ -55,6 +56,7 @@ export class ArticleComponent implements OnInit {
   }
 
   private getArticle(permalink) {
+    this.dataLoaded = false;
     this.blog.article(permalink, this.currentLang).subscribe(
       response => {
         this.article = response;
@@ -64,6 +66,8 @@ export class ArticleComponent implements OnInit {
 
         const route = this.localize.translateRoute('article');
         this.location.replaceState(`${this.currentLang}/portal/${route}/${this.article.permalinks[this.currentLang]}`);
+
+        this.dataLoaded = true;
 
         this.blog.commentsList(this.article.id).subscribe(
           commentResponse => {

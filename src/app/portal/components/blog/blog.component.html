@@ -5,7 +5,7 @@
       <div class="decorator pt-1"></div>
     </div>
   </div>
-  <div class="mb-5 group-container">
+  <div class="mb-5 group-container" *ngIf="dataLoaded; else loading">
     <ng-container *ngFor="let group of articleGroup" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
   </div>
 </div>
@@ -34,4 +34,10 @@
       </div>
     </div>
   </a>
+</ng-template>
+
+<ng-template #loading>
+  <div class="loading-container text-center mt-5 mb-5">
+    <img src="assets/images/loading.gif" alt="">
+  </div>
 </ng-template>

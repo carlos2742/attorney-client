@@ -1,27 +1,35 @@
-<div class="img-container">
-  <img *ngIf="article" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
-</div>
-<div class="container mb-4">
-  <div *ngIf="article" class="article-card pt-4">
-    <div class="title text-center text-lg-left pb-4">{{article.title}}</div>
-    <div class="header d-flex pb-5 pr-3 pl-3 pr-lg-4 pl-lg-4">
-      <div class="group-decorator flex-grow-1"></div>
-      <div class="ml-4 title">{{dateFilter(article.updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
+<div *ngIf="dataLoaded; else loadingTemplate">
+  <div class="img-container">
+    <img *ngIf="article" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+  </div>
+  <div class="container mb-4">
+    <div *ngIf="article" class="article-card pt-4">
+      <div class="title text-center text-lg-left pb-4">{{article.title}}</div>
+      <div class="header d-flex pb-5 pr-3 pl-3 pr-lg-4 pl-lg-4">
+        <div class="group-decorator flex-grow-1"></div>
+        <div class="ml-4 title">{{dateFilter(article.updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
+      </div>
+      <div class="content pr-3 pl-3 pr-lg-4 pl-lg-4" [innerHTML]="article.content"></div>
     </div>
-    <div class="content pr-3 pl-3 pr-lg-4 pl-lg-4" [innerHTML]="article.content"></div>
-  </div>
 
-  <div class="text-center pb-4 pt-3 comment-action-container">
-    <button *ngIf="!commentSent" (click)="openModal(commentFormTemplate)" class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button>
-    <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
-  </div>
+    <div class="text-center pb-4 pt-3 comment-action-container">
+      <button *ngIf="!commentSent" (click)="openModal(commentFormTemplate)" class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button>
+      <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
+    </div>
 
-  <div class="tag-list pt-3 pb-3" *ngIf="article">
-    <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>
-  </div>
+    <div class="tag-list pt-3 pb-3" *ngIf="article">
+      <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>
+    </div>
 
-  <ng-container *ngIf="comments && comments.length > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: comments}"></ng-container>
+    <ng-container *ngIf="comments && comments.length > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: comments}"></ng-container>
+  </div>
 </div>
+
+<ng-template #loadingTemplate>
+  <div class="loading-container text-center mt-5 mb-5">
+    <img src="assets/images/loading.gif" alt="">
+  </div>
+</ng-template>
 
 <ng-template #commentFormTemplate let-r>
   <div class="form-container pr-4 pl-4 pt-3 pb-3">
