@@ -12,6 +12,18 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {PortalService} from '../../services/portal/portal.service';
 
+interface Comment {
+  id: number;
+  name: string;
+  email: string;
+  content: string;
+}
+
+interface Comments {
+  pages: number;
+  comments: Array<Comment>;
+}
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -20,7 +32,7 @@ import {PortalService} from '../../services/portal/portal.service';
 export class ArticleComponent implements OnInit {
 
   public article;
-  public comments;
+  public comments: Array<Comment>;
   public currentLang;
 
   private modalRef: NgbModalRef;
@@ -70,8 +82,8 @@ export class ArticleComponent implements OnInit {
         this.dataLoaded = true;
 
         this.blog.commentsList(this.article.id).subscribe(
-          commentResponse => {
-            this.comments = commentResponse;
+          (commentResponse: Comments) => {
+            this.comments = commentResponse.comments;
           });
       });
   }

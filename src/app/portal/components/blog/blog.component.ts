@@ -34,7 +34,7 @@ export class BlogComponent implements OnInit {
   private getArticles() {
     this.dataLoaded = false;
     this.blog.articleList(this.currentLang).subscribe(response => {
-      this.articleGroup = this.mapResponse(response);
+      this.articleGroup = this.mapResponse(response['groups']);
       this.dataLoaded = true;
     });
   }
