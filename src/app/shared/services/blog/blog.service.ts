@@ -25,8 +25,8 @@ export class BlogService {
     return this.http.get(url);
   }
 
-  public commentsList(articleId) {
-    const url = `${this.articlesResources}${articleId}/comments`;
+  public commentsList(articleId, page = 1) {
+    const url = `${this.articlesResources}${articleId}/comments/${page}`;
     return this.http.get(url);
   }
 

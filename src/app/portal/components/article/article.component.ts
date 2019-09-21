@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BlogService} from '../../../shared/services/blog/blog.service';
 import {Store} from '@ngrx/store';
@@ -6,21 +6,17 @@ import {CommonState} from '../../../shared/store/reducers/common.reducers';
 import * as CommonSelector from '../../../shared/store/selectors/common.selectors';
 import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalActions from '../../store/actions/portal.actions';
+import * as PortalSelectors from '../../store/selectors/portal.selectors';
 import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
 import {NgbModal, NgbModalOptions, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {PortalService} from '../../services/portal/portal.service';
+import {ENTITIES} from '../../helpers/pagination/pagination.component';
+import {Observable} from 'rxjs';
 
-interface Comment {
-  id: number;
-  name: string;
-  email: string;
-  content: string;
-}
-
-interface Comments {
-  pages: number;
+interface CResponse {
+  total: number;
   comments: Array<Comment>;
 }
 
@@ -32,8 +28,10 @@ interface Comments {
 export class ArticleComponent implements OnInit {
 
   public article;
-  public comments: Array<Comment>;
+  public comments$: Observable<any>;
   public currentLang;
+
+  public paginationEntity: ENTITIES;
 
   private modalRef: NgbModalRef;
   public commentForm;
@@ -51,6 +49,9 @@ export class ArticleComponent implements OnInit {
     this.sending = false;
     this.commentSent = false;
     this.dataLoaded = false;
+    this.paginationEntity = ENTITIES.COMMENT;
+
+    this.comments$ = this.portalStore.select(PortalSelectors.selectComments);
   }
 
   ngOnInit() {
@@ -81,10 +82,12 @@ export class ArticleComponent implements OnInit {
 
         this.dataLoaded = true;
 
-        this.blog.commentsList(this.article.id).subscribe(
-          (commentResponse: Comments) => {
-            this.comments = commentResponse.comments;
-          });
+        this.portalStore.dispatch(new PortalActions.LoadComments({articleId: this.article.id, page: 1}));
+
+        // this.blog.commentsList(this.article.id).subscribe(
+        //   (cresponse: CResponse) => {
+        //     this.cresponse = cresponse;
+        //   });
       });
   }
 

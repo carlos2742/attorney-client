@@ -1,4 +1,5 @@
 import * as Portal from '../actions/portal.actions';
+import * as PortalModels from '../../../models/portal.model';
 
 export interface PortalState {
   menuItem: string;
@@ -6,6 +7,23 @@ export interface PortalState {
   form: {
     sending: boolean;
     sent: boolean;
+  };
+  articles: {
+    loading: boolean;
+    loaded: boolean;
+    data: Array<PortalModels.Article>
+  };
+  article: {
+    loading: boolean;
+    loaded: boolean;
+    data: any;
+    comments: {
+      loading: boolean;
+      loaded: boolean;
+      data: Array<PortalModels.Comment>;
+      total: number;
+      error: string;
+    }
   };
 }
 
@@ -15,6 +33,23 @@ export const initialState: PortalState = {
   form: {
     sending: false,
     sent: false,
+  },
+  articles: {
+    loading: false,
+    loaded: false,
+    data: []
+  },
+  article: {
+    loading: false,
+    loaded: false,
+    data: null,
+    comments: {
+      loading: false,
+      loaded: false,
+      data: [],
+      total: 0,
+      error: ''
+    }
   }
 };
 
@@ -58,6 +93,53 @@ export function reducer(
         form: {
           sending: false,
           sent: true,
+        }
+      };
+    }
+    case Portal.ActionTypes.LoadComments: {
+      console.log(Portal.ActionTypes.LoadComments);
+      return {
+        ...state,
+        article: {
+          ...state.article,
+          comments: {
+            loading: true,
+            loaded: false,
+            data: [],
+            total: 0,
+            error: ''
+          }
+        }
+      };
+    }
+    case Portal.ActionTypes.LoadCommentsSuccess: {
+      console.log(Portal.ActionTypes.LoadCommentsSuccess);
+      return {
+        ...state,
+        article: {
+          ...state.article,
+          comments: {
+            loading: false,
+            loaded: true,
+            data: action.payload.comments,
+            total: action.payload.total,
+            error: ''
+          }
+        }
+      };
+    }
+    case Portal.ActionTypes.LoadCommentsFail: {
+      console.log(Portal.ActionTypes.LoadCommentsFail);
+      return {
+        ...state,
+        article: {
+          ...state.article,
+          comments: {
+            ...state.article.comments,
+            loading: false,
+            loaded: true,
+            error: action.payload.error
+          }
         }
       };
     }

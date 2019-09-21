@@ -23,6 +23,7 @@ import { LanguageSelectorComponent } from './layouts/header/navbar/language-sele
 import {TranslateModule} from '@ngx-translate/core';
 import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/article/article.component';
+import { PaginationComponent } from './helpers/pagination/pagination.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ArticleComponent } from './components/article/article.component';
     FrequentsAnswersQuestionsComponent,
     LanguageSelectorComponent,
     BlogComponent,
-    ArticleComponent
+    ArticleComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
