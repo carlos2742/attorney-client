@@ -7,10 +7,18 @@ export const selectedMenuItem = createSelector(fromPortal, (state: PortalState) 
 export const showSubHeader = createSelector(fromPortal, (state: PortalState) => state.showSubHeader);
 export const selectFormState = createSelector(fromPortal, (state: PortalState) => state.form);
 
-export const selectArticle = createSelector(fromPortal, (state: PortalState) => state.article);
+const fromArticle = createSelector(fromPortal, (state: PortalState) => state.article);
+export const isArticleLoading = createSelector(fromArticle, (article) => article.loading);
+export const selectArticle = createSelector(fromArticle, (article) => article.data);
 
-const fromComments = createSelector(selectArticle, (article) => article.comments);
-export const isCommentsLoading = createSelector(fromComments, (comments) => comments.loading);
+const fromArticles = createSelector(fromPortal, (state: PortalState) => state.articles);
+export const areArticlesLoading = createSelector(fromArticles, (articles) => articles.loading);
+export const selectArticles = createSelector(fromArticles, (articles) => {
+  return {total: articles.total, data: articles.data};
+});
+
+const fromComments = createSelector(fromArticle, (article) => article.comments);
+export const areCommentsLoading = createSelector(fromComments, (comments) => comments.loading);
 export const selectComments = createSelector(fromComments, (comments) => {
   return {total: comments.total, data: comments.data};
 });

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {PortalState} from '../../store/reducers/portal.reducers';
+import * as PortalActions from '../../store/actions/portal.actions';
 
 export enum ENTITIES {
   ARTICLE = 'article',
@@ -18,6 +19,7 @@ export class PaginationComponent implements OnInit {
   @Input() collectionSize: number;
   @Input() entity: ENTITIES;
   @Input() params: any;
+  @Input() separator: boolean;
 
   boundaryLinks: boolean;
   maxSize: number;
@@ -30,8 +32,15 @@ export class PaginationComponent implements OnInit {
   ngOnInit() {
   }
 
-  public pageChange(payload) {
-    console.log(payload);
+  public pageChange(page) {
+    if (this.entity === ENTITIES.COMMENT) {
+      const articleId = this.params.id;
+      this.portalStore.dispatch(new PortalActions.LoadComments({articleId, page}));
+    } else {
+      const lang = this.params.lang;
+      const filter = this.params.filter;
+      this.portalStore.dispatch(new PortalActions.LoadArticles({lang, filter, page}));
+    }
   }
 
 }

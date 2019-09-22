@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BlogService} from '../../../shared/services/blog/blog.service';
 import {Store} from '@ngrx/store';
@@ -14,31 +14,31 @@ import {Location} from '@angular/common';
 import {PortalService} from '../../services/portal/portal.service';
 import {ENTITIES} from '../../helpers/pagination/pagination.component';
 import {Observable} from 'rxjs';
-
-interface CResponse {
-  total: number;
-  comments: Array<Comment>;
-}
+import {Article} from '../../../models/portal.model';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnDestroy {
 
-  public article;
+  public article$: Observable<any>;
   public comments$: Observable<any>;
   public currentLang;
 
   public paginationEntity: ENTITIES;
-
-  private modalRef: NgbModalRef;
   public commentForm;
 
   public sending: boolean;
   public commentSent: boolean;
-  public dataLoaded: boolean;
+  public articleLoading$: Observable<boolean>;
+  public commentsLoading$: Observable<boolean>;
+
+  private articleId: number;
+  private modalRef: NgbModalRef;
+
+  private subscriptions;
 
   constructor(private active: ActivatedRoute, private router: Router, private blog: BlogService,
               private commonStore: Store<CommonState>, private portalStore: Store<PortalState>,
@@ -46,20 +46,41 @@ export class ArticleComponent implements OnInit {
               private portal: PortalService, private fb: FormBuilder, private location: Location) {
 
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'article'}));
+
+    this.subscriptions = [];
+
+    this.articleLoading$ = this.portalStore.select(PortalSelectors.isArticleLoading);
+    this.article$ = this.portalStore.select(PortalSelectors.selectArticle);
+    this.commentsLoading$ = this.portalStore.select(PortalSelectors.areCommentsLoading);
+    this.comments$ = this.portalStore.select(PortalSelectors.selectComments);
+
+    const subscription = this.article$.subscribe((article: Article) => {
+      if (!article) {return;}
+
+      this.articleId = article.id;
+      const keywords = article.tags.map(item => item.name).join(', ');
+
+      this.portal.addSocialNetworksMetaTags(article.title, article.image_id, keywords);
+
+      const route = this.localize.translateRoute('article');
+      this.location.replaceState(`${this.currentLang}/portal/${route}/${article.permalinks[this.currentLang]}`);
+    });
+
+    this.subscriptions.push(subscription);
+
     this.sending = false;
     this.commentSent = false;
-    this.dataLoaded = false;
     this.paginationEntity = ENTITIES.COMMENT;
-
-    this.comments$ = this.portalStore.select(PortalSelectors.selectComments);
   }
 
   ngOnInit() {
-    this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
+    const subscription = this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe((lang) => {
       this.currentLang = lang;
       const permalink = this.active.snapshot.params.permalink;
-      this.getArticle(permalink);
+      this.portalStore.dispatch(new PortalActions.LoadArticle({permalink, lang: this.currentLang}));
     });
+
+    this.subscriptions.push(subscription);
 
     this.commentForm = this.fb.group({
       name: new FormControl('', [Validators.required]),
@@ -68,27 +89,8 @@ export class ArticleComponent implements OnInit {
     });
   }
 
-  private getArticle(permalink) {
-    this.dataLoaded = false;
-    this.blog.article(permalink, this.currentLang).subscribe(
-      response => {
-        this.article = response;
-        const keywords = this.article.tags.map(item => item.name).join(', ');
-
-        this.portal.addSocialNetworksMetaTags(this.article.title, this.article.image_id, keywords);
-
-        const route = this.localize.translateRoute('article');
-        this.location.replaceState(`${this.currentLang}/portal/${route}/${this.article.permalinks[this.currentLang]}`);
-
-        this.dataLoaded = true;
-
-        this.portalStore.dispatch(new PortalActions.LoadComments({articleId: this.article.id, page: 1}));
-
-        // this.blog.commentsList(this.article.id).subscribe(
-        //   (cresponse: CResponse) => {
-        //     this.cresponse = cresponse;
-        //   });
-      });
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subs => subs.unsubscribe());
   }
 
   public dateFilter(date) {
@@ -118,7 +120,7 @@ export class ArticleComponent implements OnInit {
     }
 
     this.sending = true;
-    this.blog.createComment(this.article.id, this.commentForm.value).subscribe(
+    this.blog.createComment(this.articleId, this.commentForm.value).subscribe(
       response => {
         this.sending = false;
         this.commentSent = true;

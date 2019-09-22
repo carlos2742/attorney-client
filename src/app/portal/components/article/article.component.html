@@ -1,15 +1,15 @@
-<div *ngIf="dataLoaded; else loadingTemplate">
+<div *ngIf="!(articleLoading$ | async); else loadingTemplate">
   <div class="img-container">
-    <img *ngIf="article" src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+    <img *ngIf="article$ | async" src="https://drive.google.com/uc?export=view&id={{(article$ | async).image_id}}" alt="">
   </div>
   <div class="container mb-4">
-    <div *ngIf="article" class="article-card pt-4">
-      <div class="title text-center text-lg-left pb-4">{{article.title}}</div>
-      <div class="header d-flex pb-5 pr-3 pl-3 pr-lg-4 pl-lg-4">
+    <div *ngIf="article$ | async" class="article-card pt-4">
+      <div class="title text-center pr-5 pl-5  pr-lg-4 pl-lg-4 text-lg-left pb-4">{{(article$ | async).title}}</div>
+      <div class="header d-flex pb-5 pr-5 pl-5 pr-lg-4 pl-lg-4">
         <div class="group-decorator flex-grow-1"></div>
-        <div class="ml-4 title">{{dateFilter(article.updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
+        <div class="ml-4 title">{{dateFilter((article$ | async).updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
       </div>
-      <div class="content pr-3 pl-3 pr-lg-4 pl-lg-4" [innerHTML]="article.content"></div>
+      <div class="content pr-5 pl-5 pr-lg-4 pl-lg-4" [innerHTML]="(article$ | async).content"></div>
     </div>
 
     <div class="text-center pb-4 pt-3 comment-action-container">
@@ -17,11 +17,14 @@
       <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
     </div>
 
-    <div class="tag-list pt-3 pb-3" *ngIf="article">
-      <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>
+    <div class="tag-list pt-3 pb-3" *ngIf="(article$ | async)">
+      <div class="tag mr-2 mb-2" *ngFor="let tag of (article$ | async).tags">{{tag.name}}</div>
     </div>
 
-    <ng-container *ngIf="(comments$ | async).total > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: (comments$ | async).data , total: (comments$ | async).total}"></ng-container>
+    <div *ngIf="!(commentsLoading$ | async); else loadingTemplate">
+      <ng-container *ngIf="(comments$ | async).total > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: (comments$ | async).data}"></ng-container>
+    </div>
+    <app-pagination [collectionSize]="(comments$ | async).total" [entity]="paginationEntity" [params]="{id: (article$ | async).id}" [pageSize]="3"></app-pagination>
   </div>
 </div>
 
@@ -58,12 +61,11 @@
   </div>
 </ng-template>
 
-<ng-template #commentContainer let-comments="comments" let-total="total">
+<ng-template #commentContainer let-comments="comments">
   <app-title [title]="'PORTAL.BLOG.COMMENTS' | translate"></app-title>
   <div class="row">
     <ng-container *ngFor="let comment of comments" [ngTemplateOutlet]="commentTemplate" [ngTemplateOutletContext]="{comment: comment}"></ng-container>
   </div>
-  <app-pagination [collectionSize]="total" [entity]="paginationEntity" [params]="{id: article.id}" [pageSize]="3"></app-pagination>
 </ng-template>
 
 <ng-template #commentTemplate let-comment="comment">

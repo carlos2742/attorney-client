@@ -15,8 +15,8 @@ export class BlogService {
     this.commentsResources = `${this.common.apiUrl}comments/`;
   }
 
-  public articleList(lang, filter = {}) {
-    const url = `${this.articlesResources + lang}/search`;
+  public articleList(lang, filter = {}, page = 1) {
+    const url = `${this.articlesResources + lang}/search/${page}`;
     return this.http.post(url, filter);
   }
 
