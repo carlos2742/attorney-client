@@ -40,6 +40,36 @@ ngb-accordion{
   }
 }
 
+ngb-pagination{
+  .pagination{
+    .page-item{
+      &.active{
+        .page-link{
+          background-color: #D8A972;
+          color: white;
+        }
+      }
+      .page-link{
+        color: #ababab;
+        font-family: $Monserrat;
+        font-weight: bold;
+        border: none;
+        margin: 0 10px;
+        font-size: 0.9em;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 50%;
+        &:focus{
+          box-shadow: 0 0 0 0.2rem rgba(216, 169, 114, 0.25);
+        }
+      }
+    }
+  }
+}
+
 .modal-content{
   background-color: transparent !important;
 }
