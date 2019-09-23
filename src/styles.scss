@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
 $gold_color: #d8a972;
 $dark_color: #161719;
@@ -34,6 +36,36 @@ ngb-accordion{
     .card-body, .card-header, .card-header button{
       padding-left: 0;
       padding-right: 0;
+    }
+  }
+}
+
+ngb-pagination{
+  .pagination{
+    .page-item{
+      &.active{
+        .page-link{
+          background-color: #D8A972;
+          color: white;
+        }
+      }
+      .page-link{
+        color: #ababab;
+        font-family: $Monserrat;
+        font-weight: bold;
+        border: none;
+        margin: 0 10px;
+        font-size: 0.9em;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 50%;
+        &:focus{
+          box-shadow: 0 0 0 0.2rem rgba(216, 169, 114, 0.25);
+        }
+      }
     }
   }
 }

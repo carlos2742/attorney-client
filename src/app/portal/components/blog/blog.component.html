@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container mb-4">
   <div id="blog">
     <div class="pt-4 pb-3">
       <div class="title">{{'PORTAL.BLOG.TITLE' | translate}}</div>
       <div class="decorator pt-1"></div>
     </div>
   </div>
-  <div class="mb-5 group-container" *ngIf="dataLoaded; else loading">
-    <ng-container *ngFor="let group of articleGroup" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
+  <div class="mb-5 group-container" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
+    <ng-container *ngFor="let group of (articleGroup$ | async).data" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
   </div>
+  <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="8"></app-pagination>
 </div>
 
 
@@ -36,7 +37,7 @@
   </a>
 </ng-template>
 
-<ng-template #loading>
+<ng-template #loadingTemplate>
   <div class="loading-container text-center mt-5 mb-5">
     <img src="assets/images/loading.gif" alt="">
   </div>
