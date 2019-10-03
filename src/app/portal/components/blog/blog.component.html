@@ -5,7 +5,7 @@
       <div class="decorator pt-1"></div>
     </div>
   </div>
-  <div class="mb-5 group-container" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
+  <div class="mb-5 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
     <ng-container *ngFor="let group of (articleGroup$ | async).data" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
   </div>
   <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="8"></app-pagination>
@@ -18,27 +18,60 @@
       <div class="title">{{dateFilter(group.date) | date: "MMM , yyyy" | uppercase}}</div>
       <div class="group-decorator flex-grow-1 ml-4"></div>
     </div>
-    <ng-container *ngFor="let article of group.article_list" [ngTemplateOutlet]="articleTemplate" [ngTemplateOutletContext]="{article: article}"></ng-container>
+    <div class="row">
+      <ng-container *ngFor="let article of group.article_list" [ngTemplateOutlet]="articleTemplate" [ngTemplateOutletContext]="{article: article}"></ng-container>
+    </div>
   </div>
 </ng-template>
 
 <ng-template #articleTemplate let-article="article">
-  <a href="" [routerLink]="['../article', article.permalinks[currentLang]] | localize" class="article-card d-flex flex-column flex-md-row mt-3 mb-4">
-    <div class="mr-md-3 img-container" *ngIf="article.image_id!==''">
-      <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
-    </div>
-    <div>
-      <div class="title mt-2 mt-md-0">{{article.title | uppercase}}</div>
-      <!--<div class="category mt-1">{{article.practice_area.name | uppercase}}</div>-->
-      <div class="tag-list mt-3">
-        <div class="tag mr-2 mb-2" *ngFor="let tag of article.tags">{{tag.name}}</div>
+  <a href="" [routerLink]="['../article', article.permalinks[currentLang]] | localize" title="{{article.title}}" class="article-card d-flex flex-column mt-3 mb-4 col-md-4">
+    <div class="article-body">
+      <div class="title mb-3">{{article.title}}</div>
+      <div class="img-container" *ngIf="article.image_id!==''">
+        <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+      </div>
+      <div>
+        <div class="summary mt-3" [innerHTML]="article.summary"></div>
+        <div class="tag-list mt-3">
+          <div class="tag mr-1 mb-2" *ngFor="let tag of article.main_tags">{{tag.name}}</div>
+        </div>
       </div>
     </div>
   </a>
 </ng-template>
 
 <ng-template #loadingTemplate>
-  <div class="loading-container text-center mt-5 mb-5">
-    <img src="assets/images/loading.gif" alt="">
+  <div class="mb-5 group-container mt-3">
+    <div class="group mb-2">
+      <div class="header d-flex align-items-center">
+        <div class="title"></div>
+        <div class="group-decorator flex-grow-1 ml-4"></div>
+      </div>
+      <div class="row">
+        <div *ngFor="let item of cardTemplates" class="article-card d-flex flex-column mt-3 mb-4 col-md-4">
+          <div class="article-body">
+            <div class="title mb-3"></div>
+            <div class="img-container">
+              <img class="border-bottom-0" src="assets/images/img_template.png" alt="">
+            </div>
+            <div>
+              <div class="summary mt-3">
+                <div class="mb-1"></div>
+                <div class="mb-1"></div>
+                <div class="mb-1"></div>
+                <div class="mb-1"></div>
+              </div>
+              <div class="tag-list mt-3">
+                <div class="tag mr-1 mb-2"></div>
+                <div class="tag mb-2"></div>
+                <div class="tag mr-1 mb-2"></div>
+                <div class="tag mb-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </ng-template>
