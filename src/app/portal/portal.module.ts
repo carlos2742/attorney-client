@@ -24,6 +24,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/article/article.component';
 import { PaginationComponent } from './helpers/pagination/pagination.component';
+import { LoadImageComponent } from './helpers/load-image/load-image.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PaginationComponent } from './helpers/pagination/pagination.component';
     LanguageSelectorComponent,
     BlogComponent,
     ArticleComponent,
-    PaginationComponent
+    PaginationComponent,
+    LoadImageComponent
   ],
   imports: [
     CommonModule,

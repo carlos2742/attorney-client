@@ -1,0 +1,2 @@
+<img [class.d-block]="!loaded" class="d-none w-100 template" src="assets/images/img_template.png" height="136" alt="">
+<img [class.d-none]="!loaded" src="{{imageSrc}}" class="w-100" alt="" (load)="loaded = true" >
