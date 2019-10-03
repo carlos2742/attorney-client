@@ -109,16 +109,22 @@
 }
 
 @include media-breakpoint-down(sm){
+  #blog{
+    .title{
+      font-size: 2.2em;
+    }
+  }
+
   .group-container{
     .group{
       .row{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
       }
       .article-card{
-        .img-container{
-          img{
-            width: 100%;
+        .article-body{
+          .summary{
+            font-size: 1em;
           }
         }
       }

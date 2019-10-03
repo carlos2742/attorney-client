@@ -234,7 +234,8 @@
       "SEND": "Send",
       "COMMENTARY": "Commentary",
       "COMMENT_MESSAGE":"Your comment has been sent and is pending review",
-      "COMMENTS":"Comments"
+      "COMMENTS":"Comments",
+      "SHARE": "Share in {{social}}"
     }
   }
 }
