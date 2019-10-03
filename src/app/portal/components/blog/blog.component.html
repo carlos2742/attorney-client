@@ -5,10 +5,10 @@
       <div class="decorator pt-1"></div>
     </div>
   </div>
-  <div class="mb-5 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
+  <div class="mb-4 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
     <ng-container *ngFor="let group of (articleGroup$ | async).data" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
   </div>
-  <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="8"></app-pagination>
+  <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="2"></app-pagination>
 </div>
 
 
@@ -29,7 +29,7 @@
     <div class="article-body">
       <div class="title mb-3">{{article.title}}</div>
       <div class="img-container" *ngIf="article.image_id!==''">
-        <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
+        <app-load-image [imageSrc]="'https://drive.google.com/uc?export=view&id='+article.image_id"></app-load-image>
       </div>
       <div>
         <div class="summary mt-3" [innerHTML]="article.summary"></div>
@@ -52,8 +52,8 @@
         <div *ngFor="let item of cardTemplates" class="article-card d-flex flex-column mt-3 mb-4 col-md-4">
           <div class="article-body">
             <div class="title mb-3"></div>
-            <div class="img-container">
-              <img class="border-bottom-0" src="assets/images/img_template.png" alt="">
+            <div class="img-container border-bottom-0">
+              <img class="w-100" src="assets/images/img_template.png" alt="">
             </div>
             <div>
               <div class="summary mt-3">
