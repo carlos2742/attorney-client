@@ -1,28 +1,37 @@
 <div *ngIf="!(articleLoading$ | async); else loadingTemplate">
-  <div class="img-container">
-    <img *ngIf="article$ | async" src="https://drive.google.com/uc?export=view&id={{(article$ | async).image_id}}" alt="">
-  </div>
-  <div class="container mb-4">
+  <div class="container mb-4 d-flex flex-column align-items-center">
     <div *ngIf="article$ | async" class="article-card pt-4">
-      <div class="title text-center pr-5 pl-5  pr-lg-4 pl-lg-4 text-lg-left pb-4">{{(article$ | async).title}}</div>
-      <div class="header d-flex pb-5 pr-5 pl-5 pr-lg-4 pl-lg-4">
+      <div class="title pb-4">{{(article$ | async).title}}</div>
+      <div class="img-container" *ngIf="(article$ | async).image_id !== ''">
+        <app-load-image [imageSrc]="'https://drive.google.com/uc?export=view&id='+(article$ | async).image_id"></app-load-image>
+        <!--<img *ngIf="article$ | async" src="https://drive.google.com/uc?export=view&id={{(article$ | async).image_id}}" alt="">-->
+      </div>
+      <div class="header d-flex pb-5 pt-5 align-items-center">
         <div class="group-decorator flex-grow-1"></div>
         <div class="ml-4 title">{{dateFilter((article$ | async).updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
       </div>
-      <div class="content pr-5 pl-5 pr-lg-4 pl-lg-4" [innerHTML]="(article$ | async).content"></div>
+      <div class="content" [innerHTML]="(article$ | async).content"></div>
     </div>
 
-    <div class="text-center pb-4 pt-3 comment-action-container">
-      <button *ngIf="!commentSent" (click)="openModal(commentFormTemplate)" class="comment-btn">{{'PORTAL.BLOG.COMMENT' | translate}}</button>
-      <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
+    <div class="share mb-4">
+      <div class="title"><strong>{{'PORTAL.BLOG.SHARE' | translate:{social:':'} }}</strong></div>
+      <div class="options pt-1 pb-1 pl-4 pr-4 mt-2">
+        <a target="_blank" title="{{'PORTAL.BLOG.SHARE' | translate:{social:'linkedin'} }}" class="fab fa-linkedin-in mr-4" href="https://www.linkedin.com/shareArticle?mini=true&url={{articleUrl}}"></a>
+        <a target="_blank" title="{{'PORTAL.BLOG.SHARE' | translate:{social:'facebook'} }}" class="fab fa-facebook-f mr-4" href="https://www.facebook.com/sharer/sharer.php?u={{articleUrl}}"></a>
+        <a target="_blank" title="{{'PORTAL.BLOG.SHARE' | translate:{social:'twitter'} }}" class="fab fa-twitter" href="https://twitter.com/intent/tweet?text={{articleUrl}}"></a>
+      </div>
     </div>
 
-    <div class="tag-list pt-3 pb-3" *ngIf="(article$ | async)">
-      <div class="tag mr-2 mb-2" *ngFor="let tag of (article$ | async).tags">{{tag.name}}</div>
+    <div class="tag-list pt-3 pb-3 pl-1 pr-1" *ngIf="(article$ | async)">
+      <div class="tag mr-2 mb-1 mt-1" *ngFor="let tag of (article$ | async).tags">{{tag.name}}</div>
     </div>
 
-    <div *ngIf="!(commentsLoading$ | async); else loadingTemplate">
+    <div class="w-100" *ngIf="!(commentsLoading$ | async); else loadingTemplate">
       <ng-container *ngIf="(comments$ | async).total > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: (comments$ | async).data}"></ng-container>
+    </div>
+    <div class="text-center pb-5 pt-4 comment-action-container">
+      <button *ngIf="!commentSent" (click)="openModal(commentFormTemplate)" class="comment-btn"><span class="mr-2"><i class="far fa-comment-alt"></i></span> {{'PORTAL.BLOG.COMMENT' | translate}}</button>
+      <div *ngIf="commentSent" class="comment-message p-4" >{{"PORTAL.BLOG.COMMENT_MESSAGE" | translate}}</div>
     </div>
     <app-pagination [collectionSize]="(comments$ | async).total" [entity]="paginationEntity" [params]="{id: (article$ | async).id}" [pageSize]="3"></app-pagination>
   </div>
@@ -70,29 +79,22 @@
 
 <ng-template #commentTemplate let-comment="comment">
   <div class="col-lg-4 comment-card text-center pb-4">
-    <div class="pb-5"><img src="assets/images/comment_image.png" width="200" alt=""></div>
-    <div class="name">{{ comment.name }}</div>
-    <div class="separator mt-4 mb-2"></div>
-    <div class="content" [innerHTML]="comment.content"></div>
-    <div *ngIf="comment.comments.length > 0" class="pt-5">
+    <div class="comment-body pt-3 pb-3 pl-3 pr-3 mr-lg-3 ml-lg-3">
+      <div class="name">{{ comment.name | uppercase }}</div>
+      <div class="separator mt-3 mb-2"></div>
+      <div class="content" [innerHTML]="comment.content"></div>
+    </div>
+    <div *ngIf="comment.comments.length > 0" class="pt-5 pb-4 anwsers-container">
+      <div class="title text-center mb-3">Respuesta</div>
       <ng-container *ngFor="let answer of comment.comments" [ngTemplateOutlet]="answerTemplate" [ngTemplateOutletContext]="{answer: answer}"></ng-container>
     </div>
   </div>
 </ng-template>
 
 <ng-template #answerTemplate let-answer="answer">
-  <div class="anwser-card pt-1 pb-4">
-    <div class="profile pb-3 pb-lg-0">
-      <div class="image-container">
-        <picture>
-          <source type="image/webp" srcset="assets/images/photo.webp">
-          <img width="190" class="position-absolute" src="assets/images/photo.JPG" alt="">
-        </picture>
-      </div>
-      <div class="text-center">Yahima Morejon</div>
-    </div>
-    <div class="content pt-5 pb-3 pl-4 pr-4">
-      <div class="pt-4" [innerHTML]="answer.content"></div>
+  <div class="anwser-card pt-1 pb-2">
+    <div class="content pl-4 pr-4">
+      <div [innerHTML]="answer.content"></div>
     </div>
   </div>
 </ng-template>
