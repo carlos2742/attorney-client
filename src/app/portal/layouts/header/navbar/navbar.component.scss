@@ -47,3 +47,12 @@
   }
 }
 
+
+@include media-breakpoint-down(sm){
+  .navbar{
+    .navbar-toggler{
+      padding: 8px 10px;
+    }
+  }
+}
+

@@ -132,4 +132,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
       });
   }
 
+  public get articleUrl() {
+    return escape(`https://www.ymorejonattorney.com${this.router.url}`);
+  }
+
 }
