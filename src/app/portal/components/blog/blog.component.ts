@@ -21,7 +21,7 @@ export class BlogComponent implements OnInit {
 
   public paginationEntity: ENTITIES;
 
-  public cardTemplates = new Array(3);
+  public cardTemplates = new Array(4);
 
   constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
 
