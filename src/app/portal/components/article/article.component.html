@@ -6,7 +6,7 @@
         <app-load-image [imageSrc]="'https://drive.google.com/uc?export=view&id='+(article$ | async).image_id"></app-load-image>
         <!--<img *ngIf="article$ | async" src="https://drive.google.com/uc?export=view&id={{(article$ | async).image_id}}" alt="">-->
       </div>
-      <div class="header d-flex pb-5 pt-5 align-items-center">
+      <div class="header d-flex pb-4 pb-md-5 pt-4 pt-md-5 align-items-center">
         <div class="group-decorator flex-grow-1"></div>
         <div class="ml-4 title">{{dateFilter((article$ | async).updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
       </div>
