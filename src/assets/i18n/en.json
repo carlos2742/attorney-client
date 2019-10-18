@@ -224,6 +224,10 @@
         }
       }
     },
+    "FILTERS": {
+      "SEARCH": "Search Article",
+      "FILTER": "Filter"
+    },
     "FOOTER":{
       "TITLE": "Consult us with any questions",
       "INFO":"&copy; Y. Morejon Attorney, P.A. All rights reserved. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."

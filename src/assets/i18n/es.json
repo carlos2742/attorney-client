@@ -224,6 +224,10 @@
         }
       }
     },
+    "FILTERS": {
+      "SEARCH": "Buscar Artículo",
+      "FILTER": "Filtrar"
+    },
     "FOOTER":{
       "TITLE": "Consúltenos ante cualquier duda",
       "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."

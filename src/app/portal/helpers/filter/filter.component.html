@@ -1,0 +1,31 @@
+<div [class.long]="currentLang == 'es'" class="filter-container pl-5 pr-5 pt-3" [class.show]="show">
+  <button id="show-btn" (click)="toggle()">
+    <i class="fas fa-search"></i>
+  </button>
+  <div class="filter-form-container d-flex flex-column">
+    <div class="words-filter position-relative">
+      <input type="text" class="w-100 pb-1" placeholder="{{'PORTAL.FILTERS.SEARCH' | translate}}">
+      <i class="fas fa-search position-absolute"></i>
+    </div>
+    <div class="separator"></div>
+    <div class="practice-areas-filter">
+      <div class="title">
+        {{'PORTAL.FILTERS.FILTER' | translate}}
+        <div class="border"></div>
+      </div>
+      <div class="body">
+        <div class="filter-list pt-4">
+          <button class="filter-item mb-4" *ngFor= "let item of practiceArea; let i = index" (click)="toggleItem(i)" title="{{item.title | translate}}">
+            <div class="img-container mr-5 position-relative">
+              <img [class.d-none]="item.selected" class="position-absolute" src="assets/images/filters/{{item.name}}.png" alt="">
+              <img [class.d-block]="item.selected" class="d-none position-absolute" src="assets/images/filters/{{item.name}}_selected.png" alt="">
+            </div>
+            <div class="name" [class.active]="item.selected">
+              {{item.title | translate}}
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

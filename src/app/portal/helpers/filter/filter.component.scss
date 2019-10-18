@@ -1,0 +1,118 @@
+@import "../../portal.component";
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  overflow: visible;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  overflow: visible;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+  overflow: visible;
+}
+
+.filter-container{
+  z-index: 1;
+  background-color: $dark_color;
+  height: 100%;
+  color: white;
+  position: fixed;
+  right: -568px;
+  transition: right 0.2s linear;
+  min-width: 320px;
+  &.long{
+    right: -697px;
+  }
+  &.show{
+    right: 1px;
+  }
+  #show-btn{
+    $dimensions: 70px;
+    background-color: $dark_color;
+    position: absolute;
+    left: -34px;
+    top: 25%;
+    color: #726e65;
+    padding-left: 13px;
+    width: $dimensions;
+    height: $dimensions;
+    border-radius: 50%;
+    &:focus{
+      outline: none;
+    }
+  }
+  .filter-form-container{
+    .separator{
+      border-bottom: 1px solid #726e65;
+      width: 89%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      align-self: center;
+    }
+    .words-filter{
+      input{
+        background-color: $gold_color;
+        color: white;
+        border-radius: 15px;
+        border: none;
+        font-size: 1em;
+        padding-right: 2.7em;
+        padding-left: 1em;
+        font-family: $cardif_bold_italic;
+        &:focus{
+          outline: none;
+        }
+      }
+      i{
+        right: 15px;
+        top: 7px;
+      }
+    }
+    .practice-areas-filter{
+      color: #5b5c5e;
+      .title{
+        font-family: $cardif_bold_italic;
+        font-size: 1.2em;
+        .border{
+          border-color: $gold_color !important;
+          margin-top: 0.2em;
+          width: 50px;
+        }
+      }
+      .body{
+        .filter-list{
+          .filter-item{
+            .img-container{
+              width: 29px;
+              img{
+                left: 0;
+              }
+            }
+            display: flex;
+            background-color: #0000;
+            padding: 0;
+            display: flex;
+            .name{
+              color: #5b5c5e;
+              text-transform: uppercase;
+              font-family: $Monserrat;
+              font-weight: bold;
+              font-size: 0.9em;
+              &.active{
+                color: $gold_color;
+              }
+            }
+
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
