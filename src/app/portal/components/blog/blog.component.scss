@@ -111,12 +111,14 @@
 @include media-breakpoint-down(sm){
   #blog{
     .title{
-      font-size: 2.2em;
+      font-size: 2em;
     }
   }
 
   .group-container{
     .group{
+      padding-left: 0.6em;
+      padding-right: 0.6em;
       .article-card{
         .article-body{
           .summary{
