@@ -8,7 +8,7 @@
   <div class="mb-4 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
     <ng-container *ngFor="let group of (articleGroup$ | async).data" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{group: group}"></ng-container>
   </div>
-  <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="6"></app-pagination>
+  <app-pagination [collectionSize]="(articleGroup$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [pageSize]="8"></app-pagination>
 </div>
 
 
