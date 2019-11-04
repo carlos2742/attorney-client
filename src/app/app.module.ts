@@ -38,7 +38,7 @@ export function TranslateStaticLoader(http: HttpClient, transferState: TransferS
         useFactory: TranslateStaticLoader,
         deps: [HttpClient, TransferState]
       }
-    }),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

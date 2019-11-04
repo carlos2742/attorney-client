@@ -26,7 +26,7 @@ export class CommonEffects {
     .pipe(
       ofType(CommonActions.ActionTypes.ChangeLanguage),
       map((action: CommonActions.ChangeLanguage) => action.payload),
-      switchMap(payload => this.common.changeLanguage(payload.lang, payload.route)
+      switchMap(payload => this.common.changeLanguage(payload.lang)
         .pipe(
           map(lang => new CommonActions.ChangeLanguageSuccess(lang))
         )

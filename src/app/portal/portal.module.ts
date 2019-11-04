@@ -20,6 +20,11 @@ import {reducer} from './store/reducers/portal.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {PortalEffects} from './store/effects/portal.effects';
 import { LanguageSelectorComponent } from './layouts/header/navbar/language-selector/language-selector.component';
+import {TranslateModule} from '@ngx-translate/core';
+import { BlogComponent } from './components/blog/blog.component';
+import { ArticleComponent } from './components/article/article.component';
+import { PaginationComponent } from './helpers/pagination/pagination.component';
+import { LoadImageComponent } from './helpers/load-image/load-image.component';
 
 
 @NgModule({
@@ -36,14 +41,19 @@ import { LanguageSelectorComponent } from './layouts/header/navbar/language-sele
     TitleComponent,
     InputComponent,
     FrequentsAnswersQuestionsComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    BlogComponent,
+    ArticleComponent,
+    PaginationComponent,
+    LoadImageComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     PortalRoutingModule,
     StoreModule.forFeature('portal', reducer),
-    EffectsModule.forFeature([PortalEffects])
+    EffectsModule.forFeature([PortalEffects]),
+    TranslateModule.forChild()
   ]
 })
 export class PortalModule { }

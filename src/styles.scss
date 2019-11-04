@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
 $gold_color: #d8a972;
 $dark_color: #161719;
 
+$cardif_bold: 'Cardiff Bold';
 $cardif_bold_italic: 'Cardiff Bold Italic';
 $Edwardian_Script_ITC: 'Edwardian Script ITC';
 $Roboto: 'Roboto';
@@ -36,4 +39,43 @@ ngb-accordion{
       padding-right: 0;
     }
   }
+}
+
+ngb-pagination{
+  .pagination{
+    .page-item{
+      &.active{
+        .page-link{
+          background-color: #D8A972;
+          color: white;
+        }
+      }
+      .page-link{
+        $size: 25px;
+        color: #ababab;
+        font-family: $Monserrat;
+        font-weight: bold;
+        border: none;
+        margin: 0 10px;
+        font-size: 0.9em;
+        width: $size;
+        height: $size;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 50%;
+        &:focus{
+          box-shadow: 0 0 0 0.2rem rgba(216, 169, 114, 0.25);
+        }
+        img{
+          width: $size;
+          height: $size;
+        }
+      }
+    }
+  }
+}
+
+.modal-content{
+  background-color: transparent !important;
 }
