@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularTokenService} from 'angular-token';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -9,22 +7,11 @@ import {Router} from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private tokenService: AngularTokenService, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  logout(){
-    this.tokenService.signOut().subscribe(
-      response => {
-        console.log('success');
-        console.log(response);
-        this.router.navigateByUrl('/admin/login');
-      },
-      error => {
-        console.log(error);
-      }
-    )
-  }
+
 
 }

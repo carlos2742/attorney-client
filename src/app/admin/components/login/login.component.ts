@@ -11,24 +11,30 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public form;
+  public showError: boolean;
 
   constructor(private tokenService: AngularTokenService, private router: Router, private formBuilder: FormBuilder) {
-    this.form = formBuilder.group({
+    this.showError = false;
+    this.form = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required])
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login(){
+    this.showError = false;
 
     if (this.form.invalid) {
-      Object.keys(this.form.controls).forEach(
+      Object.keys(this.form.controls).every(
         field => {
           const control = this.form.get(field);
-          control.markAsTouched({ onlySelf: true });
+          if(control.status === 'INVALID'){
+            control.markAsDirty({ onlySelf: true });
+            return false;
+          }
+          return true;
         });
       return;
     }
@@ -38,9 +44,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl(localStorage.getItem('redirectTo'));
       },
       error => {
-        //todo clean form, show error
-        this.form.reset();
         console.log(error);
+        this.showError = true;
       });
   }
 

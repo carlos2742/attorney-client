@@ -1,30 +1,16 @@
-<div class="login-container">
+<div class="login-container pt-5">
+  <img class="mb-5 mt-5" src="assets/images/logos/logo.png" alt="">
   <div class="card">
     <div class="card-body">
       <h3 class="card-title">Administración</h3>
-      <form action="" [formGroup] ="form">
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="email" class="form-control" formControlName="login" placeholder="Correo electrónico" >
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
-            </div>
-            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
-          </div>
-        </div>
-        <button (click)="login()" class="btn w-100 mt-3" type="submit">Iniciar Sesión</button>
+      <div *ngIf="showError" class="alert alert-danger mb-0" role="alert">
+        Credenciales incorrectas.
+      </div>
+      <form action="" [formGroup] ="form" (ngSubmit)="login()">
+        <app-admin-input *ngIf="form" [icon]="'fas fa-user'" [type]="'email'" [controlName]="'login'" [placeholder]="'Correo electrónico'" [tempFormGroup]="form" [field]="form.controls.login"></app-admin-input>
+        <app-admin-input *ngIf="form" [icon]="'fas fa-lock'" [type]="'password'" [controlName]="'password'" [placeholder]="'Contraseña'" [tempFormGroup]="form" [field]="form.controls.password"></app-admin-input>
+        <button class="btn w-100 mt-3" type="submit">Iniciar Sesión</button>
       </form>
     </div>
   </div>
 </div>
-
-
-<!--<button (click)="register()">register</button>-->
-<!--<button (click)="login()">login</button>-->

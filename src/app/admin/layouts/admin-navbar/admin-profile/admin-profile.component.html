@@ -1,0 +1,30 @@
+<div ngbDropdown>
+  <button  id="profile" class="navbar-action" ngbDropdownToggle>
+    <ng-container [ngTemplateOutlet]="userImage"></ng-container>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="profile">
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <ng-container [ngTemplateOutlet]="userCard"></ng-container>
+    </div>
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <span class="icon"><i class="fas fa-cogs"></i></span>
+      <span>Cuenta</span>
+    </div>
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" (click)="logout()">
+      <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+      <span>Salir</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #userImage>
+  <div class="icon-container text-center"><i class="fas fa-user"></i></div>
+</ng-template>
+
+<ng-template #userCard>
+  <div class="user-card pb-2 pt-2">
+    <ng-container [ngTemplateOutlet]="userImage"></ng-container>
+    <div class="name mt-3">Carlos Alberto Morales</div>
+    <div class="email">carlosm880530@gmail.com</div>
+  </div>
+</ng-template>
