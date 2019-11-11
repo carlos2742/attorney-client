@@ -10,9 +10,11 @@ import { LoginComponent } from './components/login/login.component';
 import {SharedModule} from '../shared/shared.module';
 import { AdminInputComponent } from './helpers/admin-input/admin-input.component';
 import { AdminNavbarComponent } from './layouts/admin-navbar/admin-navbar.component';
-import {NgbDropdownItem, NgbDropdownMenu, NgbDropdownModule, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
+import {NgbButtonsModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { AdminProfileComponent } from './layouts/admin-navbar/admin-profile/admin-profile.component';
 import { AdminMenuComponent } from './layouts/admin-navbar/admin-menu/admin-menu.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import {ArticleService} from './services/Article/article.service';
 
 @NgModule({
   declarations: [
@@ -22,18 +24,20 @@ import { AdminMenuComponent } from './layouts/admin-navbar/admin-menu/admin-menu
     AdminInputComponent,
     AdminNavbarComponent,
     AdminProfileComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    ArticlesComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     AdminRoutingModule,
     ngfModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    NgbButtonsModule
   ],
   providers: [
     UploadService,
-    NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle
+    ArticleService
   ]
 })
 export class AdminModule { }

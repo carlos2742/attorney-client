@@ -4,7 +4,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {AdminComponent} from './admin.component';
 import {AngularTokenService} from 'angular-token';
 import {LoginComponent} from './components/login/login.component';
-import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
+import {ArticlesComponent} from './components/articles/articles.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard'},
       { path: 'login', component: LoginComponent},
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AngularTokenService]}
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AngularTokenService]},
+      { path: 'articles', component: ArticlesComponent, canActivate: [AngularTokenService]}
     ]
   }
 ];

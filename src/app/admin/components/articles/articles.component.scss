@@ -1,0 +1,44 @@
+@import "../../admin.component";
+
+.header{
+  background-color: #f7f8fb;
+  border-bottom: 1px solid #EEF1F6;
+  color: $gold_color;
+  .icon{
+    font-size: 20px;
+  }
+  button{
+    border: 1px solid $gold_color;
+    background-color: white;
+    border-radius: 5px;
+    color: $gold_color;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 15px;
+  }
+}
+.filter{
+  color: #495057;
+}
+.card{
+  font-family: $Roboto;
+  .card-title{
+    color: $gold_color;
+  }
+  .card-text{
+    color: #7b8590;
+  }
+  .card-action{
+    background-color: $gold_color;
+    color: white !important;
+    margin-right: 10px;
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
