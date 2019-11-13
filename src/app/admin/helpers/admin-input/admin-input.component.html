@@ -1,8 +1,9 @@
 <div class="form-group position-relative" [formGroup]="tempFormGroup">
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1"><i class="{{icon}}"></i></span>
-    </div>
+  <div class="input-group mb-3 position-relative">
+      <span class="position-absolute input-icon" id="basic-addon1">
+        <i class="{{icon}}"></i>
+        <span class="divider"></span>
+      </span>
     <input type="{{type}}" name="{{controlName}}" autofocus="true" class="form-control" formControlName="{{controlName}}" placeholder="{{placeholder}}">
   </div>
   <div *ngIf="field.invalid && (field.dirty)" class="warning-notification p-2">

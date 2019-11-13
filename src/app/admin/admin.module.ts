@@ -15,6 +15,7 @@ import { AdminProfileComponent } from './layouts/admin-navbar/admin-profile/admi
 import { AdminMenuComponent } from './layouts/admin-navbar/admin-menu/admin-menu.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import {ArticleService} from './services/Article/article.service';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ArticleService} from './services/Article/article.service';
     AdminNavbarComponent,
     AdminProfileComponent,
     AdminMenuComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     CommonModule,

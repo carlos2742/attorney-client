@@ -1,14 +1,21 @@
 @import "../../admin.component";
-
-.input-group-text{
-  color: #ffffff;
-  background-color: $color;
+.input-icon{
+  top: 7px;
+  left: 10px;
+  z-index: 5;
 }
-.form-control{
+.divider{
+  border-left: 1px solid #ccc;
+  margin-left: 10px;
+}
+input.form-control{
+  border-top-left-radius: .25rem !important;
+  border-bottom-left-radius: .25rem !important;;
   &:focus{
     border-color: $color;
     box-shadow: none;
   }
+  padding-left: 45px;
 }
 .form-control{
   font-size: 14px;
@@ -19,7 +26,7 @@
   font-size: 14px;
   background-color: white;
   position: absolute;
-  z-index: 1;
+  z-index: 6;
   bottom: -42px;
   left: -58px;
   border: 1px solid #aeb2b7;

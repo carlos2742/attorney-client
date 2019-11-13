@@ -17,4 +17,9 @@ export class ArticleService {
     const path = this.articlesResources;
     return this.http.get(path)
   }
+
+  public article(id){
+    const path = `${this.articlesResources}/${id}`;
+    return this.http.get(path)
+  }
 }

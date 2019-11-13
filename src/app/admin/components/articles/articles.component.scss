@@ -1,17 +1,21 @@
 @import "../../admin.component";
 
+a{
+  text-decoration: none;
+}
+
 .header{
   background-color: #f7f8fb;
   border-bottom: 1px solid #EEF1F6;
-  color: $gold_color;
+  color: $color;
   .icon{
     font-size: 20px;
   }
   button{
-    border: 1px solid $gold_color;
+    border: 1px solid $color;
     background-color: white;
     border-radius: 5px;
-    color: $gold_color;
+    color: $color;
     font-size: 13px;
     font-weight: bold;
     padding: 4px 15px;
@@ -19,17 +23,21 @@
 }
 .filter{
   color: #495057;
+  select:focus{
+    box-shadow: none;
+    border-color: $color;
+  }
 }
 .card{
   font-family: $Roboto;
   .card-title{
-    color: $gold_color;
+    color: $color;
   }
   .card-text{
     color: #7b8590;
   }
   .card-action{
-    background-color: $gold_color;
+    background-color: $color;
     color: white !important;
     margin-right: 10px;
     width: 30px;

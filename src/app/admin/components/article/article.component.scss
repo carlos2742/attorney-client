@@ -1,0 +1,65 @@
+@import "../articles/articles.component";
+a{
+  color: $color;
+}
+
+.menu{
+  border-bottom: 1px solid #EEF1F6;
+  font-size: 14px;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+      &.active{
+        border-bottom: 1px solid $color;
+        button{
+          color: $color;
+          cursor: auto;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      margin-right: 20px;
+      button{
+        background-color: transparent;
+        border: none;
+        color: #96A3B6;
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+  .lang-container{
+    color: #96A3B6;
+    button{
+      background-color: transparent;
+      border: none;
+      color: #96A3B6;
+      &:focus{
+        outline: none;
+      }
+      &.active{
+        color: $color;
+        cursor: auto;
+      }
+    }
+  }
+}
+.sections{
+  .separator{
+    border-bottom: 1px solid #EEF1F6;
+  }
+  .label{
+    color: $color;
+  }
+  .value{
+    color: #96A3B6;
+    .tag{
+      border: 1px solid #bcbfc4;
+      padding: 5px 10px;
+    }
+  }
+}

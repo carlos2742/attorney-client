@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="container d-flex justify-content-between pb-2 pt-2">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
     <div>
       <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
       <span>Artículos</span>
@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-<div class="container pt-3 filter">
+<div class="container pt-4 filter">
   <form action="" [formGroup] ="form" class="d-flex justify-content-between">
     <app-admin-input [icon]="'fas fa-search'" [type]="'text'" [controlName]="'title'" [placeholder]="'Título'" [tempFormGroup]="form" [field]="form.controls.title"></app-admin-input>
     <div class="d-flex align-items-baseline">
@@ -31,23 +31,28 @@
 
 <ng-template #articleItem let-article="article">
   <div class="col-lg-4">
-    <div class="card">
-      <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" class="card-img-top" alt="...">
-      <div class="card-body pb-0">
-        <h5 class="card-title">{{article.title}}</h5>
-        <div class="card-text" [innerHTML]="article.summary" ></div>
+    <a [routerLink]="['/admin/article', article.id]" href="">
+      <div class="card">
+        <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" class="card-img-top" alt="...">
+        <div class="card-body pb-0">
+          <h5 class="card-title">{{article.title}}</h5>
+          <div class="card-text" [innerHTML]="article.summary" ></div>
+        </div>
+        <div class="card-footer text-muted d-flex">
+          <!--        <a [routerLink]="['/admin/article', article.id]" class="card-action" placement="top" ngbTooltip="Ver">-->
+          <!--          <span class="icon"><i class="far fa-eye"></i></span>-->
+          <!--        </a>-->
+          <!--        <a [routerLink]="'article'" class="card-action" placement="top" ngbTooltip="Editar">-->
+          <!--          <span class="icon"><i class="far fa-edit"></i></span>-->
+          <!--        </a>-->
+          <!--        <a [routerLink]="'articles'" class="card-action position-relative" placement="top" ngbTooltip="Comentarios">-->
+          <!--          <span class="icon"><i class="fas fa-comment"></i></span>-->
+          <!--        </a>-->
+          <!--        <a class="card-action"  placement="top" ngbTooltip="Eliminar">-->
+          <!--          <span class="icon"><i class="far fa-trash-alt"></i></span>-->
+          <!--        </a>-->
+        </div>
       </div>
-      <div class="card-footer text-muted d-flex">
-        <a [routerLink]="'dashboard'" class="card-action" placement="top" ngbTooltip="Ver">
-          <span class="icon"><i class="far fa-eye"></i></span>
-        </a>
-        <a [routerLink]="'articles'" class="card-action" placement="top" ngbTooltip="Editar">
-          <span class="icon"><i class="far fa-edit"></i></span>
-        </a>
-        <a class="card-action"  placement="top" ngbTooltip="Eliminar">
-          <span class="icon"><i class="far fa-trash-alt"></i></span>
-        </a>
-      </div>
-    </div>
+    </a>
   </div>
 </ng-template>
