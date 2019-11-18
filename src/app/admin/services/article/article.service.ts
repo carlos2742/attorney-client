@@ -27,4 +27,14 @@ export class ArticleService {
     const path = this.resources;
     return this.http.post(path,payload);
   }
+
+  public publish(id){
+    const path = `${this.resources}/${id}/publish`;
+    return this.http.get(path);
+  }
+
+  public unpublish(id){
+    const path = `${this.resources}/${id}/unpublish`;
+    return this.http.get(path);
+  }
 }

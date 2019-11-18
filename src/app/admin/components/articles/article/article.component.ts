@@ -11,15 +11,11 @@ export class ArticleComponent implements OnInit {
 
   public language: string;
   public article: any;
-  public menu;
+  public sending: boolean;
 
   constructor(private activeRoute: ActivatedRoute, private articleService: ArticleService) {
     this.language = 'es';
-    this.menu = [
-      {id: 'details', title: 'Detalles', active: true},
-      {id: 'tags', title: 'Etiquetas', active: false},
-      {id: 'image', title: 'Imagen', active: false},
-    ]
+    this.sending = false;
   }
 
   ngOnInit() {
@@ -35,10 +31,31 @@ export class ArticleComponent implements OnInit {
     this.language = lang;
   }
 
-  activateMenu(id){
-    this.menu.forEach(item =>{
-      item.active = item.id === id ? true : false;
-    })
+  publish(){
+    this.sending = true;
+    this.articleService.publish(this.article.id).subscribe(
+      response => {
+        this.article.status = response['status'];
+        this.sending = false;
+      },
+      error => {
+        console.log(error);
+        this.sending = false;
+      }
+    );
   }
 
+  unpublish(){
+    this.sending = true;
+    this.articleService.unpublish(this.article.id).subscribe(
+      response => {
+        this.article.status = response['status'];
+        this.sending = false;
+      },
+      error => {
+        console.log(error);
+        this.sending = false;
+      }
+    );
+  }
 }

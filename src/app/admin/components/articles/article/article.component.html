@@ -9,57 +9,58 @@
       <!--      <span class="icon mr-2"><i class="fas fa-info-circle "></i></span>-->
       <span *ngIf="article">Artículo {{article.id}}</span>
     </div>
-  </div>
-</div>
-<div class="menu">
-  <div class="container d-flex justify-content-between flex-row">
-    <ul class="d-flex">
-      <li *ngFor="let item of menu" class="pb-3 pt-3" [class.active]="item.active"><button (click)="activateMenu(item.id)">{{item.title}}</button></li>
-    </ul>
-    <div class="pb-3 pt-3 lang-container">
-      <button [class.active]="language === 'es'" (click)="changeLanguage('es')">Español</button>
-      /
-      <button [class.active]="language === 'en'" (click)="changeLanguage('en')">Inglés</button>
+    <div *ngIf="article">
+      <button>
+        <div *ngIf="sending" class="spinner-border spinner-grow-sm"></div>
+        <span *ngIf="!sending">
+          <span *ngIf="article.status !== 'published'" (click)="publish()">Publicar</span>
+          <span *ngIf="article.status === 'published'" (click)="unpublish()">Ocultar</span>
+        </span>
+      </button>
     </div>
   </div>
 </div>
 <div class="sections">
   <div class="container pt-2" *ngIf="article">
-    <div *ngFor="let item of menu">
-      <ng-container *ngIf="item.id === 'details' && item.active" [ngTemplateOutlet]="details"></ng-container>
-      <ng-container *ngIf="item.id === 'tags' && item.active" [ngTemplateOutlet]="tags"></ng-container>
-      <ng-container *ngIf="item.id === 'image' && item.active" [ngTemplateOutlet]="image"></ng-container>
+    <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Detalles del Artículo</h3>
+    <div>
+      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+        <div class="col-lg-2 label pb-2 pb-lg-0">Área de Práctica</div>
+        <div class="col-lg-10 value">{{article['practice_area'].languages['es']}} - ({{article['practice_area'].languages['en']}})</div>
+      </div>
+      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+        <div class="col-lg-2 label pb-2 pb-lg-0">Palabras Claves</div>
+        <div class="col-lg-10 value d-flex flex-wrap">
+          <div class="tag mr-2 mb-2" *ngFor="let item of article.tags">{{item.languages['es']}} - ({{item.languages['en']}})</div>
+        </div>
+      </div>
+      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5">
+        <div class="col-lg-2 pt-2 label">Contenido</div>
+        <div class="col-lg-10 value">
+          <div *ngIf="language === 'es'">
+            <div class="sub-form-head mb-3 mt-3">
+              <div class="border"></div>
+              <div>Español</div>
+              <div class="border"></div>
+              <button (click)="changeLanguage('en')" title="Cambiar a Inglés">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div *ngIf="language === 'en'">
+            <div class="sub-form-head mb-3 mt-3">
+              <div class="border"></div>
+              <div>Inglés</div>
+              <div class="border"></div>
+              <button (click)="changeLanguage('es')" title="Cambiar a Español">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div class="pb-3">{{article.languages[language].title}}</div>
+          <div [innerHTML]="article.languages[language].content"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<ng-template #details>
-  <div class="row pb-5 pt-5 separator">
-    <div class="col-lg-2 label">Área de Práctica</div>
-    <div class="col-lg-10 value">{{article['practice_area'].languages[language]}}</div>
-  </div>
-  <div class="row pb-5 pt-5 separator">
-    <div class="col-lg-2 label">Título</div>
-    <div class="col-lg-10 value">{{article.languages[language].title}}</div>
-  </div>
-  <div class="row pb-5 pt-5">
-    <div class="col-lg-2 label">Contenido</div>
-    <div class="col-lg-10 value" [innerHTML]="article.languages[language].content"></div>
-  </div>
-</ng-template>
-<ng-template #tags>
-  <div class="row pb-5 pt-5 separator">
-    <div class="col-lg-2 label">Etiquetas</div>
-    <div class="col-lg-10 value d-flex flex-wrap">
-      <div class="tag mr-2 mb-2" *ngFor="let item of article.tags">{{item.languages[language]}}</div>
-    </div>
-  </div>
-</ng-template>
-<ng-template #image>
-  <div class="row pb-5 pt-5 separator">
-    <div class="col-lg-3 label">Imagen</div>
-    <div class="col-lg-9 value">
-      <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" alt="">
-    </div>
-  </div>
-</ng-template>

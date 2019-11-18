@@ -20,13 +20,13 @@
   <form action="" [formGroup]="form" [class.pointer-events-none]="sending">
     <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Crear Artículo</h3>
     <div>
-      <div class="row pb-2 pt-2 pb-lg-4 pt-lg-4 separator">
+      <div class="row pb-2 pt-2 pt-lg-5 pb-lg-5 separator">
         <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Área de Práctica</div>
         <div class="col-lg-10 value">
           <app-admin-input *ngIf="form" [icon]="'fas fa-layer-group'" [options]="practiceAreas" [type]="'select'" [controlName]="'practice_area_id'" [tempFormGroup]="form" [field]="form.controls.practice_area_id"></app-admin-input>
         </div>
       </div>
-      <div class="row pb-4 pt-2 pt-lg-4 separator">
+      <div class="row pb-4 pt-2 pt-lg-5 pb-lg-5 separator">
         <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Palabras Claves *</div>
         <div class="col-lg-10 value position-relative">
           <app-admin-error [field]="form.controls.tags"></app-admin-error>
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div>
-      <div class="row pt-2 pb-4 pt-lg-4 separator">
+      <div class="row pt-2 pb-4 pt-lg-5 pb-lg-5 separator">
         <div class="col-lg-2 pt-2 ">Contenido *</div>
         <div class="col-lg-10">
           <div *ngIf="language === 'es'">
