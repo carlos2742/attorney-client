@@ -14,8 +14,14 @@ import {NgbButtonsModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { AdminProfileComponent } from './layouts/admin-navbar/admin-profile/admin-profile.component';
 import { AdminMenuComponent } from './layouts/admin-navbar/admin-menu/admin-menu.component';
 import { ArticlesComponent } from './components/articles/articles.component';
-import {ArticleService} from './services/Article/article.service';
-import { ArticleComponent } from './components/article/article.component';
+import {ArticleService} from './services/article/article.service';
+import { ArticleComponent } from './components/articles/article/article.component';
+import { CreateArticleComponent } from './components/articles/create-article/create-article.component';
+import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+import {PracticeAreaService} from './services/practice_area/practice-area.service';
+import {TagService} from './services/tag/tag.service';
+import { AdminErrorComponent } from './helpers/admin-error/admin-error.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,9 @@ import { ArticleComponent } from './components/article/article.component';
     AdminProfileComponent,
     AdminMenuComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    CreateArticleComponent,
+    AdminErrorComponent
   ],
   imports: [
     CommonModule,
@@ -35,11 +43,16 @@ import { ArticleComponent } from './components/article/article.component';
     AdminRoutingModule,
     ngfModule,
     NgbDropdownModule,
-    NgbButtonsModule
+    NgbButtonsModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [
     UploadService,
-    ArticleService
+    ArticleService,
+    PracticeAreaService,
+    TagService
   ]
 })
 export class AdminModule { }

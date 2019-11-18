@@ -5,7 +5,8 @@ import {AdminComponent} from './admin.component';
 import {AngularTokenService} from 'angular-token';
 import {LoginComponent} from './components/login/login.component';
 import {ArticlesComponent} from './components/articles/articles.component';
-import {ArticleComponent} from './components/article/article.component';
+import {ArticleComponent} from './components/articles/article/article.component';
+import {CreateArticleComponent} from './components/articles/create-article/create-article.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent},
       { path: 'dashboard', component: DashboardComponent, canActivate: [AngularTokenService]},
       { path: 'articles', component: ArticlesComponent, canActivate: [AngularTokenService]},
-      { path: 'article/:id', component: ArticleComponent, canActivate: [AngularTokenService]}
+      { path: 'article/:id', component: ArticleComponent, canActivate: [AngularTokenService]},
+      { path: 'create-article', component: CreateArticleComponent, canActivate: [AngularTokenService]}
     ]
   }
 ];

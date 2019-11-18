@@ -2,6 +2,7 @@
 
 a{
   text-decoration: none;
+  color: $color;
 }
 
 .header{
@@ -19,6 +20,7 @@ a{
     font-size: 13px;
     font-weight: bold;
     padding: 4px 15px;
+    width: 79px;
   }
 }
 .filter{
@@ -48,5 +50,8 @@ a{
     justify-content: center;
     cursor: pointer;
   }
+}
+.separator{
+  border-bottom: 1px solid #EEF1F6;
 }
 

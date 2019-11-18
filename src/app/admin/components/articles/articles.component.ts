@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {ArticleService} from '../../services/Article/article.service';
+import {ArticleService} from '../../services/article/article.service';
 
 @Component({
   selector: 'app-articles',
@@ -20,7 +20,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.articleService.articles.subscribe(
+    this.articleService.all.subscribe(
       response => {
         this.articles = response;
       }

@@ -15,6 +15,7 @@ export class AdminInputComponent implements OnInit {
   @Input() placeholder: string;
   @Input() type: string;
   @Input() icon: string;
+  @Input() options: Array<any>;
 
   constructor() { }
 

@@ -1,7 +1,4 @@
-@import "../articles/articles.component";
-a{
-  color: $color;
-}
+@import "../articles.component";
 
 .menu{
   border-bottom: 1px solid #EEF1F6;
@@ -49,9 +46,6 @@ a{
   }
 }
 .sections{
-  .separator{
-    border-bottom: 1px solid #EEF1F6;
-  }
   .label{
     color: $color;
   }

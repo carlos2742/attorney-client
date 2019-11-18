@@ -7,19 +7,24 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ArticleService {
 
-  private articlesResources: string;
+  private resources: string;
 
   constructor(private common: CommonService, private http: HttpClient) {
-    this.articlesResources = `${this.common.apiUrl}articles/`;
+    this.resources = `${this.common.apiUrl}articles`;
   }
 
-  get articles(){
-    const path = this.articlesResources;
+  get all(){
+    const path = this.resources;
     return this.http.get(path)
   }
 
   public article(id){
-    const path = `${this.articlesResources}/${id}`;
+    const path = `${this.resources}/${id}`;
     return this.http.get(path)
+  }
+
+  public create(payload){
+    const path = this.resources;
+    return this.http.post(path,payload);
   }
 }

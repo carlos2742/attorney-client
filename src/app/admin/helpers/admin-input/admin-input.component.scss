@@ -8,53 +8,17 @@
   border-left: 1px solid #ccc;
   margin-left: 10px;
 }
-input.form-control{
-  border-top-left-radius: .25rem !important;
-  border-bottom-left-radius: .25rem !important;;
-  &:focus{
-    border-color: $color;
-    box-shadow: none;
+input, select{
+  &.form-control{
+    border-top-left-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;;
+    &:focus{
+      border-color: $color;
+      box-shadow: none;
+    }
+    padding-left: 45px;
   }
-  padding-left: 45px;
 }
 .form-control{
   font-size: 14px;
-}
-.warning-notification{
-  display: flex;
-  color: #495057;
-  font-size: 14px;
-  background-color: white;
-  position: absolute;
-  z-index: 6;
-  bottom: -42px;
-  left: -58px;
-  border: 1px solid #aeb2b7;
-  text-align: left;
-  width: auto;
-  border-radius: 5px;
-
-  .icon{
-    color: #f5ba4c;
-  }
-  .arrow{
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #aeb2b7;
-    position: absolute;
-    top: -10px;
-    left: 67px;
-    .inner-arrow{
-      width: 0;
-      height: 0;
-      border-left: 9px solid transparent;
-      border-right: 9px solid transparent;
-      border-bottom: 9px solid white;
-      position: absolute;
-      top: 1px;
-      left: -9px;
-    }
-  }
 }
