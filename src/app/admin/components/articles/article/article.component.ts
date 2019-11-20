@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticleService} from '../../../services/article/article.service';
 import {ActivatedRoute} from '@angular/router';
+import {NotificationService} from '../../../services/notification/notification.service';
+import {NOTIFICATION_TYPE} from '../../../helpers/admin-notification/admin-notification.component';
 
 @Component({
   selector: 'app-article',
@@ -13,7 +15,7 @@ export class ArticleComponent implements OnInit {
   public article: any;
   public sending: boolean;
 
-  constructor(private activeRoute: ActivatedRoute, private articleService: ArticleService) {
+  constructor(private activeRoute: ActivatedRoute, private articleService: ArticleService, private notification: NotificationService) {
     this.language = 'es';
     this.sending = false;
   }
@@ -37,6 +39,7 @@ export class ArticleComponent implements OnInit {
       response => {
         this.article.status = response['status'];
         this.sending = false;
+        this.notification.show('El artículo se a publicado satisfactoriamente', {type:NOTIFICATION_TYPE.SUCCESS});
       },
       error => {
         console.log(error);
@@ -51,6 +54,7 @@ export class ArticleComponent implements OnInit {
       response => {
         this.article.status = response['status'];
         this.sending = false;
+        this.notification.show('El artículo a dejado de ser público', {type:NOTIFICATION_TYPE.SUCCESS});
       },
       error => {
         console.log(error);

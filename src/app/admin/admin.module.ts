@@ -22,6 +22,7 @@ import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import {PracticeAreaService} from './services/practice_area/practice-area.service';
 import {TagService} from './services/tag/tag.service';
 import { AdminErrorComponent } from './helpers/admin-error/admin-error.component';
+import {AdminNotificationComponent} from './helpers/admin-notification/admin-notification.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdminErrorComponent } from './helpers/admin-error/admin-error.component
     ArticlesComponent,
     ArticleComponent,
     CreateArticleComponent,
-    AdminErrorComponent
+    AdminErrorComponent,
+    AdminNotificationComponent
   ],
   imports: [
     CommonModule,

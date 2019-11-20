@@ -1,3 +1,8 @@
 @import "../app.component";
 $color: #3c3e40;
 
+app-admin-notification{
+  position: absolute;
+  right: 0;
+  top: 10rem;
+}
