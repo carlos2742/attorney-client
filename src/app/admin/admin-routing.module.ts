@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent},
       { path: 'dashboard', component: DashboardComponent, canActivate: [AngularTokenService]},
       { path: 'articles', component: ArticlesComponent, canActivate: [AngularTokenService]},
-      { path: 'article/:id', component: ArticleComponent, canActivate: [AngularTokenService]},
+      { path: 'article-view/:id', component: ArticleComponent, canActivate: [AngularTokenService]},
       { path: 'create-article', component: CreateArticleComponent, canActivate: [AngularTokenService]}
     ]
   }

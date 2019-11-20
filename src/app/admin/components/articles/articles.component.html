@@ -31,7 +31,7 @@
 
 <ng-template #articleItem let-article="article">
   <div class="col-md-6 col-lg-4 pb-3">
-    <a [routerLink]="['/admin/article', article.id]" href="">
+    <a [routerLink]="['/admin/article-view', article.id]" href="">
       <div class="card">
         <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" class="card-img-top" alt="...">
         <div class="card-body pb-0">

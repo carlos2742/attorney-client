@@ -108,7 +108,7 @@ export class CreateArticleComponent implements OnInit {
       response => {
         console.log(response);
         this.sending = false;
-        this.router.navigate(['/admin/article/:id',{id:response['id']}]);
+        this.router.navigate(['/admin/article-view/:id',{id:response['id']}]);
       },
       error=>{console.log(error)}
     );
