@@ -8,7 +8,7 @@ import {ngfModule} from 'angular-file';
 import {UploadService} from './services/upload.service';
 import { LoginComponent } from './components/login/login.component';
 import {SharedModule} from '../shared/shared.module';
-import { AdminInputComponent } from './helpers/admin-input/admin-input.component';
+import { AdminInputComponent } from './helpers/form/admin-input/admin-input.component';
 import { AdminNavbarComponent } from './layouts/admin-navbar/admin-navbar.component';
 import {NgbButtonsModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { AdminProfileComponent } from './layouts/admin-navbar/admin-profile/admin-profile.component';
@@ -23,6 +23,9 @@ import {PracticeAreaService} from './services/practice_area/practice-area.servic
 import {TagService} from './services/tag/tag.service';
 import { AdminErrorComponent } from './helpers/admin-error/admin-error.component';
 import {AdminNotificationComponent} from './helpers/admin-notification/admin-notification.component';
+import { AdminSelectComponent } from './helpers/form/admin-select/admin-select.component';
+import { AdminTextEditorComponent } from './helpers/form/admin-text-editor/admin-text-editor.component';
+import { AdminMultiSelectComponent } from './helpers/form/admin-multi-select/admin-multi-select.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {AdminNotificationComponent} from './helpers/admin-notification/admin-not
     ArticleComponent,
     CreateArticleComponent,
     AdminErrorComponent,
-    AdminNotificationComponent
+    AdminNotificationComponent,
+    AdminSelectComponent,
+    AdminTextEditorComponent,
+    AdminMultiSelectComponent
   ],
   imports: [
     CommonModule,

@@ -6,3 +6,28 @@ app-admin-notification{
   right: 0;
   top: 10rem;
 }
+
+.btn{
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 15px;
+  width: 79px;
+  border-radius: 5px;
+
+  &:focus{
+    box-shadow: none;
+  }
+  &.prime{
+    border: 1px solid $color;
+    background-color: white;
+    color: $color;
+  }
+  &.invert{
+    color: #fff;
+    background-color: $color;
+  }
+}
+
+
+
+

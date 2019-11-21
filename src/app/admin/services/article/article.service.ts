@@ -28,6 +28,11 @@ export class ArticleService {
     return this.http.post(path,payload);
   }
 
+  public update(id,payload){
+    const path = `${this.resources}/${id}`;
+    return this.http.put(path,payload);
+  }
+
   public publish(id){
     const path = `${this.resources}/${id}/publish`;
     return this.http.get(path);

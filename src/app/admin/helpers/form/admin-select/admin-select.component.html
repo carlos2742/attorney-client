@@ -4,10 +4,7 @@
       <i class="{{icon}}"></i>
       <span class="divider"></span>
     </span>
-
-    <input *ngIf="type!=='select'" type="{{type}}" name="{{controlName}}" autofocus="true" class="form-control" formControlName="{{controlName}}" placeholder="{{placeholder}}">
-
-    <select *ngIf="type === 'select'" class="form-control" formControlName="{{controlName}}">
+    <select class="form-control" formControlName="{{controlName}}">
       <option *ngFor="let item of options" value="{{item.id}}">{{item.value}}</option>
     </select>
   </div>

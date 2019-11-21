@@ -10,57 +10,112 @@
       <span *ngIf="article">Artículo {{article.id}}</span>
     </div>
     <div *ngIf="article">
-      <button>
+      <button *ngIf="!editing" class="mr-2 btn prime" (click)="showEdit()">Editar</button>
+      <button *ngIf="!editing" class="btn prime">
         <div *ngIf="sending" class="spinner-border spinner-grow-sm"></div>
         <span *ngIf="!sending">
           <span *ngIf="article.status !== 'published'" (click)="publish()">Publicar</span>
           <span *ngIf="article.status === 'published'" (click)="unpublish()">Ocultar</span>
         </span>
       </button>
+      <button *ngIf="editing" class="mr-2 btn invert">
+        <div *ngIf="sending" class="spinner-border spinner-grow-sm text-light"></div>
+        <span *ngIf="!sending" (click)="save()">Guardar</span>
+      </button>
+      <button *ngIf="editing" class="mr-2 btn prime" [disabled]="sending" (click)="hideEdit()">Cancelar</button>
     </div>
   </div>
 </div>
 <div class="sections">
   <div class="container pt-2" *ngIf="article">
-    <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Detalles del Artículo</h3>
-    <div>
-      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
-        <div class="col-lg-2 label pb-2 pb-lg-0">Área de Práctica</div>
-        <div class="col-lg-10 value">{{article['practice_area'].languages['es']}} - ({{article['practice_area'].languages['en']}})</div>
-      </div>
-      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
-        <div class="col-lg-2 label pb-2 pb-lg-0">Palabras Claves</div>
-        <div class="col-lg-10 value d-flex flex-wrap">
-          <div class="tag mr-2 mb-2" *ngFor="let item of article.tags">{{item.languages['es']}} - ({{item.languages['en']}})</div>
+    <h3 *ngIf="!editing" class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Detalles del Artículo</h3>
+    <h3 *ngIf="editing" class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Editar Artículo</h3>
+    <form action="" [formGroup]="form">
+      <div>
+        <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+          <div class="col-lg-2 label pb-2 pb-lg-0" [class.pt-2]="editing">Área de Práctica</div>
+          <div class="col-lg-10 value">
+            <ng-container [ngTemplateOutlet]="practiceArea"></ng-container>
+          </div>
         </div>
-      </div>
-      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5">
-        <div class="col-lg-2 pt-2 label">Contenido</div>
-        <div class="col-lg-10 value">
-          <div *ngIf="language === 'es'">
-            <div class="sub-form-head mb-3 mt-3">
-              <div class="border"></div>
-              <div>Español</div>
-              <div class="border"></div>
-              <button (click)="changeLanguage('en')" title="Cambiar a Inglés">
-                <i class="fas fa-exchange-alt"></i>
-              </button>
+        <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+          <div class="col-lg-2 label pb-2 pb-lg-0" [class.pt-2]="editing">Palabras Claves</div>
+          <div class="col-lg-10 value">
+            <ng-container [ngTemplateOutlet]="tagsTemplate"></ng-container>
+          </div>
+        </div>
+        <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5">
+          <div class="col-lg-2 pt-2 label">Contenido</div>
+          <div class="col-lg-10 value">
+            <div *ngIf="language === 'es'">
+              <div class="sub-form-head mb-3 mt-3">
+                <div class="border"></div>
+                <div>Español</div>
+                <div class="border"></div>
+                <button (click)="changeLanguage('en')" title="Cambiar a Inglés">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </div>
+              <div>
+                <div class="pb-3">
+                  <ng-container [ngTemplateOutlet]="title" [ngTemplateOutletContext]="{field: form.controls.esTitle, control: 'esTitle', lang: 'es'}"></ng-container>
+                </div>
+                <ng-container [ngTemplateOutlet]="content" [ngTemplateOutletContext]="{field: form.controls.esContent, control: 'esContent', lang: 'es'}"></ng-container>
+              </div>
+            </div>
+            <div *ngIf="language === 'en'">
+              <div class="sub-form-head mb-3 mt-3">
+                <div class="border"></div>
+                <div>Inglés</div>
+                <div class="border"></div>
+                <button (click)="changeLanguage('es')" title="Cambiar a Español">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </div>
+              <div>
+                <div class="pb-3">
+                  <ng-container [ngTemplateOutlet]="title" [ngTemplateOutletContext]="{field: form.controls.enTitle, control: 'enTitle', lang: 'en'}"></ng-container>
+                </div>
+                <ng-container [ngTemplateOutlet]="content" [ngTemplateOutletContext]="{field: form.controls.enContent, control: 'enContent', lang: 'en'}"></ng-container>
+              </div>
             </div>
           </div>
-          <div *ngIf="language === 'en'">
-            <div class="sub-form-head mb-3 mt-3">
-              <div class="border"></div>
-              <div>Inglés</div>
-              <div class="border"></div>
-              <button (click)="changeLanguage('es')" title="Cambiar a Español">
-                <i class="fas fa-exchange-alt"></i>
-              </button>
-            </div>
-          </div>
-          <div class="pb-3">{{article.languages[language].title}}</div>
-          <div [innerHTML]="article.languages[language].content"></div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
+
+<ng-template #practiceArea>
+  <div *ngIf="!editing">
+    <span>{{article['practice_area'].languages['es']}} - ({{article['practice_area'].languages['en']}})</span>
+  </div>
+  <div *ngIf="editing">
+    <app-admin-select [icon]="'fas fa-layer-group'" [options]="practiceAreas" [controlName]="'practice_area_id'" [tempFormGroup]="form" [field]="form.controls.practice_area_id"></app-admin-select>
+  </div>
+</ng-template>
+
+<ng-template #tagsTemplate>
+  <div *ngIf="!editing" class="d-flex flex-wrap">
+    <div class="tag mr-2 mb-2" *ngFor="let item of article.tags">{{item.languages['es']}} - ({{item.languages['en']}})</div>
+  </div>
+  <div *ngIf="editing">
+    <app-admin-multi-select [placeholder]="'Adicione palabras clave'" [options]="tags" [controlName]="'tags'" [tempFormGroup]="form" [field]="form.controls.tags"></app-admin-multi-select>
+  </div>
+</ng-template>
+
+<ng-template #title let-field="field" let-control="control" let-lang="lang">
+  <div *ngIf="!editing">
+    {{article.languages[lang].title}}
+  </div>
+  <div *ngIf="editing">
+    <app-admin-input *ngIf="form" [icon]="'fas fa-heading'" [type]="'text'" [controlName]="control" [placeholder]="'Título'" [tempFormGroup]="form" [field]="field"></app-admin-input>
+  </div>
+</ng-template>
+
+<ng-template #content let-field="field" let-control="control" let-lang="lang">
+  <div *ngIf="!editing" [innerHTML]="article.languages[lang].content"></div>
+  <div *ngIf="editing">
+    <app-admin-text-editor *ngIf="form" [controlName]="control" [tempFormGroup]="form" [placeholder]="'Contenido del artículo.'" [field]="field"></app-admin-text-editor>
+  </div>
+</ng-template>
