@@ -1,0 +1,108 @@
+<div class="header">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
+    <div>
+      <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
+      <span>Etiquetas</span>
+    </div>
+    <div>
+      <button class="btn prime" (click)="openAddForm(modalTemplate)">Nueva</button>
+    </div>
+  </div>
+</div>
+<div class="container pt-4 filter">
+  <form action="" [formGroup] ="form" class="d-flex justify-content-between flex-column flex-md-row">
+    <app-admin-input [icon]="'fas fa-search'" [type]="'text'" [controlName]="'title'" [placeholder]="'Título'" [tempFormGroup]="form" [field]="form.controls.title"></app-admin-input>
+  </form>
+</div>
+<div class="container pt-4">
+  <div class="d-flex flex-wrap">
+    <ng-container *ngFor="let tag of tags" [ngTemplateOutlet]="tagItem" [ngTemplateOutletContext]="{tag: tag}"></ng-container>
+  </div>
+</div>
+
+<ng-template #tagItem let-tag="tag">
+  <ng-template #popContent>
+    <button class="btn prime mr-2" (click)="openEditForm(modalTemplate, tag)">Editar</button>
+    <button class="btn prime" (click)="openDeleteForm(modalTemplate, tag.id)">Eliminar</button>
+  </ng-template>
+  <button class="tag" [ngbPopover]="popContent">
+    <span>{{tag.languages['es']}} - ({{tag.languages['en']}})</span>
+
+  </button>
+</ng-template>
+
+<ng-template #modalTemplate let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      <span *ngIf="this.modalType === 0">Crear Etiqueta</span>
+      <span *ngIf="this.modalType === 1">Editar Etiqueta</span>
+      <span *ngIf="this.modalType === 2">Eliminar Etiqueta</span>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <ng-template *ngIf="this.modalType === 0" [ngTemplateOutlet]="createForm" [ngTemplateOutletContext]="{modal: modal}"></ng-template>
+  <ng-template *ngIf="this.modalType === 1" [ngTemplateOutlet]="editForm" [ngTemplateOutletContext]="{modal: modal}"></ng-template>
+  <ng-template *ngIf="this.modalType === 2" [ngTemplateOutlet]="deleteForm" [ngTemplateOutletContext]="{modal: modal}"></ng-template>
+</ng-template>
+
+<ng-template #createForm let-modal="modal">
+  <div class="modal-body">
+    <form *ngIf="modalForm" action="" [formGroup]="modalForm">
+      <div class="row">
+        <div class="col-lg-2 pt-2">Español</div>
+        <div class="col-lg-10">
+          <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'esName'" [field]="modalForm.controls.esName"></app-admin-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 pt-2 ">Ingles</div>
+        <div class="col-lg-10">
+          <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'enName'" [field]="modalForm.controls.enName"></app-admin-input>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn invert" (click)="create()">Guardar</button>
+    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+  </div>
+</ng-template>
+
+<ng-template #editForm>
+  <div class="modal-body">
+    <form *ngIf="modalForm" action="" [formGroup]="modalForm">
+      <app-admin-input [type]="'hidden'" [tempFormGroup]="modalForm" [controlName]="'id'" [field]="modalForm.controls.id"></app-admin-input>
+      <div class="row">
+        <div class="col-lg-2 pt-2">Español</div>
+        <div class="col-lg-10">
+          <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'esName'" [field]="modalForm.controls.esName"></app-admin-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 pt-2 ">Ingles</div>
+        <div class="col-lg-10">
+          <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'enName'" [field]="modalForm.controls.enName"></app-admin-input>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn invert" (click)="update()">Editar</button>
+    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+  </div>
+</ng-template>
+
+<ng-template #deleteForm>
+  <div class="modal-body">
+    <p>Esta seguro que desea eliminar la etiqueta?</p>
+    <form *ngIf="modalForm" action="" [formGroup]="modalForm">
+      <app-admin-input [type]="'hidden'" [tempFormGroup]="modalForm" [controlName]="'id'" [field]="modalForm.controls.id"></app-admin-input>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn invert" (click)="delete()">Eliminar</button>
+    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+  </div>
+</ng-template>

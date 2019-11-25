@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import {SharedModule} from '../shared/shared.module';
 import { AdminInputComponent } from './helpers/form/admin-input/admin-input.component';
 import { AdminNavbarComponent } from './layouts/admin-navbar/admin-navbar.component';
-import {NgbButtonsModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDropdownModule, NgbModalModule, NgbPopoverModule} from '@ng-bootstrap/ng-bootstrap';
 import { AdminProfileComponent } from './layouts/admin-navbar/admin-profile/admin-profile.component';
 import { AdminMenuComponent } from './layouts/admin-navbar/admin-menu/admin-menu.component';
 import { ArticlesComponent } from './components/articles/articles.component';
@@ -26,6 +26,7 @@ import {AdminNotificationComponent} from './helpers/admin-notification/admin-not
 import { AdminSelectComponent } from './helpers/form/admin-select/admin-select.component';
 import { AdminTextEditorComponent } from './helpers/form/admin-text-editor/admin-text-editor.component';
 import { AdminMultiSelectComponent } from './helpers/form/admin-multi-select/admin-multi-select.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AdminMultiSelectComponent } from './helpers/form/admin-multi-select/adm
     AdminNotificationComponent,
     AdminSelectComponent,
     AdminTextEditorComponent,
-    AdminMultiSelectComponent
+    AdminMultiSelectComponent,
+    TagsComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { AdminMultiSelectComponent } from './helpers/form/admin-multi-select/adm
     AdminRoutingModule,
     ngfModule,
     NgbDropdownModule,
-    NgbButtonsModule,
+    NgbModalModule,
+    NgbPopoverModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     NgMultiSelectDropDownModule.forRoot()

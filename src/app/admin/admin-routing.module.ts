@@ -7,6 +7,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ArticlesComponent} from './components/articles/articles.component';
 import {ArticleComponent} from './components/articles/article/article.component';
 import {CreateArticleComponent} from './components/articles/create-article/create-article.component';
+import {TagsComponent} from './components/tags/tags.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AngularTokenService]},
       { path: 'articles', component: ArticlesComponent, canActivate: [AngularTokenService]},
       { path: 'article-view/:id', component: ArticleComponent, canActivate: [AngularTokenService]},
-      { path: 'create-article', component: CreateArticleComponent, canActivate: [AngularTokenService]}
+      { path: 'create-article', component: CreateArticleComponent, canActivate: [AngularTokenService]},
+      { path: 'tags', component: TagsComponent, canActivate: [AngularTokenService]}
     ]
   }
 ];

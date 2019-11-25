@@ -39,6 +39,7 @@
           <div class="card-text" [innerHTML]="article.summary" ></div>
         </div>
         <div class="card-footer text-muted d-flex">
+          <span>{{article.created_at | date: "MMM dd, yyyy"}}</span>
           <!--        <a [routerLink]="['/admin/article', article.id]" class="card-action" placement="top" ngbTooltip="Ver">-->
           <!--          <span class="icon"><i class="far fa-eye"></i></span>-->
           <!--        </a>-->

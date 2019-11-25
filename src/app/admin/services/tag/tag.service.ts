@@ -17,4 +17,19 @@ export class TagService {
     const path = this.resources;
     return this.http.get(path)
   }
+
+  public create(payload){
+    const path = this.resources;
+    return this.http.post(path,payload);
+  }
+
+  public update(id, payload){
+    const path = `${this.resources}/${id}`;
+    return this.http.put(path,payload);
+  }
+
+  public delete(id){
+    const path = `${this.resources}/${id}`;
+    return this.http.delete(path);
+  }
 }

@@ -118,10 +118,8 @@ export class ArticleComponent implements OnInit {
         values: formValue.tags.map(item => item.id)
       }
     };
-    console.log(payload);
     this.articleService.update(this.article.id, payload).subscribe(
       response => {
-        console.log(response);
         this.article = response;
         this.sending = false;
         this.notification.show('El artículo se ha editado satisfactoriamente', {type:NOTIFICATION_TYPE.SUCCESS});
