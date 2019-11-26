@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ROLES} from '../../../admin.component';
 
 @Component({
   selector: 'app-admin-menu',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminMenuComponent implements OnInit {
 
-  constructor() { }
+  public ROLES;
+  constructor() {
+    this.ROLES = ROLES;
+  }
 
   ngOnInit() {
   }

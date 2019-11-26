@@ -19,7 +19,7 @@ export class GuardService implements CanActivate{
       } else {
         this.auth.loggedUser().subscribe(
           response => {
-            const userRole = response['rol'];
+            const userRole = response['role'];
             const requiredRoles = route.data.roles;
 
             if (userRole === '') {

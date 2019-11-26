@@ -33,6 +33,7 @@ import {GuardService} from './services/authentication/guard.service';
 import {UserService} from './services/user/user.service';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ShowForRoleDirective } from './directives/show-for-role/show-for-role.directive';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TagsComponent,
     UsersComponent,
     UnauthorizedComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ShowForRoleDirective
   ],
   imports: [
     CommonModule,
