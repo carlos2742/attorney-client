@@ -68,6 +68,19 @@ app-admin-notification{
   background-color: white!important;
 }
 
+.http-code{
+  color: $color;
+  text-align: center;
+  padding-top: 5rem;
+  .title{
+    font-size: 20rem;
+    line-height: 15rem;
+  }
+  .description{
+    font-size: 4rem;
+  }
+}
+
 
 
 
