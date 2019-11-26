@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularTokenService} from 'angular-token';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {AuthenticationService} from '../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public form;
   public showError: boolean;
 
-  constructor(private tokenService: AngularTokenService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private auth: AuthenticationService, private router: Router, private formBuilder: FormBuilder) {
     this.showError = false;
     this.form = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.tokenService.signIn(this.form.value).subscribe(
+    this.auth.login(this.form.value).subscribe(
       response => {
         this.router.navigateByUrl(localStorage.getItem('redirectTo'));
       },
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
       password: 'gundamx880530',
       passwordConfirmation: 'gundamx880530'
     };
-    this.tokenService.registerAccount(data).subscribe(
+    this.auth.register(data).subscribe(
       response => {
         console.log('success');
         console.log(response);

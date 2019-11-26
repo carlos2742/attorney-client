@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularTokenService} from 'angular-token';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-admin-profile',
@@ -9,13 +9,14 @@ import {Router} from '@angular/router';
 })
 export class AdminProfileComponent implements OnInit {
 
-  constructor(private tokenService: AngularTokenService, private router: Router) { }
+  constructor(private auth: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
+    this.auth.loggedUser().subscribe(response => console.log(response));
   }
 
   logout(){
-    this.tokenService.signOut().subscribe(
+    this.auth.logout().subscribe(
       response => {
         console.log('success');
         console.log(response);

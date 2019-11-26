@@ -27,6 +27,12 @@ import { AdminSelectComponent } from './helpers/form/admin-select/admin-select.c
 import { AdminTextEditorComponent } from './helpers/form/admin-text-editor/admin-text-editor.component';
 import { AdminMultiSelectComponent } from './helpers/form/admin-multi-select/admin-multi-select.component';
 import { TagsComponent } from './components/tags/tags.component';
+import {AuthenticationService} from './services/authentication/authentication.service';
+import { UsersComponent } from './components/users/users.component';
+import {GuardService} from './services/authentication/guard.service';
+import {UserService} from './services/user/user.service';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +51,10 @@ import { TagsComponent } from './components/tags/tags.component';
     AdminSelectComponent,
     AdminTextEditorComponent,
     AdminMultiSelectComponent,
-    TagsComponent
+    TagsComponent,
+    UsersComponent,
+    UnauthorizedComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +72,10 @@ import { TagsComponent } from './components/tags/tags.component';
     UploadService,
     ArticleService,
     PracticeAreaService,
-    TagService
+    TagService,
+    AuthenticationService,
+    GuardService,
+    UserService
   ]
 })
 export class AdminModule { }
