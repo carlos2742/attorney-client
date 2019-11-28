@@ -34,6 +34,7 @@ import {UserService} from './services/user/user.service';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ShowForRoleDirective } from './directives/show-for-role/show-for-role.directive';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ShowForRoleDirective } from './directives/show-for-role/show-for-role.d
     UsersComponent,
     UnauthorizedComponent,
     NotFoundComponent,
-    ShowForRoleDirective
+    ShowForRoleDirective,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

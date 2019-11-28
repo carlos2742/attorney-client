@@ -4,7 +4,7 @@
       <i class="{{icon}}"></i>
       <span class="divider"></span>
     </span>
-    <input type="{{type}}" name="{{controlName}}" class="form-control" formControlName="{{controlName}}" placeholder="{{placeholder}}">
+    <input type="{{type}}" name="{{controlName}}" class="form-control" [class.read-only]="readOnly || false" formControlName="{{controlName}}" placeholder="{{placeholder}}">
   </div>
   <app-admin-error [field]="field"></app-admin-error>
 </div>

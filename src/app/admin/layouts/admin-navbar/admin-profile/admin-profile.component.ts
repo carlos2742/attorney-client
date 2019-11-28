@@ -12,7 +12,7 @@ export class AdminProfileComponent implements OnInit {
   constructor(private auth: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
-    this.auth.loggedUser().subscribe(response => console.log(response));
+    // this.auth.loggedUser().subscribe(response => console.log(response));
   }
 
   logout(){

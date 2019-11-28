@@ -12,6 +12,7 @@ import {UsersComponent} from './components/users/users.component';
 import {GuardService} from './services/authentication/guard.service';
 import {UnauthorizedComponent} from './components/unauthorized/unauthorized.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'articles', component: ArticlesComponent, canActivate: [GuardService]},
       { path: 'article-view/:id', component: ArticleComponent, canActivate: [GuardService]},
       { path: 'create-article', component: CreateArticleComponent, canActivate: [GuardService]},
+      { path: 'profile', component: ProfileComponent, canActivate: [GuardService]},
       { path: 'users', component: UsersComponent, canActivate: [GuardService], data: { roles: [ROLES.OWNER, ROLES.DEVELOPER]}},
       { path: 'tags', component: TagsComponent, canActivate: [GuardService]},
       { path: '401', component: UnauthorizedComponent, canActivate: [GuardService]},

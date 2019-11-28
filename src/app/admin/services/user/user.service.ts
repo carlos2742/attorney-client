@@ -17,4 +17,9 @@ export class UserService {
     const url = this.resources+'/profile';
     return this.http.get(url);
   }
+
+  public update(id, payload){
+    const url = this.resources+`/${id}`;
+    return this.http.put(url, payload);
+  }
 }

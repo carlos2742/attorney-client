@@ -1,12 +1,12 @@
 <div ngbDropdown placement="bottom-right">
-  <button  id="profile" class="navbar-action" ngbDropdownToggle>
+  <button id="profile" class="navbar-action" ngbDropdownToggle>
     <ng-container [ngTemplateOutlet]="userImage"></ng-container>
   </button>
   <div ngbDropdownMenu aria-labelledby="profile">
-    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" [routerLink]="'profile'">
       <ng-container [ngTemplateOutlet]="userCard"></ng-container>
     </div>
-    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" [routerLink]="'profile'">
       <span class="icon"><i class="fas fa-cogs"></i></span>
       <span>Cuenta</span>
     </div>

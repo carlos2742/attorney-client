@@ -9,8 +9,14 @@
     </div>
 
     <ng-template #emailBlock>
-      <div *ngIf="field.errors.email" style="width: 355px">
+      <div *ngIf="field.errors.email; else matchBlock" style="width: 355px">
         Por favor incluya @ en la dirección de correo electrónico
+      </div>
+    </ng-template>
+
+    <ng-template #matchBlock>
+      <div *ngIf="field.errors.notMatch">
+        Por favor introduzca la misma contraseña
       </div>
     </ng-template>
   </div>

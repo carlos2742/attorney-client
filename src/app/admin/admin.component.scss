@@ -11,7 +11,7 @@ app-admin-notification{
   font-size: 13px;
   font-weight: bold;
   padding: 4px 15px;
-  width: 80px;
+  min-width: 80px;
   border-radius: 5px;
 
   $hover_color: #7d7c7c;
@@ -78,6 +78,23 @@ app-admin-notification{
   }
   .description{
     font-size: 4rem;
+  }
+}
+
+.separator{
+  border-bottom: 1px solid #EEF1F6;
+}
+
+.sections{
+  font-family: $Roboto;
+  .label{
+    color: $color;
+  }
+  .value, p{
+    label{
+      color: $color;
+    }
+    color: #96A3B6;
   }
 }
 
