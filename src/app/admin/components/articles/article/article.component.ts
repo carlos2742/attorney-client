@@ -6,6 +6,8 @@ import {NOTIFICATION_TYPE} from '../../../helpers/admin-notification/admin-notif
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {PracticeAreaService} from '../../../services/practice_area/practice-area.service';
 import {TagService} from '../../../services/tag/tag.service';
+import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {ROLES} from '../../../admin.component';
 
 @Component({
   selector: 'app-article',
@@ -25,8 +27,14 @@ export class ArticleComponent implements OnInit {
 
   public editing:boolean;
 
-  constructor(private formBuilder: FormBuilder, private pareas: PracticeAreaService, private tag: TagService,
+  public showImage: boolean;
+
+  constructor(private formBuilder: FormBuilder, private pareas: PracticeAreaService, private tag: TagService, private auth: AuthenticationService,
               private activeRoute: ActivatedRoute, private articleService: ArticleService, private notification: NotificationService) {
+
+    this.auth.loggedUser().subscribe(response =>{
+      this.showImage = response['role'] === ROLES.DEVELOPER ? true : false;
+    });
 
     this.pareas.all.subscribe(response => {
       this.practiceAreas = (response as Array<any>).map(item =>{
@@ -61,7 +69,7 @@ export class ArticleComponent implements OnInit {
     this.form = this.formBuilder.group({
       practice_area_id: new FormControl(this.article.practice_area.id, [Validators.required]),
       tags: new FormControl(selectedTags, [Validators.required]),
-      image_id: new FormControl('' ),
+      image_id: new FormControl(this.article.image_id),
       esTitle: new FormControl(this.article.languages['es'].title, [Validators.required]),
       esContent: new FormControl(this.article.languages['es'].content, [Validators.required]),
       enTitle: new FormControl(this.article.languages['en'].title),

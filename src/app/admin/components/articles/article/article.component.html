@@ -38,6 +38,12 @@
             <ng-container [ngTemplateOutlet]="practiceArea"></ng-container>
           </div>
         </div>
+        <div *ngIf="showImage" class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+          <div class="col-lg-2 label pb-2 pb-lg-0" [class.pt-2]="editing">Imagen</div>
+          <div class="col-lg-10 value">
+            <ng-container [ngTemplateOutlet]="image"></ng-container>
+          </div>
+        </div>
         <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
           <div class="col-lg-2 label pb-2 pb-lg-0" [class.pt-2]="editing">Palabras Claves</div>
           <div class="col-lg-10 value">
@@ -92,6 +98,15 @@
   </div>
   <div *ngIf="editing">
     <app-admin-select [icon]="'fas fa-layer-group'" [options]="practiceAreas" [controlName]="'practice_area_id'" [tempFormGroup]="form" [field]="form.controls.practice_area_id"></app-admin-select>
+  </div>
+</ng-template>
+
+<ng-template #image>
+  <div *ngIf="!editing">
+    <span>{{article['image_id']}}</span>
+  </div>
+  <div *ngIf="editing">
+    <app-admin-input *ngIf="form" [icon]="'far fa-image'" [type]="'text'" [controlName]="'image_id'" [placeholder]="'Imagen'" [tempFormGroup]="form" [field]="form.controls.image_id"></app-admin-input>
   </div>
 </ng-template>
 
