@@ -13,6 +13,11 @@ export class UserService {
     this.resources = `${this.common.apiUrl}users`;
   }
 
+  get all(){
+    const url = this.resources;
+    return this.http.get(url);
+  }
+
   public profile(){
     const url = this.resources+'/profile';
     return this.http.get(url);
