@@ -23,6 +23,11 @@ export class UserService {
     return this.http.get(url);
   }
 
+  public add(payload){
+    const url = this.resources;
+    return this.http.post(url,payload);
+  }
+
   public update(id, payload){
     const url = this.resources+`/${id}`;
     return this.http.put(url, payload);

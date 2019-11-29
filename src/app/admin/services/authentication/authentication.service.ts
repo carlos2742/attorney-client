@@ -21,6 +21,10 @@ export class AuthenticationService {
     return this.tokenService.userSignedIn();
   }
 
+  get options(){
+    return this.tokenService.tokenOptions;
+  }
+
   public goToLogin(){
     const url = this.tokenService.tokenOptions.signInRedirect;
     this.router.navigateByUrl(url);

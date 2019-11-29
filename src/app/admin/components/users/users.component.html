@@ -21,13 +21,13 @@
   </div>
   <div class="modal-body">
     <form *ngIf="modalForm" action="" [formGroup]="modalForm">
-      <app-admin-input [icon]="'fas fa-envelope'" [type]="'text'" [placeholder]="'Correo electronico'" [tempFormGroup]="modalForm" [controlName]="'login'" [field]="modalForm.controls.login"></app-admin-input>
+      <app-admin-input [icon]="'fas fa-envelope'" [type]="'text'" [placeholder]="'Correo electronico'" [tempFormGroup]="modalForm" [controlName]="'email'" [field]="modalForm.controls.email"></app-admin-input>
       <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'name'" [field]="modalForm.controls.name"></app-admin-input>
       <app-admin-select [icon]="'fas fa-layer-group'" [options]="roles" [controlName]="'role'" [tempFormGroup]="modalForm" [field]="modalForm.controls.role"></app-admin-select>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn invert" (click)="register()" >Registrar</button>
+    <button type="button" class="btn invert" (click)="addUser()" >Registrar</button>
     <button type="button" class="btn prime" (click)="modal.dismiss('Cross click')">Cancelar</button>
   </div>
 </ng-template>

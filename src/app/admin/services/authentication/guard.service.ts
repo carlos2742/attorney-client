@@ -14,6 +14,13 @@ export class GuardService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return new Observable<boolean>(observe => {
       if(!this.auth.isLogged){
+        const options = this.auth.options;
+        if(options.signInStoredUrlStorageKey){
+          localStorage.setItem(
+            options.signInStoredUrlStorageKey,
+            state.url
+          );
+        }
         this.auth.goToLogin();
         observe.next(false);
       } else {
