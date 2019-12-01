@@ -1,0 +1,29 @@
+@import "../../../admin.component";
+.input-icon{
+  top: 7px;
+  left: 10px;
+  z-index: 5;
+}
+.divider{
+  border-left: 1px solid #ccc;
+  margin-left: 10px;
+}
+input, select{
+  &.form-control{
+    border-top-left-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;
+    &:focus{
+      border-color: $color;
+      box-shadow: none;
+    }
+    padding-left: 45px;
+  }
+}
+.form-control{
+  font-size: 14px;
+}
+
+.read-only{
+  border: none;
+  background-color: #e5e5e5;
+}

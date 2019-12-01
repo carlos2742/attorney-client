@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'http://localhost:3000/'
-  apiUrl: 'https://attorney-api-prod.herokuapp.com/'
+  apiUrl: 'http://localhost:3000/'
 };
 
 /*
