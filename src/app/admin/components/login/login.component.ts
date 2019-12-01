@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {AuthenticationService} from '../../services/authentication/authentication.service';
+import {Store} from '@ngrx/store';
+import {AdminState} from '../../store/reducers/admin.reducers';
+import * as AdminActions from '../../store/actions/admin.actions';
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,7 @@ export class LoginComponent implements OnInit {
   public form;
   public showError: boolean;
 
-  constructor(private auth: AuthenticationService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private adminStore: Store<AdminState>, private auth: AuthenticationService, private router: Router, private formBuilder: FormBuilder) {
     this.showError = false;
     this.form = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
@@ -42,6 +46,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.form.value).subscribe(
       response => {
         this.router.navigateByUrl(localStorage.getItem('redirectTo'));
+        this.adminStore.dispatch(new AdminActions.LoadLoggedUser());
       },
       error => {
         console.log(error);

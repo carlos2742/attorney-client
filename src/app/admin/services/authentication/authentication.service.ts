@@ -48,6 +48,10 @@ export class AuthenticationService {
     }
   }
 
+  public cleanLoggedUser(){
+    this.currentUser = null;
+  }
+
   register(payload){
     return this.tokenService.registerAccount(payload);
   }
@@ -64,6 +68,7 @@ export class AuthenticationService {
   }
 
   logout(){
+    this.cleanLoggedUser();
     return this.tokenService.signOut();
   }
 }

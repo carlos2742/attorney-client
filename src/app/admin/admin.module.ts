@@ -35,6 +35,10 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ShowForRoleDirective } from './directives/show-for-role/show-for-role.directive';
 import { ProfileComponent } from './components/profile/profile.component';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from './store/reducers/admin.reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {AdminEffects} from './store/effects/admin.effects';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     NgbPopoverModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    StoreModule.forFeature('admin', reducer),
+    EffectsModule.forFeature([AdminEffects]),
   ],
   providers: [
     UploadService,

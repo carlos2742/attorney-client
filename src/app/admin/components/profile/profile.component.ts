@@ -5,28 +5,40 @@ import {NotificationService} from '../../services/notification/notification.serv
 import {NOTIFICATION_TYPE} from '../../helpers/admin-notification/admin-notification.component';
 import {UserService} from '../../services/user/user.service';
 import {match} from '../../validators/form/customs-validators';
+import {Observable} from 'rxjs';
+import {User} from '../../../models/admin.model';
+import {Store} from '@ngrx/store';
+import {AdminState} from '../../store/reducers/admin.reducers';
+import * as AdminSelector from '../../store/selectors/admin.selectors';
+import * as AdminActions from '../../store/actions/admin.actions';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit{
 
-  public currentUser;
+  public loggedUser$: Observable<User>;
+  private currentUser: User;
+
   public profileForm;
   public passwordForm;
   public editing: boolean;
 
-  constructor(private auth: AuthenticationService, private formBuilder: FormBuilder, private notification: NotificationService, private user: UserService) {
+  constructor(private adminStore: Store<AdminState>, private auth: AuthenticationService, private formBuilder: FormBuilder, private notification: NotificationService, private user: UserService) {
     this.editing = false;
-    this.initPasswordForm()
+    this.initPasswordForm();
   }
 
   ngOnInit() {
-    this.auth.loggedUser().subscribe( response => {
-      this.currentUser = response;
-      this.initProfileForm();
+
+    this.loggedUser$ = this.adminStore.select(AdminSelector.selectLoggedUser);
+    this.loggedUser$.subscribe((user:User) =>{
+      this.currentUser = user;
+      if(this.currentUser){
+        this.initProfileForm();
+      }
     });
   }
 
@@ -36,7 +48,6 @@ export class ProfileComponent implements OnInit {
 
   hideForm(){
     this.editing = false;
-    this.initProfileForm();
   }
 
   saveProfile(){
@@ -45,7 +56,8 @@ export class ProfileComponent implements OnInit {
     }
     this.user.update(this.currentUser.id,{user:{...this.profileForm.value}}).subscribe(
       response => {
-        this.currentUser = response;
+        this.auth.cleanLoggedUser();
+        this.adminStore.dispatch(new AdminActions.LoadLoggedUser());
         this.notification.show('Su usuario ha sido actualizado', {type:NOTIFICATION_TYPE.SUCCESS});
         this.hideForm();
       },

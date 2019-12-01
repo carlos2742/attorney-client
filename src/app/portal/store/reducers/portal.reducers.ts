@@ -199,7 +199,7 @@ export function reducer(
           comments: {
             loading: false,
             loaded: true,
-            data: action.payload.comments,
+            data: action.payload.comments as Array<Comment>,
             total: action.payload.total,
             error: ''
           }
@@ -213,7 +213,6 @@ export function reducer(
         article: {
           ...state.article,
           comments: {
-            ...state.article.comments,
             loading: false,
             loaded: true,
             data: [],

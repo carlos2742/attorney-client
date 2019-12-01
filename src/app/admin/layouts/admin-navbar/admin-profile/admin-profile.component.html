@@ -24,9 +24,9 @@
 <ng-template #userCard>
   <div class="user-card pb-2 pt-2">
     <ng-container [ngTemplateOutlet]="userImage"></ng-container>
-    <div class="mt-3">
-      <div class="name">Carlos Alberto Morales</div>
-      <div class="email">carlosm880530@gmail.com</div>
+    <div *ngIf="(loggedUser$ | async)" class="mt-3 text-center">
+      <div *ngIf="(loggedUser$ | async).name !== ''" class="name">{{(loggedUser$ | async).name}}</div>
+      <div class="email">{{(loggedUser$ | async).email}}</div>
     </div>
   </div>
 </ng-template>

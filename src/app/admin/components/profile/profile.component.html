@@ -8,7 +8,7 @@
 </div>
 <div class="sections">
   <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Detalles</h3>
-  <div class="container pt-2" *ngIf="currentUser">
+  <div class="container pt-2" *ngIf="loggedUser$ | async">
     <div>
       <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
         <div class="col-lg-4 label pb-2 pb-lg-0">
@@ -35,7 +35,7 @@
 
 <ng-template #profile>
   <div class="form-container">
-    <form action="" [formGroup]="profileForm">
+    <form *ngIf="profileForm" action="" [formGroup]="profileForm">
       <div [class.disabled]="!editing">
         <div class="field-container">
           <label>Correo electrónico</label>
@@ -61,7 +61,7 @@
 
 <ng-template #password>
   <div class="form-container">
-    <form [formGroup]="passwordForm">
+    <form *ngIf="passwordForm" [formGroup]="passwordForm">
       <div>
         <div class="field-container">
           <label>Actual</label>

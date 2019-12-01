@@ -64,10 +64,9 @@ export class UsersComponent implements OnInit {
       user:{
         email: values.email,
         name: values.name,
-        rol: values.role,
-        password:'123456789'
+        rol: parseInt(values.role)
       }
-    }
+    };
     this.user.add(payload).subscribe(
       response => {
         this.users = [response, ...this.users];
