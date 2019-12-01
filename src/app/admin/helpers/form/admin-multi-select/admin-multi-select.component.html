@@ -1,0 +1,9 @@
+<div [formGroup]="tempFormGroup">
+  <app-admin-error [field]="field"></app-admin-error>
+  <ng-multiselect-dropdown
+    [placeholder]="placeholder"
+    [data]="options"
+    formControlName="{{controlName}}"
+    [settings]="settings">
+  </ng-multiselect-dropdown>
+</div>

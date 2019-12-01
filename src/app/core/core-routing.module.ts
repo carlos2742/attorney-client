@@ -19,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('../admin/admin.module').then( mod => mod.AdminModule)
+    loadChildren: () => import('../admin/admin.module').then( mod => mod.AdminModule),
+    data: { skipRouteLocalization: true }
   }
 ];
 

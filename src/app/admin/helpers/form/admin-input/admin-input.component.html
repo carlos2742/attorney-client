@@ -1,0 +1,15 @@
+<div *ngIf="type !== 'hidden'; else hiddenInput" class="form-group position-relative" [formGroup]="tempFormGroup">
+  <div class="input-group mb-3 position-relative">
+    <span class="position-absolute input-icon" id="basic-addon1">
+      <i class="{{icon}}"></i>
+      <span class="divider"></span>
+    </span>
+    <input type="{{type}}" name="{{controlName}}" class="form-control" [class.read-only]="readOnly || false" formControlName="{{controlName}}" placeholder="{{placeholder}}">
+  </div>
+  <app-admin-error [field]="field"></app-admin-error>
+</div>
+<ng-template #hiddenInput>
+  <div [formGroup]="tempFormGroup">
+    <input type="{{type}}" name="{{controlName}}" formControlName="{{controlName}}">
+  </div>
+</ng-template>

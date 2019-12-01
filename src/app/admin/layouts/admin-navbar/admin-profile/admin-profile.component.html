@@ -1,0 +1,32 @@
+<div ngbDropdown placement="bottom-right">
+  <button id="profile" class="navbar-action" ngbDropdownToggle>
+    <ng-container [ngTemplateOutlet]="userImage"></ng-container>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="profile">
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" [routerLink]="'profile'">
+      <ng-container [ngTemplateOutlet]="userCard"></ng-container>
+    </div>
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" [routerLink]="'profile'">
+      <span class="icon"><i class="fas fa-cogs"></i></span>
+      <span>Cuenta</span>
+    </div>
+    <div ngbDropdownItem class="menu-item pl-3 pb-2 pt-2" (click)="logout()">
+      <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+      <span>Salir</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #userImage>
+  <div class="icon-container text-center"><i class="fas fa-user"></i></div>
+</ng-template>
+
+<ng-template #userCard>
+  <div class="user-card pb-2 pt-2">
+    <ng-container [ngTemplateOutlet]="userImage"></ng-container>
+    <div *ngIf="(loggedUser$ | async)" class="mt-3 text-center">
+      <div *ngIf="(loggedUser$ | async).name !== ''" class="name">{{(loggedUser$ | async).name}}</div>
+      <div class="email">{{(loggedUser$ | async).email}}</div>
+    </div>
+  </div>
+</ng-template>

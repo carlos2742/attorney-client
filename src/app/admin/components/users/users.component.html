@@ -1,0 +1,35 @@
+<div class="header">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
+    <div>
+      <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
+      <span>Usuarios</span>
+    </div>
+    <div>
+      <button class="btn prime" (click)="openModalForm(modalTemplate)">Nuevo</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalTemplate let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      <span>Registrar Usuario</span>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form *ngIf="modalForm" action="" [formGroup]="modalForm">
+      <app-admin-input [icon]="'fas fa-envelope'" [type]="'text'" [placeholder]="'Correo electrónico'" [tempFormGroup]="modalForm" [controlName]="'email'" [field]="modalForm.controls.email"></app-admin-input>
+      <app-admin-input [icon]="'fas fa-heading'" [type]="'text'" [placeholder]="'Nombre'" [tempFormGroup]="modalForm" [controlName]="'name'" [field]="modalForm.controls.name"></app-admin-input>
+      <app-admin-select [icon]="'fas fa-layer-group'" [options]="roles" [controlName]="'role'" [tempFormGroup]="modalForm" [field]="modalForm.controls.role"></app-admin-select>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn invert" (click)="addUser()" >Registrar</button>
+    <button type="button" class="btn prime" (click)="modal.dismiss('Cross click')">Cancelar</button>
+  </div>
+</ng-template>
+
+

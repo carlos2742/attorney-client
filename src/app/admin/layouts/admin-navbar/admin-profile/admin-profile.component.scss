@@ -1,0 +1,31 @@
+@import "../admin-navbar.component";
+.icon-container{
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: black;
+}
+.user-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  width: 100%;
+  .name{
+    color: #3F3F44;
+  }
+  .email{
+    font-size: 13px;
+    color: #96A3B6;
+  }
+  .icon-container{
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+  }
+}
+.dropdown-menu{
+  width: 240px;
+}
