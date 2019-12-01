@@ -75,13 +75,16 @@ export class ProfileComponent implements OnInit{
 
     this.auth.updatePassword(this.passwordForm.value).subscribe(
       response => {
-        console.log(response);
         this.notification.show('Su contraseña ha sido actualizada', {type:NOTIFICATION_TYPE.SUCCESS});
         this.passwordForm.reset();
       },
       error =>{
+        let message = 'Su contraseña no se ha podido actualizar';
         console.log(error);
-        this.notification.show('Su contraseña no se ha podido actualizar', {type:NOTIFICATION_TYPE.FAILED});
+        if(error.status === 422){
+          message = message+'. <strong>(Contraseña Actual incorrecta)</strong>'
+        }
+        this.notification.show(message, {type:NOTIFICATION_TYPE.FAILED});
         this.passwordForm.reset();
       }
     );
@@ -113,8 +116,8 @@ export class ProfileComponent implements OnInit{
   private initPasswordForm(){
     this.passwordForm = this.formBuilder.group({
       passwordCurrent: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      passwordConfirmation: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      passwordConfirmation: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
 
     const passwordConfirmation =  this.passwordForm.controls.passwordConfirmation;

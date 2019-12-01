@@ -15,8 +15,14 @@
     </ng-template>
 
     <ng-template #matchBlock>
-      <div *ngIf="field.errors.notMatch">
+      <div *ngIf="field.errors.notMatch; else minLengthBlock">
         Por favor introduzca la misma contraseña
+      </div>
+    </ng-template>
+
+    <ng-template #minLengthBlock>
+      <div *ngIf="field.errors.minlength">
+        La contraseña debe tener al menos {{field.errors.minlength.requiredLength}} caracteres
       </div>
     </ng-template>
   </div>

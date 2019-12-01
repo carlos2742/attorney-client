@@ -37,10 +37,10 @@
   <div class="form-container">
     <form *ngIf="profileForm" action="" [formGroup]="profileForm">
       <div [class.disabled]="!editing">
-        <div class="field-container">
+        <div class="field-container disabled">
           <label>Correo electrónico</label>
           <div>
-            <app-admin-input  [icon]="'fas fa-envelope'" [placeholder]="'Correo electrónico'" [readOnly]="!editing" [controlName]="'email'" [tempFormGroup]="profileForm" [field]="profileForm.controls.email"></app-admin-input>
+            <app-admin-input  [icon]="'fas fa-envelope'" [placeholder]="'Correo electrónico'" [readOnly]="true" [controlName]="'email'" [tempFormGroup]="profileForm" [field]="profileForm.controls.email"></app-admin-input>
           </div>
         </div>
         <div class="field-container">
