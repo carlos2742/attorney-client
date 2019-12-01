@@ -79,7 +79,6 @@ import {AdminEffects} from './store/effects/admin.effects';
     EffectsModule.forFeature([AdminEffects]),
   ],
   providers: [
-    UploadService,
     ArticleService,
     PracticeAreaService,
     TagService,
