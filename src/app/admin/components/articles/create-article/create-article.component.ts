@@ -106,7 +106,6 @@ export class CreateArticleComponent implements OnInit {
     };
     this.articleService.create(payload).subscribe(
       response => {
-        console.log(response);
         this.sending = false;
         this.router.navigate(['/admin/article-view/:id',{id:response['id']}]);
       },
