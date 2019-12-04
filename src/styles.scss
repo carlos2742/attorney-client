@@ -115,3 +115,7 @@ ngb-pagination{
     background-color: #96A3B6!important;
   }
 }
+
+.fr-box.fr-basic.fr-top .fr-wrapper > div:first-child{
+  display: none !important;
+}
