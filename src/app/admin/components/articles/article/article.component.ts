@@ -113,12 +113,12 @@ export class ArticleComponent implements OnInit {
           {
             lang: 'es',
             title: formValue.esTitle,
-            content: formValue.esContent
+            content: this.removeFroalaTag(formValue.esContent)
           },
           {
             lang: 'en',
             title: formValue.enTitle !== '' ? formValue.enTitle : formValue.esTitle,
-            content: formValue.enContent !== '' ? formValue.enContent : formValue.esContent
+            content: formValue.enContent !== '' ? this.removeFroalaTag(formValue.enContent) : this.removeFroalaTag(formValue.esContent)
           }
         ]
       },
@@ -168,5 +168,13 @@ export class ArticleComponent implements OnInit {
         this.sending = false;
       }
     );
+  }
+
+  private removeFroalaTag(text){
+    let htmlText = text;
+    const index  = text.indexOf('<p data-f-id="pbf"');
+    const sub = htmlText.slice(index);
+    htmlText = htmlText.replace(sub,'');
+    return htmlText;
   }
 }
