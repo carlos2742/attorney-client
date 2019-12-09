@@ -38,6 +38,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/reducers/admin.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {AdminEffects} from './store/effects/admin.effects';
+import {UploadService} from './services/upload.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import {AdminEffects} from './store/effects/admin.effects';
     TagService,
     AuthenticationService,
     GuardService,
-    UserService
+    UserService,
+    UploadService
   ]
 })
 export class AdminModule { }
