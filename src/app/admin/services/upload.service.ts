@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {CommonService} from '../../shared/services/common/common.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
 
-  constructor(private http: HttpClient) { }
+  private resources: string;
+
+  constructor(private common: CommonService, private http: HttpClient) {
+    this.resources = `${this.common.apiUrl}articles`;
+  }
 
   public sendFile(metadata) {
-    const url = 'http://localhost:3000/articles/upload_image';
-    return this.http.post(url, {image: metadata});
+    const path = `${this.resources}/upload_image`;
+    return this.http.post(path, {image: metadata});
   }
 }
