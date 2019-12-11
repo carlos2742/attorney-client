@@ -16,13 +16,18 @@ export class AdminTextEditorComponent implements OnInit {
 
   constructor() {
     this.options = {
-      language: 'es',
+      htmlAllowedAttrs: [],
+      attribution: false,
       heightMin: 300,
-      placeholderText: this.placeholder
-    };
+      placeholderText: this.placeholder,
+      events: {
+        'contentChanged': function(){
+          // console.log(this.html.get());
+        }
+      }
+    }
   }
 
   ngOnInit() {
   }
-
 }

@@ -9,7 +9,7 @@
       <span>Nuevo</span>
     </div>
     <div>
-      <button class="btn prime" (click)="create()">
+      <button class="btn prime" [disabled]="sending" (click)="create()">
         <div *ngIf="sending" class="spinner-border spinner-grow-sm"></div>
         <span *ngIf="!sending">Guardar</span>
       </button>
@@ -24,6 +24,12 @@
         <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Área de Práctica</div>
         <div class="col-lg-10 value">
           <app-admin-select *ngIf="form" [icon]="'fas fa-layer-group'" [options]="practiceAreas" [controlName]="'practice_area_id'" [tempFormGroup]="form" [field]="form.controls.practice_area_id"></app-admin-select>
+        </div>
+      </div>
+      <div class="row pb-2 pt-2 pt-lg-5 pb-lg-5 separator">
+        <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Imagen *</div>
+        <div class="col-lg-10 value">
+          <app-admin-image-upload [controlName]="'image_data'" [tempFormGroup]="form" [field]="form.controls.image_data"></app-admin-image-upload>
         </div>
       </div>
       <div class="row pb-4 pt-2 pt-lg-5 pb-lg-5 separator">
