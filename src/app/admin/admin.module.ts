@@ -38,7 +38,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/reducers/admin.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {AdminEffects} from './store/effects/admin.effects';
-import {UploadService} from './services/upload.service';
+import { AdminImageUploadComponent } from './helpers/form/admin-image-upload/admin-image-upload.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,8 @@ import {UploadService} from './services/upload.service';
     UnauthorizedComponent,
     NotFoundComponent,
     ShowForRoleDirective,
-    ProfileComponent
+    ProfileComponent,
+    AdminImageUploadComponent
   ],
   imports: [
     CommonModule,
@@ -84,8 +85,7 @@ import {UploadService} from './services/upload.service';
     TagService,
     AuthenticationService,
     GuardService,
-    UserService,
-    UploadService
+    UserService
   ]
 })
 export class AdminModule { }

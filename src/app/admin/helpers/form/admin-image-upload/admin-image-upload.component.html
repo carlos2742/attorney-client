@@ -1,0 +1,16 @@
+<div class="image-container position-relative">
+  <button *ngIf="!isImageSelected" title="Seleccionar" class="select-image-btn" (click)="selectFile()"><i class="fas fa-file-upload"></i></button>
+  <img *ngIf="isImageSelected" class="w-100" src="{{base64File}}" alt="">
+  <button *ngIf="isImageSelected" title="Eliminar" class="remove-image-btn" (click)="removeFile()"><i class="fas fa-trash-alt"></i></button>
+  <app-admin-error [field]="field"></app-admin-error>
+</div>
+<i #uploadElem class="d-none" ngfSelect
+   [accept]   = "accepted"
+   [(files)] = "files"
+   [maxSize] = "maxSize"
+   [(lastBaseUrl)] = "base64File"
+   [(lastInvalids)] = "invalidFiles"
+   (lastInvalidsChange) = "invalidFileChange()"
+   (filesChange) = "fileChange()"></i>
+
+

@@ -1,26 +1,4 @@
 <p>dashboard works!</p>
-<div>
-  <button class="btn btn-primary mr-2" (click)="selectFile()">Adicionar</button>
-  <button *ngIf="base64File" class="btn btn-success" (click)="sendFile()">Enviar</button>
-</div>
-<i #uploadElem class="d-none" ngfSelect
-   [accept]   = "accepted"
-   [(files)] = "files"
-   [maxSize] = "maxSize"
-   [(lastBaseUrl)] = "base64File"
-   [(lastInvalids)] = "invalidFiles"
-   (lastInvalidsChange) = "invalidFileChange()"
-   (filesChange) = "fileChange()"></i>
 
-<div class="row">
-  <div class="mt-2 col-lg-6">
-    <div>Local image</div>
-    <img class="w-100" src="{{base64File}}" alt="">
-  </div>
-  <div class="mt-2 col-lg-6">
-    <div>Image from google drive</div>
-    <img class="w-100" [attr.src]="driveUrl" alt="">
-  </div>
-</div>
 
 
