@@ -18,7 +18,7 @@
           <span *ngIf="article.status === 'published'" (click)="unpublish()">Ocultar</span>
         </span>
       </button>
-      <button *ngIf="editing" class="mr-2 btn invert">
+      <button *ngIf="editing" [disabled]="sending" class="mr-2 btn invert">
         <div *ngIf="sending" class="spinner-border spinner-grow-sm text-light"></div>
         <span *ngIf="!sending" (click)="save()">Guardar</span>
       </button>
@@ -102,11 +102,11 @@
 </ng-template>
 
 <ng-template #image>
-  <div *ngIf="!editing">
-    <span>{{article['image_id']}}</span>
+  <div [ngClass]="{'d-block':!editing, 'd-none':editing}">
+    <div class="image-container"><img src="https://drive.google.com/uc?export=view&id={{article['image_id']}}" alt=""></div>
   </div>
   <div *ngIf="editing">
-    <app-admin-input *ngIf="form" [icon]="'far fa-image'" [type]="'text'" [controlName]="'image_id'" [placeholder]="'Imagen'" [tempFormGroup]="form" [field]="form.controls.image_id"></app-admin-input>
+    <app-admin-image-upload [controlName]="'imageData'" [imageId]="article['image_id']" [tempFormGroup]="form" [field]="form.controls.imageData"></app-admin-image-upload>
   </div>
 </ng-template>
 

@@ -7,7 +7,6 @@ import {EffectsModule} from '@ngrx/effects';
 import {ngfModule} from 'angular-file';
 import {AngularTokenModule} from 'angular-token';
 import {environment} from '../../environments/environment';
-import {UploadService} from '../admin/services/upload.service';
 
 @NgModule({
   declarations: [],

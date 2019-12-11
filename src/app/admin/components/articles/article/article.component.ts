@@ -69,7 +69,7 @@ export class ArticleComponent implements OnInit {
     this.form = this.formBuilder.group({
       practice_area_id: new FormControl(this.article.practice_area.id, [Validators.required]),
       tags: new FormControl(selectedTags, [Validators.required]),
-      image_id: new FormControl(this.article.image_id),
+      imageData: new FormControl({id: this.article['image_id']}),
       esTitle: new FormControl(this.article.languages['es'].title, [Validators.required]),
       esContent: new FormControl(this.article.languages['es'].content, [Validators.required]),
       enTitle: new FormControl(this.article.languages['en'].title),
@@ -106,8 +106,8 @@ export class ArticleComponent implements OnInit {
     const payload = {
       article: {
         practice_area_id: formValue.practice_area_id,
-        image_id: formValue.image_id
       },
+      image: formValue.imageData,
       translation: {
         fields: [
           {
@@ -132,6 +132,7 @@ export class ArticleComponent implements OnInit {
         this.sending = false;
         this.notification.show('El artículo se ha editado satisfactoriamente', {type:NOTIFICATION_TYPE.SUCCESS});
         this.hideEdit();
+        this.initForm();
       },
       error=>{
         console.log(error);

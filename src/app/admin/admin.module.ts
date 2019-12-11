@@ -5,7 +5,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './admin.component';
 import {ngfModule} from 'angular-file';
-import {UploadService} from './services/upload.service';
 import { LoginComponent } from './components/login/login.component';
 import {SharedModule} from '../shared/shared.module';
 import { AdminInputComponent } from './helpers/form/admin-input/admin-input.component';
@@ -39,6 +38,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducer} from './store/reducers/admin.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {AdminEffects} from './store/effects/admin.effects';
+import { AdminImageUploadComponent } from './helpers/form/admin-image-upload/admin-image-upload.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,8 @@ import {AdminEffects} from './store/effects/admin.effects';
     UnauthorizedComponent,
     NotFoundComponent,
     ShowForRoleDirective,
-    ProfileComponent
+    ProfileComponent,
+    AdminImageUploadComponent
   ],
   imports: [
     CommonModule,
@@ -79,7 +80,6 @@ import {AdminEffects} from './store/effects/admin.effects';
     EffectsModule.forFeature([AdminEffects]),
   ],
   providers: [
-    UploadService,
     ArticleService,
     PracticeAreaService,
     TagService,

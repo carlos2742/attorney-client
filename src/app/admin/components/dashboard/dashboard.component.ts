@@ -1,5 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {UploadService} from '../../services/upload.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,45 +7,7 @@ import {UploadService} from '../../services/upload.service';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild('uploadElem', {static: false}) uploadElem: ElementRef;
+  constructor() { }
 
-  public accepted: string;
-  public maxSize: number;
-  public files: File[];
-  public invalidFiles: File[];
-  public base64File: any;
-  public driveUrl: string;
-
-  constructor(private uploadService: UploadService) { }
-
-  ngOnInit() {
-  }
-
-  invalidFileChange() {
-  }
-
-  fileChange() {
-    console.log(this.files[0]);
-  }
-
-  selectFile() {
-    this.uploadElem.nativeElement.click();
-  }
-
-  sendFile() {
-    const file = this.files[0];
-    const metadata = {
-      name: file.name,
-      type: file.type,
-      content: this.base64File,
-    };
-    this.uploadService.sendFile(metadata).subscribe(
-      response => {
-        this.driveUrl = `https://drive.google.com/uc?export=view&id=${response['drive_file_id']}`;
-        this.files.splice(0);
-      },
-      error => console.log(error)
-    );
-  }
-
+  ngOnInit() {}
 }
