@@ -117,7 +117,7 @@ export class ArticleComponent implements OnInit {
           },
           {
             lang: 'en',
-            title: formValue.enTitle !== '' ? this.removeMark(formValue.enTitle) : this.removeMark(formValue.esTitle),
+            title: formValue.enTitle !== '' ? formValue.enTitle : formValue.esTitle,
             content: formValue.enContent !== '' ? this.removeMark(formValue.enContent) : this.removeMark(formValue.esContent)
           }
         ]
