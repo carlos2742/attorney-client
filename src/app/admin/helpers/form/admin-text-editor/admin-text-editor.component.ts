@@ -17,17 +17,23 @@ export class AdminTextEditorComponent implements OnInit {
   constructor() {
     this.options = {
       htmlAllowedAttrs: [],
-      attribution: true,
       heightMin: 300,
       placeholderText: this.placeholder,
       events: {
         'contentChanged': function(){
-          // console.log(this.html.get());
+          console.log('--------------------------- Froala Content Changed Event ---------------------------');
+          console.log(this.html.get());
         }
       }
     }
   }
 
   ngOnInit() {
+    this.field.valueChanges.subscribe(
+      value => {
+        console.log('--------------------------- Form Control Value Changed Event ---------------------------');
+        console.log(value);
+      }
+    );
   }
 }
