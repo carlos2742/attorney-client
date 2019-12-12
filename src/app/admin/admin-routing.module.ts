@@ -20,7 +20,7 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: '', redirectTo: 'dashboard'},
+      { path: '', redirectTo: 'articles'},
       { path: 'login', component: LoginComponent},
       { path: 'dashboard', component: DashboardComponent, canActivate: [GuardService]},
       { path: 'articles', component: ArticlesComponent, canActivate: [GuardService]},

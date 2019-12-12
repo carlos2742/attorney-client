@@ -91,12 +91,12 @@ export class CreateArticleComponent implements OnInit {
           {
             lang: 'es',
             title: formValue.esTitle,
-            content: formValue.esContent
+            content: this.removeMark(formValue.esContent)
           },
           {
             lang: 'en',
             title: formValue.enTitle !== '' ? formValue.enTitle : formValue.esTitle,
-            content: formValue.enContent !== '' ? formValue.enContent : formValue.esContent
+            content: formValue.enContent !== '' ? this.removeMark(formValue.enContent) : this.removeMark(formValue.esContent)
           }
         ]
       },
@@ -115,5 +115,16 @@ export class CreateArticleComponent implements OnInit {
 
   changeLanguage(lang){
     this.language = lang;
+  }
+
+  private removeMark(value){
+    const element = document.createElement('div');
+    element.innerHTML = value;
+    const list = element.getElementsByTagName('p');
+    const lastElement = list[list.length-1];
+    if(lastElement.innerText === 'Powered by Froala Editor'){
+      lastElement.remove()
+    }
+    return element.innerHTML;
   }
 }
