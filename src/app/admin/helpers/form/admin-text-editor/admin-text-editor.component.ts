@@ -17,7 +17,7 @@ export class AdminTextEditorComponent implements OnInit {
   constructor() {
     this.options = {
       htmlAllowedAttrs: [],
-      attribution: false,
+      attribution: true,
       heightMin: 300,
       placeholderText: this.placeholder,
       events: {
