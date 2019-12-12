@@ -14,23 +14,25 @@ export class AdminTextEditorComponent implements OnInit {
   @Input() placeholder: string;
   options: Object;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
+    const removeMarkFn = this.removeMark;
+    const field = this.field;
     this.options = {
       htmlAllowedAttrs: [],
       heightMin: 300,
       placeholderText: this.placeholder,
       events: {
-        'contentChanged': () => {
-          const parsedValue = this.parseValue(this.field.value);
-          this.field.setValue(parsedValue);
+        'contentChanged': function() {
+          const html = this.html.get();
+          field.setValue(removeMarkFn(html));
         }
       }
     }
   }
 
-  ngOnInit() { }
-
-  private parseValue(value){
+  private removeMark(value){
     const element = document.createElement('div');
     element.innerHTML = value;
     const list = element.getElementsByTagName('p');
