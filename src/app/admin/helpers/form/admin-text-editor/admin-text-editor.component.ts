@@ -17,29 +17,10 @@ export class AdminTextEditorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const removeMarkFn = this.removeMark;
-    const field = this.field;
     this.options = {
       htmlAllowedAttrs: [],
       heightMin: 300,
-      placeholderText: this.placeholder,
-      events: {
-        'contentChanged': function() {
-          const html = this.html.get();
-          field.setValue(removeMarkFn(html));
-        }
-      }
+      placeholderText: this.placeholder
     }
-  }
-
-  private removeMark(value){
-    const element = document.createElement('div');
-    element.innerHTML = value;
-    const list = element.getElementsByTagName('p');
-    const lastElement = list[list.length-1];
-    if(lastElement.innerText === 'Powered by Froala Editor'){
-      lastElement.remove()
-    }
-    return element.innerHTML;
   }
 }
