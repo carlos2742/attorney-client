@@ -39,6 +39,7 @@ import {reducer} from './store/reducers/admin.reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {AdminEffects} from './store/effects/admin.effects';
 import { AdminImageUploadComponent } from './helpers/form/admin-image-upload/admin-image-upload.component';
+import { AdminPaginationComponent } from './helpers/admin-pagination/admin-pagination.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AdminImageUploadComponent } from './helpers/form/admin-image-upload/adm
     NotFoundComponent,
     ShowForRoleDirective,
     ProfileComponent,
-    AdminImageUploadComponent
+    AdminImageUploadComponent,
+    AdminPaginationComponent
   ],
   imports: [
     CommonModule,
