@@ -6,7 +6,6 @@ app-admin-notification{
   right: 0;
   top: 10rem;
 }
-
 .btn{
   font-size: 13px;
   font-weight: bold;
@@ -15,10 +14,14 @@ app-admin-notification{
   border-radius: 5px;
 
   $hover_color: #7d7c7c;
+  &.large{
+    height: 44px;
+    font-size: 18px;
+  }
   &:focus{
     box-shadow: none;
   }
-  &.prime{
+  &.light{
     border: 1px solid $color;
     background-color: white;
     color: $color;
@@ -28,7 +31,7 @@ app-admin-notification{
       color: white;
     }
   }
-  &.invert{
+  &.dark{
     color: #fff;
     background-color: $color;
     &:hover{
@@ -95,6 +98,16 @@ app-admin-notification{
       color: $color;
     }
     color: #96A3B6;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -100px;
+  }
+
+  100% {
+    background-position: 200px;
   }
 }
 

@@ -1,0 +1,4 @@
+<button class="{{classes}}" [disabled]="executed" (click)="execAction()">
+  <div *ngIf="executed" class="spinner-border spinner-grow-sm"></div>
+  <span *ngIf="!executed">{{name}}</span>
+</button>

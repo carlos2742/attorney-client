@@ -5,7 +5,7 @@
       <span>Artículos</span>
     </div>
     <div>
-      <button class="btn prime" [routerLink]="'/admin/create-article'">Nuevo</button>
+      <button class="btn light" [routerLink]="'/admin/create-article'">Nuevo</button>
     </div>
   </div>
 </div>
@@ -24,9 +24,9 @@
 </div>
 
 <div class="container pt-4">
-  <div *ngIf="articles" [class.d-none]="loading">
+  <div *ngIf="articles" >
     <app-admin-pagination (action)="loadArticles($event)" [collectionSize]="articles.total" [pageSize]="6"></app-admin-pagination>
-    <div class="row">
+    <div class="row" [class.d-none]="loading">
       <ng-container *ngFor="let article of articles.data" [ngTemplateOutlet]="articleItem" [ngTemplateOutletContext]="{article: article}"></ng-container>
     </div>
   </div>

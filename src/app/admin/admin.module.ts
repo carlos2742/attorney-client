@@ -40,6 +40,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {AdminEffects} from './store/effects/admin.effects';
 import { AdminImageUploadComponent } from './helpers/form/admin-image-upload/admin-image-upload.component';
 import { AdminPaginationComponent } from './helpers/admin-pagination/admin-pagination.component';
+import { AdminButtonComponent } from './helpers/form/admin-button/admin-button.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { AdminPaginationComponent } from './helpers/admin-pagination/admin-pagin
     ShowForRoleDirective,
     ProfileComponent,
     AdminImageUploadComponent,
-    AdminPaginationComponent
+    AdminPaginationComponent,
+    AdminButtonComponent
   ],
   imports: [
     CommonModule,

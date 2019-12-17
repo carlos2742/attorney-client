@@ -5,7 +5,7 @@
       <span>Etiquetas</span>
     </div>
     <div>
-      <button class="btn prime" (click)="openAddForm(modalTemplate)">Nueva</button>
+      <button class="btn light" (click)="openAddForm(modalTemplate)">Nueva</button>
     </div>
   </div>
 </div>
@@ -15,20 +15,37 @@
 <!--  </form>-->
 </div>
 <div class="container pt-4">
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap" [class.d-none]="loading">
     <ng-container *ngFor="let tag of tags" [ngTemplateOutlet]="tagItem" [ngTemplateOutletContext]="{tag: tag}"></ng-container>
+  </div>
+  <div [class.d-none]="!loading">
+    <ng-container [ngTemplateOutlet]="loadTemplate"></ng-container>
   </div>
 </div>
 
 <ng-template #tagItem let-tag="tag">
   <ng-template #popContent>
-    <button class="btn prime mr-2" (click)="openEditForm(modalTemplate, tag)">Editar</button>
-    <button class="btn prime" (click)="openDeleteForm(modalTemplate, tag.id)">Eliminar</button>
+    <button class="btn light mr-2" (click)="openEditForm(modalTemplate, tag)">Editar</button>
+    <button class="btn light" (click)="openDeleteForm(modalTemplate, tag.id)">Eliminar</button>
   </ng-template>
   <button class="tag" [ngbPopover]="popContent">
     <span>{{tag.languages['es']}} - ({{tag.languages['en']}})</span>
-
   </button>
+</ng-template>
+
+<ng-template #loadTemplate>
+  <div class="d-flex flex-wrap">
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="tagTemplate"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #tagTemplate>
+  <div class="tag"></div>
 </ng-template>
 
 <ng-template #modalTemplate let-modal>
@@ -65,8 +82,8 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn invert" (click)="create()">Guardar</button>
-    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+    <app-admin-button [classes]="'btn light'" (action)="create()" [executed]="sending" [name]="'Guardar'"></app-admin-button>
+    <button type="button" class="btn dark" (click)="closeForm()">Cancelar</button>
   </div>
 </ng-template>
 
@@ -89,8 +106,8 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn invert" (click)="update()">Editar</button>
-    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+    <app-admin-button [classes]="'btn light'" (action)="update()" [executed]="sending" [name]="'Editar'"></app-admin-button>
+    <button type="button" class="btn dark" (click)="closeForm()">Cancelar</button>
   </div>
 </ng-template>
 
@@ -102,7 +119,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn invert" (click)="delete()">Eliminar</button>
-    <button type="button" class="btn prime" (click)="closeForm()">Cancelar</button>
+    <button type="button" class="btn light" (click)="delete()">Eliminar</button>
+    <button type="button" class="btn dark" (click)="closeForm()">Cancelar</button>
   </div>
 </ng-template>
