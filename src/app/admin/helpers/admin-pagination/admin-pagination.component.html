@@ -1,5 +1,4 @@
-<div *ngIf="collectionSize/pageSize > 1">
-  <div *ngIf="separator ? separator : false" class="decorator mb-4"></div>
+<div *ngIf="collectionSize/pageSize > 1" class="mb-4">
   <ngb-pagination  aria-label="Default pagination" class="d-flex justify-content-center"
                    [maxSize]="maxSize"
                    [rotate]="true"

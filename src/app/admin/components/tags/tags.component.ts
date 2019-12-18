@@ -4,6 +4,7 @@ import {TagService} from '../../services/tag/tag.service';
 import {ModalDismissReasons, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {NotificationService} from '../../services/notification/notification.service';
 import {NOTIFICATION_TYPE} from '../../helpers/admin-notification/admin-notification.component';
+import {timer} from 'rxjs';
 
 enum MODAL_TYPE{
   CREATE,
@@ -24,16 +25,31 @@ export class TagsComponent implements OnInit {
   public modalType: MODAL_TYPE;
   public modalRef: NgbModalRef;
 
+  public loading: boolean;
+  public sending: boolean;
+
   constructor(private formBuilder: FormBuilder, private tagService: TagService, private modalService: NgbModal,
               private notification: NotificationService) {
     this.form = this.formBuilder.group({
       title: new FormControl(''),
     });
     this.modalForm = null;
+    this.sending = false;
+    this.loading = false;
   }
 
   ngOnInit() {
-    this.tagService.all.subscribe(response => this.tags = response);
+    this.loadTags();
+  }
+
+  loadTags(page = 1){
+    this.loading = true;
+    this.tagService.all.subscribe(response => {
+      timer(500).subscribe(() => {
+        this.loading = false;
+        this.tags = response;
+      })
+    });
   }
 
   openAddForm(content){
@@ -89,81 +105,85 @@ export class TagsComponent implements OnInit {
     return true;
   }
 
+  private get payload(){
+    const formValue = this.modalForm.value;
+    return {
+      translation: {
+        fields: [
+          {
+            lang: 'es',
+            name: formValue.esName,
+          },
+          {
+            lang: 'en',
+            name: formValue.enName
+          }
+        ]
+      }
+    };
+  }
+
+  private get tagId(){
+    const formValue = this.modalForm.value;
+    return formValue.id;
+  }
+
   create(){
     if(this.formIsValid()){
-      const formValue = this.modalForm.value;
-      const payload = {
-        translation: {
-          fields: [
-            {
-              lang: 'es',
-              name: formValue.esName,
-            },
-            {
-              lang: 'en',
-              name: formValue.enName
-            }
-          ]
-        }
-      };
-      this.tagService.create(payload).subscribe(
+      this.sending = true;
+      this.tagService.create(this.payload).subscribe(
         response => {
           this.tags = [response, ...this.tags];
           this.closeForm();
           this.notification.show('La etiqueta se ha adicionado satisfactoriamente',{type: NOTIFICATION_TYPE.SUCCESS});
+          this.sending = false;
         },
         error=>{
-          console.log(error);
+          this.closeForm();
           this.notification.show('La etiqueta no se pudo adicionar',{type: NOTIFICATION_TYPE.FAILED});
+          this.sending = false;
         }
       );
     }
   }
+
   update(){
     if(this.formIsValid()){
-      const formValue = this.modalForm.value;
-      const payload = {
-        translation: {
-          fields: [
-            {
-              lang: 'es',
-              name: formValue.esName,
-            },
-            {
-              lang: 'en',
-              name: formValue.enName
-            }
-          ]
-        }
-      };
-      this.tagService.update(formValue.id, payload).subscribe(
+      this.sending = true;
+      this.tagService.update(this.tagId, this.payload).subscribe(
         response => {
           const editedItem:any = response;
           const index = this.tags.findIndex(item => item.id === editedItem.id);
           this.tags.splice(index,1,editedItem);
           this.closeForm();
           this.notification.show('La etiqueta se ha editado satisfactoriamente',{type: NOTIFICATION_TYPE.SUCCESS});
+          this.sending = false;
         },
         error=>{
           console.log(error);
+          this.closeForm();
           this.notification.show('La etiqueta no se pudo editar',{type: NOTIFICATION_TYPE.FAILED});
+          this.sending = false;
         }
       );
     }
   }
   delete(){
     if(this.formIsValid()){
-      const formValue = this.modalForm.value;
-      this.tagService.delete(formValue.id).subscribe(
+      this.sending = true;
+      this.tagService.delete(this.tagId).subscribe(
         response => {
           const deletedItem: any = response;
           this.tags = this.tags.filter(item => item.id !== deletedItem.id);
           this.closeForm();
           this.notification.show('La etiqueta se ha eliminado satisfactoriamente',{type: NOTIFICATION_TYPE.SUCCESS});
+          this.sending = false;
         },
         error=>{
+          this.closeForm();
           console.log(error);
           this.notification.show('La etiqueta no se pudo eliminar',{type: NOTIFICATION_TYPE.FAILED});
+          this.sending = false;
         }
       );
     }

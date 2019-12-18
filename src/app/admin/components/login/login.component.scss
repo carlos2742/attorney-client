@@ -29,22 +29,24 @@
     }
     form{
       padding: 20px 30px 30px 30px;
-
-      .btn{
-        height: 44px;
-        font-size: 18px;
-        background-color: $color;
-        color: #ffffff;
-      }
     }
-
   }
 }
 
 @include media-breakpoint-down(sm){
   .login-container{
+    img{
+      width: 150px;
+    }
     .card{
       min-width: 90%;
+      .card-body{
+        padding: 1.25rem .5rem;
+        .card-title{
+          margin-top: 15px;
+        }
+      }
+
     }
   }
 }

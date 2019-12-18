@@ -46,7 +46,7 @@ ngb-pagination{
     .page-item{
       &.active{
         .page-link{
-          background-color: #D8A972;
+          background-color: $dark_color;
           color: white;
         }
       }
@@ -65,7 +65,7 @@ ngb-pagination{
         display: flex;
         border-radius: 50%;
         &:focus{
-          box-shadow: 0 0 0 0.2rem rgba(216, 169, 114, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(207, 214, 216, 0.25);
         }
         img{
           width: $size;
@@ -73,6 +73,11 @@ ngb-pagination{
         }
       }
     }
+  }
+}
+ngb-progressbar{
+  .progress{
+    border-radius: 0;
   }
 }
 
@@ -116,6 +121,6 @@ ngb-pagination{
   }
 }
 
-.fr-box.fr-basic.fr-top .fr-wrapper > div:first-child:not(.fr-element.fr-view){
+.fr-box.fr-basic.fr-top .fr-wrapper > div:first-child:not(.fr-view){
   display: none !important;
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -14,20 +14,13 @@ export class AdminTextEditorComponent implements OnInit {
   @Input() placeholder: string;
   options: Object;
 
-  constructor() {
-    this.options = {
-      htmlAllowedAttrs: [],
-      attribution: false,
-      heightMin: 300,
-      placeholderText: this.placeholder,
-      events: {
-        'contentChanged': function(){
-          // console.log(this.html.get());
-        }
-      }
-    }
-  }
+  constructor() {}
 
   ngOnInit() {
+    this.options = {
+      htmlAllowedAttrs: [],
+      heightMin: 300,
+      placeholderText: this.placeholder
+    }
   }
 }
