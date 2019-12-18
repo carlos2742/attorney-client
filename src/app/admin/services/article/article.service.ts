@@ -13,8 +13,8 @@ export class ArticleService {
     this.resources = `${this.common.apiUrl}articles`;
   }
 
-  get all(){
-    const path = this.resources;
+  public all(page){
+    const path = `${this.resources}/all/${page}`;
     return this.http.get(path)
   }
 

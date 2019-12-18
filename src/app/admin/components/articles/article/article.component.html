@@ -1,6 +1,6 @@
 <div class="header">
-  <div class="container d-flex justify-content-between pb-3 pt-3">
-    <div>
+  <div class="container d-flex justify-content-between pb-3 pt-3 flex-column flex-md-row">
+    <div class="mb-3 mb-md-0">
       <a [routerLink]="'/admin/articles'" href="">
         <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
         <span>Artículos</span>
@@ -10,19 +10,19 @@
       <span *ngIf="article">Artículo {{article.id}}</span>
     </div>
     <div *ngIf="article">
-      <button *ngIf="!editing" class="mr-2 btn prime" (click)="showEdit()">Editar</button>
-      <button *ngIf="!editing" class="btn prime">
+      <button *ngIf="!editing" class="mr-2 btn light" (click)="showEdit()">Editar</button>
+      <button *ngIf="!editing" class="btn light">
         <div *ngIf="sending" class="spinner-border spinner-grow-sm"></div>
         <span *ngIf="!sending">
           <span *ngIf="article.status !== 'published'" (click)="publish()">Publicar</span>
           <span *ngIf="article.status === 'published'" (click)="unpublish()">Ocultar</span>
         </span>
       </button>
-      <button *ngIf="editing" [disabled]="sending" class="mr-2 btn invert">
+      <button *ngIf="editing" [disabled]="sending" class="mr-2 btn light">
         <div *ngIf="sending" class="spinner-border spinner-grow-sm text-light"></div>
         <span *ngIf="!sending" (click)="save()">Guardar</span>
       </button>
-      <button *ngIf="editing" class="mr-2 btn prime" [disabled]="sending" (click)="hideEdit()">Cancelar</button>
+      <button *ngIf="editing" class="mr-2 btn dark" [disabled]="sending" (click)="hideEdit()">Cancelar</button>
     </div>
   </div>
 </div>

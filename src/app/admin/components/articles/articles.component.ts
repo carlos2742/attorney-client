@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {ArticleService} from '../../services/article/article.service';
+import {timer} from 'rxjs';
 
 @Component({
   selector: 'app-articles',
@@ -11,8 +12,10 @@ export class ArticlesComponent implements OnInit {
 
   public form;
   public articles;
+  public loading: boolean;
 
   constructor(private formBuilder: FormBuilder, private articleService: ArticleService) {
+    this.loading = false;
     this.form = this.formBuilder.group({
       title: new FormControl(''),
       status: new FormControl('')
@@ -20,9 +23,17 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.articleService.all.subscribe(
+    this.loadArticles();
+  }
+
+  loadArticles(page = 1){
+    this.loading = true;
+    this.articleService.all(page).subscribe(
       response => {
-        this.articles = response;
+        timer(500).subscribe(() => {
+          this.loading = false;
+          this.articles = response;
+        });
       }
     )
   }

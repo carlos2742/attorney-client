@@ -16,9 +16,11 @@ export class LoginComponent implements OnInit {
 
   public form;
   public showError: boolean;
+  public sending: boolean;
 
   constructor(private adminStore: Store<AdminState>, private auth: AuthenticationService, private router: Router, private formBuilder: FormBuilder) {
     this.showError = false;
+    this.sending = false;
     this.form = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required])
@@ -43,6 +45,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.sending = true;
     this.auth.login(this.form.value).subscribe(
       response => {
         this.router.navigateByUrl(localStorage.getItem('redirectTo'));
@@ -51,6 +54,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error);
         this.showError = true;
+        this.sending = false;
       });
   }
 

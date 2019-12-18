@@ -9,10 +9,7 @@
       <span>Nuevo</span>
     </div>
     <div>
-      <button class="btn prime" [disabled]="sending" (click)="create()">
-        <div *ngIf="sending" class="spinner-border spinner-grow-sm"></div>
-        <span *ngIf="!sending">Guardar</span>
-      </button>
+      <app-admin-button [classes]="'btn light'" (action)="create()" [executed]="sending" [name]="'Guardar'"></app-admin-button>
     </div>
   </div>
 </div>

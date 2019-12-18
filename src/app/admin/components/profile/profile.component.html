@@ -51,9 +51,9 @@
         </div>
       </div>
       <div>
-        <button *ngIf="!editing" class="btn prime" (click)="showForm()">Editar</button>
-        <button *ngIf="editing" class="btn prime" (click)="saveProfile()">Guardar</button>
-        <button *ngIf="editing" class="btn invert ml-2" (click)="hideForm()">Cancelar</button>
+        <button *ngIf="!editing" class="btn light" (click)="showForm()">Editar</button>
+        <button *ngIf="editing" class="btn light" (click)="saveProfile()">Guardar</button>
+        <button *ngIf="editing" class="btn dark ml-2" (click)="hideForm()">Cancelar</button>
       </div>
     </form>
   </div>
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div>
-        <button class="btn prime" (click)="updatePass()">Actualizar</button>
+        <button class="btn light" (click)="updatePass()">Actualizar</button>
       </div>
     </form>
   </div>

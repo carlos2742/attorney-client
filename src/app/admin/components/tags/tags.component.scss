@@ -10,5 +10,15 @@ button:focus{
     border: none;
     color: white;
   }
+  &:empty{
+    width: 15%;
+    height: 35px;
+    border: none;
+    animation: loading 1.7s infinite linear;
+    background: #dedfe1;
+    background-image: -webkit-linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-image: linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-repeat: no-repeat;
+  }
 }
 
