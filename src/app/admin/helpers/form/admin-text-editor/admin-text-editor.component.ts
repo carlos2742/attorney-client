@@ -20,7 +20,15 @@ export class AdminTextEditorComponent implements OnInit {
     this.options = {
       htmlAllowedAttrs: [],
       heightMin: 300,
-      placeholderText: this.placeholder
+      placeholderText: this.placeholder,
+      linkAlwaysBlank: true,
+      linkInsertButtons: ['linkBack'],
+      linkEditButtons: ['linkEdit', 'linkRemove'],
+      toolbarButtons: {
+        'moreRich': {
+          'buttons': ['insertLink']
+        }
+      }
     }
   }
 }

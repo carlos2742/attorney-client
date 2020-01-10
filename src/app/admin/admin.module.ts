@@ -1,3 +1,7 @@
+// Import a single Froala Editor plugin.
+import 'froala-editor/js/plugins/link.min.js';
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
