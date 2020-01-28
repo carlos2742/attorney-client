@@ -56,7 +56,7 @@ export class AdminImageUploadComponent implements OnInit {
         content: this.base64File,
         id: ''
       });
-    },50);
+    },100);
   }
 
   selectFile() {
