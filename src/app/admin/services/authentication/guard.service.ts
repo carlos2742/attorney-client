@@ -14,30 +14,27 @@ export class GuardService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return new Observable<boolean>(observe => {
       if(!this.auth.isLogged){
-        const options = this.auth.options;
-        if(options.signInStoredUrlStorageKey){
-          localStorage.setItem(
-            options.signInStoredUrlStorageKey,
-            state.url
-          );
-        }
-        this.auth.goToLogin();
-        observe.next(false);
+        this.goToLogin(state,observe);
       } else {
         this.auth.loggedUser().subscribe(
           response => {
-            const userRole = response['role'];
-            const requiredRoles = route.data.roles;
+            if(!response){
+              this.goToLogin(state,observe);
+            }else{
+              const userRole = response['role'];
+              const requiredRoles = route.data.roles;
 
-            if (userRole === '') {
-              this.auth.permissionDenied();
-              observe.next(false);
-            } else if (!requiredRoles || requiredRoles.length === 0 || requiredRoles.indexOf(userRole) > -1) {
-              observe.next(true);
-            } else {
-              this.auth.permissionDenied();
-              observe.next(false);
+              if (userRole === '') {
+                this.auth.permissionDenied();
+                observe.next(false);
+              } else if (!requiredRoles || requiredRoles.length === 0 || requiredRoles.indexOf(userRole) > -1) {
+                observe.next(true);
+              } else {
+                this.auth.permissionDenied();
+                observe.next(false);
+              }
             }
+
           },
           error => {
             console.log(error);
@@ -47,5 +44,17 @@ export class GuardService implements CanActivate{
         );
       }
     });
+  }
+
+  private goToLogin(state, observe){
+    const options = this.auth.options;
+    if(options.signInStoredUrlStorageKey){
+      localStorage.setItem(
+        options.signInStoredUrlStorageKey,
+        state.url
+      );
+    }
+    this.auth.goToLogin();
+    observe.next(false);
   }
 }
