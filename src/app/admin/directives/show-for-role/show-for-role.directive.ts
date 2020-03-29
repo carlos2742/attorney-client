@@ -13,7 +13,7 @@ export class ShowForRoleDirective implements OnInit{
   ngOnInit(): void {
     this.auth.loggedUser().subscribe(
       response => {
-        if (this.role.indexOf(response['role']) > -1) {
+        if (response && this.role.indexOf(response['role']) > -1) {
           this.viewContainer.createEmbeddedView(this.templateRef);
         } else {
           this.viewContainer.clear();
