@@ -21,9 +21,9 @@
       </div>
     </div>
 
-    <div class="tag-list pt-3 pb-3 pl-1 pr-1" *ngIf="(article$ | async)">
-      <div class="tag mr-2 mb-1 mt-1" *ngFor="let tag of (article$ | async).tags">{{tag.name}}</div>
-    </div>
+<!--    <div class="tag-list pt-3 pb-3 pl-1 pr-1" *ngIf="(article$ | async)">-->
+<!--      <div class="tag mr-2 mb-1 mt-1" *ngFor="let tag of (article$ | async).tags">{{tag.name}}</div>-->
+<!--    </div>-->
 
     <div class="w-100" *ngIf="!(commentsLoading$ | async); else loadingTemplate">
       <ng-container *ngIf="(comments$ | async).total > 0" [ngTemplateOutlet]="commentContainer" [ngTemplateOutletContext]="{comments: (comments$ | async).data}"></ng-container>
