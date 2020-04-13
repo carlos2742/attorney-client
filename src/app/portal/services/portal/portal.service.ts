@@ -16,7 +16,8 @@ export class PortalService {
 
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedMenuItem).subscribe(select => {
-      if (select === 'home') {
+      console.log(select);
+      if (select === 'home' || select === 'article' || select === 'blog') {
         this.goTop();
       } else if (allowed.includes(select)) {
         this.goToElement(select);
