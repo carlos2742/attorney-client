@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalActions from '../../store/actions/portal.actions';
+import {Router} from '@angular/router';
+import {LocalizeRouterService} from '@gilsdav/ngx-translate-router';
 
 export enum ENTITIES {
   ARTICLE = 'article',
@@ -20,11 +22,12 @@ export class PaginationComponent implements OnInit {
   @Input() entity: ENTITIES;
   @Input() params: any;
   @Input() separator: boolean;
+  @Input() page: number;
 
   boundaryLinks: boolean;
   maxSize: number;
 
-  constructor(private portalStore: Store<PortalState>) {
+  constructor(private portalStore: Store<PortalState>, private router: Router, private localize: LocalizeRouterService) {
     this.maxSize = 5;
     this.boundaryLinks = false;
   }
@@ -37,9 +40,8 @@ export class PaginationComponent implements OnInit {
       const articleId = this.params.id;
       this.portalStore.dispatch(new PortalActions.LoadComments({articleId, page}));
     } else {
-      const lang = this.params.lang;
-      const filter = this.params.filter;
-      this.portalStore.dispatch(new PortalActions.LoadArticles({lang, filter, page}));
+      const route = this.localize.translateRoute('/portal/blog');
+      this.router.navigate([route,page]);
     }
   }
 

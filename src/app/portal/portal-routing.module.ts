@@ -17,8 +17,9 @@ const routes: Routes = [
       { path: 'about', component: HomeComponent},
       { path: 'area_of_practices', component: HomeComponent},
       { path: 'faq', component: FrequentsAnswersQuestionsComponent},
-      { path: 'blog', component: BlogComponent},
       { path: 'article/:permalink', component: ArticleComponent},
+      { path: 'blog', component: BlogComponent},
+      { path: 'blog/:page', component: BlogComponent}
     ]
   }
 ];
