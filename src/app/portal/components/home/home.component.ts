@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public practices: Array<any>;
 
   constructor(private portalService: PortalService) {
-    this.practices = ['IMMIGRATION', 'FAMILY', 'WILLSPROBATE', 'BANKRUPTCY', 'INJURY', 'CDEFENSE'];
+    this.practices = ['IMMIGRATION', 'FAMILY', 'WILLSPROBATE', 'BANKRUPTCY', 'INJURY'];
   }
 
   ngOnInit() {
