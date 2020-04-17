@@ -44,4 +44,8 @@ export class CommonService {
   get apiUrl() {
     return environment.apiUrl;
   }
+
+  get tawkId(){
+    return environment.tawkId
+  }
 }
