@@ -1,0 +1,64 @@
+@import "../articles.component";
+
+.menu{
+  border-bottom: 1px solid #EEF1F6;
+  font-size: 14px;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+      &.active{
+        border-bottom: 1px solid $color;
+        button{
+          color: $color;
+          cursor: auto;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      margin-right: 20px;
+      button{
+        background-color: transparent;
+        border: none;
+        color: #96A3B6;
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+  .lang-container{
+    color: #96A3B6;
+    button{
+      background-color: transparent;
+      border: none;
+      color: #96A3B6;
+      &:focus{
+        outline: none;
+      }
+      &.active{
+        color: $color;
+        cursor: auto;
+      }
+    }
+  }
+}
+
+.image-container{
+  width: 500px;
+  height: 268px;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-down(md){
+  .image-container{
+    width: 100%;
+    height: auto;
+  }
+}
+

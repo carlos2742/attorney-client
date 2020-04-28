@@ -1,0 +1,116 @@
+@import "../app.component";
+$color: #3c3e40;
+
+app-admin-notification{
+  position: fixed;
+  right: 0;
+  top: 10rem;
+}
+.btn{
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 15px;
+  min-width: 80px;
+  border-radius: 5px;
+
+  $hover_color: #7d7c7c;
+  &.large{
+    height: 44px;
+    font-size: 18px;
+  }
+  &:focus{
+    box-shadow: none;
+  }
+  &.light{
+    border: 1px solid $color;
+    background-color: white;
+    color: $color;
+    &:hover{
+      border: 1px solid white;
+      background-color: $hover_color;
+      color: white;
+    }
+  }
+  &.dark{
+    color: #fff;
+    background-color: $color;
+    &:hover{
+      border: 1px solid white;
+      background-color: $hover_color;
+      color: white;
+    }
+  }
+}
+
+.header{
+  background-color: #f7f8fb;
+  border-bottom: 1px solid #EEF1F6;
+  color: $color;
+  .icon{
+    font-size: 20px;
+  }
+}
+.filter{
+  color: #495057;
+  select:focus{
+    box-shadow: none;
+    border-color: $color;
+  }
+}
+
+.tag{
+  border: 1px solid #bcbfc4;
+  padding: 5px 10px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #96A3B6;
+  color: white;
+}
+
+.modal-content {
+  background-color: white!important;
+}
+
+.http-code{
+  color: $color;
+  text-align: center;
+  padding-top: 5rem;
+  .title{
+    font-size: 20rem;
+    line-height: 15rem;
+  }
+  .description{
+    font-size: 4rem;
+  }
+}
+
+.separator{
+  border-bottom: 1px solid #EEF1F6;
+}
+
+.sections{
+  font-family: $Roboto;
+  .label{
+    color: $color;
+  }
+  .value, p{
+    label{
+      color: $color;
+    }
+    color: #96A3B6;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -100px;
+  }
+
+  100% {
+    background-position: 200px;
+  }
+}
+
+
+
+

@@ -1,0 +1,18 @@
+@import "../../admin.component";
+
+p{
+  font-size: 13px;
+}
+.disabled{
+  pointer-events: none;
+}
+.form-container{
+  .field-container{
+    max-width: 360px;
+    label{
+      color: #596981;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}

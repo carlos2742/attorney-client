@@ -42,10 +42,6 @@ export class FrequentsAnswersQuestionsComponent implements OnInit, AfterViewInit
       {
         id: 'INJURY',
         items: this.range(2),
-      },
-      {
-        id: 'CDEFENSE',
-        items: this.range(5),
       }
     ];
   }

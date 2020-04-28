@@ -1,0 +1,12 @@
+<ngb-toast
+  *ngFor="let message of messages"
+  [autohide]="true"
+  [delay] = "message.delay || 7000"
+  class="text-light"
+  [ngClass]="{'bg-success': message.type === NOTFY_TYPE.SUCCESS, 'bg-danger': message.type === NOTFY_TYPE.FAILED}"
+  (hide)="remove(message)"
+   aria-live="alert">
+  <i *ngIf="message.type === NOTFY_TYPE.SUCCESS" class="fas fa-check"></i>
+  <i *ngIf="message.type === NOTFY_TYPE.FAILED" class="fas fa-times"></i>
+  <span class="ml-2" [innerHTML]="message.text"></span>
+</ngb-toast>

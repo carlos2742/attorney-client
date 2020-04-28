@@ -1,0 +1,12 @@
+<div class="form-group position-relative" [formGroup]="tempFormGroup">
+  <div class="input-group mb-3 position-relative">
+    <span class="position-absolute input-icon" id="basic-addon1">
+      <i class="{{icon}}"></i>
+      <span class="divider"></span>
+    </span>
+    <select class="form-control" formControlName="{{controlName}}">
+      <option *ngFor="let item of options" value="{{item.id}}">{{item.value}}</option>
+    </select>
+  </div>
+  <app-admin-error [field]="field"></app-admin-error>
+</div>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+export enum ROLES{
+  COLLABORATOR,
+  OWNER,
+  DEVELOPER
+}
 
 @Component({
   selector: 'app-admin',
@@ -11,5 +16,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

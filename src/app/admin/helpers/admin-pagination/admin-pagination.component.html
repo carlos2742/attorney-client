@@ -1,0 +1,17 @@
+<div *ngIf="collectionSize/pageSize > 1" class="mb-4">
+  <ngb-pagination  aria-label="Default pagination" class="d-flex justify-content-center"
+                   [maxSize]="maxSize"
+                   [rotate]="true"
+                   [boundaryLinks]="boundaryLinks"
+                   [collectionSize]="collectionSize"
+                   [pageSize]="pageSize"
+                   (pageChange)="pageChange($event)"
+  >
+    <ng-template ngbPaginationPrevious>
+      <i class="fas fa-angle-double-left"></i>
+    </ng-template>
+    <ng-template ngbPaginationNext>
+      <i class="fas fa-angle-double-right"></i>
+    </ng-template>
+  </ngb-pagination>
+</div>

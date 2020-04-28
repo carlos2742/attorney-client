@@ -1,0 +1,72 @@
+<div class="header">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
+    <div>
+      <a [routerLink]="'/admin/articles'" href="">
+        <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
+        <span>Artículos</span>
+      </a>
+      <span class="mr-2 ml-2"> <i class="fas fa-chevron-right"></i> </span>
+      <span>Nuevo</span>
+    </div>
+    <div>
+      <app-admin-button [classes]="'btn light'" (action)="create()" [executed]="sending" [name]="'Guardar'"></app-admin-button>
+    </div>
+  </div>
+</div>
+<div class="container form-section">
+  <form action="" [formGroup]="form" [class.pointer-events-none]="sending">
+    <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Crear Artículo</h3>
+    <div>
+      <div class="row pb-2 pt-2 pt-lg-5 pb-lg-5 separator">
+        <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Área de Práctica</div>
+        <div class="col-lg-10 value">
+          <app-admin-select *ngIf="form" [icon]="'fas fa-layer-group'" [options]="practiceAreas" [controlName]="'practice_area_id'" [tempFormGroup]="form" [field]="form.controls.practice_area_id"></app-admin-select>
+        </div>
+      </div>
+      <div class="row pb-2 pt-2 pt-lg-5 pb-lg-5 separator">
+        <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Imagen *</div>
+        <div class="col-lg-10 value">
+          <app-admin-image-upload [controlName]="'image_data'" [tempFormGroup]="form" [field]="form.controls.image_data"></app-admin-image-upload>
+        </div>
+      </div>
+      <div class="row pb-4 pt-2 pt-lg-5 pb-lg-5 separator">
+        <div class="col-lg-2 pt-2 label pb-2 pb-lg-0">Palabras Claves *</div>
+        <div class="col-lg-10 value position-relative">
+          <app-admin-multi-select [placeholder]="'Adicione palabras clave'" [options]="tags" [controlName]="'tags'" [tempFormGroup]="form" [field]="form.controls.tags"></app-admin-multi-select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row pt-2 pb-4 pt-lg-5 pb-lg-5 separator">
+        <div class="col-lg-2 pt-2 ">Contenido *</div>
+        <div class="col-lg-10">
+          <div *ngIf="language === 'es'">
+            <div class="sub-form-head mb-3 mt-3">
+              <div class="border"></div>
+              <div>Español</div>
+              <div class="border"></div>
+              <button (click)="changeLanguage('en')" title="Cambiar a Inglés">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </div>
+            <app-admin-input *ngIf="form" [icon]="'fas fa-heading'" [type]="'text'" [controlName]="'esTitle'" [placeholder]="'Título'" [tempFormGroup]="form" [field]="form.controls.esTitle"></app-admin-input>
+            <app-admin-text-editor *ngIf="form" [controlName]="'esContent'" [placeholder]="'Contenido del artículo.'" [tempFormGroup]="form" [field]="form.controls.esContent"></app-admin-text-editor>
+          </div>
+          <div *ngIf="language === 'en'">
+            <div class="sub-form-head mb-3 mt-3">
+              <div class="border"></div>
+              <div>Inglés</div>
+              <div class="border"></div>
+              <button (click)="changeLanguage('es')" title="Cambiar a Español">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </div>
+            <app-admin-input *ngIf="form" [icon]="'fas fa-heading'" [type]="'text'" [controlName]="'enTitle'" [placeholder]="'Título'" [tempFormGroup]="form" [field]="form.controls.enTitle"></app-admin-input>
+            <app-admin-text-editor *ngIf="form" [controlName]="'enContent'" [placeholder]="'Contenido del artículo.'" [tempFormGroup]="form" [field]="form.controls.enContent"></app-admin-text-editor>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

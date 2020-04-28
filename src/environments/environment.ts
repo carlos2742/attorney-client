@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'http://localhost:3000/'
-  apiUrl: 'https://attorney-api-prod.herokuapp.com/'
+  tawkId: '5e97487235bcbb0c9ab17107',
+  apiUrl: 'http://localhost:3000/'
+  // apiUrl: 'https://attorney-api-staging.herokuapp.com/'
 };
 
 /*

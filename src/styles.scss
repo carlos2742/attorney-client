@@ -46,7 +46,7 @@ ngb-pagination{
     .page-item{
       &.active{
         .page-link{
-          background-color: #D8A972;
+          background-color: $dark_color;
           color: white;
         }
       }
@@ -65,7 +65,7 @@ ngb-pagination{
         display: flex;
         border-radius: 50%;
         &:focus{
-          box-shadow: 0 0 0 0.2rem rgba(216, 169, 114, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(207, 214, 216, 0.25);
         }
         img{
           width: $size;
@@ -75,7 +75,52 @@ ngb-pagination{
     }
   }
 }
+ngb-progressbar{
+  .progress{
+    border-radius: 0;
+  }
+}
 
 .modal-content{
   background-color: transparent !important;
+}
+.multiselect-dropdown{
+  .dropdown-btn{
+    .dropdown-down, .dropdown-up{
+      top: -1px !important;
+      position: relative;
+      right: -11px;
+    }
+    .dropdown-up{
+      border-bottom: 6px solid #adadad !important;
+      border-left: 3px solid transparent !important;
+      border-right: 3px solid transparent !important;
+    }
+    .dropdown-down{
+      border-top: 6px solid black !important;
+      border-left: 3px solid transparent !important;
+      border-right: 3px solid transparent !important;
+    }
+  }
+  .selected-item{
+    border: 1px solid #bcbfc4 !important;
+    padding: 5px 10px !important;
+    margin-right: .5rem !important;
+    margin-bottom: .5rem;
+    background-color: #96A3B6!important;
+    &:hover{
+      box-shadow: none!important;
+    }
+  }
+  .multiselect-item-checkbox input[type=checkbox] + div:before{
+    color: #96A3B6 !important;
+    border: 2px solid #96A3B6!important;
+  }
+  .multiselect-item-checkbox input[type=checkbox]:checked + div:before{
+    background-color: #96A3B6!important;
+  }
+}
+
+.fr-box.fr-basic.fr-top .fr-wrapper > div:first-child:not(.fr-view){
+  display: none !important;
 }

@@ -1,0 +1,89 @@
+@import "../../admin.component";
+
+a{
+  text-decoration: none;
+  color: $color;
+}
+
+.card{
+  font-family: $Roboto;
+  .card-title{
+    color: $color;
+  }
+  .card-text{
+    color: #7b8590;
+    div:empty{
+      margin-bottom: 0.5rem;
+      &:last-child{
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  .card-action{
+    background-color: $color;
+    color: white !important;
+    margin-right: 10px;
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .card-text div:empty, .card-title:empty, .card-footer span:empty{
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    animation: loading 1.7s infinite linear;
+    background: #dedfe1;
+    background-image: -webkit-linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-image: linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-repeat: no-repeat;
+  }
+}
+
+.sub-form-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #495057;
+  .border{
+    width: 50px;
+    border-bottom: 1px solid #EEF1F6;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  button{
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 0 rgba(118, 118, 118, 0.4);
+    animation: pulse 2s infinite;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      animation: none;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(118, 118, 118, 0.4);
+      box-shadow: 0 0 0 0 rgba(118, 118, 118, 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+}
+

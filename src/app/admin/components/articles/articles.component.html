@@ -1,0 +1,92 @@
+<div class="header">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
+    <div>
+      <span class="icon mr-2"><i class="far fa-newspaper"></i></span>
+      <span>Artículos</span>
+    </div>
+    <div>
+      <button class="btn light" [routerLink]="'/admin/create-article'">Nuevo</button>
+    </div>
+  </div>
+</div>
+<div class="container pt-4 filter">
+<!--  <form action="" [formGroup] ="form" class="d-flex justify-content-between flex-column flex-md-row">-->
+<!--    <app-admin-input [icon]="'fas fa-search'" [type]="'text'" [controlName]="'title'" [placeholder]="'Título'" [tempFormGroup]="form" [field]="form.controls.title"></app-admin-input>-->
+<!--    <div class="d-flex align-items-baseline">-->
+<!--      <label class="mr-2" for="status">Estado</label>-->
+<!--      <select class="form-control pl-2 w-auto" id="status">-->
+<!--        <option>Todos</option>-->
+<!--        <option>Pendientes</option>-->
+<!--        <option>Publicados</option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--  </form>-->
+</div>
+
+<div class="container pt-4">
+  <div *ngIf="articles" >
+    <app-admin-pagination (action)="loadArticles($event)" [collectionSize]="articles.total" [pageSize]="6"></app-admin-pagination>
+    <div class="row" [class.d-none]="loading">
+      <ng-container *ngFor="let article of articles.data" [ngTemplateOutlet]="articleItem" [ngTemplateOutletContext]="{article: article}"></ng-container>
+    </div>
+  </div>
+  <div [class.d-none]="!loading">
+    <ng-container [ngTemplateOutlet]="loadTemplate"></ng-container>
+  </div>
+</div>
+<ng-template #articleItem let-article="article">
+  <div class="col-md-6 col-lg-4 pb-3">
+    <a [routerLink]="['/admin/article-view', article.id]" href="" title="Detalles">
+      <div class="card">
+        <img src="https://drive.google.com/uc?export=view&id={{article.image_id}}" class="card-img-top" alt="...">
+        <div class="card-body pb-0">
+          <h5 class="card-title">{{article.title}}</h5>
+          <div class="card-text" [innerHTML]="article.summary" ></div>
+        </div>
+        <div class="card-footer text-muted d-flex">
+          <span>{{article.created_at | date: "MMM dd, yyyy"}}</span>
+          <!--        <a [routerLink]="['/admin/article', article.id]" class="card-action" placement="top" ngbTooltip="Ver">-->
+          <!--          <span class="icon"><i class="far fa-eye"></i></span>-->
+          <!--        </a>-->
+          <!--        <a [routerLink]="'article'" class="card-action" placement="top" ngbTooltip="Editar">-->
+          <!--          <span class="icon"><i class="far fa-edit"></i></span>-->
+          <!--        </a>-->
+          <!--        <a [routerLink]="'articles'" class="card-action position-relative" placement="top" ngbTooltip="Comentarios">-->
+          <!--          <span class="icon"><i class="fas fa-comment"></i></span>-->
+          <!--        </a>-->
+          <!--        <a class="card-action"  placement="top" ngbTooltip="Eliminar">-->
+          <!--          <span class="icon"><i class="far fa-trash-alt"></i></span>-->
+          <!--        </a>-->
+        </div>
+      </div>
+    </a>
+  </div>
+</ng-template>
+
+<ng-template #loadTemplate>
+  <div class="row">
+    <ng-container [ngTemplateOutlet]="articleTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="articleTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="articleTemplate"></ng-container>
+  </div>
+</ng-template>
+<ng-template #articleTemplate>
+  <div class="col-md-6 col-lg-4 pb-3">
+    <div>
+      <div class="card">
+        <img src="assets/images/img_template.png" class="card-img-top" alt="...">
+        <div class="card-body pb-0">
+          <h5 class="card-title"></h5>
+          <div class="card-text">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="card-footer text-muted d-flex">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

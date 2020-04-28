@@ -7,6 +7,7 @@ import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalSelectors from '../../store/selectors/portal.selectors';
 import {Observable} from 'rxjs';
 import {ENTITIES} from '../../helpers/pagination/pagination.component';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -16,6 +17,7 @@ import {ENTITIES} from '../../helpers/pagination/pagination.component';
 export class BlogComponent implements OnInit {
 
   public currentLang;
+  public currentPage;
   public articleGroup$: Observable<any>;
   public articlesLoading$: Observable<boolean>;
 
@@ -23,13 +25,11 @@ export class BlogComponent implements OnInit {
 
   public cardTemplates = new Array(4);
 
-  constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
+  constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>, private route: ActivatedRoute) {
 
     this.paginationEntity = ENTITIES.ARTICLE;
-
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
-      this.portalStore.dispatch(new PortalActions.LoadArticles({lang: this.currentLang, filter: {}, page: 1}));
     });
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'blog'}));
 
@@ -37,7 +37,12 @@ export class BlogComponent implements OnInit {
     this.articleGroup$ = this.portalStore.select(PortalSelectors.selectArticles);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.params.subscribe(params =>{
+      this.currentPage = params['page'] ? params['page'] : 1;
+      this.portalStore.dispatch(new PortalActions.LoadArticles({lang: this.currentLang, filter: {}, page: this.currentPage}));
+    });
+  }
 
   public dateFilter(date) {
     return date.split(' ')[0];

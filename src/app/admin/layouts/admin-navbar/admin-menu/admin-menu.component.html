@@ -1,0 +1,25 @@
+<div ngbDropdown placement="bottom-right">
+  <button id="menu" class="navbar-action" ngbDropdownToggle>
+    <i class="fas fa-ellipsis-v"></i>
+    <i class="fas fa-ellipsis-v"></i>
+    <i class="fas fa-ellipsis-v"></i>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="menu">
+    <div [routerLink]="'dashboard'" ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <span class="icon"><i class="far fa-clipboard"></i></span>
+      <span>Dashboard</span>
+    </div>
+    <div [routerLink]="'articles'" ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <span class="icon"><i class="far fa-newspaper"></i></span>
+      <span>Artículos</span>
+    </div>
+    <div [routerLink]="'tags'" ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <span class="icon"><i class="fas fa-tags"></i></span>
+      <span>Etiquetas</span>
+    </div>
+    <div *showForRole="[ROLES.DEVELOPER, ROLES.OWNER]" [routerLink]="'users'" ngbDropdownItem class="menu-item pl-3 pb-2 pt-2">
+      <span class="icon"><i class="fas fa-users"></i></span>
+      <span>Usuarios</span>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
+import {ngfModule} from 'angular-file';
+import {AngularTokenModule} from 'angular-token';
+import {environment} from '../../environments/environment';
 
 @NgModule({
   declarations: [],
@@ -11,11 +14,17 @@ import {EffectsModule} from '@ngrx/effects';
     CommonModule,
     CoreRoutingModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    AngularTokenModule.forRoot({
+      apiBase: environment.apiUrl,
+      signInRedirect: 'admin/login',
+      signInStoredUrlStorageKey: 'redirectTo',
+    })
   ],
   exports: [
     CoreRoutingModule,
-    StoreModule
+    StoreModule,
+    AngularTokenModule
   ]
 })
 export class CoreModule { }

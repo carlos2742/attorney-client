@@ -1,0 +1,91 @@
+<div class="header">
+  <div class="container d-flex justify-content-between pb-3 pt-3">
+    <div>
+      <span class="icon mr-2"><i class="fas fa-cogs"></i></span>
+      <span>Cuenta</span>
+    </div>
+  </div>
+</div>
+<div class="sections">
+  <h3 class="text-center mb-1 mt-3 mb-lg-3 mt-lg-5">Detalles</h3>
+  <div class="container pt-2" *ngIf="loggedUser$ | async">
+    <div>
+      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+        <div class="col-lg-4 label pb-2 pb-lg-0">
+          <span>Perfil</span>
+          <p>Su dirección de correo electrónico es su identidad y se utiliza para iniciar sesión.</p>
+        </div>
+        <div class="col-lg-8 value pl-5">
+          <ng-container [ngTemplateOutlet]="profile"></ng-container>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row pb-4 pt-4 pb-lg-5 pt-lg-5 separator">
+        <div class="col-lg-4 label pb-2 pb-lg-0">
+          <span>Contraseña</span>
+        </div>
+        <div class="col-lg-8 value pl-5">
+          <ng-container [ngTemplateOutlet]="password"></ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #profile>
+  <div class="form-container">
+    <form *ngIf="profileForm" action="" [formGroup]="profileForm">
+      <div [class.disabled]="!editing">
+        <div class="field-container disabled">
+          <label>Correo electrónico</label>
+          <div>
+            <app-admin-input  [icon]="'fas fa-envelope'" [placeholder]="'Correo electrónico'" [readOnly]="true" [controlName]="'email'" [tempFormGroup]="profileForm" [field]="profileForm.controls.email"></app-admin-input>
+          </div>
+        </div>
+        <div class="field-container">
+          <label>Nombre</label>
+          <div>
+            <app-admin-input [icon]="'fas fa-heading'" [placeholder]="'Nombre'" [readOnly]="!editing" [controlName]="'name'" [tempFormGroup]="profileForm" [field]="profileForm.controls.name"></app-admin-input>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button *ngIf="!editing" class="btn light" (click)="showForm()">Editar</button>
+        <button *ngIf="editing" class="btn light" (click)="saveProfile()">Guardar</button>
+        <button *ngIf="editing" class="btn dark ml-2" (click)="hideForm()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #password>
+  <div class="form-container">
+    <form *ngIf="passwordForm" [formGroup]="passwordForm">
+      <div>
+        <div class="field-container">
+          <label>Actual</label>
+          <div>
+            <app-admin-input  [icon]="'fas fa-lock'" [type]="'password'" [placeholder]="'contraseña actual'" [controlName]="'passwordCurrent'" [tempFormGroup]="passwordForm" [field]="passwordForm.controls.passwordCurrent"></app-admin-input>
+          </div>
+          <div class="separator mb-3 mt-4"></div>
+        </div>
+        <div class="field-container">
+          <label>Nueva</label>
+          <div>
+            <app-admin-input [icon]="'fas fa-lock'" [type]="'password'" [placeholder]="'contraseña nueva'" [controlName]="'password'" [tempFormGroup]="passwordForm" [field]="passwordForm.controls.password"></app-admin-input>
+          </div>
+        </div>
+        <div class="field-container">
+          <label>Confirmar</label>
+          <div>
+            <app-admin-input [icon]="'fas fa-lock'" [type]="'password'" [placeholder]="'confirmar contraseña nueva'" [controlName]="'passwordConfirmation'" [tempFormGroup]="passwordForm" [field]="passwordForm.controls.passwordConfirmation"></app-admin-input>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn light" (click)="updatePass()">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

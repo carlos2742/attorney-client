@@ -1,0 +1,52 @@
+@import "../../admin.component";
+
+.login-container{
+  font-family: $Roboto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color;
+  img{
+    width: 200px;
+  }
+  .card{
+    min-width: 430px;
+    text-align: center;
+    border-radius: 0.50rem;
+    .card-title{
+      color: $color;
+      margin-top: 40px;
+    }
+    .alert{
+      margin: 0 30px 0 30px;
+      color: white;
+      background-color: red;
+      font-size: 14px;
+    }
+    form{
+      padding: 20px 30px 30px 30px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .login-container{
+    img{
+      width: 150px;
+    }
+    .card{
+      min-width: 90%;
+      .card-body{
+        padding: 1.25rem .5rem;
+        .card-title{
+          margin-top: 15px;
+        }
+      }
+
+    }
+  }
+}
