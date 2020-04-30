@@ -27,23 +27,18 @@ export class FilterComponent implements OnInit {
 
   constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
     this.show = false;
-    this.practiceArea = [
-      {id: 1, name: 'immigration', selected: false, title: 'PORTAL.VIEW.APRACTICES.IMMIGRATION.TITLE'},
-      {id: 2, name: 'family', selected: false, title: 'PORTAL.VIEW.APRACTICES.FAMILY.TITLE'},
-      {id: 3, name: 'willsprobate', selected: false, title: 'PORTAL.VIEW.APRACTICES.WILLSPROBATE.TITLE'},
-      {id: 4, name: 'bankruptcy', selected: false, title: 'PORTAL.VIEW.APRACTICES.BANKRUPTCY.TITLE'},
-      {id: 5, name: 'injury', selected: false, title: 'PORTAL.VIEW.APRACTICES.INJURY.TITLE'}
-    ];
+
+    this._initFilter();
 
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
     });
 
-    this.keyword = '';
     this.event$ = new Subject<any>();
   }
 
   ngOnInit() {
+    this.tempSelector.unsubscribe();
     this.event$.subscribe(value => this._updateFilter());
   }
 
@@ -69,5 +64,20 @@ export class FilterComponent implements OnInit {
       practice_areas: this.practiceArea.filter(item => item.selected).map(item => item.id)
     }
     this.portalStore.dispatch(new PortalActions.SetArticlesFilters(payload));
+  }
+
+  private _initFilter(){
+    this.practiceArea = [
+      {id: 1, name: 'immigration', selected: false, title: 'PORTAL.VIEW.APRACTICES.IMMIGRATION.TITLE'},
+      {id: 2, name: 'family', selected: false, title: 'PORTAL.VIEW.APRACTICES.FAMILY.TITLE'},
+      {id: 3, name: 'willsprobate', selected: false, title: 'PORTAL.VIEW.APRACTICES.WILLSPROBATE.TITLE'},
+      {id: 4, name: 'bankruptcy', selected: false, title: 'PORTAL.VIEW.APRACTICES.BANKRUPTCY.TITLE'},
+      {id: 5, name: 'injury', selected: false, title: 'PORTAL.VIEW.APRACTICES.INJURY.TITLE'}
+    ];
+
+    this.tempSelector = this.portalStore.select(PortalSelectors.selectArticlesFilter).subscribe((filter: Filter) =>{
+      this.keyword = filter.keyword;
+      this.practiceArea.forEach(item => item['selected'] = filter.practice_areas.indexOf(item['id']) > -1 ? true : false);
+    });
   }
 }
