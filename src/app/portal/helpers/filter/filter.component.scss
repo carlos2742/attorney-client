@@ -17,16 +17,14 @@
 
 .filter-container{
   z-index: 1;
+  top: 0;
   background-color: $dark_color;
   height: 100%;
   color: white;
   position: fixed;
-  right: -568px;
+  right: -360px;
   transition: right 0.2s linear;
-  min-width: 320px;
-  &.long{
-    right: -697px;
-  }
+  width: 360px;
   &.show{
     right: 1px;
   }
@@ -36,7 +34,7 @@
     position: absolute;
     left: -34px;
     top: 25%;
-    color: #726e65;
+    color: #ffffff;
     padding-left: 13px;
     width: $dimensions;
     height: $dimensions;
@@ -102,6 +100,8 @@
               font-family: $Monserrat;
               font-weight: bold;
               font-size: 0.9em;
+              width: 200px;
+              text-align: left;
               &.active{
                 color: $gold_color;
               }

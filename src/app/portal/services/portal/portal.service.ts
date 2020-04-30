@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalSelector from '../../store/selectors/portal.selectors';
+import * as PortalActions from '../../store/actions/portal.actions';
+
 import {isNullOrUndefined} from 'util';
 import {Meta, Title} from '@angular/platform-browser';
 import {Location} from '@angular/common';
@@ -18,6 +20,9 @@ export class PortalService {
     this.store.select(PortalSelector.selectedMenuItem).subscribe(select => {
       console.log(select);
       if (select === 'home' || select === 'article' || select === 'blog') {
+        if(select !== 'article' && select !== 'blog' ){
+          this.store.dispatch(new PortalActions.CleanArticlesFilters())
+        }
         this.goTop();
       } else if (allowed.includes(select)) {
         this.goToElement(select);

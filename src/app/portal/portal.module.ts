@@ -26,6 +26,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { PaginationComponent } from './helpers/pagination/pagination.component';
 import { LoadImageComponent } from './helpers/load-image/load-image.component';
 import { FilterComponent } from './helpers/filter/filter.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { FilterComponent } from './helpers/filter/filter.component';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     PortalRoutingModule,
     StoreModule.forFeature('portal', reducer),
     EffectsModule.forFeature([PortalEffects]),
