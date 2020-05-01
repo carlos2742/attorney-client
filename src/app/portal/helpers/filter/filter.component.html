@@ -1,4 +1,4 @@
-<div class="filter-container pl-5 pr-5 pt-5" [class.show]="show">
+<div class="filter-container pl-5 pr-5 pt-5 pb-4 d-flex d-sm-block justify-content-center" [class.show]="show">
   <button id="show-btn" (click)="toggleFilter()">
     <i class="fas fa-search"></i>
   </button>
@@ -15,13 +15,13 @@
           <div class="border"></div>
         </div>
         <div class="body">
-          <div class="filter-list pt-4">
+          <div class="filter-list pt-4 d-flex d-sm-block justify-content-between">
             <button class="filter-item mb-4" *ngFor= "let item of practiceArea; let i = index" (click)="markItem(i)" title="{{item.title | translate}}">
-              <div class="img-container mr-3 position-relative">
+              <div class="img-container mr-0 mr-sm-3 position-relative">
                 <img [class.d-none]="item.selected" class="position-absolute" src="assets/images/filters/{{item.name}}.png" alt="">
                 <img [class.d-block]="item.selected" class="d-none position-absolute" src="assets/images/filters/{{item.name}}_selected.png" alt="">
               </div>
-              <div class="name" [class.active]="item.selected">
+              <div class="name d-none d-sm-block" [class.active]="item.selected">
                 {{item.title | translate}}
               </div>
             </button>
