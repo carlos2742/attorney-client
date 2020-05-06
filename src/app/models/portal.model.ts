@@ -15,3 +15,8 @@ export interface Comment {
   email: string;
   content: string;
 }
+
+export interface Filter {
+  keyword: string;
+  practice_areas: any[];
+}

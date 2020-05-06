@@ -1,5 +1,5 @@
 import * as Portal from '../actions/portal.actions';
-import {Article, Comment} from '../../../models/portal.model';
+import {Article, Comment, Filter} from '../../../models/portal.model';
 
 export interface PortalState {
   menuItem: string;
@@ -14,6 +14,7 @@ export interface PortalState {
     data: Array<Article>;
     total: number;
     error: string;
+    filter: Filter;
   };
   article: {
     loading: boolean;
@@ -42,7 +43,11 @@ export const initialState: PortalState = {
     loaded: false,
     data: [],
     total: 0,
-    error: ''
+    error: '',
+    filter:{
+      keyword: '',
+      practice_areas: []
+    }
   },
   article: {
     loading: false,
@@ -157,7 +162,7 @@ export function reducer(
           ...state.articles,
           loading: false,
           loaded: true,
-          data: action.payload.data,
+          data: action.payload.groups,
           total: action.payload.total
         }
       };
@@ -218,6 +223,29 @@ export function reducer(
             data: [],
             total: 0,
             error: action.payload.error
+          }
+        }
+      };
+    }
+    case Portal.ActionTypes.SetArticlesFilters: {
+      console.log(Portal.ActionTypes.SetArticlesFilters);
+      return {
+        ...state,
+        articles: {
+          ...state.articles,
+          filter: action.payload
+        }
+      };
+    }
+    case Portal.ActionTypes.CleanArticlesFilters: {
+      console.log(Portal.ActionTypes.CleanArticlesFilters);
+      return {
+        ...state,
+        articles: {
+          ...state.articles,
+          filter: {
+            keyword: '',
+            practice_areas: []
           }
         }
       };

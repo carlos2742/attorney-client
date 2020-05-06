@@ -14,6 +14,8 @@ export enum ActionTypes {
   LoadComments = '[Portal] Load Comments',
   LoadCommentsFail = '[Portal] Load Comments Fail',
   LoadCommentsSuccess = '[Portal] Load Comments Success',
+  SetArticlesFilters = '[Portal] Set Articles filters',
+  CleanArticlesFilters = '[Portal] Clean Articles filters',
 }
 
 export class SelectMenu implements Action {
@@ -80,6 +82,16 @@ export class LoadCommentsSuccess implements Action {
   constructor(public payload: any) {}
 }
 
+export class SetArticlesFilters implements Action {
+  readonly type = ActionTypes.SetArticlesFilters;
+  constructor(public payload: any) {}
+}
+
+export class CleanArticlesFilters implements Action {
+  readonly type = ActionTypes.CleanArticlesFilters;
+  constructor() {}
+}
+
 export type ActionsUnion = SelectMenu |
   SendEmail |
   SendEmailFail |
@@ -92,5 +104,7 @@ export type ActionsUnion = SelectMenu |
   LoadArticlesSuccess |
   LoadComments |
   LoadCommentsFail |
-  LoadCommentsSuccess;
+  LoadCommentsSuccess |
+  SetArticlesFilters |
+  CleanArticlesFilters;
 

@@ -13,8 +13,11 @@
 
 .group-container{
   min-height: calc(100vh - 694px);
+  .not-found{
+    font-family: $Monserrat;
+    font-weight: bold;
+  }
   .group{
-
     .header .title:empty, .article-card .article-body .title:empty, .article-card .article-body .summary div:empty, .article-card .article-body .tag-list .tag:empty{
       animation: loading 1.7s infinite linear;
       background: #dedfe1;
