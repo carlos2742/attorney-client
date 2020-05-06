@@ -61,9 +61,6 @@ export class PortalEffects {
           return this.blog.articleList(payload.lang, payload.filter, payload.page)
             .pipe(
               map((response: ArticleGroupResponse) => {
-                  response.groups = Object.keys(response.groups).map(date => {
-                    return {date, article_list: response.groups[date] };
-                  });
                   return new PortalActions.LoadArticlesSuccess(response);
                 },
                 catchError(error => of(new PortalActions.LoadArticlesFail(error)))
