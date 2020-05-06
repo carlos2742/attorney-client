@@ -25,6 +25,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/article/article.component';
 import { PaginationComponent } from './helpers/pagination/pagination.component';
 import { LoadImageComponent } from './helpers/load-image/load-image.component';
+import { TimeAgoDirective } from './directives/time-ago.directive';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { LoadImageComponent } from './helpers/load-image/load-image.component';
     BlogComponent,
     ArticleComponent,
     PaginationComponent,
-    LoadImageComponent
+    LoadImageComponent,
+    TimeAgoDirective
   ],
   imports: [
     CommonModule,

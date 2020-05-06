@@ -236,6 +236,24 @@
       "COMMENT_MESSAGE":"Su comentario ha sido enviado y esta pendiente a revisión",
       "COMMENTS":"Comentarios",
       "SHARE": "Compartir en {{social}}"
+    },
+    "TIME_AGO": {
+      "PUBLISHED": "Publicado",
+      "NOW": "ahora",
+      "PLURAL": {
+        "HOURS": "hace {{time}} horas",
+        "DAYS": "hace {{time}} días",
+        "WEEKS": "hace {{time}} semanas",
+        "MONTHS": "hace {{time}} meses",
+        "YEARS": "hace {{time}} años"
+      },
+      "SINGULAR": {
+        "HOURS": "hace {{time}} hora",
+        "DAYS": "hace {{time}} día",
+        "WEEKS": "hace {{time}} semana",
+        "MONTHS": "hace {{time}} mes",
+        "YEARS": "hace {{time}} año"
+      }
     }
   }
 }
