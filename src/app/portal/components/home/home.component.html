@@ -35,7 +35,7 @@
   <div id="practices" class="pb-5">
     <app-title [title]="'PORTAL.NAV.AREAS_OF_PRACTICES' | translate"></app-title>
     <div class="content">
-      <div class="row">
+      <div class="row justify-content-around">
         <ng-container *ngFor="let item of practices">
           <ng-container [ngTemplateOutlet]="practiceCard" [ngTemplateOutletContext]="{item: item}"></ng-container>
         </ng-container>
