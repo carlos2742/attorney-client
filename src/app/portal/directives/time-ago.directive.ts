@@ -1,5 +1,5 @@
 import {Directive, ElementRef, Input, OnInit} from '@angular/core';
-import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Directive({
   selector: '[timeAgo]'
@@ -10,7 +10,6 @@ export class TimeAgoDirective implements OnInit{
 
   ngOnInit(): void {
     this.renderTime();
-    this.translate.onLangChange.subscribe((event:LangChangeEvent) => this.renderTime());
   }
 
   private renderTime(){
