@@ -162,7 +162,7 @@ export function reducer(
           ...state.articles,
           loading: false,
           loaded: true,
-          data: action.payload.groups,
+          data: action.payload.data,
           total: action.payload.total
         }
       };
