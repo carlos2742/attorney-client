@@ -27,7 +27,7 @@ import { PaginationComponent } from './helpers/pagination/pagination.component';
 import { LoadImageComponent } from './helpers/load-image/load-image.component';
 import { FilterComponent } from './helpers/filter/filter.component';
 import {FormsModule} from '@angular/forms';
-
+import { TimeAgoDirective } from './directives/time-ago.directive';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import {FormsModule} from '@angular/forms';
     ArticleComponent,
     PaginationComponent,
     LoadImageComponent,
-    FilterComponent
+    FilterComponent,
+    TimeAgoDirective
   ],
   imports: [
     CommonModule,

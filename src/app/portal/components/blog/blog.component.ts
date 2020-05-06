@@ -20,7 +20,7 @@ export class BlogComponent implements OnInit {
 
   public currentLang;
   public currentPage;
-  public articleGroup$: Observable<any>;
+  public articles$: Observable<any>;
   public articlesLoading$: Observable<boolean>;
 
   public paginationEntity: ENTITIES;
@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'blog'}));
 
     this.articlesLoading$ = this.portalStore.select(PortalSelectors.areArticlesLoading);
-    this.articleGroup$ = this.portalStore.select(PortalSelectors.selectArticles);
+    this.articles$ = this.portalStore.select(PortalSelectors.selectArticles);
 
     this.currentFilter = {
       keyword: '',
