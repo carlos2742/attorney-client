@@ -224,6 +224,10 @@
         }
       }
     },
+    "FILTERS": {
+      "SEARCH": "Buscar Artículo",
+      "FILTER": "Filtrar"
+    },
     "FOOTER":{
       "TITLE": "Consúltenos ante cualquier duda",
       "INFO":"&copy; Y. Morejon Attorney, P.A. Todos los derechos reservados. Tenga en cuenta que la información divulgada en esta conversación no constituye ni crea una relación abogado-cliente."
@@ -235,7 +239,26 @@
       "COMMENTARY": "Comentario",
       "COMMENT_MESSAGE":"Su comentario ha sido enviado y esta pendiente a revisión",
       "COMMENTS":"Comentarios",
-      "SHARE": "Compartir en {{social}}"
+      "SHARE": "Compartir en {{social}}",
+      "NOT_FOUND": "No se encontraron resultados"
+    },
+    "TIME_AGO": {
+      "PUBLISHED": "Publicado",
+      "NOW": "ahora",
+      "PLURAL": {
+        "HOURS": "hace {{time}} horas",
+        "DAYS": "hace {{time}} días",
+        "WEEKS": "hace {{time}} semanas",
+        "MONTHS": "hace {{time}} meses",
+        "YEARS": "hace {{time}} años"
+      },
+      "SINGULAR": {
+        "HOURS": "hace {{time}} hora",
+        "DAYS": "hace {{time}} día",
+        "WEEKS": "hace {{time}} semana",
+        "MONTHS": "hace {{time}} mes",
+        "YEARS": "hace {{time}} año"
+      }
     }
   }
 }

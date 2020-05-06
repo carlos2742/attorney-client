@@ -16,6 +16,9 @@ export const areArticlesLoading = createSelector(fromArticles, (articles) => art
 export const selectArticles = createSelector(fromArticles, (articles) => {
   return {total: articles.total, data: articles.data};
 });
+export const selectArticlesFilter = createSelector(fromArticles, (articles) =>{
+  return articles.filter;
+})
 
 const fromComments = createSelector(fromArticle, (article) => article.comments);
 export const areCommentsLoading = createSelector(fromComments, (comments) => comments.loading);

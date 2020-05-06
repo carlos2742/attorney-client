@@ -13,8 +13,11 @@
 
 .group-container{
   min-height: calc(100vh - 694px);
+  .not-found{
+    font-family: $Monserrat;
+    font-weight: bold;
+  }
   .group{
-
     .header .title:empty, .article-card .article-body .title:empty, .article-card .article-body .summary div:empty, .article-card .article-body .tag-list .tag:empty{
       animation: loading 1.7s infinite linear;
       background: #dedfe1;
@@ -60,7 +63,12 @@
             font-size: 1.3em;
           }
         }
-
+        .published{
+          font-size: 1rem;
+          color: #8e8c8c;
+          font-family: $Roboto;
+          line-height: 1.3em;
+        }
         .summary{
           color: #8e8c8c;
           font-family: $Roboto;
