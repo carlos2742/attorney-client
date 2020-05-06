@@ -240,7 +240,9 @@
       "COMMENT_MESSAGE":"Su comentario ha sido enviado y esta pendiente a revisión",
       "COMMENTS":"Comentarios",
       "SHARE": "Compartir en {{social}}",
-      "NOT_FOUND": "No se encontraron resultados"
+      "NOT_FOUND": "No se encontraron resultados",
+      "CLEAN_FILTER": "Filtros",
+      "CLEAN_FILTER_TITLE": "Eliminar filtros"
     },
     "TIME_AGO": {
       "PUBLISHED": "Publicado",

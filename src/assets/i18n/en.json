@@ -240,7 +240,9 @@
       "COMMENT_MESSAGE":"Your comment has been sent and is pending review",
       "COMMENTS":"Comments",
       "SHARE": "Share in {{social}}",
-      "NOT_FOUND": "Results not found"
+      "NOT_FOUND": "Results not found",
+      "CLEAN_FILTER": "Filters",
+      "CLEAN_FILTER_TITLE": "Remove filters"
     },
     "TIME_AGO": {
       "PUBLISHED": "Published",

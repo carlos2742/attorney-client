@@ -25,7 +25,7 @@ export class BlogComponent implements OnInit {
 
   public paginationEntity: ENTITIES;
 
-  public cardTemplates = new Array(4);
+  public cardTemplates = new Array(3);
 
   private currentFilter: Filter;
 
@@ -65,5 +65,13 @@ export class BlogComponent implements OnInit {
 
   private _loadArticles(){
     this.portalStore.dispatch(new PortalActions.LoadArticles({lang: this.currentLang, filter: this.currentFilter, page: this.currentPage}));
+  }
+
+  get isFilterApplied(){
+    return this.currentFilter.practice_areas.length > 0 || this.currentFilter.keyword !== '';
+  }
+
+  public cleanFilter(){
+    this.portalStore.dispatch(new PortalActions.CleanArticlesFilters());
   }
 }
