@@ -35,7 +35,6 @@
         </div>
         <div class="summary mt-2" [innerHTML]="article.summary"></div>
         <div class="tag-list mt-3">
-<!--          <div class="tag mr-2 mb-2" *ngFor="let tag of article.main_tags">{{tag.name}}</div>-->
         </div>
       </div>
     </div>
@@ -45,10 +44,6 @@
 <ng-template #loadingTemplate>
   <div class="mb-5 group-container mt-3">
     <div class="group mb-2">
-<!--      <div class="header d-flex align-items-center">-->
-<!--        <div class="title"></div>-->
-<!--        <div class="group-decorator flex-grow-1 ml-4"></div>-->
-<!--      </div>-->
       <div class="row">
         <div *ngFor="let item of cardTemplates" class="article-card d-flex flex-column mt-3 mb-4 col-lg-4">
           <div class="article-body">
