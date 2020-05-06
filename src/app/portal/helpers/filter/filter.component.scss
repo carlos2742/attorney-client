@@ -22,9 +22,9 @@
   height: 100%;
   color: white;
   position: fixed;
-  right: -360px;
+  right: -336px;
   transition: right 0.2s linear;
-  width: 360px;
+  width: 336px;
   &.show{
     right: 0;
   }

@@ -6,13 +6,13 @@
       <div class="decorator pt-1"></div>
     </div>
   </div>
-  <div class="mb-4 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
+  <div class="mb-5 group-container mt-3" *ngIf="!(articlesLoading$ | async); else loadingTemplate">
     <div class="group mb-2">
       <div class="row ">
         <ng-container *ngFor="let article of (articles$ | async).data" [ngTemplateOutlet]="articleTemplate" [ngTemplateOutletContext]="{article: article}"></ng-container>
       </div>
     </div>
-    <h3 class="mt-5" *ngIf="(articles$ | async).data.length === 0">No se encontraron resultados</h3>
+    <h3 class="mt-5 not-found" *ngIf="(articles$ | async).data.length === 0">{{'PORTAL.BLOG.NOT_FOUND' | translate}}</h3>
   </div>
   <app-pagination [collectionSize]="(articles$ | async).total" [separator]="true" [params]="{lang: this.currentLang, filter: {}}" [entity]="paginationEntity" [page]="currentPage" [pageSize]="6"></app-pagination>
 </div>

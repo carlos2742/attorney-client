@@ -239,7 +239,26 @@
       "COMMENTARY": "Commentary",
       "COMMENT_MESSAGE":"Your comment has been sent and is pending review",
       "COMMENTS":"Comments",
-      "SHARE": "Share in {{social}}"
+      "SHARE": "Share in {{social}}",
+      "NOT_FOUND": "Results not found"
+    },
+    "TIME_AGO": {
+      "PUBLISHED": "Published",
+      "NOW": "now",
+      "PLURAL": {
+        "HOURS": "{{time}} hours ago",
+        "DAYS": "{{time}} days ago",
+        "WEEKS": "{{time}} weeks ago",
+        "MONTHS": "{{time}} months ago",
+        "YEARS": "{{time}} years ago"
+      },
+      "SINGULAR": {
+        "HOURS": "{{time}} hour ago",
+        "DAYS": "{{time}} day ago",
+        "WEEKS": "{{time}} week ago",
+        "MONTHS": "{{time}} month ago",
+        "YEARS": "{{time}} year ago"
+      }
     }
   }
 }
