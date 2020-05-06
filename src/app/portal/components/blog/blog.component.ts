@@ -34,6 +34,7 @@ export class BlogComponent implements OnInit {
     this.paginationEntity = ENTITIES.ARTICLE;
     this.commonStore.select(CommonSelector.selectCurrentLanguage).subscribe(language => {
       this.currentLang = language;
+      this._loadArticles();
     });
     this.portalStore.dispatch(new PortalActions.SelectMenu({menuItem: 'blog'}));
 
