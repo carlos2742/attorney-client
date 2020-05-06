@@ -9,6 +9,14 @@
     border-bottom: 3px solid $gold_color;
     width: 84px;
   }
+  .clean{
+    font-weight: bold;
+    font-family: $cardif_bold_italic;
+    font-size: 1.2rem;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
 
 .group-container{

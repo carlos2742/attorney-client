@@ -23,8 +23,6 @@ export class FilterComponent implements OnInit {
 
   private event$: Subject<any>;
 
-  private tempSelector;
-
   constructor(private commonStore: Store<CommonState>, private portalStore: Store<PortalState>) {
     this.show = false;
 
@@ -38,7 +36,6 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tempSelector.unsubscribe();
     this.event$.subscribe(value => this._updateFilter());
   }
 
@@ -75,7 +72,7 @@ export class FilterComponent implements OnInit {
       {id: 5, name: 'injury', selected: false, title: 'PORTAL.VIEW.APRACTICES.INJURY.TITLE'}
     ];
 
-    this.tempSelector = this.portalStore.select(PortalSelectors.selectArticlesFilter).subscribe((filter: Filter) =>{
+    this.portalStore.select(PortalSelectors.selectArticlesFilter).subscribe((filter: Filter) =>{
       this.keyword = filter.keyword;
       this.practiceArea.forEach(item => item['selected'] = filter.practice_areas.indexOf(item['id']) > -1 ? true : false);
     });
