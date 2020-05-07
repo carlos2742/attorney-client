@@ -22,16 +22,16 @@ export class TimeAgoDirective implements OnInit{
         param = {time: this.time};
       } else if(this.time/24 < 7){
         key = 'DAYS';
-        param = {time: Math.floor(this.time/24)}
+        param = {time: Math.ceil(this.time/24)}
       } else if(this.time/168 < 4){
         key = 'WEEKS';
-        param = {time: Math.floor(this.time/168)}
+        param = {time: Math.ceil(this.time/168)}
       } else if(this.time/672 < 12){
         key = 'MONTHS';
-        param = {time: Math.floor(this.time/672)}
+        param = {time: Math.ceil(this.time/672)}
       } else{
         key = 'YEARS';
-        param = {time: Math.floor(this.time/8064)}
+        param = {time: Math.ceil(this.time/8064)}
       }
       key = param['time'] === 1 ? `SINGULAR.${key}` : `PLURAL.${key}`;
     }
