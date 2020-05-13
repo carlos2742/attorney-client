@@ -63,6 +63,7 @@ export class PortalService {
   /* create meta tags for facebook and linkedin*/
   private createOpenGraphMetaTags(title, image) {
     const url = `https://www.ymorejonattorney.com${this.location.path()}`;
+    this.meta.updateTag({property: 'fb:app_id', content: '558879891707307'});
     this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({property: 'og:site_name', content: 'Attorney'});
     this.meta.updateTag({property: 'og:url', content: url});
