@@ -1,9 +1,10 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {CommonService} from '../shared/services/common/common.service';
 import {CommonState} from '../shared/store/reducers/common.reducers';
 import {Store} from '@ngrx/store';
 import * as CommonActions from '../shared/store/actions/common.actions';
 import * as CommonSelector from '../shared/store/selectors/common.selectors';
+import {DOCUMENT} from '@angular/common';
 declare var Tawk_API
 
 @Component({
@@ -13,7 +14,7 @@ declare var Tawk_API
 })
 export class PortalComponent implements OnInit {
 
-  constructor(private common: CommonService, private store: Store<CommonState>) {
+  constructor(private common: CommonService, private store: Store<CommonState>, @Inject(DOCUMENT) private document: any,) {
     this.store.dispatch(new CommonActions.InitializeLanguage());
   }
 
@@ -22,12 +23,12 @@ export class PortalComponent implements OnInit {
   }
 
   createTawkLiveChat(){
-    let script = document.createElement("script");
+    let script = this.document.createElement("script");
     script.type = "text/javascript";
     script.src = `https://embed.tawk.to/${this.common.tawkId}/default`;
     script.onload = ()=>{
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     };
-    document.body.appendChild(script);
+    this.document.body.appendChild(script);
   }
 }

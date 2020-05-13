@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {PortalState} from '../../store/reducers/portal.reducers';
 import * as PortalSelector from '../../store/selectors/portal.selectors';
@@ -6,7 +6,7 @@ import * as PortalActions from '../../store/actions/portal.actions';
 
 import {isNullOrUndefined} from 'util';
 import {Meta, Title} from '@angular/platform-browser';
-import {Location} from '@angular/common';
+import {isPlatformBrowser, Location} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ import {Location} from '@angular/common';
 export class PortalService {
 
   constructor(private store: Store<PortalState>, private meta: Meta, private titleService: Title,
-              private location: Location) { }
+              private location: Location, @Inject(PLATFORM_ID) private platformId: any,) { }
 
   goToSection(allowed: Array<string>) {
     this.store.select(PortalSelector.selectedMenuItem).subscribe(select => {
@@ -31,7 +31,9 @@ export class PortalService {
   }
 
   goTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth'});
+    if(isPlatformBrowser(this.platformId)){
+      window.scrollTo({ top: 0, behavior: 'smooth'});
+    }
   }
 
   goToElement(id) {
