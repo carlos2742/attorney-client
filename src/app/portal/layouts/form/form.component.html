@@ -5,6 +5,7 @@
   <div *ngIf="!sent">
     <p [innerHTML] ="'PORTAL.FORM.TITLE' | translate"></p>
     <p [innerHTML] ="'PORTAL.FORM.DESCRIPTION' | translate"></p>
+    <p [innerHTML] ="'PORTAL.FORM.WARNING' | translate"></p>
     <form [formGroup] ="requestForm">
       <div class="row">
         <div class="col-12 pb-1" [ngClass]="{'col-lg-4': !subheaderLayout, 'col-lg-6': subheaderLayout}">

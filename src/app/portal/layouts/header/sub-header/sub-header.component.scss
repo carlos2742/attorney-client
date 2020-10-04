@@ -103,7 +103,7 @@
 @include media-breakpoint-down(md){
   :host{
     .subheader-background{
-      height: 580px;
+      height: 625px;
       background-size: cover;
       background-position-x: center;
       background-position-y: bottom;
@@ -115,10 +115,8 @@
 @include media-breakpoint-down(sm){
   :host{
     .subheader-background{
-      height: 615px;
+      height: 695px;
       background-image: url("../../../../../assets/images/subheader-image-responsive.jpg");
-
-
       &>div{
         background-color: #1a1b1bad;
         height: 100%;
