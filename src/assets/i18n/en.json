@@ -49,7 +49,8 @@
         "MESSAGE": "Message"
       },
       "BUTTON": "Submit your message",
-      "DESCRIPTION": "We will contact you within 24 hours. For immediate assistance call us at <a class='phone' href='tel:7869070154'>(786) 907-0154</a>. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship."
+      "DESCRIPTION": "We will contact you within 24 hours. For immediate assistance call us at <a class='phone' href='tel:7869070154'>(786) 907-0154</a>. Please be aware that the information disclosed in this conversation does not constitute or create a lawyer-client relationship.",
+      "WARNING": "By providing us with your information you agree to receive newsletters and other communications from Y. Morejon Attorney, P.A."
     },
     "VIEW":{
       "HOME":{
