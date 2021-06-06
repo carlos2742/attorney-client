@@ -15,22 +15,22 @@ export class ArticleService {
 
   public all(page){
     const path = `${this.resources}/all/${page}`;
-    return this.http.get(path)
+    return this.http.get(path);
   }
 
   public article(id){
     const path = `${this.resources}/${id}`;
-    return this.http.get(path)
+    return this.http.get(path);
   }
 
   public create(payload){
     const path = this.resources;
-    return this.http.post(path,payload);
+    return this.http.post(path, payload);
   }
 
-  public update(id,payload){
+  public update(id, payload){
     const path = `${this.resources}/${id}`;
-    return this.http.put(path,payload);
+    return this.http.put(path, payload);
   }
 
   public publish(id){

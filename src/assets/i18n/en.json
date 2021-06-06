@@ -243,7 +243,8 @@
       "SHARE": "Share in {{social}}",
       "NOT_FOUND": "Results not found",
       "CLEAN_FILTER": "Filters",
-      "CLEAN_FILTER_TITLE": "Remove filters"
+      "CLEAN_FILTER_TITLE": "Remove filters",
+      "ARTICLE_ALERT": "The explanations that we are going to give in this video constitute the current law of the State of Florida. If you reside in another state contact an attorney in your area fo specific advice."
     },
     "TIME_AGO": {
       "PUBLISHED": "Published",

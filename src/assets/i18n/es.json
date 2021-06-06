@@ -243,7 +243,8 @@
       "SHARE": "Compartir en {{social}}",
       "NOT_FOUND": "No se encontraron resultados",
       "CLEAN_FILTER": "Filtros",
-      "CLEAN_FILTER_TITLE": "Eliminar filtros"
+      "CLEAN_FILTER_TITLE": "Eliminar filtros",
+      "ARTICLE_ALERT": "Las explicaciones que vamos a dar en este video constituyen la ley actual del Estado de la Florida. Si ustede reside en otro estado, contacte a un abogado de su áre para que lo asesore."
     },
     "TIME_AGO": {
       "PUBLISHED": "Publicado",
