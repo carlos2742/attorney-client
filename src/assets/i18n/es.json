@@ -244,7 +244,8 @@
       "NOT_FOUND": "No se encontraron resultados",
       "CLEAN_FILTER": "Filtros",
       "CLEAN_FILTER_TITLE": "Eliminar filtros",
-      "ARTICLE_ALERT": "Las explicaciones que vamos a dar en este video constituyen la ley actual del Estado de la Florida. Si ustede reside en otro estado, contacte a un abogado de su áre para que lo asesore."
+      "ARTICLE_ALERT_TITLE": "Aviso Legal",
+      "ARTICLE_ALERT_DESC": "Cualquier información proporcionada por el abogado o el bufete de abogados es solo para fines educativos, así como para brindarle información y comprensión generales de la ley, NO para brindarle consejos legales específicos. Esto NO crea una relación abogado-cliente entre usted y Y. Morejon Attorney, P.A. Esta información NO debe utilizarse como sustituto del asesoramiento legal competente de un abogado profesional autorizado en su estado."
     },
     "TIME_AGO": {
       "PUBLISHED": "Publicado",
