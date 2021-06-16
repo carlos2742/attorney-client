@@ -10,6 +10,10 @@
         <div class="ml-4 title">{{dateFilter((article$ | async).updated_at) | date: "MMM dd, yyyy" | uppercase}}</div>
       </div>
       <div class="content" [innerHTML]="(article$ | async).content"></div>
+      <div class="article-alert">
+        <div class="mb-2 font-weight-bold">{{'PORTAL.BLOG.ARTICLE_ALERT_TITLE' | translate}}</div>
+        <div>{{'PORTAL.BLOG.ARTICLE_ALERT_DESC' | translate}}</div>
+      </div>
     </div>
 
     <div class="share mb-4">

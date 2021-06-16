@@ -243,7 +243,9 @@
       "SHARE": "Share in {{social}}",
       "NOT_FOUND": "Results not found",
       "CLEAN_FILTER": "Filters",
-      "CLEAN_FILTER_TITLE": "Remove filters"
+      "CLEAN_FILTER_TITLE": "Remove filters",
+      "ARTICLE_ALERT_TITLE": "Legal Disclaimer",
+      "ARTICLE_ALERT_DESC": "Any information made available by the lawyer or law firm is for educational purposes only, as well as to give you general information and general understanding of the law, NOT to provide specific advice. This does NOT create a relationship attorney-client between you and Y. Morejon Attorney, P.A. This information should NOT be use as a substitute for competent legal advice from a licensed professional attorney in your state."
     },
     "TIME_AGO": {
       "PUBLISHED": "Published",
